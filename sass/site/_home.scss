@@ -248,7 +248,7 @@ $theme_grid_bp : '760px';
 		@include absolute(n n -2px n);
 
 		@media (min-width: 600px) {
-			background: url(/wp-content/themes/blades/images/covers/round-mask-bk-6.png) 50% 0% no-repeat;
+			background: url(../images/covers/round-mask-bk-6.png) 50% 0% no-repeat;
 			background-size: 110%;
 		}//mq
 
