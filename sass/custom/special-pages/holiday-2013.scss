@@ -158,7 +158,7 @@
 
 	&.metallica {
 		background-color: #111;
-		background-image: url("/wp-content/themes/blades/images/lightning.jpg");
+		background-image: url("../images/lightning.jpg");
 		@include background-size(cover);
 
 		.holiday-play-btn {
@@ -180,7 +180,7 @@
 }
 
 .holiday-bg {
-	background: url(/wp-content/themes/blades/images/drink/star-bg.gif);
+	background: url(../images/drink/star-bg.gif);
 }
 
 

@@ -10,7 +10,7 @@ body {-webkit-font-smoothing: antialiased;}
 
 .hof-cover {
 	@include background-size(cover);
-	background-image: url(/wp-content/themes/blades/images/hof/john-2.jpg);
+	background-image: url(../images/hof/john-2.jpg);
 	background-repeat: no-repeat;
 
 	@media (min-width: 768px) {
@@ -169,15 +169,15 @@ body {-webkit-font-smoothing: antialiased;}
 
 
 		&.john-1 {
-			background-image: url(/wp-content/themes/blades/images/hof/cover.jpg);
+			background-image: url(../images/hof/cover.jpg);
 		}
 
 		&.john-npr {
-			background-image: url(/wp-content/themes/blades/images/hof/john-npr.jpg);
+			background-image: url(../images/hof/john-npr.jpg);
 		}
 
 		&.john-3 {
-			background-image: url(/wp-content/themes/blades/images/hof/john-3.jpg);
+			background-image: url(../images/hof/john-3.jpg);
 		}
 
 	@include mq(768px) {
