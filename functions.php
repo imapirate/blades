@@ -38,7 +38,7 @@
 		wp_enqueue_script('jquery-core');
 		wp_enqueue_script('jquery-migrate');
 
-		load_script('modernizr', get_stylesheet_directory_uri() . '../components/modernizr/modernizr.js', false);
+		load_script('modernizr', get_stylesheet_directory_uri() . '/components/modernizr/modernizr.js', false);
 		error_log('loaded scripts');
 	}
 
