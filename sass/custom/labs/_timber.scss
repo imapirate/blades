@@ -1,0 +1,187 @@
+@import "custom/custom-base";
+@import "site/partials/variables";
+
+$timber: #009344;
+
+.page-topper {
+	background-color: $timber;
+	@include background-image(radial-gradient(#5EBA4B, $timber));
+	padding: 30px 0 0 0;
+	@include pie-clearfix;
+	text-align: center;
+	position:relative;
+	@media (min-width: 600px){
+		padding: 60px 0 0 0;
+	}
+}
+.timber-logo {
+	background-image: url('/wp-content/themes/blades/images/timber/timber-logo.svg');
+}
+
+.github-sash {
+	background-color: darken($timber, 10);
+	@include trans;
+	&:hover {
+		color:rgba(white, 1);
+		background-color: darken($timber, 15);
+	}
+}
+
+.logo {
+	text-indent: -10000px;
+	width: 100%;
+	height: 60px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 50%;
+	width: 100%;
+	height: 100px;
+
+	@media (min-width: 600px){
+		background-size: 100%;
+		width: 400px;
+		height: 120px;
+		margin: 0px auto 30px auto;
+	}
+}
+
+.timber-banner {
+	overflow: hidden;
+}
+
+.qs-label {
+	display: none;
+}
+
+.qs-link {
+	padding: 3px;
+	border-radius: 19px;
+	@include size(34px);
+	display: inline-block;
+	background-color: #ffffff;
+	@include trans;
+	margin: 0 7px;
+	&:hover {
+		// background-color: #97D28B;
+	}
+}
+
+.qs-icon {
+	@include size(28px);
+	border-radius: 14px;
+	padding-top: 7px;
+	font-size: 16px;
+	background-color: #bbb;
+	color: #fff;
+	@include trans;
+	&:hover {
+		background-color: $timber;
+	}
+}
+
+
+
+.page-timber{
+	.page-body {
+		@media (min-width: 1000px){
+			background-color: darken(desaturate($timber, 80), 10);
+		}
+	}
+	.center-txt {
+		@media (min-width: 1000px){
+			border:1px solid rgba($timber, .3);
+		}
+	}
+	.tagline {
+		margin-top:0px;
+	}
+}
+
+.social-media {
+	margin: 32px 0 -37px;
+}
+
+
+
+// Code
+
+.code-mod {
+	margin-bottom:35px;
+}
+
+code.hljs {
+	padding:0.5em 1.5em 1.75em;
+	border:1px solid #CCC;
+}
+
+.code-tag {
+	font: 400 14px $proxima;
+	&.top {
+		margin-bottom: 10px;
+	}
+}
+
+
+// Showcase here:
+
+.showcase-mod {
+	@include mq(500px, 750px) {
+	@include media-grid(2);
+	}
+	@include mq(750px) {
+	@include media-grid(3);
+	}
+}
+
+.showcase-item {
+	margin-bottom: 20px;
+}
+
+.showcase-img-mod {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.showcase-img {
+	max-width: 100%;
+	border:1px solid lighten($gray, 10);
+}
+
+.head-label {
+	font: 300 14px $proxima;
+}
+
+.showcase-section.section {
+	border-bottom: 0px;
+}
+
+.download-big-button-mod {
+	text-align:center;
+	margin-bottom:50px;
+}
+
+.endtag {
+	padding-top:20px;
+	text-align:center;
+	line-height:34px;
+	a {
+		color:$timber;
+	}
+}
+
+.download-big {
+	@include inline-block;
+	padding: 30px 90px 30px 30px;
+	background-image: url(/wp-content/themes/blades/images/timber/download-arrow.svg);
+	background-position: center right;
+	background-repeat: no-repeat;
+	background-color:$timber;
+	font-size: 20px;
+	font-family: "proxima-nova",Helvetica,Arial,sans-serif;
+	color: #FFF;
+	@include border-radius(60px);
+	@include trans;
+	&:hover {
+		background-color:darken($timber, 5);
+	}
+}
