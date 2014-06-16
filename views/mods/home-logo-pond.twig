@@ -4,7 +4,7 @@
 			{% if item.link %}
 				<a class="pond-item" href="{{TimberPost(item.link).permalink}}">
 			{% else %}
-				<span class="pond-item" href="{{TimberPost(item.link).permalink}}">
+				<span class="pond-item">
 			{% endif %}
 				<img class="stuff" src="{{TimberImage(item.logo).src}}" alt="{{item.link.post_title|default('Client logo')|e}}" />
 			{% if item.link %}
