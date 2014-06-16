@@ -314,6 +314,28 @@
 
 	});
 
+	// Video Sanity Checks
+
+	// play only when inview
+	$('.hlr-video-overview-mod').one('inview', function(event, isInView) {
+		if (isInView && $('html').hasClass('no-touch')) {
+			$('.hlr-video-overview').get(0).play();
+		}
+	});
+
+	$('.hlr-video-article-mod').one('inview', function(event, isInView) {
+		if (isInView && $('html').hasClass('no-touch')) {
+			$('.hlr-video-article').get(0).play();
+		}
+	});
+
+	$('.hlr-video-footnote-mod').one('inview', function(event, isInView) {
+		if (isInView && $('html').hasClass('no-touch')) {
+			$('.hlr-video-footnote').get(0).play();
+		}
+	});
+
+
 	//Run the code;
 
 	$(window).ready(function() {
