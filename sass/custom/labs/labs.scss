@@ -90,7 +90,7 @@ $timber: #009344;
 		width: 100%;
 		height: 0;
 		padding-bottom: 2.5%;
-		// background: url(../images/dev/covers/round-mask.png) 50% 0% no-repeat;
+		// background: url("../../../images/dev/covers/round-mask.png") 50% 0% no-repeat;
 		background-size: 140%;
 		bottom: -2px;
 	}
@@ -128,7 +128,7 @@ $timber: #009344;
 
 			&.download {
 				padding: 10px 40px 10px 10px;
-				background-image: url(../images/timber/download-arrow.svg);
+				background-image: url("../../../images/timber/download-arrow.svg");
 				background-position: center right;
 				background-repeat: no-repeat;
 			}

@@ -15,7 +15,7 @@ $timber: #009344;
 	}
 }
 .timber-logo {
-	background-image: url('../images/timber/timber-logo.svg');
+	background-image: url('../../../images/timber/timber-logo.svg');
 }
 
 .github-sash {
@@ -172,7 +172,7 @@ code.hljs {
 .download-big {
 	@include inline-block;
 	padding: 30px 90px 30px 30px;
-	background-image: url(../images/timber/download-arrow.svg);
+	background-image: url("../../../images/timber/download-arrow.svg");
 	background-position: center right;
 	background-repeat: no-repeat;
 	background-color:$timber;
