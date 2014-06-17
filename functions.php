@@ -32,7 +32,7 @@
 	function load_scripts(){
 		wp_register_script( 'jquery', false, array( 'jquery-core', 'jquery-migrate' ), '1.11.0',true);
 		wp_register_script( 'jquery-core', '/wp-includes/js/jquery/jquery.js', array(), '1.11.0',0 );
-		wp_register_script( 'jquery-migrate', "/wp-includes/js/jquery/jquery-migrate$suffix.js", array(), '1.2.1',0 );
+		wp_register_script( 'jquery-migrate', "/wp-includes/js/jquery/jquery-migrate.js", array(), '1.2.1',0 );
 
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('jquery-core');
@@ -49,7 +49,7 @@
 		load_script('plugins', get_stylesheet_directory_uri() . '/js/plugins.js', 1);
 		load_script('blades', get_stylesheet_directory_uri() . '/js/blades.app.js', 1);
 
-		load_script('scrollTo', get_stylesheet_directory_uri() . '../components/jquery.scrollTo/jquery.scrollTo.js', 1);
+		load_script('scrollTo', get_stylesheet_directory_uri() . '/components/jquery.scrollTo/jquery.scrollTo.js', 1);
 	}
 
 	add_action('wp_enqueue_scripts', 'load_scripts');

@@ -1,0 +1,15 @@
+{
+    "name": "upstatement/blades",
+    "description": "Blades repo",
+    "type":"wordpress-theme",
+    "authors": [
+        {
+            "name": "thetmkay",
+            "email": "george@upstatement.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
