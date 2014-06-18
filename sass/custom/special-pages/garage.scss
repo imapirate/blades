@@ -27,10 +27,10 @@ The G A R A G E
 
 	background-color: #2fbfd4;
 
-	background-image: url("/wp-content/themes/blades/images/garage/garage-badge.svg");
+	background-image: url("../../../images/garage/garage-badge.svg");
 
 	.no-svg & {
-		background-image: url("/wp-content/themes/blades/images/garage/garage-badge.png");
+		background-image: url("../../../images/garage/garage-badge.png");
 	}
 
 	background-repeat: no-repeat;
@@ -41,11 +41,11 @@ The G A R A G E
 		//weird bg animation because why not
 		@include animation(zoomOut .5s);
 
-		background-image: url("/wp-content/themes/blades/images/garage/garage-logo.svg");
+		background-image: url("../../../images/garage/garage-logo.svg");
 		background-size: 70%;
 
 		.no-svg & {
-			background-image: url("/wp-content/themes/blades/images/garage/garage-logo.png");
+			background-image: url("../../images/garage/garage-logo.png");
 		}
 	}
 

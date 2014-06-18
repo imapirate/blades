@@ -16,13 +16,13 @@ The G A R A G E
 	overflow: hidden;
 
 	background-color: #2db786;
-	background-image: url("/wp-content/themes/blades/images/garage/garage-badge.svg");
+	background-image: url("../images/garage/garage-badge.svg");
 	background-repeat: no-repeat;
 	background-size: 40%;
 	background-position: center 30%;
 
 	@include mq(700px) {
-		background-image: url("/wp-content/themes/blades/images/garage/garage-logo.svg");
+		background-image: url("../images/garage/garage-logo.svg");
 		background-size: 70%;
 	}
 
