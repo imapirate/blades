@@ -286,37 +286,39 @@
 		var video_elements = {
 			hlr_overview: $video_template.clone()
 				.attr('poster', '/wp-content/themes/blades/images/portfolio/hlr/video-overview-cover.jpg')
-				.attr('class', 'hlr-video-poster')
+				.attr('class', 'hlr-video hlr-video-overview')
 				.find('.video-mp4')
-					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-stream.mp4')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/overview.mp4')
 					.end()
 				.find('.video-ogg')
-					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-stream.ogv')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/overview.ogv')
 					.end()
 				.find('.video-webm')
-					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-stream.webm')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/overview.webmhd.webm')
 					.end(),
 			hlr_article: $video_template.clone()
 				.attr('poster', '/wp-content/themes/blades/images/portfolio/hlr/video-article-cover.jpg')
+				.attr('class', 'hlr-video hlr-video-article')
 				.find('.video-mp4')
-					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-gallery.mp4')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/article.mp4')
 					.end()
 				.find('.video-ogg')
-					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-gallery.ogv')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/article.ogv')
 					.end()
 				.find('.video-webm')
-					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-gallery.webm')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/article.webmhd.webm')
 					.end(),
-			hlr_footnotes: $video_template.clone()
+			hlr_footnote: $video_template.clone()
 				.attr('poster', '/wp-content/themes/blades/images/portfolio/hlr/video-footnote-cover.jpg')
+				.attr('class', 'hlr-video hlr-video-footnote')
 				.find('.video-mp4')
-					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-nav.mp4')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/footnote.mp4')
 					.end()
 				.find('.video-ogg')
-					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-nav.ogv')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/footnote.ogv')
 					.end()
 				.find('.video-webm')
-					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-nav.ogv')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/footnote.webmhd.webm')
 					.end(),
 		};
 
@@ -409,8 +411,11 @@
 		_setTypeScrubberSize();
 		ts = new TypeScrubber();
 		bs = new BackgroundSlideshow(img_paths);
-		_bindVideos();
 		_bindTypeCharacter();
+		if ($(window).width() > 499) {
+			injectVideo();
+			_bindVideos();
+		}
 	});
 
 	$(window).load(function() {
