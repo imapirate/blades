@@ -274,7 +274,7 @@ $mq-type-slider: 600px;
 .hlr-char-oldseven {
 	@include animation-fill-mode(forwards);
 	@include animation-timing-function($animation-ease);
-	@include animation-duration(2s);
+	@include animation-duration(1.25s);
 }
 
 #hlr-char-hoefler.start-pos{
@@ -363,6 +363,12 @@ $mq-type-slider: 600px;
 	}
 }
 
+.portfolio-color-splash {
+	margin-bottom: 90px;
+	@include mq(600px) {
+		margin-bottom: 120px;
+	}
+}
 
 
 
