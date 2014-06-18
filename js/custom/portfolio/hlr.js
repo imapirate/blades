@@ -32,6 +32,7 @@
 
 		var _defaults = {
 			scrubber: '.hlr-bg-scrubber',
+			img_holder_parent: '.hlr-bg-imgs',
 			img_holder: '.hlr-bg-img',
 			timeline: '.hlr-bg-timeline',
 			slider: '.hlr-bg-slider',
@@ -51,6 +52,7 @@
 
 		//selectors
 		this._scrubber = options.scrubber;
+		this._img_holder_parent = options.img_holder_parent;
 		this._img_holder = options.img_holder;
 		this._timeline = options.timeline;
 		this._slider = options.slider;
@@ -90,6 +92,7 @@
 		bindButtonEvent: function() {
 			// var _this = this;
 			$(this._button).on('click', $.proxy(this.toggleSlideshowOnClick, this));
+			$(this._img_holder_parent).on('click', $.proxy(this.toggleSlideshowOnClick, this));
 
 		},
 		bindInView: function() {
@@ -255,6 +258,72 @@
 			return undefined;
 		}
 	};
+
+	// Video Injector
+	function injectVideo() {
+		var $video_template = $('<video/>', {
+			'class': 'hlr-video',
+			'preload': 'auto',
+			'loop': 'true'
+		}).append(
+			$('<source/>', {
+				'class': 'video-mp4',
+				'type': 'video/mp4; codecs=avc1.42E01E,mp4a.40.2',
+			})
+		).append(
+			$('<source/>', {
+				'class': 'video-ogg',
+				'type': 'video/ogg; codecs=theora,vorbis',
+			})
+		).append(
+			$('<source/>', {
+				'class': 'video-webm',
+				'type': 'video/webm; codecs=vp8,vorbis',
+			})
+		);
+
+		// Swaps video out
+		var video_elements = {
+			hlr_overview: $video_template.clone()
+				.attr('poster', '/wp-content/themes/blades/images/portfolio/hlr/video-overview-cover.jpg')
+				.attr('class', 'hlr-video-poster')
+				.find('.video-mp4')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-stream.mp4')
+					.end()
+				.find('.video-ogg')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-stream.ogv')
+					.end()
+				.find('.video-webm')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-stream.webm')
+					.end(),
+			hlr_article: $video_template.clone()
+				.attr('poster', '/wp-content/themes/blades/images/portfolio/hlr/video-article-cover.jpg')
+				.find('.video-mp4')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-gallery.mp4')
+					.end()
+				.find('.video-ogg')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-gallery.ogv')
+					.end()
+				.find('.video-webm')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-gallery.webm')
+					.end(),
+			hlr_footnotes: $video_template.clone()
+				.attr('poster', '/wp-content/themes/blades/images/portfolio/hlr/video-footnote-cover.jpg')
+				.find('.video-mp4')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-nav.mp4')
+					.end()
+				.find('.video-ogg')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-nav.ogv')
+					.end()
+				.find('.video-webm')
+					.attr('src', '/wp-content/themes/blades/images/portfolio/hlr/video/hlr-nav.ogv')
+					.end(),
+		};
+
+		$.each(video_elements, function(el_class, video_html) {
+			$('.' + el_class).replaceWith(video_html);
+		});
+	}
 
 
 	//Change if hardcode img paths

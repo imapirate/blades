@@ -37,6 +37,7 @@ $animation-ease: cubic-bezier(0.490, 0.370, 0.445, 0.715);
 
 .hlr-bg-slider {
 	margin-bottom: 60px;
+	overflow: hidden;
 	&.site-width {
 		padding: 0;
 	}
@@ -67,7 +68,7 @@ $controls-color-hover: #999;
 $controls-border: 2px solid #efefef;
 
 .hlr-bg-controls {
-	margin: 0 30px;
+	margin: 0 20px;
 }
 
 .hlr-bg-btn {
@@ -274,7 +275,7 @@ $mq-type-slider: 600px;
 .hlr-char-oldseven {
 	@include animation-fill-mode(forwards);
 	@include animation-timing-function($animation-ease);
-	@include animation-duration(1.25s);
+	@include animation-duration(1s);
 }
 
 #hlr-char-hoefler.start-pos{
