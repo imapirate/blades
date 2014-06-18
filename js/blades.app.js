@@ -156,6 +156,9 @@ var upSite;
 		$msg.fadeIn();
 	}
 
-	upSite = new UpSite();
+	$(document).ready(function() {
+		console.log('ready');
+		upSite = new UpSite();
+	});
 
 })(jQuery);
