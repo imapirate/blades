@@ -28,7 +28,7 @@ wp core install
 ### 3. Fetch & import the database
 1. get a copy of the database dump you'd like to use (we store lots of these on Dropbox, ask Jared where)
 2. import the database
- * with this one-liner: `mysql -u root -phopic0ji wp_blades < [your file here].sql`
+ * with this one-liner: `mysql -u root -p hopic0ji wp_blades < [your file here].sql`
  * OR with a phpmyadmin import via your MAMP install
  * OR via Sequel Pro, import
 
