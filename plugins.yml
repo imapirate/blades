@@ -1,0 +1,45 @@
+---
+path: ../../plugins/
+require:
+  term-management-tools:
+    ref: term-management-tools
+    src: wp
+  timber-library:
+    ref: timber-library
+    src: wp
+  debug-bar-console:
+    ref: debug-bar-console
+    src: wp
+  debug-bar:
+    ref: debug-bar
+    src: wp
+  debug-bar-timber:
+    ref: debug-bar-timber
+    src: wp
+  chainsaw-share:
+    ref: https://github.com/Upstatement/chainsaw-share
+    src: git
+  advanced-custom-fields:
+    ref: advanced-custom-fields
+    src: wp
+  jigsaw:
+    ref: https://github.com/Upstatement/jigsaw
+    src: git
+  simple-page-ordering:
+    ref: simple-page-ordering
+    src: wp
+  safe-redirect-manager:
+    ref: safe-redirect-manager
+    src: wp
+  chainsaw-dashboard:
+    ref: https://github.com/Upstatement/chainsaw-dashboard
+    src: git
+  404-error-monitor:
+    ref: 404-error-monitor
+    src: wp
+  js-css-script-optimizer:
+    ref: js-css-script-optimizer
+    src: wp
+  find-replace:
+    ref: find-replace
+    src: wp
