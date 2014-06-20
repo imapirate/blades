@@ -31,15 +31,15 @@ require:
   safe-redirect-manager:
     ref: safe-redirect-manager
     src: wp
-  chainsaw-dashboard:
-    ref: https://github.com/Upstatement/chainsaw-dashboard
-    src: git
+  # chainsaw-dashboard:
+  #   ref: https://github.com/Upstatement/chainsaw-dashboard
+  #   src: git
   404-error-monitor:
     ref: 404-error-monitor
     src: wp
   js-css-script-optimizer:
     ref: js-css-script-optimizer
     src: wp
-  find-replace:
-    ref: find-replace
-    src: wp
+  # find-replace:
+  #   ref: find-replace
+  #   src: wp
