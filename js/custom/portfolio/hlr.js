@@ -334,7 +334,7 @@
 			img_dir = $('.hlr-bg-img').data('bg-path');
 
 		for(var i = 1; i <= NUM_IMAGES; i++) {
-			img_paths.push(img_dir + 'bg-' + i + '.jpg');
+			img_paths.push(img_dir + 'bg-' + i + '-small' + '.jpg');
 		}
 
 		return img_paths;
