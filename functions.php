@@ -58,31 +58,35 @@
 	update_option('siteurl', 'http://'.$_SERVER['HTTP_HOST']);
 	update_option('home', 'http://'.$_SERVER['HTTP_HOST']);
 
+	if(class_exists('Timber')) {
+		Timber::add_route('blog', function($params){
+			$sticky = get_option('sticky_posts');
+			$sticky = TimberHelper::array_truncate($sticky, 4);
+			$page = 0;
+			$query = array('post_type' => 'post', 'posts_per_page' => 6, 'post__not_in' => $sticky, 'offset' => $page * 6);
+			Timber::load_template('archive-blog.php', $query);
+		});
 
-	Timber::add_route('blog', function($params){
-		$sticky = get_option('sticky_posts');
-		$sticky = TimberHelper::array_truncate($sticky, 4);
-		$page = 0;
-		$query = array('post_type' => 'post', 'posts_per_page' => 6, 'post__not_in' => $sticky, 'offset' => $page * 6);
-		Timber::load_template('archive-blog.php', $query);
-	});
+		Timber::add_route('blog/page/:pg', function($params){
+			$sticky = get_option('sticky_posts');
+			$sticky = TimberHelper::array_truncate($sticky, 4);
+			$page = $params['pg'];
+			$page -= 1;
+			$page = max(0, $page);
+			$query = array('post_type' => 'post', 'posts_per_page' => 6, 'post__not_in' => $sticky, 'offset' => $page * 6);
+			Timber::load_template('archive-blog.php', $query);
+		});
+	}
 
-	Timber::add_route('blog/page/:pg', function($params){
-		$sticky = get_option('sticky_posts');
-		$sticky = TimberHelper::array_truncate($sticky, 4);
-		$page = $params['pg'];
-		$page -= 1;
-		$page = max(0, $page);
-		$query = array('post_type' => 'post', 'posts_per_page' => 6, 'post__not_in' => $sticky, 'offset' => $page * 6);
-		Timber::load_template('archive-blog.php', $query);
-	});
-
-	BladesSite::register_post_types();
-	BladesSite::apply_admin_customizations();
-
-	add_action('init', function(){
+	if(class_exists('BladesSite')) {
 		BladesSite::register_post_types();
-	});
+		BladesSite::apply_admin_customizations();
+
+		add_action('init', function(){
+			BladesSite::register_post_types();
+		});
+	}
+
 
 	if (class_exists('ChainsawDashboard')){
 		$dashboard = new ChainsawDashboard('wp-content/themes/blades/blades-dashboard.json');

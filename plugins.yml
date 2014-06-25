@@ -1,11 +1,11 @@
 ---
 path: ../../plugins/
 require:
-  term-management-tools:
-    ref: term-management-tools
-    src: wp
   timber-library:
     ref: timber-library
+    src: wp
+  term-management-tools:
+    ref: term-management-tools
     src: wp
   debug-bar-console:
     ref: debug-bar-console
