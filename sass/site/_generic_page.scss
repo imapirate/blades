@@ -1,0 +1,54 @@
+.page-template-default {
+	.page-topper {
+		background-color:black(90);
+		background-image:none;
+		padding:60px 0 30px 0;
+		.page-wrapper {
+			max-width:1045px;
+			margin:0;
+		}
+	}
+	.page-body {
+		background-color:black(88);
+	}
+	
+}
+
+/* gravity forms */
+
+.center-txt .gform_wrapper {
+	padding:0px 50px;
+	.gfield {
+		margin-bottom:25px;
+	}
+
+	.gfield_label {
+		@extend .text-l;
+		font: 20px/120% $sans;
+	}
+
+	.gsection_title {
+		@extend .section-h2;
+		font:bold 28px/120% $sans;
+	}
+
+	.ginput_container .textarea {
+		@extend .text-l;
+		padding:20px;
+		font: 16px/120% $serif;
+		border:1px solid black(20);
+	}
+
+	.ginput_container input {
+		width:100%;
+		display:block;
+		font-size:24px;
+		padding:40px;
+		border:1px solid black(20);
+		padding:20px;
+	}
+
+	input[type="submit"] {
+		@extend %btn-large;
+	}
+}

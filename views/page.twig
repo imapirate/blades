@@ -1,4 +1,27 @@
-{% extends "base.twig" %}
+{% extends 'base.twig' %}
+{% set wp_title = 'Timber: WordPress + Twig - Upstatement' %}
+{% block head %}
+	<link rel="stylesheet" href="{{site.theme.link}}/css/custom/labs/labs.css">
+
+
+{% endblock %}
 {% block content %}
-	{{post.title}}
+
+
+<div class="page-topper">
+	<div class="page-wrapper">
+
+		<div class="h1">{{post.title}}</div>
+
+	</div><!-- page-wrapper -->
+</div><!-- page-topper -->
+
+	<div class="page-body">
+		<div class="center-txt">
+		
+			{{post.content}}
+		</div><!-- center-txt -->
+
+	</div>
+
 {% endblock %}
