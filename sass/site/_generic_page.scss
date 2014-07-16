@@ -14,8 +14,14 @@
 		@media (min-width:1000px){
 			background-color:black(88);
 		}
+		&.light {
+			background-color: #fff;
+			@media (min-width:1000px){
+				background-color: #f1f1f1;
+			}
+		}
 	}
-	
+
 }
 
 /* gravity forms */
@@ -24,33 +30,52 @@
 	@media (min-width: 700px){
 		padding:0px 50px;
 	}
+	.gform_title {
+		display: none;
+	}
+
+	.gsection {
+		margin-top: 90px;
+		border-bottom: 1px solid #ccc;
+	}
+
 	.gfield {
 		margin-bottom:25px;
 	}
 
 	.gform_button {
-		border: 1px solid #CCC;
-		padding: 10px 40px;
-		font-size: 2em;
+		@include input-default;
+		padding: 10px 40px !important;
+		font-size: em(16) !important;
 		margin: auto;
 		display: block;
 	}
 
 	.gfield_label {
 		@extend .text-l;
-		font: 20px/120% $proxima;
+		font: em(16)/130% $proxima;
+		font-weight: 500 !important;
+		@include mq(700px) {
+			font-size: em(20);
+		}
 	}
 
 	.gsection_title {
 		@extend .section-h2;
-		font:bold 28px/120% $proxima;
+		font: 500 em(24)/120% $proxima;
+		@include mq(700px) {
+			font-size: em(37);
+		}
 	}
 
 	.ginput_container .textarea {
 		@extend .text-l;
 		padding:20px;
-		font: 16px/120% $serif;
+		font: em(16)/120% $adelle;
 		border:1px solid black(20);
+	}
+	.ginput_container .large {
+		font-family: $proxima;
 	}
 
 	.ginput_container input {
@@ -60,6 +85,17 @@
 		padding:40px;
 		border:1px solid black(20);
 		padding:20px;
+	}
+
+	.gfield_description {
+		font: 500 em(14) $proxima;
+	}
+
+
+	.gfield_select {
+		max-width: 320px;
+		width: 100% !important;
+
 	}
 
 	input[type="submit"] {

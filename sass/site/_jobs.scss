@@ -101,4 +101,50 @@
 	@include animation-duration(2s);
 }
 
+// apprenticeship
+
+.page-template-default.page-apprenticeship {
+	.page-topper {
+		background-color: $highlight;
+		padding: 50px 0;
+		@include mq(500px) {
+			padding: 100px 0;
+		}
+	}
+
+	.h1 {
+		color: #fff;
+		font: 300 em(35) $proxima;
+		text-align: center;
+		height: auto;
+		@include mq(700px, 1000px) {
+			font-size: em(50);
+		}
+		@include mq(1000px) {
+			font-size: em(65);
+		}
+	}
+
+	.h3 {
+		color: #fff;
+		width: 100%;
+		max-width: 740px;
+		margin: 15px auto 0;
+		font: 300 em(18) $proxima;
+		line-height: 1.4em;
+		text-align: center;
+		@include mq(700px, 1000px) {
+			font-size: em(21);
+		}
+		@include mq(1000px) {
+			font-size: em(25);
+		}
+	}
+
+	.center-txt {
+		@include mq(1000px) {
+			margin: -70px auto -30px;
+		}
+	}
+}
 
