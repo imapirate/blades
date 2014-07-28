@@ -162,16 +162,20 @@
 			<h3 class="section-head">Showcase</h3>
 			<div class="showcase-mod">
 				{% for showcase_item in post.get_field('showcase') %}
+					{% if showcase_item.image %}
 					<article class="showcase-item media-block">
 						<a class="showcase-img-mod" href="{{showcase_item.url}}" target="_blank">
 							<img src="{{TimberImage(showcase_item.image).src|resize(600, 420)}}" alt="{{showcase_item.title|striptags}}" class="showcase-img"/>
 						</a>
 						<h5 class="head-label"><a href="{{showcase_item.url}}" target="_blank">{{showcase_item.title}}</a></h5>
 					</article>
+					{% endif %}
 				{% endfor %}
 			</div>
 		</section>
 
+		{% if contribs %}
+	
 		<section class="section" id="contributors">
 			<h3 class="section-head">Built By</h3>
 			<ul class="contrib-list">
@@ -184,6 +188,8 @@
 				{% endfor %}
 			</ul>
 		</section>
+
+		{% endif %}
 
 		<section class="section-download">
 			<div class="download-big-button-mod">
