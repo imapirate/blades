@@ -187,3 +187,35 @@ code.hljs {
 		background-color:darken($timber, 5);
 	}
 }
+
+.contrib-list {
+	@include pie-clearfix;
+	@include media-grid(6, 10px, '.contrib-list-item');
+}
+
+.contrib-list-item {
+	margin-bottom:10px;
+}
+.timber-github-avatar {
+	display:block;
+	width:100%;
+	max-width: 100%;
+	img {
+		display: block;
+		width:100%;
+		max-width: 100%;
+		-webkit-filter: grayscale(100%);
+		-moz-filter: grayscale(100%);
+		-ms-filter: grayscale(100%);
+		-o-filter: grayscale(100%);
+		filter: grayscale(100%);
+		filter: url(grayscale.svg); /* Firefox 4+ */
+		filter: gray; /* IE 6-9 */
+		&:hover {
+			filter: none;
+			-webkit-filter: none;
+			-moz-filter: none;
+			-o-filter: none;
+		}
+	}
+}

@@ -172,6 +172,19 @@
 			</div>
 		</section>
 
+		<section class="section" id="contributors">
+			<h3 class="section-head">Built By</h3>
+			<ul class="contrib-list">
+				{% for contrib in contribs %}
+				<li class="contrib-list-item">
+					<a href="http://github.com/{{contrib.getLogin}}" target="_blank" class="timber-github-avatar">
+						<img src="{{contrib.getAvatarUrl}}" alt="Avatar for {{contrib.getLogin}}" />
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+		</section>
+
 		<section>
 			<div class="download-big-button-mod">
 				<a class="download-big" href="http://wordpress.org/plugins/timber-library/">Download</a>
