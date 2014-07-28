@@ -177,15 +177,15 @@
 			<ul class="contrib-list">
 				{% for contrib in contribs %}
 				<li class="contrib-list-item">
-					<a href="http://github.com/{{contrib.getLogin}}" target="_blank" class="timber-github-avatar">
-						<img src="{{contrib.getAvatarUrl}}" alt="Avatar for {{contrib.getLogin}}" />
+					<a href="http://github.com/{{contrib.login}}" target="_blank" class="timber-github-avatar">
+						<img src="{{contrib.avatar_url}}" alt="Avatar for {{contrib.login}}" />
 					</a>
 				</li>
 				{% endfor %}
 			</ul>
 		</section>
 
-		<section>
+		<section class="section-download">
 			<div class="download-big-button-mod">
 				<a class="download-big" href="http://wordpress.org/plugins/timber-library/">Download</a>
 			</div>
