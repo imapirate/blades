@@ -1,0 +1,129 @@
+{% extends "base.twig" %}
+
+{% block head %}
+	<link rel="stylesheet" href="{{theme.path}}/css/custom/special-pages/careers.css">
+{% endblock %}
+
+
+{% block content %}
+
+<!-- Jobs Cover Image -->
+<div class="page-banner">
+	<img class="page-banner-img" src="/wp-content/themes/blades/images/careers/careers_test2.jpg" />
+	<div class="page-banner-content">
+		<h2 class="h2 h-centered header-h">Careers <span class="header-h-break">at Upstatement</span></h2>
+	</div> <!-- /page-banner-content -->
+</div><!-- page-banner -->
+
+
+<!-- Careers openings -->
+<div class="careers-mod careers-openings">
+	<div class="site-width">
+		<div class="pull-up pull-up-border">
+			<div class="pull-up-inner">
+				<div class="txt-width">
+					<div class="txt-lg">
+						<p><span class="dropcap">T</span>Words be going here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci explicabo perspiciatis error inventore quae voluptatum, veniam, possimus doloribus, obcaecati rem provident fugiat nostrum, sapiente rerum commodi repudiandae recusandae omnis cum quod quas delectus. Corporis necessitatibus hic soluta culpa sapiente similique delectus consequuntur obcaecati pariatur alias? Quasi quisquam, explicabo quae id!</p>
+					</div> <!-- /txt-lg -->
+
+
+
+					{# if jobs or something like that #}
+					<div class="openings">
+						<ul class="career-items">
+							{# for job in jobs #}
+							{% for i in 1..5 %}
+								<li class="career-item">
+									<article class="l-career-static" id="{{job.title|sanitize|e}}">
+										<div class="ui-block-1">
+											<div class="ui-block-inner">
+												<h1 class="h1 career-h">
+													<a href="/careers/single-career/" class="career-h-link">{{job.title}}Senior Vice President: Office Pleasantries</a>
+												</h1>
+											</div> <!-- /ui-block-inner -->
+										</div> <!-- /ui-block-1-->
+										<div class="ui-block-2">
+											<div class="ui-block-inner">
+												<a href="/careers/single-career/" class="btn-link">Learn More</a>
+											</div> <!-- ui-block-inner -->
+										</div> <!-- /ui-block-2 -->
+									</article>
+								</li> <!-- /career-item -->
+							{% endfor %}
+						</ul> <!-- /career-items -->
+					</div> <!-- /openings -->
+					{# endif #}
+
+				</div> <!-- txt-width -->
+			</div> <!-- /pull-up-inner -->
+		</div> <!-- /pull-up -->
+	</div> <!-- /site-width -->
+
+	<div class="career-quote">
+		<div class="site-width">
+			<h3 class="h1">You're doing stuff and saying words right here with words to say right here</h3>
+		</div> <!-- site-width -->
+	</div> <!-- /career-block -->
+
+</div> <!-- /career-openings -->
+
+
+<!-- career photos top -->
+<div class="career-mod career-photos">
+	<img src="/wp-content/themes/blades/images/careers/careers_test_1.jpg" />
+</div> <!-- /careers-content -->
+
+<!-- Culture + Benefits -->
+<div class="career-mod">
+	<div class="site-width">
+		<div class="pull-up">
+			<div class="pull-up-inner">
+				<div class="txt-width">
+					<h2 class="h2 h-centered">Culture + Benefits</h2>
+					<div class="txt-lg">
+						<p><span class="dropcap">T</span>Words be going here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci explicabo perspiciatis error inventore quae voluptatum, veniam, possimus doloribus, obcaecati rem provident fugiat nostrum, sapiente rerum commodi repudiandae recusandae omnis cum quod quas delectus. Corporis necessitatibus hic soluta culpa sapiente similique delectus consequuntur obcaecati pariatur alias? Quasi quisquam, explicabo quae id!</p>
+						<p>Words be going here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci explicabo perspiciatis error inventore quae voluptatum, veniam, possimus doloribus, obcaecati rem provident fugiat nostrum, sapiente rerum commodi repudiandae recusandae omnis cum quod quas delectus. Corporis necessitatibus hic soluta culpa sapiente similique delectus consequuntur obcaecati pariatur alias? Quasi quisquam, explicabo quae id!</p>
+					</div> <!-- /txt-lg -->
+				</div> <!-- /txt-width -->
+			</div> <!-- pull-up-innter -->
+		</div> <!-- /pull-up -->
+	</div> <!--/site-width -->
+
+	<div class="dual-mod-bottom">
+		<div class="site-width">
+			<div class="l-grid-3">
+				{% for i in 1..9 %}
+					<article class="media-block grid-item">
+						<div class="grid-img-block">
+							<img src="http://placekitten.com/g/200/200" alt="">
+						</div> <!-- /grid-img-block -->
+						<div class="grid-content-block">
+							<h4 class="grid-h">Title of thing here</h4>
+							<p class="grid-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, dicta.</p>
+						</div> <!-- grid-content-block -->
+					</article> <!-- /media-block -->
+				{% endfor %}
+			</div> <!-- /l-grid-3 -->
+		</div> <!-- /site-width -->
+	</div> <!--/dual-mod-bottom -->
+
+	<div class="career-teasers">
+		<div class="site-width">
+			<h4 class="career-teaser-label">Featured Project</h4>
+			<h3 class="h1">
+				<a href="#" class="career-teaser-link">See how we redesigned Harvard Law Review with nary an image</a>
+			</h3>
+		</div> <!-- site-width -->
+	</div> <!-- /careers-block -->
+
+</div> <!-- careers-mod -->
+
+
+<!-- Career photos bottom -->
+<div class="career-mod career-photos">
+	<img src="/wp-content/themes/blades/images/careers/careers_test_2.jpg" />
+</div> <!-- /career-content -->
+
+
+
+{% endblock %}
