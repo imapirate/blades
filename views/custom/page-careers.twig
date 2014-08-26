@@ -2,10 +2,12 @@
 
 {% block head %}
 	<link rel="stylesheet" href="{{theme.path}}/css/custom/special-pages/careers.css">
+	<link rel="stylesheet" href="{{theme.path}}/css/custom/special-pages/careers-swiper.css">
 
 	<script type="text/javascript">
 	!function(a){"use strict";a.picturefill=function(){for(var b=a.document.getElementsByTagName("span"),c=0,d=b.length;d>c;c++)if(null!==b[c].getAttribute("data-picture")){for(var e=b[c].getElementsByTagName("span"),f=[],g=0,h=e.length;h>g;g++){var i=e[g].getAttribute("data-media");(!i||a.matchMedia&&a.matchMedia(i).matches)&&f.push(e[g])}var j=b[c].getElementsByTagName("img")[0];if(f.length){var k=f.pop();if(j&&"NOSCRIPT"!==j.parentNode.nodeName){if(k===j.parentNode)continue}else j=a.document.createElement("img"),j.alt=b[c].getAttribute("data-alt");j.src=k.getAttribute("data-src"),k.appendChild(j),j.removeAttribute("width"),j.removeAttribute("height")}else j&&j.parentNode.removeChild(j)}},a.addEventListener?(a.addEventListener("resize",a.picturefill,!1),a.addEventListener("DOMContentLoaded",function(){a.picturefill(),a.removeEventListener("load",a.picturefill,!1)},!1),a.addEventListener("load",a.picturefill,!1)):a.attachEvent&&a.attachEvent("onload",a.picturefill)}(this);
 	</script>
+
 {% endblock %}
 
 
@@ -20,6 +22,11 @@
 	</div> <!-- /page-banner-content -->
 </div><!-- page-banner -->
 
+{% for job in jobs %}
+<ul>
+<li>{{job.title}}</li>
+</ul>
+{% endfor %}
 
 <!-- Careers openings -->
 <div class="careers-mod careers-openings">
@@ -110,7 +117,7 @@
 				{% for i in 1..9 %}
 					<article class="media-block grid-item">
 						<div class="grid-img-block">
-							<img src="http://placekitten.com/g/200/200" alt="">
+							<img src="/wp-content/themes/blades/images/careers/icons/careers_icons_computers.svg" alt="">
 						</div> <!-- /grid-img-block -->
 						<div class="grid-content-block">
 							<h4 class="grid-h">Title of thing here</h4>
@@ -122,16 +129,36 @@
 		</div> <!-- /site-width -->
 	</div> <!--/dual-mod-bottom -->
 
-	<div class="career-teasers">
-		<div class="site-width">
-			<h4 class="career-teaser-label">Featured Project</h4>
-			<h3 class="h1">
-				<a href="#" class="career-teaser-link">See how we redesigned Harvard Law Review with nary an image</a>
-			</h3>
-		</div> <!-- site-width -->
-	</div> <!-- /careers-block -->
+	<div class="career-teasers gallery">
+		<div class="swiper-container">
+		  <div class="swiper-wrapper">
+
+		      {% for i in 1..5 %}
+		      <div class="swiper-slide">
+		        <div class="site-width">
+					<h4 class="career-teaser-label">Featured Project</h4>
+					<h3 class="h1 career-teaser-h">
+						<a href="#" class="career-teaser-link">{{i}}. See how we redesigned Harvard Law Review with nary an image</a>
+					</h3>
+				</div> <!-- site-width -->
+		      </div> <!-- /swiper-slide -->
+		      {% endfor %}
+
+		  </div> <!-- /swiper-wrapper -->
+		</div> <!-- /swiper-container -->
+
+		<div class="gallery-pagination-mod">
+			<button id="gallery_control" class="gallery-pagination-button">
+				<span class="gallery-pagination-icon"></span>
+			</button>
+		</div>	<!-- pagination-mod -->
+	</div> <!-- /career-teasers -->
 
 </div> <!-- careers-mod -->
+
+
+
+
 
 
 <!-- Career photos bottom -->
@@ -151,4 +178,10 @@
 
 
 
+{% endblock %} {# /content #}
+
+
+{% block scripts %}
+	<script src="{{theme.path}}/components/swiper/dist/idangerous.swiper.min.js"></script>
+	<script src="{{theme.path}}/js/custom/careers/careers.swiper.js"></script>
 {% endblock %}

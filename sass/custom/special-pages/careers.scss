@@ -92,15 +92,22 @@ body {
 	background-color: #fff;
 	padding: 30px 0;
 	// margin-bottom: 30px;
+	@media(min-width: 600px) {
+		padding: 60px 0;
+	}
 }
 
 .dual-mod-bottom {
 	background-color: $career-bg;
-	margin-top: -60px;
+	// margin-top: -60px;
 	// padding-top: 120px;
-	padding: 120px 0 60px;
+	padding: 30px 0;
 	margin-left: auto;
 	margin-right: auto;
+	@media(min-width: 600px) {
+		margin-top: -60px;
+		padding: 120px 0 60px;
+	}
 }
 
 
@@ -163,7 +170,10 @@ body {
 }
 
 .openings {
-	margin-top: $career-space-med;
+	// margin-top: $career-space-med;
+	@media(min-width: 600px) {
+		margin-top: $career-space-sm;
+	}
 }
 
 .career-alumni {
@@ -176,11 +186,25 @@ body {
 }
 
 .career-teasers {
-	padding: $career-space-med 0;
-	background-color: pink;
+	// padding: $career-space-med 0;
+	padding: 38px 0 30px;
+	// background-color: pink;
+	background-image: url('/wp-content/themes/blades/images/careers/careers_test2.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	&:before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		content: '\0020';
+		background-color: #fff;
+		opacity: 0.45;
+	}
+
 }
-
-
 
 
 // -----------------------------------
@@ -188,7 +212,8 @@ body {
 
 .career-quote {
 	background-color: whitesmoke;
-	padding: 4em;
+	// padding: 4em;
+	padding: 30px 0;
 	color: green;
 }
 
@@ -329,9 +354,16 @@ body {
 	}
 }
 
+
+// -----------------------------------
+// Typography
+
 .grid-h {
 	text-transform: uppercase;
 	margin-bottom: 8px;
+	font-size: 1.076923077em;
+	letter-spacing: 2px;
+
 }
 
 .grid-txt {
@@ -344,5 +376,22 @@ body {
 	// font-weight: 300;
 	text-transform: uppercase;
 	letter-spacing: 4px;
-	margin-bottom: 15px;
+	// margin-bottom: 15px;
+	margin-bottom: 11px;
+	color: #fff;
 }
+
+.career-teaser-h {
+	line-height: 1.15em;
+}
+
+
+
+.gallery-pagination-mod {
+	position: relative;
+	z-index: 100;
+}
+
+
+
+
