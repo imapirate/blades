@@ -265,6 +265,9 @@ body {
 	margin: 8px 0 15px 0;
 	&:hover {
 		background-color: darken($career-accent, 5%);
+		// margin-bottom: 0;
+	}
+	@media(min-width: 600px) {
 		margin-bottom: 0;
 	}
 }
