@@ -7,6 +7,22 @@
 			self::register_post_type_highlights();
 			self::register_post_type_promo();
 			self::register_post_type_furniture();
+			self::register_post_type_job();
+		}
+
+		public static function register_post_type_job() {
+			register_post_type('job', array(
+						'label' => 'Jobs',
+						'description' => 'Job listings',
+						'public' => true,
+						'show_ui' => true,
+						'show_in_menu' => true,
+						'menu_icon' => 'dashicons-businessman',
+						'rewrite' => array('slug' => 'careers', 'with_front' => false),
+						'query_var' => true,
+						'supports' => array('title','editor','excerpt','revisions','thumbnail','page-attributes')
+					)
+				);
 		}
 
 		public static function register_post_type_promo(){
