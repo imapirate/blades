@@ -1,0 +1,24 @@
+{
+    "key": "group_53fe4c3a575e8",
+    "title": "People Options",
+    "fields": [
+
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-person.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+
+    ]
+}

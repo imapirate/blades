@@ -1,0 +1,24 @@
+{
+    "key": "group_53fe4c3c19f9e",
+    "title": "Blog Call to Action",
+    "fields": [
+
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+
+    ]
+}
