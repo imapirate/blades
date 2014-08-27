@@ -464,6 +464,17 @@ body {
 // -----------------------------------
 // Typography
 
+.careers-txt {
+	&:first-letter {
+		font: 100 61px/104% "proxima-nova",Helvetica,Arial,sans-serif;
+		display: block;
+		float: left;
+		margin-right: 8px;
+		margin-bottom: -6px;
+		@media(min-width: 500px) { font-size: 72px; }
+	}
+}
+
 .grid-h {
 	text-transform: uppercase;
 	margin-bottom: 8px;
