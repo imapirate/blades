@@ -18,7 +18,7 @@ $career-header-bg: #A26AB3;
 $career-txt: #333;
 
 
-$career-grad-quote: linear-gradient(120deg, rgb(237, 139, 109) 5%, rgb(219, 170, 236) 25%, rgb(175, 99, 189) 45%, rgb(219, 170, 236) 75%, rgb(237, 139, 109) 90%);
+$career-grad-quote: -webkit-linear-gradient(120deg, rgb(219, 170, 236) 25%, rgb(175, 99, 189) 65%, rgb(219, 170, 236) 90%);
 
 
 // -----------------------------------
@@ -193,7 +193,8 @@ body {
 	background-color: transparent;
 }
 
-.career-teasers {
+.career-teasers,
+.career-quote-single {
 	// padding: $career-space-med 0;
 	padding: 30px 0 20px;
 	// background-color: pink;
@@ -227,16 +228,41 @@ body {
 	// color: green;
 }
 
+.career-quote-single {
+	padding: 30px 0;
+	color: white;
+	&:before {
+		background-color: rgb(237, 139, 109);
+		opacity: 0.75;
+	}
+}
+
 .career-quote-h {
+	margin-bottom: 0;
+	position: relative;
+}
+
+.career-quote-h-fancy {
 	margin-bottom: 0;
 	background-image: $career-grad-quote;
 	background-size: 100% 100%;
+	color: $career-header-bg;
 	-webkit-background-clip: text;
+	-moz-background-clip: text;
 	        background-clip: text;
     -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
 }
 
 .career-quote-attr {
+	font-size: 0.45em;
+	color: #fff;
+	margin-left: 5px;
+	position: relative;
+	top: -5px;
+}
+
+.career-quote-attr-fancy {
 	font-size: 0.45em;
 	color: #666;
 	margin-left: 5px;
