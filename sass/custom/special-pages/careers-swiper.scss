@@ -13,7 +13,7 @@
 // Licensed under GPL & MIT
 
 .swiper-container {
-	margin:0 auto 10px;
+	margin:0 auto 15px;
 	position:relative;
 	overflow:hidden;
 	-webkit-backface-visibility:hidden;
@@ -196,38 +196,48 @@
 
 // .gallery-next { @extend %next; }
 
+.gallery-pagination-mod {
+	position: relative;
+	z-index: 100;
+}
 
 .gallery-pagination-button {
-	background-color: #fff;
-	background-color: rgba(255, 255, 255, 0.7);
+	// background-color: #fff;
+	background-color: #A26AB3;
+	background-color: rgba(#A26AB3, 0.3);
+	// background-color: rgba(255, 255, 255, 0.7);
 	// border: 2px solid #CCC;
-	width: 45px;
-	height: 45px;
+	// width: 45px;
+	// height: 45px;
+	padding: 8px 12px;
 	text-decoration: none;
 	display: inline-block;
 	cursor: pointer;
 	color: #fff;
 	outline: 0;
 	border: none;
-	border-radius: 50%;
+	transition: background-color 0.2s;
+	// border-radius: 50%;
 	position: relative;
 	&:hover {
-		.gallery-pagination-icon {
-			opacity: 1;
-			-webkit-transform: rotate(90deg);
-			-moz-transform: rotate(90deg);
-			-o-transform: rotate(90deg);
-			-ms-transform: rotate(90deg);
-		}
+		background-color: darken(#a26ab3, 5%);
+		background-color: rgba(#A26AB3, 0.8);
+		// .gallery-pagination-icon {
+		// 	opacity: 1;
+		// 	-webkit-transform: rotate(90deg);
+		// 	-moz-transform: rotate(90deg);
+		// 	-o-transform: rotate(90deg);
+		// 	-ms-transform: rotate(90deg);
+		// }
 	}
-	&:active {
-		.gallery-pagination-icon {
-			-webkit-transform: rotate(180deg);
-			-moz-transform: rotate(180deg);
-			-o-transform: rotate(180deg);
-			-ms-transform: rotate(180deg);
-		}
-	}
+	// &:active {
+	// 	.gallery-pagination-icon {
+	// 		-webkit-transform: rotate(180deg);
+	// 		-moz-transform: rotate(180deg);
+	// 		-o-transform: rotate(180deg);
+	// 		-ms-transform: rotate(180deg);
+	// 	}
+	// }
 }
 
 .gallery-pagination-icon {

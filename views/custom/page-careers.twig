@@ -15,12 +15,25 @@
 
 <!-- Jobs Cover Image -->
 <div class="page-banner">
-	<img class="page-banner-img" src="/wp-content/themes/blades/images/careers/careers_test2.jpg" />
+	<span data-picture data-alt="">
+	    <span data-src="/wp-content/themes/blades/images/careers/careers_bg_sm.jpg"></span>
+	    <span data-src="/wp-content/themes/blades/images/careers/careers_bg_med.jpg"     data-media="(min-width: 600px)"></span>
+	    <span data-src="/wp-content/themes/blades/images/careers/careers_bg_lg.jpg"      data-media="(min-width: 1100px)"></span>
+
+	    <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+	    <noscript>
+	        <img class="page-banner-img" src="/wp-content/themes/blades/images/careers/careers_bg_lg.jpg" alt="">
+	    </noscript>
+	</span> <!-- /data-picture -->
 
 	<div class="page-banner-content">
 		<h2 class="h2 h-centered header-h">Careers <span class="header-h-break">at Upstatement</span></h2>
 	</div> <!-- /page-banner-content -->
 </div><!-- page-banner -->
+
+
+
+
 
 {% for job in jobs %}
 <ul>
@@ -73,7 +86,7 @@
 
 	<div class="career-quote">
 		<div class="site-width">
-			<h3 class="h1">You're doing stuff and saying words right here with words to say right here</h3>
+			<h3 class="h2 career-quote-h">&lsquo;You&rsquo;re making work that&rsquo;s at the edge of what&rsquo;s possible on the Internet.&rsquo;<span class="career-quote-attr">&mdash;&nbsp;Nathan, designer about town</span></h2>
 		</div> <!-- site-width -->
 	</div> <!-- /career-block -->
 
@@ -84,13 +97,13 @@
 <div class="career-mod career-photos">
 	<!-- <img src="/wp-content/themes/blades/images/careers/careers_test_1.jpg" /> -->
 	<span data-picture data-alt="">
-        <span data-src="/wp-content/themes/blades/images/careers/landing_top_sm.jpg"></span>
-        <span data-src="/wp-content/themes/blades/images/careers/landing_top_med.jpg"     data-media="(min-width: 600px)"></span>
-        <span data-src="/wp-content/themes/blades/images/careers/landing_top_lg.jpg"      data-media="(min-width: 1200px)"></span>
+        <span data-src="/wp-content/themes/blades/images/careers/landing_block_top_sm.jpg"></span>
+        <span data-src="/wp-content/themes/blades/images/careers/landing_block_top_med.jpg"     data-media="(min-width: 600px)"></span>
+        <span data-src="/wp-content/themes/blades/images/careers/landing_block_top_lg.jpg"      data-media="(min-width: 1100px)"></span>
 
         <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
         <noscript>
-            <img class="page-banner-img" src="/wp-content/themes/blades/images/careers/landing_top_sm.jpg" alt="">
+            <img src="/wp-content/themes/blades/images/careers/landing_block_top_lg.jpg" alt="">
         </noscript>
     </span>
 </div> <!-- /careers-content -->
@@ -149,7 +162,8 @@
 
 		<div class="gallery-pagination-mod">
 			<button id="gallery_control" class="gallery-pagination-button">
-				<span class="gallery-pagination-icon"></span>
+				<!-- <span class="gallery-pagination-icon"></span> -->
+				Show me more
 			</button>
 		</div>	<!-- pagination-mod -->
 	</div> <!-- /career-teasers -->
@@ -165,13 +179,13 @@
 <div class="career-mod career-photos">
 	<!-- <img src="/wp-content/themes/blades/images/careers/careers_test_2.jpg" /> -->
 	<span data-picture data-alt="">
-        <span data-src="/wp-content/themes/blades/images/careers/landing_bottom_sm.jpg"></span>
-        <span data-src="/wp-content/themes/blades/images/careers/landing_bottom_med.jpg"     data-media="(min-width: 600px)"></span>
-        <span data-src="/wp-content/themes/blades/images/careers/landing_bottom_lg.jpg"      data-media="(min-width: 1200px)"></span>
+        <span data-src="/wp-content/themes/blades/images/careers/landing_block_bottom_sm.jpg"></span>
+        <span data-src="/wp-content/themes/blades/images/careers/landing_block_bottom_med.jpg"     data-media="(min-width: 600px)"></span>
+        <span data-src="/wp-content/themes/blades/images/careers/landing_block_bottom_lg.jpg"      data-media="(min-width: 1100px)"></span>
 
         <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
         <noscript>
-            <img src="/wp-content/themes/blades/images/careers/landing_bottom_sm.jpg" alt="">
+            <img src="/wp-content/themes/blades/images/careers/landing_block_bottom_lg.jpg" alt="">
         </noscript>
     </span>
 </div> <!-- /career-content -->

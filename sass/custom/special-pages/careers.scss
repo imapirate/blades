@@ -13,10 +13,12 @@ $career-space-sm: 45px;
 
 $career-accent: #27b99e;
 $career-bg: #eef0f0;
+$career-header-bg: #A26AB3;
 
 $career-txt: #333;
 
 
+$career-grad-quote: linear-gradient(120deg, rgb(237, 139, 109) 5%, rgb(219, 170, 236) 25%, rgb(175, 99, 189) 45%, rgb(219, 170, 236) 75%, rgb(237, 139, 109) 90%);
 
 
 // -----------------------------------
@@ -127,8 +129,12 @@ body {
 	// padding-bottom: 200px;
 	padding-bottom: 150px;
 	overflow: hidden;
+	background-color: $career-header-bg;
 	@media(min-width: 600px) {
 		padding-bottom: 200px;
+	}
+	img {
+		max-width: 100%;
 	}
 }
 
@@ -189,12 +195,14 @@ body {
 
 .career-teasers {
 	// padding: $career-space-med 0;
-	padding: 38px 0 30px;
+	padding: 30px 0 20px;
 	// background-color: pink;
-	background-image: url('/wp-content/themes/blades/images/careers/careers_test2.jpg');
+	background-image: url('/wp-content/themes/blades/images/careers/careers_bg_sm.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
+	@media(min-width: 600px) { background-image: url('/wp-content/themes/blades/images/careers/careers_bg_med.jpg'); }
+	@media(min-width: 1100px) { background-image: url('/wp-content/themes/blades/images/careers/careers_bg_lg.jpg'); }
 	&:before {
 		position: absolute;
 		top: 0;
@@ -203,7 +211,7 @@ body {
 		right: 0;
 		content: '\0020';
 		background-color: #fff;
-		opacity: 0.45;
+		opacity: 0.35;
 	}
 
 }
@@ -216,8 +224,43 @@ body {
 	background-color: whitesmoke;
 	// padding: 4em;
 	padding: 30px 0;
-	color: green;
+	// color: green;
 }
+
+.career-quote-h {
+	margin-bottom: 0;
+	background-image: $career-grad-quote;
+	background-size: 100% 100%;
+	-webkit-background-clip: text;
+	        background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.career-quote-attr {
+	font-size: 0.45em;
+	color: #666;
+	margin-left: 5px;
+	position: relative;
+	top: -5px;
+	-webkit-background-clip: none;
+	background-clip: none;
+	-webkit-text-fill-color: #666;
+}
+
+// .grad-text-p {
+// 	position: relative;
+// 	@include sans(18px, heavy, normal, .2em, cap);
+// 	text-align: center;
+// 	line-height: 1.5em;
+// 	color: #444;
+// 	.backgroundcliptext.gt-ie8 & {
+// 		// background: #444;
+// 		background-image: url(/static/images/gradient-green.jpg);
+// 		background-size: 100% 100%;
+// 		background-image: $grad-green;
+// 		-webkit-text-fill-color: transparent;
+// 		@include background-clip(text);
+// 	}
 
 
 
@@ -424,10 +467,7 @@ body {
 
 
 
-.gallery-pagination-mod {
-	position: relative;
-	z-index: 100;
-}
+
 
 
 
