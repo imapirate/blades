@@ -14,18 +14,23 @@
 {% block content %}
 
 	<!-- Jobs Cover Image -->
-	<div class="page-banner page-banner-lg">
+	<div class="page-banner {{post.page_header_image ? 'page-banner-lg'}}">
 		<span data-picture data-alt="">
-		    <span data-src="/wp-content/themes/blades/images/careers/single_header1_sm.jpg"></span>
-		    <span data-src="/wp-content/themes/blades/images/careers/single_header1_med.jpg"     data-media="(min-width: 600px)"></span>
-		    <span data-src="/wp-content/themes/blades/images/careers/single_header1_lg.jpg"      data-media="(min-width: 1100px)"></span>
+		    <span data-src="{{ TimberImage(post.page_header_image).src | resize(600, 303) | default('/wp-content/themes/blades/images/careers/careers_bg_sm.jpg') }}"></span>
+		    <span data-src="{{ TimberImage(post.page_header_image).src | resize(1100, 336) | default('/wp-content/themes/blades/images/careers/careers_bg_med.jpg') }}"     data-media="(min-width: 600px)"></span>
+		    <span data-src="{{ TimberImage(post.page_header_image).src | resize(1954, 431) | default('/wp-content/themes/blades/images/careers/careers_bg_lg.jpg') }}"      data-media="(min-width: 1100px)"></span>
 
 		    <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
 		    <noscript>
-		        <img class="page-banner-img" src="/wp-content/themes/blades/images/careers/single_header1_sm.jpg" alt="">
+		        <img class="page-banner-img" src="{{ TimberImage(post.page_header_image).src | resize(600, 303) | default('/wp-content/themes/blades/images/careers/careers_bg_sm.jpg') }}" alt="">
 		    </noscript>
 		</span> <!-- /data-picture -->
+		<div class="page-banner-content">
+			<h2 class="h2 h-centered header-h"><a href="/careers">Careers <span class="header-h-break">at Upstatement</span></a></h2>
+		</div> <!-- /page-banner-content -->
 	</div><!-- page-banner -->
+
+
 
 
 	<!-- Posting description -->
@@ -35,7 +40,7 @@
 				<div class="pull-up pull-up-border">
 					<div class="pull-up-inner">
 						<div class="career-desc-head">
-							<h4 class="h4 h-centered career-sub-h"><a href="/careers" class="career-sub-h-link">Careers at Upstatement</a></h4>
+							<!-- <h4 class="h4 h-centered career-sub-h"><a href="/careers" class="career-sub-h-link">Careers at Upstatement</a></h4> -->
 							<h2 class="h2 h-centered">{{post.title}}</h2>
 						</div> <!-- /career-desc-head -->
 
@@ -50,82 +55,99 @@
 		</div> <!-- /career-desc -->
 	{% endblock %} {# career_description #}
 
+
+
+
 	<!-- Quote -->
 	{% block career_quote %}
-		<div class="career-quote career-quote-single">
-			<div class="site-width">
-				<h3 class="h2 career-quote-h">&lsquo;Freedom. I can eat all the food in the kitchen. I can do whatever hours, set my own lifestyle.&rsquo;<span class="career-quote-attr">&mdash;&nbsp;George, developer and eater of food</span></h2>
-			</div> <!-- site-width -->
-		</div> <!-- /career-quote -->
+		{% if post.single_quote %}
+			<div class="career-quote career-quote-single">
+				<div class="site-width">
+					<h3 class="h2 career-quote-h">&lsquo;{{post.get_field('single_quote')[0].quote }}&rsquo;<span class="career-quote-attr">&mdash;&nbsp;{{post.get_field('single_quote')[0].quote_attribution}}</span></h2>
+				</div> <!-- site-width -->
+			</div> <!-- /career-quote -->
+		{% endif %}
 	{% endblock %} {# career_quote #}
+
+
 
 
 	<!-- Alumni block -->
 	{% block career_alumni %}
-		<div class="career-mod career-alumni">
-			<div class="site-width">
-				<div class="career-desc-head">
-					<h4 class="h4 h-centered career-sub-h">Where are they now</h4>
-					<h2 class="h2 h-centered">Apprenticeship Alumni</h2>
-				</div> <!-- /career-desc-head -->
-				<div class="l-grid-3">
-					{% for i in 1..3 %}
-						<article class="media-block grid-item">
-							<div class="alumni-img-block">
-								<img src="http://placekitten.com/250/250" alt="">
-							</div> <!-- /grid-img-block -->
-							<div class="grid-content-block">
-								<h4 class="grid-h">Gus Wezerk</h4>
-								<p class="grid-txt">Young Gus left a full-time job in San Francicso, rode his bike across the country just to get here for his Design Apprenticeship. We liked him so much, he stayed longer and did a Development Apprenticeship. Gus left us to join Fast Company as a data something or other.</p>
-							</div> <!-- grid-content-block -->
-						</article> <!-- /media-block -->
-					{% endfor %}
-				</div> <!-- /l-grid-3 -->
-			</div> <!-- /site-width -->
-		</div> <!-- /career-alumni -->
+		{% if post.vignettes %}
+			<div class="career-mod career-alumni">
+				<div class="site-width">
+					<div class="career-desc-head">
+						<h4 class="h4 h-centered career-sub-h">{{ post.vignettes_header }}</h4>
+						<h2 class="h2 h-centered">{{ post.vignettes_title }}</h2>
+					</div> <!-- /career-desc-head -->
+
+					<div class="l-grid-3">
+						{% for vignette in post.get_field('vignettes') %}
+							<article class="media-block grid-item">
+								<div class="alumni-img-block">
+									<img src="http://placekitten.com/250/250" alt="">
+								</div> <!-- /grid-img-block -->
+								<div class="grid-content-block">
+									<h4 class="grid-h">{{ vignette.vignette_name }}</h4>
+									<div class="grid-txt">{{ vignette.vignette_description }}</div>
+								</div> <!-- grid-content-block -->
+							</article> <!-- /media-block -->
+						{% endfor %}
+					</div> <!-- /l-grid-3 -->
+				</div> <!-- /site-width -->
+			</div> <!-- /career-alumni -->
+		{% endif %}
 	{% endblock %} {# career_alumni #}
 
 
 
 	<!-- Apply form -->
 	{% block career_form %}
-		<div class="career-mod career-apply">
-			<div class="site-width">
-				<div class="pull-up">
-					<div class="pull-up-inner">
-							<div class="career-desc-head">
-								<h2 class="h2 h-centered">Are you ready to Apply?</h2>
-							</div> <!-- /career-desc-head -->
+		{% if post.application_form %}
+			<div class="career-mod career-apply">
+				<div class="site-width">
+					<div class="pull-up">
+						<div class="pull-up-inner">
+								<div class="career-desc-head">
+									<h2 class="h2 h-centered">Are you ready to Apply?</h2>
+								</div> <!-- /career-desc-head -->
 
-							<div class="career-form">
-								Form goes here
-							</div> <!-- career-form -->
+								<div class="career-form">
+									{{ post.application_form }}
+								</div> <!-- career-form -->
 
-					</div> <!-- /pull-up-inner -->
-				</div> <!-- /pull-up -->
-			</div> <!-- /site-width -->
-		</div>  <!-- career-apply -->
+						</div> <!-- /pull-up-inner -->
+					</div> <!-- /pull-up -->
+				</div> <!-- /site-width -->
+			</div>  <!-- career-apply -->
+		{% endif %}
 	{% endblock %} {# career_form #}
 
 
 
 	<!-- Career photos bottom -->
 	{% block career_photos_bottom %}
+		{% if post.single_photo_bottom %}
 		<!-- Career photos bottom -->
-		<div class="career-mod career-photos">
-			<!-- <img src="/wp-content/themes/blades/images/careers/careers_test_2.jpg" /> -->
-			<span data-picture data-alt="">
-		        <span data-src="/wp-content/themes/blades/images/careers/single_block_sm.jpg"></span>
-		        <span data-src="/wp-content/themes/blades/images/careers/single_block_med.jpg"     data-media="(min-width: 600px)"></span>
-		        <span data-src="/wp-content/themes/blades/images/careers/single_block_lg.jpg"      data-media="(min-width: 1100px)"></span>
+			<div class="career-mod career-photos">
+				<!-- <img src="/wp-content/themes/blades/images/careers/careers_test_2.jpg" /> -->
+				{% for photo in post.get_field('single_photo_bottom') %}
+					<span data-picture data-alt="">
+				        <span data-src="{{ TimberImage(photo.bottom_photo_small).src | resize(600,303) }}"></span>
+				        <span data-src="{{ TimberImage(photo.bottom_photo_large).src | resize(1100, 660) }}"     data-media="(min-width: 600px)"></span>
+				        <span data-src="{{ TimberImage(photo.bottom_photo_large).src | resize(2000, 1200) }}"      data-media="(min-width: 1100px)"></span>
 
-		        <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-		        <noscript>
-		            <img src="/wp-content/themes/blades/images/careers/single_block_sm.jpg" alt="">
-		        </noscript>
-		    </span>
-		</div> <!-- /career-content -->
+				        <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+				        <noscript>
+				            <img src="{{ TimberImage(photo.bottom_photo_large).src | resize(1100, 660) }}" alt="">
+				        </noscript>
+				    </span>
+			    {% endfor %}
+			</div> <!-- /career-mod -->
+		{% endif %}
 	{% endblock %} {# career_photos_bottom #}
+
 
 
 {% endblock %} {# /content #}
