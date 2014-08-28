@@ -21,6 +21,13 @@ $career-txt: #333;
 $career-grad-quote: -webkit-linear-gradient(120deg, rgb(219, 170, 236) 25%, rgb(175, 99, 189) 65%, rgb(219, 170, 236) 90%);
 
 
+// For benefits grid
+$benefit-icon-path: /wp-content/themes/blades/images/careers/icons;
+
+$icons: snacks, health, money, computers, goldbrick, learn, pto, retire, slack;
+
+
+
 // -----------------------------------
 // Overriding site styles
 
@@ -306,7 +313,7 @@ body {
 
 .l-career-static {
 	@media(min-width: 600px) {
-		@include grid-static(80px, 40px);
+		@include grid-static(100px, 40px);
 	}
 }
 
@@ -316,13 +323,17 @@ body {
 
 .career-item {
 	border-bottom: 1px solid #ccc;
-	padding-bottom: 1em;
-	margin-bottom: 1em;
+	padding-bottom: 2em;
+	margin-bottom: 1.5em;
 	@include clearfix;
 	&:last-child {
 		padding-bottom: 0;
 		border-bottom: 0;
 	}
+	// @media(min-width: 600px) {
+	// 	padding-bottom: 1em;
+	// 	margin-bottom: 1em;
+	// }
 
 }
 
@@ -343,7 +354,10 @@ body {
 	margin-bottom: 0;
 	font-family: "proxima-nova", Helvetica, Arial, sans-serif;
 	// float: left;
-	font-size: 36px;
+	font-size: 32px;
+	@media(min-width: 600px) {
+		font-size: 36px;
+	}
 }
 
 .career-h-link {
@@ -354,11 +368,12 @@ body {
 .btn-link {
 	background-color: $career-accent;
 	color: #fff;
-	font-size: 11px;
+	font-size: 12px;
 	padding: 8px 12px;
 	display: inline-block;
 	// float: right;
-	margin: 8px 0 15px 0;
+	// margin: 8px 0 15px 0;
+	margin-top: 8px;
 	&:hover {
 		background-color: darken($career-accent, 5%);
 		// margin-bottom: 0;
@@ -410,7 +425,7 @@ body {
 }
 
 .grid-img-block {
-	width: 25px;
+	// width: 25px;
 	// margin: 0 auto 15px;
 	float: left;
 	> img {
@@ -421,6 +436,33 @@ body {
 		float: none;
 	}
 }
+
+
+
+.grid-icon {
+	position: relative;
+	height: 30px;
+	width: 30px;
+	// top: 5px;
+	// left: 5px;
+	// opacity: 0.8;
+
+	@each $icon in $icons {
+		.icon-#{$icon} {
+			position: absolute;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			background-size: contain;
+			height: 30px;
+			width: 30px;
+			top: 0;
+			left: 0;
+			background-image: url(#{$benefit-icon-path}/careers_icons_#{$icon}.svg);
+			.no-svg & { background-image: url(#{$benefit-icon-path}/careers_icons_#{$icon}.png)}
+		}
+	}
+}
+
 
 .alumni-img-block {
 	width: 65px;
@@ -501,7 +543,6 @@ body {
 .career-teaser-h {
 	line-height: 1.15em;
 }
-
 
 
 

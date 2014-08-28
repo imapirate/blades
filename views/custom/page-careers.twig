@@ -56,20 +56,19 @@
 					{# if jobs or something like that #}
 					<div class="openings">
 						<ul class="career-items">
-							{# for job in jobs #}
-							{% for i in 1..5 %}
+							{% for job in TimberPost(post.get_field('job_postings') )%}
 								<li class="career-item">
 									<article class="l-career-static" id="{{job.title|sanitize|e}}">
 										<div class="ui-block-1">
 											<div class="ui-block-inner">
 												<h1 class="h1 career-h">
-													<a href="/careers/single-career/" class="career-h-link">{{job.title}}Senior Vice President: Office Pleasantries</a>
+													<a href="{{job.link}}" class="career-h-link">{{job.title}}</a>
 												</h1>
 											</div> <!-- /ui-block-inner -->
 										</div> <!-- /ui-block-1-->
 										<div class="ui-block-2">
 											<div class="ui-block-inner">
-												<a href="/careers/single-career/" class="btn-link">Learn More</a>
+												<a href="{{job.link}}" class="btn-link">Tell me more</a>
 											</div> <!-- ui-block-inner -->
 										</div> <!-- /ui-block-2 -->
 									</article>
@@ -86,7 +85,7 @@
 
 	<div class="career-quote">
 		<div class="site-width">
-			<h3 class="h2 career-quote-h-fancy">&lsquo;You&rsquo;re making work that&rsquo;s at the edge of what&rsquo;s possible on the Internet.&rsquo;<span class="career-quote-attr-fancy">&mdash;&nbsp;Nathan, designer about town</span></h2>
+			<h3 class="h2 career-quote-h-fancy">&lsquo;{{post.get_field('landing_quote')[0].quote }}&rsquo;<span class="career-quote-attr-fancy">&mdash;&nbsp;{{post.get_field('landing_quote')[0].quote_attribution}}</span></h2>
 		</div> <!-- site-width -->
 	</div> <!-- /career-block -->
 
@@ -95,17 +94,18 @@
 
 <!-- career photos top -->
 <div class="career-mod career-photos">
-	<!-- <img src="/wp-content/themes/blades/images/careers/careers_test_1.jpg" /> -->
-	<span data-picture data-alt="">
-        <span data-src="/wp-content/themes/blades/images/careers/landing_block_top_sm.jpg"></span>
-        <span data-src="/wp-content/themes/blades/images/careers/landing_block_top_med.jpg"     data-media="(min-width: 600px)"></span>
-        <span data-src="/wp-content/themes/blades/images/careers/landing_block_top_lg.jpg"      data-media="(min-width: 1100px)"></span>
+    {% for photo in post.get_field('landing_photo_top') %}
+		<span data-picture data-alt="">
+	        <span data-src="{{ TimberImage(photo.top_photo_small).src | resize(600,303) }}"></span>
+	        <span data-src="{{ TimberImage(photo.top_photo_large).src | resize(1100, 660) }}"     data-media="(min-width: 600px)"></span>
+	        <span data-src="{{ TimberImage(photo.top_photo_large).src | resize(2000, 1200) }}"      data-media="(min-width: 1100px)"></span>
 
-        <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-        <noscript>
-            <img src="/wp-content/themes/blades/images/careers/landing_block_top_lg.jpg" alt="">
-        </noscript>
-    </span>
+	        <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+	        <noscript>
+	            <img src="{{ TimberImage(photo.top_photo_large).src | resize(1100, 660) }}" alt="">
+	        </noscript>
+	    </span>
+    {% endfor %}
 </div> <!-- /careers-content -->
 
 <!-- Culture + Benefits -->
@@ -115,9 +115,8 @@
 			<div class="pull-up-inner">
 				<div class="txt-width">
 					<h2 class="h2 h-centered">Culture + Benefits</h2>
-					<div class="txt-lg">
-						<p><span class="dropcap">T</span>Words be going here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci explicabo perspiciatis error inventore quae voluptatum, veniam, possimus doloribus, obcaecati rem provident fugiat nostrum, sapiente rerum commodi repudiandae recusandae omnis cum quod quas delectus. Corporis necessitatibus hic soluta culpa sapiente similique delectus consequuntur obcaecati pariatur alias? Quasi quisquam, explicabo quae id!</p>
-						<p>Words be going here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci explicabo perspiciatis error inventore quae voluptatum, veniam, possimus doloribus, obcaecati rem provident fugiat nostrum, sapiente rerum commodi repudiandae recusandae omnis cum quod quas delectus. Corporis necessitatibus hic soluta culpa sapiente similique delectus consequuntur obcaecati pariatur alias? Quasi quisquam, explicabo quae id!</p>
+					<div class="txt-lg careers-txt">
+						{{ post.culture_description | wpautop }}
 					</div> <!-- /txt-lg -->
 				</div> <!-- /txt-width -->
 			</div> <!-- pull-up-innter -->
@@ -127,14 +126,15 @@
 	<div class="dual-mod-bottom">
 		<div class="site-width">
 			<div class="l-grid-benefits">
-				{% for i in 1..9 %}
+				{% for benefit in post.get_field('benefits_grid') %}
 					<article class="media-block grid-item grid-benefits">
-						<div class="grid-img-block">
-							<img src="/wp-content/themes/blades/images/careers/icons/careers_icons_computers.svg" alt="">
+						<div class="grid-img-block grid-icon">
+							<span class="icon-{{benefit.benefits_image}}"></span>
+							<!-- <img src="/wp-content/themes/blades/images/careers/icons/careers_icons_computers.svg" alt=""> -->
 						</div> <!-- /grid-img-block -->
 						<div class="grid-content-block">
-							<h4 class="grid-h">Title of thing here</h4>
-							<p class="grid-txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, dicta.</p>
+							<h4 class="grid-h">{{ benefit.benefits_title }}</h4>
+							<p class="grid-txt">{{ benefit.benefits_description }}</p>
 						</div> <!-- grid-content-block -->
 					</article> <!-- /media-block -->
 				{% endfor %}
@@ -146,12 +146,12 @@
 		<div class="swiper-container">
 		  <div class="swiper-wrapper">
 
-		      {% for i in 1..5 %}
+		      {% for link in post.get_field('featured_links') %}
 		      <div class="swiper-slide">
 		        <div class="site-width">
-					<h4 class="career-teaser-label">Featured Project</h4>
+					<h4 class="career-teaser-label">{{ link.featured_link_label }}</h4>
 					<h3 class="h1 career-teaser-h">
-						<a href="#" class="career-teaser-link">{{i}}. See how we redesigned Harvard Law Review with nary an image</a>
+						<a href="{{link.featured_link_url}}" class="career-teaser-link">{{ link.featured_link_title }}</a>
 					</h3>
 				</div> <!-- site-width -->
 		      </div> <!-- /swiper-slide -->
@@ -178,16 +178,18 @@
 <!-- Career photos bottom -->
 <div class="career-mod career-photos">
 	<!-- <img src="/wp-content/themes/blades/images/careers/careers_test_2.jpg" /> -->
-	<span data-picture data-alt="">
-        <span data-src="/wp-content/themes/blades/images/careers/landing_block_bottom_sm.jpg"></span>
-        <span data-src="/wp-content/themes/blades/images/careers/landing_block_bottom_med.jpg"     data-media="(min-width: 600px)"></span>
-        <span data-src="/wp-content/themes/blades/images/careers/landing_block_bottom_lg.jpg"      data-media="(min-width: 1100px)"></span>
+	{% for photo in post.get_field('landing_photo_bottom') %}
+		<span data-picture data-alt="">
+	        <span data-src="{{ TimberImage(photo.bottom_photo_small).src | resize(600,303) }}"></span>
+	        <span data-src="{{ TimberImage(photo.bottom_photo_large).src | resize(1100, 660) }}"     data-media="(min-width: 600px)"></span>
+	        <span data-src="{{ TimberImage(photo.bottom_photo_large).src | resize(2000, 1200) }}"      data-media="(min-width: 1100px)"></span>
 
-        <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
-        <noscript>
-            <img src="/wp-content/themes/blades/images/careers/landing_block_bottom_lg.jpg" alt="">
-        </noscript>
-    </span>
+	        <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+	        <noscript>
+	            <img src="{{ TimberImage(photo.bottom_photo_large).src | resize(1100, 660) }}" alt="">
+	        </noscript>
+	    </span>
+    {% endfor %}
 </div> <!-- /career-content -->
 
 
