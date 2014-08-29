@@ -1,0 +1,552 @@
+@import "custom/custom-base";
+
+
+
+
+// -----------------------------------
+// Careers variable
+
+$career-space-lg: 120px;
+$career-space-med: 60px;
+$career-space-sm: 45px;
+
+
+$career-accent: #27b99e;
+$career-bg: #eef0f0;
+$career-header-bg: #A26AB3;
+
+$career-txt: #333;
+
+
+$career-grad-quote: -webkit-linear-gradient(120deg, rgb(219, 170, 236) 25%, rgb(175, 99, 189) 65%, rgb(219, 170, 236) 90%);
+
+
+// For benefits grid
+$benefit-icon-path: /wp-content/themes/blades/images/careers/icons;
+
+$icons: snacks, health, money, computers, goldbrick, learn, pto, retire, slack;
+
+
+
+// -----------------------------------
+// Overriding site styles
+
+body {
+	&.page-careers,
+	&.page-single-career,
+	&.single-job {
+		background-color: #fff;
+		color: #333;
+	}
+}
+
+.ftr {
+	.page-careers &,
+	.page-single-career &,
+	.single-job & {
+		margin-top: 0;
+		position: relative;
+		z-index: 1;
+	}
+
+}
+
+
+
+
+// -----------------------------------
+// xxx
+
+.h-centered {
+	text-align: center;
+}
+
+.header-h {
+	font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	color: #fff;
+	letter-spacing: 2px;
+}
+
+.header-h-break {
+	display: block;
+	@media(min-width: 600px) {
+		display: inline;
+	}
+}
+
+.pull-up {
+	// padding: 30px 0;
+	// margin-top: -60px;
+	max-width: 700px;
+	margin: 0 auto 0 auto;
+	// border: 20px solid #fff;
+	// border: 20px solid rgba(255, 255, 255, 0.5);
+	border-bottom: 0;
+	position: relative;
+	@media(min-width: 600px) {
+		margin-top: -60px;
+		// border: 20px solid #fff;
+		// border: 20px solid rgba(255, 255, 255, 0.5);
+	}
+}
+
+.pull-up-border {
+	border-bottom: 0;
+	@media(min-width: 600px) {
+		border: 20px solid #fff;
+		border: 20px solid rgba(255, 255, 255, 0.5);
+	}
+}
+
+.pull-up-inner {
+	background-color: #fff;
+	padding: 30px 0;
+	// margin-bottom: 30px;
+	@media(min-width: 600px) {
+		padding: 60px 0;
+	}
+}
+
+.dual-mod-bottom {
+	background-color: $career-bg;
+	// margin-top: -60px;
+	// padding-top: 120px;
+	padding: 30px 0;
+	margin-left: auto;
+	margin-right: auto;
+	@media(min-width: 600px) {
+		margin-top: -60px;
+		padding: 120px 0 60px;
+	}
+}
+
+
+
+
+// -----------------------------------
+// Banner
+
+.page-banner {
+	position: relative;
+	// margin-top: -20px;
+	// padding-bottom: 45.5%;
+	height: 0;
+	// padding-bottom: 25%;
+	// padding-bottom: 200px;
+	padding-bottom: 150px;
+	overflow: hidden;
+	background-color: $career-header-bg;
+	@media(min-width: 600px) {
+		padding-bottom: 200px;
+	}
+	img {
+		max-width: 100%;
+	}
+}
+
+.page-banner-lg {
+	@media(min-width: 1000px) {
+		padding-bottom: 300px;
+	}
+}
+
+
+.page-banner-img {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	width: 117%;
+	// margin-left: -8.5%;
+}
+
+.page-banner-content {
+	position: absolute;
+	// top: 40%;
+	top: 20%;
+	left: 0;
+	right: 0;
+	@media(min-width: 600px) {
+		top: 25%;
+	}
+}
+
+
+
+
+
+// -----------------------------------
+// Sections
+
+.career-mod {
+	background-color: #fff;
+	// padding: 4em 0;
+}
+
+.openings {
+	// margin-top: $career-space-med;
+	@media(min-width: 600px) {
+		margin-top: $career-space-sm;
+	}
+}
+
+.career-alumni {
+	padding: $career-space-med 0 100px;
+	background-color: $career-bg;
+}
+
+.career-apply {
+	background-color: transparent;
+}
+
+.career-teasers,
+.career-quote-single {
+	// padding: $career-space-med 0;
+	padding: 30px 0 20px;
+	// background-color: pink;
+	background-image: url('/wp-content/themes/blades/images/careers/careers_bg_sm.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	@media(min-width: 600px) { background-image: url('/wp-content/themes/blades/images/careers/careers_bg_med.jpg'); }
+	@media(min-width: 1100px) { background-image: url('/wp-content/themes/blades/images/careers/careers_bg_lg.jpg'); }
+	&:before {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		content: '\0020';
+		background-color: #fff;
+		opacity: 0.35;
+	}
+
+}
+
+
+// -----------------------------------
+// Careers quotes
+
+.career-quote {
+	background-color: whitesmoke;
+	// padding: 4em;
+	padding: 30px 0;
+	// color: green;
+}
+
+.career-quote-single {
+	padding: 30px 0;
+	color: white;
+	&:before {
+		background-color: rgb(237, 139, 109);
+		opacity: 0.75;
+	}
+}
+
+.career-quote-h {
+	margin-bottom: 0;
+	position: relative;
+}
+
+.career-quote-h-fancy {
+	margin-bottom: 0;
+	background-image: $career-grad-quote;
+	background-size: 100% 100%;
+	color: $career-header-bg;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	        background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.career-quote-attr {
+	font-size: 0.45em;
+	color: #fff;
+	margin-left: 5px;
+	position: relative;
+	top: -5px;
+}
+
+.career-quote-attr-fancy {
+	font-size: 0.45em;
+	color: #666;
+	margin-left: 5px;
+	position: relative;
+	top: -5px;
+	-webkit-background-clip: none;
+	background-clip: none;
+	-webkit-text-fill-color: #666;
+}
+
+// .grad-text-p {
+// 	position: relative;
+// 	@include sans(18px, heavy, normal, .2em, cap);
+// 	text-align: center;
+// 	line-height: 1.5em;
+// 	color: #444;
+// 	.backgroundcliptext.gt-ie8 & {
+// 		// background: #444;
+// 		background-image: url(/static/images/gradient-green.jpg);
+// 		background-size: 100% 100%;
+// 		background-image: $grad-green;
+// 		-webkit-text-fill-color: transparent;
+// 		@include background-clip(text);
+// 	}
+
+
+
+
+// -----------------------------------
+// Careers photos
+
+.career-photos {
+	img { max-width: 100%; }
+}
+
+
+
+
+// -----------------------------------
+// Careers styles
+
+.l-career-static {
+	@media(min-width: 600px) {
+		@include grid-static(100px, 40px);
+	}
+}
+
+.career-items {
+	font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+}
+
+.career-item {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 2em;
+	margin-bottom: 1.5em;
+	@include clearfix;
+	&:last-child {
+		padding-bottom: 0;
+		border-bottom: 0;
+	}
+	// @media(min-width: 600px) {
+	// 	padding-bottom: 1em;
+	// 	margin-bottom: 1em;
+	// }
+
+}
+
+.career-sub-h {
+	color: #ccc;
+	margin-bottom: 10px;
+}
+
+.career-sub-h-link {
+	text-decoration: none;
+}
+
+.career-desc-head {
+	margin-bottom: $career-space-sm;
+}
+
+.career-h {
+	margin-bottom: 0;
+	font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+	// float: left;
+	font-size: 32px;
+	@media(min-width: 600px) {
+		font-size: 36px;
+	}
+}
+
+.career-h-link {
+	text-decoration: none;
+	color: #333;
+}
+
+.btn-link {
+	background-color: $career-accent;
+	color: #fff;
+	font-size: 12px;
+	padding: 8px 12px;
+	display: inline-block;
+	// float: right;
+	// margin: 8px 0 15px 0;
+	margin-top: 8px;
+	&:hover {
+		background-color: darken($career-accent, 5%);
+		// margin-bottom: 0;
+	}
+	@media(min-width: 600px) {
+		margin-bottom: 0;
+	}
+}
+
+
+
+
+// -----------------------------------
+// Grid
+
+.l-grid-3 {
+	@media(min-width: 850px) {
+		@include media-grid(3);
+	}
+}
+
+.l-grid-benefits {
+	@media(min-width: 450px) and (max-width: 749px) {
+		@include media-grid(2);
+		.grid-item {
+			&:last-child {
+				width: 100%;
+			}
+		}
+	}
+	@media(min-width: 750px) {
+		@include media-grid(3);
+	}
+}
+
+
+.grid-item {
+	margin-bottom: 30px;
+	@media(min-width: 850px) {
+		text-align: center;
+		margin-bottom: 60px;
+	}
+
+	.l-grid-benefits & {
+		@media(min-width: 450px) {
+			text-align: center;
+		}
+	}
+}
+
+.grid-img-block {
+	// width: 25px;
+	// margin: 0 auto 15px;
+	float: left;
+	> img {
+		max-width: 100%;
+	}
+	@media(min-width: 450px) {
+		margin: 0 auto 15px;
+		float: none;
+	}
+}
+
+
+
+.grid-icon {
+	position: relative;
+	height: 30px;
+	width: 30px;
+	// top: 5px;
+	// left: 5px;
+	// opacity: 0.8;
+
+	@each $icon in $icons {
+		.icon-#{$icon} {
+			position: absolute;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			background-size: contain;
+			height: 30px;
+			width: 30px;
+			top: 0;
+			left: 0;
+			background-image: url(#{$benefit-icon-path}/careers_icons_#{$icon}.svg);
+			.no-svg & { background-image: url(#{$benefit-icon-path}/careers_icons_#{$icon}.png)}
+		}
+	}
+}
+
+
+.alumni-img-block {
+	width: 65px;
+	// margin: 0 auto 20px;
+	border-radius: 50%;
+	overflow: hidden;
+	float: left;
+	margin-right: 25px;
+	> img {
+		max-width: 100%;
+	}
+	@media(min-width: 850px) {
+		margin: 0 auto 20px;
+		float: none;
+	}
+}
+
+.grid-content-block {
+	// padding: 0 40px;
+	.grid-benefits & { padding-left: 45px; }
+
+	@media(min-width: 450px) {
+		padding-left: 100px;
+	}
+	@media(min-width: 850px) {
+		padding: 0 40px;
+	}
+
+	.l-grid-benefits & {
+		@media(min-width: 450px) {
+			padding: 0 20px;
+		}
+		@media(min-width: 750px) {
+			padding: 0 40px;
+		}
+	}
+
+}
+
+
+// -----------------------------------
+// Typography
+
+.careers-txt {
+	&:first-letter {
+		font: 100 61px/104% "proxima-nova",Helvetica,Arial,sans-serif;
+		display: block;
+		float: left;
+		margin-right: 8px;
+		margin-bottom: -6px;
+		@media(min-width: 500px) { font-size: 72px; }
+	}
+}
+
+.grid-h {
+	text-transform: uppercase;
+	margin-bottom: 8px;
+	font-size: 1.076923077em;
+	letter-spacing: 2px;
+
+}
+
+.grid-txt {
+	font-size: 1.153846154em;
+	line-height: 1.45;
+}
+
+
+.career-teaser-label {
+	// font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 4px;
+	// margin-bottom: 15px;
+	margin-bottom: 11px;
+	color: #fff;
+}
+
+.career-teaser-h {
+	line-height: 1.15em;
+}
+
+
+
+
+
+
+

@@ -1,21 +1,191 @@
 {% extends "base.twig" %}
+
+{% block head %}
+	<link rel="stylesheet" href="{{theme.path}}/css/custom/special-pages/careers.css">
+	<link rel="stylesheet" href="{{theme.path}}/css/custom/special-pages/careers-swiper.css">
+
+	<script type="text/javascript">
+	!function(a){"use strict";a.picturefill=function(){for(var b=a.document.getElementsByTagName("span"),c=0,d=b.length;d>c;c++)if(null!==b[c].getAttribute("data-picture")){for(var e=b[c].getElementsByTagName("span"),f=[],g=0,h=e.length;h>g;g++){var i=e[g].getAttribute("data-media");(!i||a.matchMedia&&a.matchMedia(i).matches)&&f.push(e[g])}var j=b[c].getElementsByTagName("img")[0];if(f.length){var k=f.pop();if(j&&"NOSCRIPT"!==j.parentNode.nodeName){if(k===j.parentNode)continue}else j=a.document.createElement("img"),j.alt=b[c].getAttribute("data-alt");j.src=k.getAttribute("data-src"),k.appendChild(j),j.removeAttribute("width"),j.removeAttribute("height")}else j&&j.parentNode.removeChild(j)}},a.addEventListener?(a.addEventListener("resize",a.picturefill,!1),a.addEventListener("DOMContentLoaded",function(){a.picturefill(),a.removeEventListener("load",a.picturefill,!1)},!1),a.addEventListener("load",a.picturefill,!1)):a.attachEvent&&a.attachEvent("onload",a.picturefill)}(this);
+	</script>
+
+{% endblock %}
+
+
 {% block content %}
 
-<!-- Jobs Cover Image -->
-<div class="cover-single">
-	<div id="slide-jobs" class="slide"><div class="jobs-pin"></div><img class="jobs-sign swing animated" src="/wp-content/themes/blades/images/dev/covers/jobs-sign.png" /></div>
-</div><!-- cover -->
+	<!-- Jobs Cover Image -->
+	<div class="page-banner">
+		<span data-picture data-alt="">
+		    <span data-src="/wp-content/themes/blades/images/careers/careers_bg_sm.jpg"></span>
+		    <span data-src="/wp-content/themes/blades/images/careers/careers_bg_med.jpg"     data-media="(min-width: 600px)"></span>
+		    <span data-src="/wp-content/themes/blades/images/careers/careers_bg_lg.jpg"      data-media="(min-width: 1100px)"></span>
+
+		    <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+		    <noscript>
+		        <img class="page-banner-img" src="/wp-content/themes/blades/images/careers/careers_bg_lg.jpg" alt="">
+		    </noscript>
+		</span> <!-- /data-picture -->
+
+		<div class="page-banner-content">
+			<h2 class="h2 h-centered header-h">Careers <span class="header-h-break">at Upstatement</span></h2>
+		</div> <!-- /page-banner-content -->
+	</div><!-- page-banner -->
 
 
-<!-- Jobs Content -->
-<section class="jobs-content inset">
-		{% for job in jobs %}
-		<article class="job-mod wrapper" id="{{job.title|sanitize|e}}">
-			<h1 class="h1 jobs-h1 ui-block-1">{{job.title}}</h1>
-			<div class="article-txt-reverse jobs-txt ui-block-2">{{job.description | wpautop }}</div>
-		</article>
-	{% endfor %}
-</section> <!-- /about-intro -->
+	<!-- Careers openings -->
+	<div class="careers-mod careers-openings">
+		<div class="site-width">
+			<div class="pull-up pull-up-border">
+				<div class="pull-up-inner">
+					<div class="txt-width">
+						<div class="txt-lg careers-txt">
+							{{post.content}}
+						</div> <!-- /txt-lg -->
+
+						<div class="openings">
+							<ul class="career-items">
+								{% for job in TimberPost(post.get_field('job_postings') )%}
+									<li class="career-item">
+										<article class="l-career-static" id="{{job.title|sanitize|e}}">
+											<div class="ui-block-1">
+												<div class="ui-block-inner">
+													<h1 class="h1 career-h">
+														<a href="{{job.link}}" class="career-h-link">{{job.title}}</a>
+													</h1>
+												</div> <!-- /ui-block-inner -->
+											</div> <!-- /ui-block-1-->
+											<div class="ui-block-2">
+												<div class="ui-block-inner">
+													<a href="{{job.link}}" class="btn-link">Tell me more</a>
+												</div> <!-- ui-block-inner -->
+											</div> <!-- /ui-block-2 -->
+										</article>
+									</li> <!-- /career-item -->
+								{% endfor %}
+							</ul> <!-- /career-items -->
+						</div> <!-- /openings -->
+						{# endif #}
+
+					</div> <!-- txt-width -->
+				</div> <!-- /pull-up-inner -->
+			</div> <!-- /pull-up -->
+		</div> <!-- /site-width -->
+
+		<div class="career-quote">
+			<div class="site-width">
+				<h3 class="h2 career-quote-h-fancy">&lsquo;{{post.get_field('landing_quote')[0].quote }}&rsquo;<span class="career-quote-attr-fancy">&mdash;&nbsp;{{post.get_field('landing_quote')[0].quote_attribution}}</span></h2>
+			</div> <!-- site-width -->
+		</div> <!-- /career-quote -->
+
+	</div> <!-- /career-openings -->
 
 
+	<!-- career photos top -->
+	<div class="career-mod career-photos">
+	    {% for photo in post.get_field('landing_photo_top') %}
+			<span data-picture data-alt="">
+		        <span data-src="{{ TimberImage(photo.top_photo_small).src | resize(600,303) }}"></span>
+		        <span data-src="{{ TimberImage(photo.top_photo_large).src | resize(1100, 660) }}"     data-media="(min-width: 600px)"></span>
+		        <span data-src="{{ TimberImage(photo.top_photo_large).src | resize(2000, 1200) }}"      data-media="(min-width: 1100px)"></span>
+
+		        <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+		        <noscript>
+		            <img src="{{ TimberImage(photo.top_photo_large).src | resize(1100, 660) }}" alt="">
+		        </noscript>
+		    </span>
+	    {% endfor %}
+	</div> <!-- /careers-mod -->
+
+	<!-- Culture + Benefits -->
+	<div class="career-mod">
+		<div class="site-width">
+			<div class="pull-up">
+				<div class="pull-up-inner">
+					<div class="txt-width">
+						<h2 class="h2 h-centered">Culture + Benefits</h2>
+						<div class="txt-lg careers-txt">
+							{{ post.culture_description | wpautop }}
+						</div> <!-- /txt-lg -->
+					</div> <!-- /txt-width -->
+				</div> <!-- pull-up-innter -->
+			</div> <!-- /pull-up -->
+		</div> <!--/site-width -->
+
+		<div class="dual-mod-bottom">
+			<div class="site-width">
+				<div class="l-grid-benefits">
+					{% for benefit in post.get_field('benefits_grid') %}
+						<article class="media-block grid-item grid-benefits">
+							<div class="grid-img-block grid-icon">
+								<span class="icon-{{benefit.benefits_image}}"></span>
+								<!-- <img src="/wp-content/themes/blades/images/careers/icons/careers_icons_computers.svg" alt=""> -->
+							</div> <!-- /grid-img-block -->
+							<div class="grid-content-block">
+								<h4 class="grid-h">{{ benefit.benefits_title }}</h4>
+								<p class="grid-txt">{{ benefit.benefits_description }}</p>
+							</div> <!-- grid-content-block -->
+						</article> <!-- /media-block -->
+					{% endfor %}
+				</div> <!-- /l-grid-3 -->
+			</div> <!-- /site-width -->
+		</div> <!--/dual-mod-bottom -->
+
+		<div class="career-teasers gallery">
+			<div class="swiper-container">
+			  <div class="swiper-wrapper">
+
+			      {% for link in post.get_field('featured_links') %}
+			      <div class="swiper-slide">
+			        <div class="site-width">
+						<h4 class="career-teaser-label">{{ link.featured_link_label }}</h4>
+						<h3 class="h1 career-teaser-h">
+							<a href="{{link.featured_link_url}}" class="career-teaser-link">{{ link.featured_link_title }}</a>
+						</h3>
+					</div> <!-- site-width -->
+			      </div> <!-- /swiper-slide -->
+			      {% endfor %}
+
+			  </div> <!-- /swiper-wrapper -->
+			</div> <!-- /swiper-container -->
+
+			<div class="gallery-pagination-mod">
+				<button id="gallery_control" class="gallery-pagination-button">
+					<!-- <span class="gallery-pagination-icon"></span> -->
+					Show me more
+				</button>
+			</div>	<!-- pagination-mod -->
+		</div> <!-- /career-teasers -->
+
+	</div> <!-- careers-mod -->
+
+
+
+
+
+
+	<!-- Career photos bottom -->
+	<div class="career-mod career-photos">
+		<!-- <img src="/wp-content/themes/blades/images/careers/careers_test_2.jpg" /> -->
+		{% for photo in post.get_field('landing_photo_bottom') %}
+			<span data-picture data-alt="">
+		        <span data-src="{{ TimberImage(photo.bottom_photo_small).src | resize(600,303) }}"></span>
+		        <span data-src="{{ TimberImage(photo.bottom_photo_large).src | resize(1100, 660) }}"     data-media="(min-width: 600px)"></span>
+		        <span data-src="{{ TimberImage(photo.bottom_photo_large).src | resize(2000, 1200) }}"      data-media="(min-width: 1100px)"></span>
+
+		        <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+		        <noscript>
+		            <img src="{{ TimberImage(photo.bottom_photo_large).src | resize(1100, 660) }}" alt="">
+		        </noscript>
+		    </span>
+	    {% endfor %}
+	</div> <!-- /career-content -->
+
+
+
+{% endblock %} {# /content #}
+
+
+{% block scripts %}
+	<script src="{{theme.path}}/components/swiper/dist/idangerous.swiper.min.js"></script>
+	<script src="{{theme.path}}/js/custom/careers/careers.swiper.js"></script>
 {% endblock %}

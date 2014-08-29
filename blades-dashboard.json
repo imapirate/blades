@@ -69,6 +69,21 @@
                     "url"   :   "/wp-admin/post-new.php?post_type=redirect_rule"
                 }
             ]
+        },
+        {
+            "label"     :   "Jobs",
+            "icon"      :   "dashicons-businessman",
+            "links"     :   [
+                {
+                    "label" :   "Review Applications",
+                    "url"   :   "/wp-admin/admin.php?page=gf_entries"  
+                },
+                {
+                    "label" :   "Post a Job",
+                    "url"   :   "/wp-admin/post-new.php?post_type=job"
+
+                }
+            ]
         }
     ]
 
