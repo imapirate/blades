@@ -66,6 +66,9 @@ body {
 	font-weight: 300;
 	color: #fff;
 	letter-spacing: 2px;
+	.page-banner-lg & {
+		text-shadow: 0 0 25px black;
+	}
 }
 
 .header-h-break {
