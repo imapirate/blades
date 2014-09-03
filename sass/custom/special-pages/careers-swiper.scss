@@ -197,31 +197,42 @@
 // .gallery-next { @extend %next; }
 
 .gallery-pagination-mod {
-	position: relative;
+	// position: relative;
 	z-index: 100;
+	// position: absolute;
+	right: 40px;
+	bottom: 0;
+	// top: 50%;
+	// margin-top: -30px;
+	@media(min-width: 600px) {
+		position: absolute;
+	}
 }
 
 .gallery-pagination-button {
 	// background-color: #fff;
 	background-color: #A26AB3;
-	background-color: rgba(#A26AB3, 0.3);
+	// background-color: rgba(#A26AB3, 0.3);
 	// background-color: rgba(255, 255, 255, 0.7);
 	// border: 2px solid #CCC;
 	// width: 45px;
 	// height: 45px;
-	padding: 8px 12px;
+	// padding: 8px 12px;
+	padding: 8px 30px;
 	text-decoration: none;
 	display: inline-block;
 	cursor: pointer;
 	color: #fff;
 	outline: 0;
 	border: none;
+	// border-radius: 50%;
 	transition: background-color 0.2s;
 	// border-radius: 50%;
 	position: relative;
+	overflow: visible;
 	&:hover {
 		background-color: darken(#a26ab3, 5%);
-		background-color: rgba(#A26AB3, 0.8);
+		// background-color: rgba(#A26AB3, 0.8);
 		// .gallery-pagination-icon {
 		// 	opacity: 1;
 		// 	-webkit-transform: rotate(90deg);
@@ -240,21 +251,32 @@
 	// }
 }
 
-.gallery-pagination-icon {
-	background-image: url('/wp-content/themes/blades/images/careers/icons/careers_next.svg');
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: 50% 50%;
-	width: 25px;
-	height: 25px;
-	display: block;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: -12.5px;
-	margin-left: -12.5px;
-	opacity: 0.8;
-	// .no-svg & { background-image: url('/wp-content/themes/wamu-show/img/icons/magnify_sm_size.png') };
+.pagination-icon {
+	font-family: "proxima-nova",Helvetica,Arial,sans-serif;
+	// font-size: 4em;
+	// letter-spacing: -5px;
+	font-weight: 100;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	background-color: blue;
 }
+
+// .gallery-pagination-icon {
+// 	background-image: url('/wp-content/themes/blades/images/careers/icons/careers_next.svg');
+// 	background-repeat: no-repeat;
+// 	background-size: contain;
+// 	background-position: 50% 50%;
+// 	width: 25px;
+// 	height: 25px;
+// 	display: block;
+// 	position: absolute;
+// 	top: 50%;
+// 	left: 50%;
+// 	margin-top: -12.5px;
+// 	margin-left: -12.5px;
+// 	opacity: 0.8;
+// 	// .no-svg & { background-image: url('/wp-content/themes/wamu-show/img/icons/magnify_sm_size.png') };
+// }
 
 

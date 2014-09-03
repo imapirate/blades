@@ -316,9 +316,10 @@ body {
 // Careers styles
 
 .l-career-static {
-	@media(min-width: 600px) {
-		@include grid-static(100px, 40px);
-	}
+	@include grid-static(40px, 20px);
+	// @media(min-width: 600px) {
+	// 	@include grid-static(40px, 40px);
+	// }
 }
 
 .career-items {
@@ -358,9 +359,9 @@ body {
 	margin-bottom: 0;
 	font-family: "proxima-nova", Helvetica, Arial, sans-serif;
 	// float: left;
-	font-size: 32px;
+	font-size: 28px;
 	@media(min-width: 600px) {
-		font-size: 36px;
+		font-size: 32px;
 	}
 }
 
@@ -373,11 +374,17 @@ body {
 	background-color: $career-accent;
 	color: #fff;
 	font-size: 12px;
-	padding: 8px 12px;
+	// padding: 12px;
+	width: 35px;
+	height: 35px;
+	line-height: 35px;
 	display: inline-block;
+	border-radius: 50%;
+	text-align: center;
 	// float: right;
 	// margin: 8px 0 15px 0;
-	margin-top: 8px;
+	// margin-top: 8px;
+	margin-top: 5px;
 	&:hover {
 		background-color: darken($career-accent, 5%);
 		// margin-bottom: 0;
@@ -387,7 +394,12 @@ body {
 	}
 }
 
-
+.job-icon {
+	font-size: 2em;
+	letter-spacing: -2px;
+	position: relative;
+	top: -2px;
+}
 
 
 // -----------------------------------
@@ -549,6 +561,8 @@ body {
 
 .career-teaser-h {
 	line-height: 1.15em;
+	// margin-bottom: 0.75em;
+	// padding-right: 100px;
 }
 
 
