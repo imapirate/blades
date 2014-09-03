@@ -86,7 +86,7 @@
 						{% for vignette in post.get_field('vignettes') %}
 							<article class="media-block grid-item">
 								<div class="alumni-img-block">
-									<img src="http://placekitten.com/250/250" alt="">
+									<img src="{{ TimberImage(vignette.vignette_image).src | resize(100, 100) }}" alt="">
 								</div> <!-- /grid-img-block -->
 								<div class="grid-content-block">
 									<h4 class="grid-h">{{ vignette.vignette_name }}</h4>
