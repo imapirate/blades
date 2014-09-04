@@ -15,9 +15,9 @@ add_filter( 'timber_context', function( $data ) {
 	} );
 
 
-if ( function_exists( 'register_options_page' ) ) {
-	register_options_page( 'Homepage' );
-	register_options_page( 'Site Info' );
+if ( function_exists( 'acf_add_options_page' ) ) {
+	acf_add_options_page( 'Homepage' );
+	acf_add_options_page( 'Site Info' );
 }
 
 function load_script( $name, $src, $footer = true ) {
