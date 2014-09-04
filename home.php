@@ -16,7 +16,15 @@
 
 	$data['blogs'] = Timber::get_posts('post_type=post&numberposts=3');
 	$highlights = get_field('highlights', 'options');
-	$data['highlights'] = array_chunk(Timber::get_posts($highlights), 2);
+	$highlight_posts = Timber::get_posts(array(
+		"post__in" => $highlights,
+		"post_type" => "highlight",
+		"ignore_sticky_posts" => 1
+		));
+	$data['highlights'] = array_chunk($highlight_posts, 2);
 	$data['logo_pond'] = get_field('logo_pond', 'options');
 
 	Timber::render('home.twig', $data, 600);
+
+
+
