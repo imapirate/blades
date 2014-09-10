@@ -1,7 +1,7 @@
 @media print {
 	
    * {
-		background: transparent !important;
+		background: transparent;
 		color: #000 !important; /* Black prints faster: h5bp.com/s */
 		box-shadow:none !important;
 		text-shadow: none !important;
@@ -9,7 +9,7 @@
 
     a,
     a:visited {
-		text-decoration: underline;
+		text-decoration: none;
     }
 
     a[href]:after {
@@ -65,5 +65,97 @@
         page-break-after: avoid;
     }
 
+    .print-logo {
+    display: block !important;
+    width: 25%;
+    margin: auto;
+    }
+
+    .hdr {
+        background: transparent !important;
+        border-bottom: none !important;
+    }
+
+    .header-h-break {
+        display: inline !important;
+    }
+
+
+    .hdr .wrapper, .social-icon {
+        display: none;
+    }
+
+    a:after {
+        display: none;
+    }
+
+    .article-txt a:link,  {
+        font-weight: bold;
+        color: #000 !important;
+    }
+
+    .career-mod.career-photos, .ftr-logo-mod, .ftr-msg {
+        display: none;
+    }
+
+    .pull-up-inner, .article-txt {
+        padding-bottom: 0 !important;
+
+    }
+
+    .pull-up-inner {
+        padding-top: 0 !important;
+    }
+
+    .career-alumni {
+        padding: 60px 0 !important;
+    }
+
+    footer.ftr {
+        padding: 0 !important;
+        background: transparent !important;
+    }
+
+    // .h2 .h-centered .header-h, .header-h-break {
+    //     color: #ffffff !important;
+    // }
+    .page-banner {
+        background: transparent !important;
+    }
+
+    // .page-banner-content {
+    //     background: url("/wp-content/themes/blades/images/upstatement_logo_black.jpg");
+    //     background-size: contain;
+    //     background-repeat: no-repeat;
+    //     line-height: 2;
+    // }
+
+    .page-banner img {
+        display: none;
+    }
+
+    h4 {
+        margin: 10px 0 10px 0 !important;
+    }
+
+    .career-quote-h {
+        font-size: 24px;
+    }
+
+    .article-txt p, .ftr-msg, h4, li {
+        font-size: 16px !important;
+        line-height: 1.45;
+    }
+
+    .grid-content-block {
+        padding-right: 100px;
+        page-break-inside: avoid !important;
+        font-size: 13px;
+    }
+
+
 } // @media print
 
+.print-logo {
+    display: none;
+}
