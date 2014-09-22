@@ -1,0 +1,124 @@
+{
+    "key": "group_54207a55245dc",
+    "title": "Drinks Page",
+    "fields": [
+        {
+            "key": "field_54207b9b85d5d",
+            "label": "Kicker",
+            "name": "kicker",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "Ring in the New Year with some new friends",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_54207a674e081",
+            "label": "Main Info",
+            "name": "main_info",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "Join us June 18th at 6pm!",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_54207a7744780",
+            "label": "Info Boxes",
+            "name": "info_boxes",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "min": 3,
+            "max": 3,
+            "layout": "table",
+            "button_label": "Add Info Box",
+            "sub_fields": [
+                {
+                    "key": "field_54207a8b44781",
+                    "label": "Subhead",
+                    "name": "subhead",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_54207a9044782",
+                    "label": "Description",
+                    "name": "description",
+                    "prefix": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": "wpautop",
+                    "readonly": 0,
+                    "disabled": 0
+                }
+            ]
+        },
+        {
+            "key": "field_54207b4c0b889",
+            "label": "Facebook Link",
+            "name": "facebook_link",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "https:\/\/www.facebook.com\/events\/706097892782968\/?source=1",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "2995"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}
