@@ -51,7 +51,6 @@
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
-	max-width: 1600px;
 }
 
 .drinks-sign-neon {
@@ -61,7 +60,6 @@
 	@include trans;
 	@include opacity(1);
 	z-index: 1;
-	max-width: 1600px;
 
 	@media (min-width: 401px){
 		@include opacity(0);
