@@ -21,13 +21,16 @@ $template_file = 'page.twig';
 if ( file_exists( $_SERVER['DOCUMENT_ROOT'].$data['theme_dir'].'/css/'.$pi->post_type.'-'.$post->post_name.'.css' ) ) {
 	$data['post']->css_file = $data['theme_dir'].'/css/'.$pi->post_type.'-'.$post->post_name.'.css';
 }
-$contribs = TimberHelper::transient( 'aatimbaaer-contribs', function() {
+$contribs = TimberHelper::transient( 'timber-contribs', function() {
 		require_once __DIR__ . '/vendor/tan-tan-kanarek/github-php-client/tan-tan-kanarek/github-php-client/client/GitHubClient.php';
 		$client = new GitHubClient();
 		$auth = file_get_contents( __DIR__.'/auth.json' );
 		$auth = json_decode( $auth );
 		$client->setCredentials( $auth->github->user, $auth->github->pass );
-		$contribs = $client->repos->listContributors( 'jarednova', 'timber' );
+		$contribs = $client->repos->listContributors( 'jarednova', 'timber', array('per_page'=> 100) );
+		$extra = count($contribs) % 6;
+		$total = count($contribs) - $extra;
+		$contribs = TimberHelper::array_truncate($contribs, $total);
 		$ret = array();
 		foreach ( $contribs as $contrib ) {
 			$obj = new stdClass();
