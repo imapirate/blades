@@ -42,6 +42,9 @@
 						<div class="career-desc-head">
 							<!-- <h4 class="h4 h-centered career-sub-h"><a href="/careers" class="career-sub-h-link">Careers at Upstatement</a></h4> -->
 							<h2 class="h2 h-centered">{{post.title}}</h2>
+							{% if post.subline %}
+								<h2 class="h3 h-centered">{{post.subline}}</h2>
+							{% endif %}
 						</div> <!-- /career-desc-head -->
 
 						<div class="txt-width">
