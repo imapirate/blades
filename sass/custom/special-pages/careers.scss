@@ -522,6 +522,13 @@ body {
 // -----------------------------------
 // Typography
 
+.careers-subline {
+	// extends h3 in html
+	font-style: italic;
+	color: #888;
+	line-height: 140%;
+}
+
 .careers-txt {
 	&:first-letter {
 		font: 100 61px/104% "proxima-nova",Helvetica,Arial,sans-serif;
