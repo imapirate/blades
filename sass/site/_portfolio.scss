@@ -40,21 +40,19 @@
 
 
 .portfolio-promo-hgroup {
-	color: #1d1d1d;
 	text-align: center;
-	background-color: #FFF;
+	background-color: #rgba(0,0,0,.5);
 	padding: 20px 20px 30px 20px;
-	border-bottom: 4px solid #FFF;
+	border-bottom: 1px solid #1d1d1d;
 	@include trans(.15s);
 	.portfolio-promo:hover & {
-		border-bottom: 4px solid #CCC;
+		border-bottom: 1px solid #CCC;
 	}
 } //portfolio-top-text
 
 .portfolio-promo-h {
 	line-height: 100%;
 	margin-bottom: 0;
-	font-weight: 300;
 }
 
 .portfolio-promo-kicker {

@@ -52,7 +52,7 @@
 	}
 
 	.gfield_label {
-		@extend .text-l;
+		@extend .txt-lg;
 		font: em(16)/130% $proxima;
 		font-weight: 500 !important;
 		@include mq(700px) {
@@ -61,7 +61,7 @@
 	}
 
 	.gsection_title {
-		@extend .section-h2;
+		@extend .section-h2 !optional;
 		font: 500 em(24)/120% $proxima;
 		@include mq(700px) {
 			font-size: em(37);
@@ -69,7 +69,7 @@
 	}
 
 	.ginput_container .textarea {
-		@extend .text-l;
+		@extend .txt-lg;
 		padding:20px;
 		font: em(16)/120% $adelle;
 		border:1px solid black(20);
