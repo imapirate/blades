@@ -48,6 +48,7 @@ function load_footer_scripts() {
 	load_script( 'inview', get_stylesheet_directory_uri() . '/components/jquery.inview/jquery.inview.js',  1 );
 	load_script( 'localScroll', get_stylesheet_directory_uri() .'/components/jquery.localScroll/jquery.localScroll.js', 1 );
 	load_script( 'unveil', get_stylesheet_directory_uri() . '/components/unveil/jquery.unveil.js', 1 );
+	load_script( 'quickShare', get_stylesheet_directory_uri() . '/components/QuickShare/dist/quickshare.min.js', 1 );
 	load_script( 'plugins', get_stylesheet_directory_uri() . '/js/plugins.js', 1 );
 	load_script( 'blades', get_stylesheet_directory_uri() . '/js/blades.app.js', 1 );
 

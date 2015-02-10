@@ -459,6 +459,46 @@ html.ie8 .blog-cron .media-block {
 	}
 }
 
+
+/* ============================================= */
+/*	QuickShare				   					 */
+/* ============================================= */
+
+.blog-quickshare {
+	text-align: center;
+}
+
+.qs-link {
+	padding: 10px 20px 10px 35px;
+	border-radius: 40px;
+	margin: 0 10px 0 0;
+	background-repeat: no-repeat;
+	background-size: 20px;
+	background-position: 10px center;
+	color: #FFF;
+	font-family: $proxima;
+
+	@include trans;
+
+	&:hover {
+		opacity: .8;
+	}
+}
+
+.qs-twitter {
+	background-color: #00aced;
+	background-image: url('/wp-content/themes/blades/images/icons/twtr-wht.png');
+	background-image: url('/wp-content/themes/blades/images/icons/twtr-wht.svg');
+}
+
+.qs-facebook {
+	background-color: #3b5998;
+	background-image: url('/wp-content/themes/blades/images/icons/fb-wht.png');
+	background-image: url('/wp-content/themes/blades/images/icons/fb-wht.svg');
+}
+
+
+
 // Extra styles that beautify individual blog posts
 /* ! ============================================= */
 
