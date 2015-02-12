@@ -9,13 +9,11 @@
 
 	{% if blog_featured %}
 	<div class="featured-wrapper inset">
-		<div class="wrapper">
 		<section id="archive-blog-featured" class="blog-featured-mod">
 			{% for post in blog_featured %}
 				{% include "mods/tz-blog-l.twig" %}
 			{% endfor %}
 		</section><!--archive-blog-featured -->
-		</div><!-- wrapper -->
 	</div><!-- inset -->
 	{% endif %}
 	<div class="inset-dark">
