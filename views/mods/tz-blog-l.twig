@@ -1,6 +1,8 @@
 <article class="blog blog-featured" id="post-{{post.slug}}">
-	<a class="blog-feat-img" href="{{post.path}}"><img src="{{post.banner_image.src}}" class="blog-banner-image" alt="{{post.post_title}}" /></a>
-	
+	<a class="blog-feat-img" href="{{post.path}}">
+		<img src="{{TimberImage(post.banner_image).src}}" class="blog-banner-image" alt="{{post.post_title}}" />
+	</a>
+
 	<div class="blog-featured-txt">
 		<h2 class="h1 blog-featured-h"><a href="{{post.path}}">{{post.title}}</a></h2>
 		<p class="blog-author"><span>By</span> {{post.author.name}}</p>
