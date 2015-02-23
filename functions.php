@@ -1,10 +1,18 @@
 <?php
 require_once __DIR__.'/wp/acf-blog-options.php';
+require_once __DIR__.'/wp/acf-hacks.php';
 
 if ( class_exists( 'Timber' ) ) {
 	require_once 'wp/portfolio-entry.php';
 	require_once 'wp/blades-site.php';
 }
+
+ACFHacks::map_page_rule_to_slug(48, 'about');
+ACFHacks::map_page_rule_to_slug(506, 'careers');
+ACFHacks::map_page_rule_to_slug(2777, 'jobs');
+ACFHacks::map_page_rule_to_slug(2995, 'drinks');
+ACFHacks::map_page_rule_to_slug(4883, 'garage');
+ACFHacks::map_page_rule_to_slug(4913, 'timber');
 
 add_theme_support( 'menus' );
 add_theme_support( 'post-thumbnails' );
