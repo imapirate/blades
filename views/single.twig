@@ -1,4 +1,11 @@
 {% extends "base.twig" %}
+{% block opengraph %}
+	{% if post.thumbnail.src %}
+	
+	<meta property="og:image" content="{{post.thumbnail.src}}" />
+	{% endif %}
+{% endblock %}
+
 {% block content %}
 
 
@@ -14,9 +21,7 @@
 	{% endif %}
 
 
-{% if post.thumbnail.src %}
-	<meta property="og:image" content="{{post.thumbnail.src}}" />
-{% endif %}
+
 
 <div class="content-wrapper">
 	<div class="wrapper">
