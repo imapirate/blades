@@ -1,0 +1,176 @@
+{
+    "key": "group_5400cdc184154",
+    "title": "Blog Call to Action",
+    "fields": [
+        {
+            "key": "field_526004f1b7f0f",
+            "label": "Calls to Action",
+            "name": "calls_to_action",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "row_min": 0,
+            "row_limit": "",
+            "layout": "row",
+            "button_label": "Add Call to Action",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_52600510b7f10",
+                    "label": "Action Name",
+                    "name": "action",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "Required",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Read More on",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "html",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_52600535b7f11",
+                    "label": "Action Website",
+                    "name": "site",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "If offsite, what's the site URL or name that people know?",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "github.com",
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "html",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_52600554b7f12",
+                    "label": "Title",
+                    "name": "title",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "The title of the article, software, etc.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "html",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_52600577b7f13",
+                    "label": "Intro text",
+                    "name": "desc",
+                    "prefix": "",
+                    "type": "textarea",
+                    "instructions": "Any intro text, optional",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "new_lines": "br",
+                    "readonly": 0,
+                    "disabled": 0,
+                    "rows": ""
+                },
+                {
+                    "key": "field_526008d1c87fd",
+                    "label": "URL",
+                    "name": "url",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "Where should the link actually go? Very much required.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "http:\/\/github.com\/jarednova\/timber",
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "html",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_526008fec87fe",
+                    "label": "New Window?",
+                    "name": "target_blank",
+                    "prefix": "",
+                    "type": "true_false",
+                    "instructions": "Should the link open in a new window?",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 1
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1424655478
+}

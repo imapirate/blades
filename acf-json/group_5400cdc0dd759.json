@@ -1,11 +1,11 @@
 {
-    "key": "group_53fe4c3908425",
-    "title": "Blog Subline",
+    "key": "group_5400cdc0dd759",
+    "title": "Highlights - Options",
     "fields": [
         {
-            "key": "field_521bc796f4065",
-            "label": "Subline",
-            "name": "subline",
+            "key": "field_527cef7de9270",
+            "label": "Link",
+            "name": "link",
             "prefix": "",
             "type": "text",
             "instructions": "",
@@ -31,23 +31,15 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "job"
+                "value": "highlight"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "acf_after_title",
-    "style": "seamless",
+    "position": "normal",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "local": "json",
-    "modified": 1424655728
+    "modified": 1424655423
 }

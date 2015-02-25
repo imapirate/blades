@@ -46,8 +46,18 @@
 					<article class="about-person media-block">
 
 						<div class="icn-box">
-							<img src="{{person.face}}" class="face"/>
-							<img src="{{person.image}}" class="icn"/>
+							{% if person.face %}
+								<img src="{{person.face}}" class="face"/>
+							{% else %}
+								<span class="icn-missing">{{person.initials}}</span>
+							{% endif %}
+
+
+							{% if person.image %}
+								<img src="{{person.image}}" class="icn"/>
+							{% else %}
+								<span class="icn-missing icn">{{person.initials}}</span>
+							{% endif %}
 						</div>
 							<h4 class="h3 about-person-name"><a href="{{person.personal_page}}">{{person.name}}</a></h4>
 							<p class="about-person-title">{{person.title}}   <span>&nbsp;&bull;&nbsp;</span> <a class="about-person-twtr" href="http://twitter.com/{{person.twitter}}">@{{person.twitter}}</a></p>

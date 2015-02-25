@@ -1,5 +1,5 @@
 {
-    "key": "group_53fe4c3908425",
+    "key": "group_5400cdc0bdb31",
     "title": "Blog Subline",
     "fields": [
         {
@@ -48,6 +48,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "local": "json",
-    "modified": 1424655728
+    "modified": 1424655402
 }
