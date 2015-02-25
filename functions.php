@@ -19,6 +19,14 @@ add_theme_support( 'post-thumbnails' );
 
 add_filter( 'timber_context', function( $data ) {
 		$data['menu'] = new TimberMenu();
+
+		global $post;
+		if ($post && isset($post->ID)) {
+			$maybe_title = get_post_meta($post->ID, 'custom_title_tag', true);
+			if ( $maybe_title ) {
+				$data['wp_title'] = $maybe_title;
+			}
+		}
 		return $data;
 	} );
 
