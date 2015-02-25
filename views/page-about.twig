@@ -47,7 +47,7 @@
 
 						<div class="icn-box">
 							{% if person.face %}
-								<img src="{{person.face}}" class="face"/>
+								<img src="{{person.face|resize(240, 240)}}" class="face"/>
 							{% else %}
 								<span class="icn-missing">{{person.initials}}</span>
 							{% endif %}
@@ -60,8 +60,12 @@
 							{% endif %}
 						</div>
 							<h4 class="h3 about-person-name"><a href="{{person.personal_page}}">{{person.name}}</a></h4>
-							<p class="about-person-title">{{person.title}}   <span>&nbsp;&bull;&nbsp;</span> <a class="about-person-twtr" href="http://twitter.com/{{person.twitter}}">@{{person.twitter}}</a></p>
-							<p class="txt about-person-desc">{{person.description}}</p>
+							<p class="about-person-title">{{person.title}}</p>
+							<p class="txt about-person-desc">{{person.description}}
+							{% if person.twitter %}
+								<a class="about-person-twtr" href="http://twitter.com/{{person.twitter}}">@{{person.twitter}}</a>
+							{% endif %}
+							</p>
 
 					</article>
 				{% endfor %}

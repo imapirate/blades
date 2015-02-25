@@ -132,9 +132,9 @@ html.ie8 .about-person {
 }
 
 .about-person-twtr {
-	font-size: 14px;
 	font-family: $proxima;
-	color: #ccc;
+	color: #aaa !important;
+	font-size: .9em;
 	&:hover {
 		text-decoration: underline;
 	}
