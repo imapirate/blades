@@ -12,10 +12,22 @@
 * @since Boilerplate 1.0
 */
 
+	function initials( $name ) {
+		// preg_match_all('~\b(\S){1}~', $this->name, $matches);
+		// return $matches[1][0].end($matches[1]);
+		$name = explode(' ', $name);
+		$last = end($name);
+		$first = reset($name);
+		return strtoupper($first[0]).strtoupper($last[0]);
+	}
 
 	$data = Timber::get_context();
 	$pi = new TimberPost();
 	$data['post'] = $pi;
-	$data['people'] = get_field('person', $pi->ID);
+	$people = get_field('person', $pi->ID);
+	foreach( $people as &$person ) {
+		$person['initials'] = initials($person['name']);
+	}
+	$data['people'] = $people;
 	$data['wp_title'] = 'About Upstatement';
 	Timber::render('page-about.twig', $data);

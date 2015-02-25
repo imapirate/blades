@@ -1,0 +1,112 @@
+{
+    "key": "group_5400cdc0e9bca",
+    "title": "Homepage Heros",
+    "fields": [
+        {
+            "key": "field_5213e15cdb62c",
+            "label": "Billboards",
+            "name": "billboards",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "row_min": 1,
+            "row_limit": 8,
+            "layout": "row",
+            "button_label": "Add Hero Image",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_5213e16cdb62d",
+                    "label": "Portfolio",
+                    "name": "portfolio",
+                    "prefix": "",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "object",
+                    "post_type": [
+                        "portfolio"
+                    ],
+                    "taxonomy": [],
+                    "filters": [
+                        "search"
+                    ],
+                    "max": 1,
+                    "elements": [
+                        "post_type"
+                    ]
+                },
+                {
+                    "key": "field_5213e182db62e",
+                    "label": "Intro",
+                    "name": "intro",
+                    "prefix": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "new_lines": "",
+                    "readonly": 0,
+                    "disabled": 0,
+                    "rows": ""
+                },
+                {
+                    "key": "field_5213e19edb62f",
+                    "label": "Image",
+                    "name": "image",
+                    "prefix": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "preview_size": "large",
+                    "library": "all",
+                    "return_format": "id"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "user_role",
+                "operator": "==",
+                "value": "subscriber"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1424655433
+}
