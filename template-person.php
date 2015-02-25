@@ -19,7 +19,7 @@ Template Name: Person
 	$data['post']->links = get_field('links');
 	foreach($data['post']->links as &$link){
 		$link['class'] = 'ss-social';
-		if ($link['icon'] == 'home'){
+		if ( isset($link['icon']) && $link['icon'] == 'home' ){
 			$link['class'] = ' ';
 		}
 	}
