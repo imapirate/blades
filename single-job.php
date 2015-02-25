@@ -10,4 +10,4 @@
 
 	$data = Timber::get_context();
 	$data['post'] = new TimberPost();
-	Timber::render('custom/page-single-career.twig', $data);
+	Timber::render('single-job.twig', $data);

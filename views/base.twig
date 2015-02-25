@@ -24,11 +24,12 @@
         {{function('wp_head')}}
         {% include "mods/typekit.twig" %}
 
-        
+{% block opengraph %}
+    <meta property="og:image" content="http://upstatement.com/wp-content/themes/blades/images/upstatement-og-image.jpg" />
+{% endblock %}  
+      
 {% block head %}
-    {% block opengraph %}
-        <meta property="og:image" content="http://upstatement.com/wp-content/themes/blades/images/upstatement-og-image.jpg" />
-    {% endblock %}
+    
 {% endblock %}
 </head>
     <body class="{{body_class}}" data-source="base.twig">
