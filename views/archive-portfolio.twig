@@ -42,7 +42,9 @@
 <div class="wrapper">
 	<section id="archive-tiles">
 		{% for tile in tiles %}
-			{% include 'mods/tile.twig' %}
+			{% if tile.thumbnail.src %}
+				{% include 'mods/tile.twig' %}
+			{% endif %}
 		{% endfor %}
 	</section>
 </div>
