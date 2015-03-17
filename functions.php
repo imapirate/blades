@@ -110,9 +110,3 @@ if ( class_exists( 'BladesSite' ) ) {
 if ( class_exists( 'ChainsawDashboard' ) ) {
 	$dashboard = new ChainsawDashboard( 'wp-content/themes/blades/blades-dashboard.json' );
 }
-
-add_action( "gform_after_submission_1", function( $entry, $form ) {
-		$to = $entry[2];
-		$response = Timber::get_post( 'thanks-for-applying' );
-		wp_mail( $to, $response->post_title, $response->post_content );
-	}, 10, 2 );
