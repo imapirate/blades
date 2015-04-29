@@ -49,7 +49,7 @@
 					{% if layout.images %}
 						<div class="portfolio-image-set image-count-{{layout.images|length}} {{layout.size|length ? layout.size}}">
 							{% for image in layout.images %}
-								<img class="lazy viz-resp {{layout.visibility|join(' ')}}" data-original="{{image.get_pathinfo.filename == image.get_pathinfo.filename|upper ? image.src : image.src|tojpg}}" data-src="{{image.get_pathinfo.filename == image.get_pathinfo.filename|upper ? image.src : image.src|tojpg}}" src="{{image.get_pathinfo.filename == image.get_pathinfo.filename|upper ? image.src : image.src|tojpg}}" alt="{{image.alt_text|raw}}" id="portfolio-img-{{image.ID}}"/>
+								<img class="lazy viz-resp {{layout.visibility|join(' ')}}" data-original="{{image.get_pathinfo.filename == image.get_pathinfo.filename|upper ? image.src : image.src}}" data-src="{{image.get_pathinfo.filename == image.get_pathinfo.filename|upper ? image.src : image.src}}" src="{{image.get_pathinfo.filename == image.get_pathinfo.filename|upper ? image.src : image.src}}" alt="{{image.alt_text|raw}}" id="portfolio-img-{{image.ID}}"/>
 								<p>{{image.caption}}</p>
 							{% endfor %}
 						</div>
