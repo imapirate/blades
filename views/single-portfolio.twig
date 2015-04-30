@@ -24,11 +24,11 @@
 						<h3 class="h4 portfolio-kicker">{{post.kicker}}</h3>
 						{% endif %}
 						<h1 class="h1 portfolio-h1">
-							{% if post.link %}
-								<a href="{{post.link}}" target="_blank">
+							{% if post.client_link %}
+								<a href="{{post.client_link}}" target="_blank">
 							{% endif %}
 								{{post.post_title}}
-							{% if post.link %}
+							{% if post.client_link %}
 								</a>
 							{% endif %}
 						</h1>
