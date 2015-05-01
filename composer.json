@@ -19,11 +19,24 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "advanced-custom-fields/advanced-custom-fields-pro",
+                "version": "5.0",
+                "type": "wordpress-plugin",
+                "dist": {
+                    "type": "zip",
+                    "url": "http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9MzQwMzh8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA3LTA5IDEyOjU4OjA4"
+                }
+            }
         }
     ],
     "minimum-stability": "stable",
     "require": {
         "composer/installers": "~1.0",
-        "tan-tan-kanarek/github-php-client" : "*"
+        "tan-tan-kanarek/github-php-client" : "*",
+        "advanced-custom-fields/advanced-custom-fields-pro": "*"
     }
 }
