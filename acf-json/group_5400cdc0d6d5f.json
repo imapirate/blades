@@ -72,7 +72,8 @@
                 "taxonomy"
             ],
             "elements": [],
-            "return_format": "object"
+            "return_format": "object",
+            "min": 0
         }
     ],
     "location": [
@@ -90,5 +91,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1424655418
+    "modified": 1430448028,
+    "local": "json"
 }

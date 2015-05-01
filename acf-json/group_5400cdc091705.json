@@ -58,7 +58,14 @@
                     },
                     "preview_size": "thumbnail",
                     "library": "all",
-                    "return_format": "url"
+                    "return_format": "url",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 },
                 {
                     "key": "field_5086a23526ed6",
@@ -167,7 +174,14 @@
                     },
                     "preview_size": "thumbnail",
                     "library": "all",
-                    "return_format": "url"
+                    "return_format": "url",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 },
                 {
                     "key": "field_522f5e8543b4d",
@@ -208,5 +222,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1424655319
+    "modified": 1430448028,
+    "local": "json"
 }

@@ -85,7 +85,14 @@
                     },
                     "preview_size": "medium",
                     "library": "all",
-                    "return_format": "array"
+                    "return_format": "array",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 },
                 {
                     "key": "field_53611f7583ec7",
@@ -128,5 +135,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1424655415
+    "modified": 1430448028,
+    "local": "json"
 }

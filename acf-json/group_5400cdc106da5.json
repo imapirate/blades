@@ -27,7 +27,8 @@
                 "taxonomy"
             ],
             "elements": [],
-            "return_format": "object"
+            "return_format": "object",
+            "min": 0
         }
     ],
     "location": [
@@ -53,5 +54,6 @@
         "format",
         "send-trackbacks"
     ],
-    "modified": 1424655438
+    "modified": 1430448029,
+    "local": "json"
 }

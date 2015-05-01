@@ -17,7 +17,10 @@
                 "id": ""
             },
             "library": "uploadedTo",
-            "return_format": "id"
+            "return_format": "id",
+            "min_size": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_52b0ad2f430c2",
@@ -34,7 +37,10 @@
                 "id": ""
             },
             "library": "uploadedTo",
-            "return_format": "id"
+            "return_format": "id",
+            "min_size": 0,
+            "max_size": 0,
+            "mime_types": ""
         }
     ],
     "location": [
@@ -52,5 +58,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1424655370
+    "modified": 1430448028,
+    "local": "json"
 }

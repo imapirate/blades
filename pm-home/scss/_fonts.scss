@@ -1,0 +1,37 @@
+// =============================================
+
+// Fonts
+
+// =============================================
+
+
+@mixin font-face(
+  $family-name,
+  $file-name,
+  $font-weight: normal,
+  $font-style: normal
+  ){
+    @font-face {
+      $font-path: "/fonts/#{$file-name}";
+      font-family: "#{$family-name}";
+      src: url($font-path + '.eot');
+      src: local('☺'),
+         url($font-path + '.eot?iefix') format('eot'),
+         url($font-path + '.woff') format('woff'),
+         url($font-path + '.svg') format('svg'),
+         local('☺');
+      font-weight: $font-weight;
+      font-style: $font-style;
+  }
+}
+
+
+//
+// Galaxie
+//
+
+@include font-face(
+  $family-name: Galaxie,
+  $file-name: galaxie-heavy,
+  $font-weight: 900
+);

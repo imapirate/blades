@@ -1,0 +1,76 @@
+// =============================================
+
+// Variables
+
+// =============================================
+
+
+// --------------------------------------------
+// Fonts
+// --------------------------------------------
+
+// Font Fallbacks
+$fallback--sans: Helvetica, Arial, sans-serif;
+$fallback--serif: Georgia, Times, serif;
+
+// Font Families
+$sans: "proxima-nova", $fallback--sans;
+$serif: "Galaxie", $fallback--serif;
+
+// Font Weights
+$font-weight--light: 100;
+$font-weight--reg: 300;
+$font-weight--bold: 700;
+$font-weight--black: 900;
+
+
+
+// --------------------------------------------
+// Color
+// --------------------------------------------
+
+$site-bg: rgb(31,31,31);
+$gray-light: rgb(153,153,153);
+$gray-med: rgb(77,77,77);
+
+
+$blue: #1d78af;
+
+$selection-color: $blue;
+$selection-color-type: #FFF;
+
+$link: $blue;
+$link-hover: darken($link, 8%);
+$highlight: #ea4c88;  //Pink
+
+
+
+// --------------------------------------------
+// Layout
+// --------------------------------------------
+
+$site-max-width: 1060px;
+$site-margin: 20px;
+
+$bp--site-max: $site-max-width + ($site-margin * 2);
+$bp--header: 600px;
+
+
+
+// --------------------------------------------
+// Animations
+// --------------------------------------------
+
+$timing: cubic-bezier(0.645,0.045,0.355,1);
+$timing--butter: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+
+
+
+// --------------------------------------------
+// Paths
+// --------------------------------------------
+
+$rgba-bg-path: "rgba-bg/";
+$svg-path: "icons/";
+
