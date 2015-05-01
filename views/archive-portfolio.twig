@@ -10,19 +10,19 @@
 				<div class="portfolio-promo-hgroup">
 					{% if billboard.kicker %}
 						<h3 class="h4 portfolio-promo-kicker">{{billboard.kicker}}</h3>
-						<i class="portfolio-promo-detail" style="color:{{billboard.project_spot_color}};"></i>
 					{% endif %}
 					<h2 class="h1 portfolio-promo-h">{{ billboard.title }}</h2>
-					{# <p class="txt">{{ billboard.billboard_message }}</p> #}
-				</div>
-			</a> <!-- /portfolio-promo -->
-			<div class="content-wrapper">
-				<div class="wrapper">
+
+<i class="portfolio-promo-detail" style="color:{{billboard.project_spot_color}};"></i>
+
 					<div class="article-txt portfolio-promo-deck-p">
 						<p>We’re excited to announce that our friends at The Hechinger Report recently launched a bright new website and brand identity — both designed by Upstatement.</p>
 					</div>
+
+					{# <p class="txt">{{ billboard.billboard_message }}</p> #}
 				</div>
-			</div>
+			</a> <!-- /portfolio-promo -->
+
 		{% endfor %}
 
 	</div><!-- wrapper -->

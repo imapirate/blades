@@ -41,8 +41,8 @@
 	background-size: cover;
 	background-position: 50% 50%;
 	background-attachment: fixed;
-	margin-bottom: 5px;
-	padding: 140px 10px;
+	margin-bottom: 500px;
+	padding: 200px 10px;
 	// filter: grayscale(100%);
 }
 
@@ -54,10 +54,9 @@ $promo-offset: 50px;
 
 .portfolio-promo-hgroup {
 	text-align: center;
-	background-color: rgba(255,255,255,0.6);
+	background-color: #FFF;
 	border: 4px solid #fff;
-	padding: 60px 20px;
-	@include trans(.15s);
+	padding: 60px;
 	width: 50%;
 	margin: 0 auto;
 	// .portfolio-promo:nth-child(odd) &{
@@ -67,9 +66,6 @@ $promo-offset: 50px;
 	// 	@include absolute($promo-offset $promo-offset $promo-offset n);
 	// }
 	// text-shadow: 1px 1px 1px rgba(0,0,0,.3);
-	&:hover {
-		background: #fff;
-	}
 } //portfolio-top-text
 
 .portfolio-promo-h {
@@ -82,12 +78,12 @@ $promo-offset: 50px;
 .portfolio-promo-kicker {
 	color: #222;
 	position: relative;
-	margin-bottom: 0;
+	margin-bottom: 20px;
 }
 
 .portfolio-promo-deck-p {
 	text-align: center;
-	padding: 30px 0 20px;
+	padding: 0;
 }
 
 
@@ -101,14 +97,14 @@ $promo-offset: 50px;
 	 	margin-left: -25px;
 	 	width: 50px;
 	 	height: 2px;
-		background-color: #222;
+		background-color: currentColor;
 	 }
 	 &:after {
 	 	@include pseudo(n n -3px 50%);
 	 	width: 8px;
 	 	height: 8px;
 		margin-left: -4px;
-		background-color: #222;
+		background-color: currentColor;
 		transform: rotate(45deg);
 		transform-origin: 50% 50%;
 		.portfolio-promo-hgroup:hover & {
