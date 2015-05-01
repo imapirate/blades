@@ -18,7 +18,14 @@
             },
             "preview_size": "thumbnail",
             "library": "all",
-            "return_format": "array"
+            "return_format": "array",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_5085ab5a9c211",
@@ -82,7 +89,30 @@
             },
             "preview_size": "medium",
             "library": "all",
-            "return_format": "id"
+            "return_format": "id",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_5543b72edc867",
+            "label": "Project Spot Color",
+            "name": "project_spot_color",
+            "prefix": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
         }
     ],
     "location": [
@@ -102,5 +132,5 @@
     "hide_on_screen": [
         "custom_fields"
     ],
-    "modified": 1424655469
+    "modified": 1430501212
 }
