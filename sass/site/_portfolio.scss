@@ -28,44 +28,40 @@
 /*	Portfolio Archive				   			 */
 /* ============================================= */
 
-.portfolio-topperMod {
-	// padding: 25px;
+.portfolio-wrapper {
 	background-color: #fff;
+	padding: 50px 50px;
 }
 
-.portfolio-promo {
+.portfolio-topperMod {
+	// padding: 25px;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+$promo-offset: 120px;
+
+.portfolio-promo-big {
 	display: block;
 	position: relative;
-	// margin-bottom: 40px;
-	// height: 70vh;
+	margin-bottom: $promo-offset;
 	background-size: cover;
 	background-position: 50% 50%;
-	background-attachment: fixed;
-	margin-bottom: 500px;
-	padding: 200px 10px;
-	// filter: grayscale(100%);
+	padding: 140px 10px;
 }
 
 .porfolio-tile-wrapper {
 	background-color:#111;
 }
 
-$promo-offset: 50px;
-
 .portfolio-promo-hgroup {
 	text-align: center;
-	background-color: #FFF;
+	background: #fff;
 	border: 4px solid #fff;
-	padding: 60px;
+	padding: 60px 20px;
+	@include trans(.15s);
 	width: 50%;
 	margin: 0 auto;
-	// .portfolio-promo:nth-child(odd) &{
-	// 	@include absolute($promo-offset n $promo-offset $promo-offset);
-	// }
-	// .portfolio-promo:nth-child(even) &{
-	// 	@include absolute($promo-offset $promo-offset $promo-offset n);
-	// }
-	// text-shadow: 1px 1px 1px rgba(0,0,0,.3);
 } //portfolio-top-text
 
 .portfolio-promo-h {
@@ -78,14 +74,14 @@ $promo-offset: 50px;
 .portfolio-promo-kicker {
 	color: #222;
 	position: relative;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
 }
 
 .portfolio-promo-deck-p {
 	text-align: center;
-	padding: 0;
+	font: 300 17px/184% "proxima-nova",Helvetica,Arial,sans-serif;
+	color: #222;
 }
-
 
 .portfolio-promo-detail {
 	display: block;
@@ -139,6 +135,32 @@ $promo-offset: 50px;
 		width: 100%;
 		height: auto;
 	}
+}
+
+
+.small-tease-img {
+	@include size(180px);
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 10px auto;
+}
+
+.portfolio-promo-small {
+	text-align: center;
+	max-width: 400px;
+	margin: 0 auto $promo-offset;
+	display: block;
+}
+
+.portfolio-smallTeaseGrid {
+	max-width: 1000px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.portfolio-smallTeaseGridItem {
+	width: 50%;
+	float: left;
 }
 
 // Portfolio Banner

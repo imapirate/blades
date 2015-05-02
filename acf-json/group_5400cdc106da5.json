@@ -19,14 +19,15 @@
             "post_type": [
                 "portfolio"
             ],
-            "taxonomy": [],
-            "max": 5,
+            "taxonomy": "",
             "filters": [
                 "search",
                 "post_type",
                 "taxonomy"
             ],
-            "elements": [],
+            "elements": "",
+            "min": "",
+            "max": 6,
             "return_format": "object"
         }
     ],
@@ -53,5 +54,5 @@
         "format",
         "send-trackbacks"
     ],
-    "modified": 1424655438
+    "modified": 1430514513
 }
