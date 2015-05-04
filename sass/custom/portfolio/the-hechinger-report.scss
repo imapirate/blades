@@ -1,0 +1,94 @@
+@import "compass/css3";
+@import "hechinger-partials/mixins.scss";
+
+.thr-xray{
+	width: 100%;
+	overflow: auto;
+}
+
+.thr-xray-content{
+	overflow: visible;
+	width: 77%;
+	float: right;
+	@include box-shadow(#DBDBDB -2px 1px 10px);
+}
+
+.thr-xray-item,
+.thr-img-container{	
+	position: relative;
+}
+
+.thr-img-container{
+	width: 100%;
+	overflow: hidden;
+}
+
+.thr-section-img{
+	max-width: 129%;
+}
+
+.thr-zone{
+	position: absolute;
+	right: -100%;
+	width: 100%;
+	margin-top: 2em;
+	// easeInOutExpo
+	@include transition(compact(all 0.8s cubic-bezier(0.895, 0.03, 0.685, 0.22)));
+	img{
+		max-width: 100%;
+	}
+}
+
+.thr-popup{
+	background-color: rgba(1, 1, 1, 0.85);
+	@include border-radius(50%);
+	width: 250px;
+	height: 250px;
+	position: absolute;
+	z-index: 20;
+	left: -10%;
+	@include scale3d(0, 0, 0, false);
+	// easeInBack
+	@include transition(compact(all 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045)));
+	@include respond-to('tablet-vert'){
+		left: -20%;
+	}
+	@include respond-to('desktop'){
+		left: -15%;
+	}
+}
+
+.thr-popup{
+	&:nth-of-type(1){
+		@include respond-to('tablet-vert'){
+			top: 125px;
+		}
+		@include respond-to('desktop'){
+			top: 220px;
+		}
+	}
+}
+
+.thr-popup-content{
+	color: #FFF;
+	font-size: em(14);
+	padding: 4em;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	font-family: "proxima-nova", Helvetica, Arial, sans-serif;	
+	font-weight: 300;	
+}
+
+.is-in-view{
+	.thr-zone{
+		// easeInOutExpo
+		@include transition(compact(all 0.6s cubic-bezier(0.19, 1, 0.22, 1)));
+		right: -15.5%;
+	}
+	.thr-popup{
+		@include scale3d(1, 1, 1, false);
+		// easeOutBack
+		@include transition(compact(all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s));
+	}
+}

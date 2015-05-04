@@ -1,0 +1,26 @@
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}
+
+$breakpoints: (
+  'tablet-vert' : 767px,
+  'tablet-horiz' : 1080px,
+  'laptop' : 1100px,
+  'desktop'  : 1280px,
+) !default;
+ 
+// In `_mixins.scss`
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+ 
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
