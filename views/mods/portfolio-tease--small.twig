@@ -1,15 +1,12 @@
-<div class="portfolio-smallTeaseGridItem">
-  <a class="portfolio-promo portfolio-promo-small" href="{{billboard.permalink}}">
-    {% if billboard.kicker %}
-      <h3 class="h4 portfolio-promo-kicker" >{{billboard.kicker}}</h3>
-    {% endif %}
-    <div class="small-tease-img">
-      <img src="{{billboard.billboard.src|resize(350, 350)}}" alt="{{tile.title|striptags}}">
+<div class="portfolio-teaseGridItem">
+  <a class="portfolio-promo portfolio-promo--small" href="{{billboard.permalink}}">
+    <div class="portfolio-promoImgMod--small">
+      <img src="{{billboard.billboard.src|resize(350, 350)}}" alt="{{tile.title|striptags}}" class="portfolio-promoImg portfolio-promoImg--small">
     </div>
-    <h2 class="h1 portfolio-promo-h">{{ billboard.title }}</h2>
+    <h2 class="portfolio-promoH--small">{{ billboard.title }}</h2>
 
-    <div class="portfolio-promo-deck">
-      <p class="portfolio-promo-deck-p">We’re excited to announce that our friends at The Hechinger Report recently launched a bright new website and brand identity — both designed by Upstatement.</p>
+    <div class="portfolio-promoDeck">
+      <p class="portfolio-promoDeckText">We’re excited to announce that our friends at The Hechinger Report recently launched a bright new website and brand identity — both designed by Upstatement.</p>
     </div>
   </a> <!-- /portfolio-promo -->
 </div>
