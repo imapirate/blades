@@ -15,8 +15,10 @@
 		$fp = new TimberPost(3251);
 		$fp->squares = get_field('squares', $fp->ID);
 		$billboards = array();
+		$billboard_ids = array();
 		foreach($fp->squares as $square){
 			$bb = new TimberPost($square);
+			$billboard_ids[] = $bb->ID;
 			$bb->billboard = new TimberImage($bb->billboard);
 			if (isset($bb->hero_tease)){
 				$bb->hero_tease = new TimberImage($bb->hero_tease);
@@ -25,9 +27,9 @@
 		}
 		$data['billboards'] = $billboards;
 
-		$data['plist'] = Timber::get_posts(array('post_type' => 'portfolio', 'numberposts' => -1, 'post__not_in' => array(4639)));
+		$data['plist'] = Timber::get_posts(array('post_type' => 'portfolio', 'numberposts' => -1, 'post__not_in' => $billboard_ids));
 
-		$data['clients'] = Timber::get_posts(array('post_type' => 'portfolio', 'numberposts' => -1, 'post__not_in' => array(4639)));
+		$data['clients'] = Timber::get_posts(array('post_type' => 'portfolio', 'numberposts' => -1, 'post__not_in' => $billboard_ids));
 		$portfolio_client_names = array();
 		foreach($data['clients'] as $client){
 			$portfolio_client_names[] = $client->client_name;
