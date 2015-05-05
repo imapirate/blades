@@ -25,7 +25,7 @@
 		}
 		$data['billboards'] = $billboards;
 
-		$data['tiles'] = Timber::get_posts(array('post_type' => 'portfolio', 'numberposts' => -1, 'post__not_in' => array(4639)));
+		$data['plist'] = Timber::get_posts(array('post_type' => 'portfolio', 'numberposts' => -1, 'post__not_in' => array(4639)));
 
 		$data['clients'] = Timber::get_posts(array('post_type' => 'portfolio', 'numberposts' => -1, 'post__not_in' => array(4639)));
 		$portfolio_client_names = array();

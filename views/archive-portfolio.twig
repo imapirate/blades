@@ -41,8 +41,8 @@
 
 <div class="project-list--wrapper">
 	<ul class="project-list">
-		{% for tile in tiles | slice(0, 5)  %}
-			{% if tile.thumbnail.src %}
+		{% for item in plist | slice(0, 5)  %}
+			{% if item.thumbnail.src %}
 				{% include 'mods/project-list.twig' %}
 			{% endif %}
 		{% endfor %}
