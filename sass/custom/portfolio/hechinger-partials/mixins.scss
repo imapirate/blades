@@ -5,6 +5,7 @@ $browser-context: 16; // Default
 }
 
 $breakpoints: (
+  'phablet' : '600px',
   'tablet-vert' : 767px,
   'tablet-horiz' : 1080px,
   'laptop' : 1100px,
