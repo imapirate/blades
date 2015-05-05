@@ -482,7 +482,7 @@
 /*	Project list						   		*/
 /* ============================================= */
 
-.project-list--wrapper {
+.project-list__wrapper {
 	padding: 10px;
 	background: linear-gradient(30deg, #EEE, #FFF, #EEE);
 
@@ -496,7 +496,7 @@
 	margin: 0 auto;
 	@include trans;
 
-	&--item {
+	&__item {
 		padding: 10px 0;
 		border-bottom: 1px solid #CCC;
 		color: #1d1d1d;
@@ -504,7 +504,7 @@
 		// @include pie-clearfix;
 	}
 
-	&--img {
+	&__img {
 		float: right;
 		margin: 0 0 0 20px;
 		@include border-radius(200px);
@@ -514,7 +514,7 @@
 		margin-bottom: 10px;
 	}
 
-	.project-listH { //only throwing this in here because type is such a mess right now
+	&__h { //only throwing this in here because type is such a mess right now
 		font-family: $proxima;
 		font-size: 20px;
 		font-weight: bold;
@@ -522,27 +522,28 @@
 	}
 
 	@media(min-width: 640px){
-		&--item {
+		&__item {
 			margin: 0 0 55px 0;
 			min-height: 75px;
 		}	
 
-		.project-listH {
+		&__h {
 			font-size: 28px;
 		}
 	}
 
 	@media(max-width: 640px){
-		&--item {
+		&__item {
 			@include pie-clearfix;
 		}
 
-		&--img {
+		&__img {
 			width: 60px;
 			height: 60px;
 		}
 	}
 }
+
 
 /* ============================================= */
 /*	Portfolio Detail 			 				 */
