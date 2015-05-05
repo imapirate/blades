@@ -1,6 +1,6 @@
 {
     "key": "group_5400cdc106da5",
-    "title": "Homepage Promo",
+    "title": "Promos List",
     "fields": [
         {
             "key": "field_50a27b07bcfd7",
@@ -19,14 +19,14 @@
             "post_type": [
                 "portfolio"
             ],
-            "taxonomy": [],
-            "max": 5,
+            "taxonomy": "",
             "filters": [
                 "search",
                 "post_type",
                 "taxonomy"
             ],
-            "elements": [],
+            "elements": "",
+            "max": "",
             "return_format": "object"
         }
     ],
@@ -53,5 +53,5 @@
         "format",
         "send-trackbacks"
     ],
-    "modified": 1424655438
+    "modified": 1430842726
 }

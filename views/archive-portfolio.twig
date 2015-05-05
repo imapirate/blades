@@ -4,6 +4,7 @@
 <div class="inset">
 	<div class="wrapper">
 		{% for billboard in billboards %}
+		dfasdf
 			{% if billboard == billboards[0] %}
 			<a class="portfolio-promo portfolio-promo-top" href="{{billboard.permalink}}">
 				<div class="portfolio-promo-img">
@@ -41,7 +42,7 @@
 
 <div class="project-list--wrapper">
 	<ul class="project-list">
-		{% for item in plist | slice(0, 5)  %}
+		{% for item in plist %}
 			{% if item.thumbnail.src %}
 				{% include 'mods/project-list.twig' %}
 			{% endif %}
