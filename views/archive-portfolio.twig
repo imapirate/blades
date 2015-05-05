@@ -39,14 +39,14 @@
 {% endif %}
 
 
-<div class="wrapper">
-	<section id="archive-tiles">
-		{% for tile in tiles %}
+<div class="project-list--wrapper">
+	<ul class="project-list">
+		{% for tile in tiles | slice(0, 5)  %}
 			{% if tile.thumbnail.src %}
-				{% include 'mods/tile.twig' %}
+				{% include 'mods/project-list.twig' %}
 			{% endif %}
 		{% endfor %}
-	</section>
+	</ul>
 </div>
 
 <section id="archive-clients" class="inset">

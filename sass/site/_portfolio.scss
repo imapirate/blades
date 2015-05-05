@@ -479,6 +479,72 @@
 
 
 /* ============================================= */
+/*	Project list						   		*/
+/* ============================================= */
+
+.project-list--wrapper {
+	padding: 10px;
+	background: linear-gradient(30deg, #EEE, #FFF, #EEE);
+
+	@media(min-width: 640px){
+		padding: 20px 0 40px 0;
+	}
+}
+
+.project-list {
+	max-width: 600px;
+	margin: 0 auto;
+	@include trans;
+
+	&--item {
+		padding: 10px 0;
+		border-bottom: 1px solid #CCC;
+		color: #1d1d1d;
+		margin: 0 0 20px 0;
+		// @include pie-clearfix;
+	}
+
+	&--img {
+		float: right;
+		margin: 0 0 0 20px;
+		@include border-radius(200px);
+	}
+
+	.txt {
+		margin-bottom: 10px;
+	}
+
+	.project-listH { //only throwing this in here because type is such a mess right now
+		font-family: $proxima;
+		font-size: 20px;
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+
+	@media(min-width: 640px){
+		&--item {
+			margin: 0 0 55px 0;
+			min-height: 75px;
+		}	
+
+		.project-listH {
+			font-size: 28px;
+		}
+	}
+
+	@media(max-width: 640px){
+		&--item {
+			@include pie-clearfix;
+		}
+
+		&--img {
+			width: 60px;
+			height: 60px;
+		}
+	}
+}
+
+/* ============================================= */
 /*	Portfolio Detail 			 				 */
 /* ============================================= */
 
