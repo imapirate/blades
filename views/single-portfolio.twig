@@ -97,7 +97,7 @@
 	</article>
 </div> <!-- /content-wrapper -->
 
-<div class="project-list--wrapper">
+<div class="project-list__wrapper">
 	<ul class="project-list">
 		{% for item in plist | slice(0, 5)  %}
 			{% if item.thumbnail.src %}
@@ -106,4 +106,5 @@
 		{% endfor %}
 	</ul>
 </div>
+
 {% endblock %}
