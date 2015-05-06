@@ -26,14 +26,14 @@
 {% endif %}
 
 
-<div class="wrapper">
-	<section id="archive-tiles">
-		{% for tile in tiles %}
-			{% if tile.thumbnail.src %}
-				{% include 'mods/tile.twig' %}
+<div class="project-list__wrapper">
+	<ul class="project-list">
+		{% for item in plist %}
+			{% if item.thumbnail.src %}
+				{% include 'mods/project-list.twig' %}
 			{% endif %}
 		{% endfor %}
-	</section>
+	</ul>
 </div>
 
 <section id="archive-clients" class="inset">

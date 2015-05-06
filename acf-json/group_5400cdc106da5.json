@@ -1,6 +1,6 @@
 {
     "key": "group_5400cdc106da5",
-    "title": "Homepage Promo",
+    "title": "Promos List",
     "fields": [
         {
             "key": "field_50a27b07bcfd7",
@@ -27,7 +27,7 @@
             ],
             "elements": "",
             "min": "",
-            "max": 6,
+            "max": "",
             "return_format": "object"
         }
     ],
@@ -54,5 +54,9 @@
         "format",
         "send-trackbacks"
     ],
+<<<<<<< HEAD
     "modified": 1430514513
+=======
+    "modified": 1430842726
+>>>>>>> portfolio-downpage
 }
