@@ -253,7 +253,9 @@
 
 .project-list__wrapper {
 	padding: 10px 0;
-	background: linear-gradient(30deg, #EEE, #FFF, #EEE);
+	background: linear-gradient(100deg, rgb(255,240,212), rgb(226,167,212));
+	// background-color: #E7E7FF;
+	background-attachment: fixed;
 
 	@media(min-width: 640px){
 		padding: 40px 0;
@@ -288,6 +290,7 @@
 		float: right;
 		margin: 0 0 0 20px;
 		@include border-radius(200px);
+		border: 5px solid rgba(255,255,255,.5);
 	}
 
 	&__h { 
@@ -299,10 +302,7 @@
 
 	@media(min-width: 640px){
 		&__item {
-			transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-			-moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-			-o-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-			-webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+			transition: all 0.1s cubic-bezier(0.4, 0, 0.1, 1);
 
 			transform: scale(.98);
 			border-bottom: 0;
@@ -316,7 +316,7 @@
 		&__overline {
 			padding: 24px 0 8px 0;
 			position: relative;
-			margin: 0 0 8px 0;
+			margin: 0 0 14px 0;
 
 			&::after {
 			  	display: block;
@@ -325,12 +325,13 @@
 			  	bottom: 0;
 			  	left: 0;
 			  	right: 120px;
-			  	border-bottom: 1px solid #CCC;
+			  	border-bottom: 1px solid rgba(0,0,0,.1);
 			}
 		}
 
 		&__h {
-			font-size: 28px;
+			font-size: 33px;
+			line-height: 30px;
 		}
 	}
 
