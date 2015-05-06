@@ -1,0 +1,33 @@
+/* ============================================= */
+/*	Calls to Action		   			 */
+/* ============================================= */
+
+.cta {
+	border-top: 5px solid #EEE;
+	padding-top: 40px;
+	margin: 20px 0;
+
+	&__h {
+		font-family: $proxima;
+		color: #000;
+		font-size: 28px;
+		text-align: center;
+		margin: 0 0 20px 0;
+	}
+
+	&__p {
+		font-family: $proxima;
+		color: #3d3d3d;
+		font-size: 16px;
+		text-align: center;
+		font-weight: normal;
+		margin: 0 0 30px 0;
+	}
+
+	&__buttons {
+		text-align: center;
+		.btn-large {
+			line-height: 40px;
+		}
+	}
+}
