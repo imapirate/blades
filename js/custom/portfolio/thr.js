@@ -11,28 +11,29 @@
 			statsNum = 0,
 			currentInView;
 
+		// set up a data index for each x-ray item
 		$thrXrayItem.each(function(i){
 			$(this).attr('data-index', i);
 		});
 
-		function scrollPosition(i){
+		function scrollPosition(){
 			$thrXrayItem.each(function(){
 				winHeight = $(window).height();
-
+				// the rate items come into view is calculated within the data tag
 				if($(window).scrollTop() >= $(this).offset().top + ($(this).height() / $(this).data('view-interval')) - winHeight){
 					$(this).addClass('is-in-view');
 					if($(this).data('index') == 2 && $(this).hasClass('is-in-view')){
 						setTimeout(function(){ statsCounter(); }, 400);
 					}
 				}
-
 			});
 		}
 
 		function mobileScrollPosition(){
 			$thrXrayItem.each(function(){
-				if($(window).scrollTop() >= $(this).offset().top + $(this).height() - $(window).height() && $(window).scrollTop() <= $(this).offset().top + $(this).height()){
-					$(this).addClass('is-in-view');
+				// the rate items come into view is calculated within the data tag
+				if($(window).scrollTop() >= $(this).offset().top + ($(this).height() / $(this).data('mobile-view-interval')) - $(window).height() && $(window).scrollTop() <= $(this).offset().top + $(this).height()){
+					$(this).addClass('is-in-view popup-is-in-view');
 					currentInView = $(this).data('index');
 					if($(this).data('index') == 2 && $(this).hasClass('is-in-view')){
 						setTimeout(function(){ statsCounter(); }, 400);
@@ -40,7 +41,7 @@
 				}
 				else{
 					if($(this).data('index') !== currentInView){
-						$(this).removeClass('is-in-view');
+						$(this).removeClass('popup-is-in-view');
 					}
 					currentInView = null;
 				}
