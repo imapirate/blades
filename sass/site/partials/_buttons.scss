@@ -3,7 +3,7 @@
 	background-color: $link;
 	color: #FFF;
 	padding: 10px;
-	@include border-radius(8px);
+	@include border-radius(30px);
 
 	&:hover {
 		background-color: darken($link, 10%);

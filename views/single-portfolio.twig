@@ -100,14 +100,14 @@
 	
 </div> <!-- /content-wrapper -->
 
-<div class="project-list__wrapper">
-	<ul class="project-list">
-		{% for item in plist | slice(0, 5)  %}
-			{% if item.thumbnail.src %}
-				{% include 'mods/project-list.twig' %}
-			{% endif %}
+<div class="portfolio-top__wrapper">
+	<div class="portfolio-top">
+		<div class="portfolio-teaseGrid--small">
+		{% for billboard in billboards %}
+			{% include 'mods/portfolio-tease--small.twig' %}
 		{% endfor %}
-	</ul>
+		</div>
+	</div>
 </div>
 
 {% endblock %}

@@ -15,7 +15,7 @@
 			{% include 'mods/portfolio-tease--big.twig' %}
 		{% endfor %}
 		<div class="portfolio-teaseGrid--small">
-		{% for billboard in billboards | slice(4,2)  %}
+		{% for billboard in billboards | slice(4,4)  %}
 			{% include 'mods/portfolio-tease--small.twig' %}
 		{% endfor %}
 		</div>
@@ -24,16 +24,6 @@
 </div><!-- inset -->
 {% endif %}
 
-
-<div class="project-list__wrapper">
-	<ul class="project-list">
-		{% for item in plist %}
-			{% if item.thumbnail.src %}
-				{% include 'mods/project-list.twig' %}
-			{% endif %}
-		{% endfor %}
-	</ul>
-</div>
 
 <section id="archive-clients" class="inset">
 	<div class="wrapper">
