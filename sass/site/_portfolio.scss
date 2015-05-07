@@ -25,10 +25,10 @@
 
 
 /* ============================================= */
-/*	Portfolio Archive				   			 */
+/*	Portfolio Topper				   			 */
 /* ============================================= */
 
-.portfolio-wrapper {
+.portfolio-top__wrapper {
 	background-color: #fff;
 	padding: 20px;
 	@include mq(500px) {
@@ -36,7 +36,7 @@
 	}
 }
 
-.portfolio-topperMod {
+.portfolio-top {
 	// padding: 25px;
 	max-width: 1400px;
 	margin: 0 auto;
@@ -44,7 +44,7 @@
 
 $promo-offset: 80px;
 
-.portfolio-promo--big {
+.portfolio-promo__big {
 	display: block;
 	position: relative;
 	margin-bottom: 40px;
@@ -53,7 +53,7 @@ $promo-offset: 80px;
 	padding: 150px 0 0;
 	@include mq(500px) {
 		background-size: cover;
-		padding: 100px 10px;
+		padding: 100px;
 		margin-bottom: $promo-offset;
 	}
 }
@@ -62,44 +62,85 @@ $promo-offset: 80px;
 	background-color:#111;
 }
 
-.portfolio-promoHgroup {
+.portfolio-promo__hgroup {
 	text-align: center;
-	background: #fff;
+	background: rgba(0,0,0,.75);
 	padding: 20px 0 0;
 	@include trans(.15s);
 	width: 100%;
 	margin: 0 auto;
-	max-width: 500px;
+	// max-width: 500px;
 	@include mq(500px) {
 		padding: 60px 20px;
 	}
 } //portfolio-top-text
 
-.portfolio-promoH {
-	line-height: 100%;
-	margin-bottom: 0;
-	color: #222;
-	font-weight: 700;
-	font-size: 32px;
-	font-family: $proxima;
-	@include mq(700px) {
-		font-size: 42px;
+.portfolio-promo-client {
+	position: absolute;
+	height: 180px;
+	width: 180px;
+	background-color: #EEE;
+	@include border-radius(180px);
+	transform: scale(.1);
+	opacity: 0;
+	transition: all 0.1s cubic-bezier(0.4, 0, 0.1, 1);
+}
+
+.portfolio-teaseGridItem:hover {
+	.portfolio-promo-client {
+		transform: scale(1);
+		opacity: 1;
 	}
 }
 
-.portfolio-promo-kicker {
+.portfolio-promo-client-p {
+	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
+}
+
+.portfolio-promo__h {
+	line-height: 100%;
+	margin-bottom: 0;
+	color: #FFF;
+	font-weight: 700;
+	font-size: 75px;
+	font-family: $proxima;
+	@include mq(700px) {
+		font-size: 75px;
+	}
+}
+
+.portfolio-promo__kicker {
 	color: #222;
 	position: relative;
 	margin-bottom: 15px;
+	font-family: $proxima;
+	font-size: 20px;
 }
 
-.portfolio-promoDeckText {
+.portfolio-promo {
+	&__big {
+		> .portfolio-promo__kicker {
+			font-size: 20px;
+		}
+	}
+	&__small {
+		> .portfolio-promo__kicker {
+			font-size: 16px;
+		}
+	}
+}
+
+.portfolio-promo__p {
+	margin: 0 auto;
+	max-width: 600px;
 	text-align: center;
 	font: 300 17px/184% "proxima-nova",Helvetica,Arial,sans-serif;
 	color: #222;
 }
 
-.portfolio-promoDetail {
+.portfolio-promo__detail {
 	display: block;
 	position: relative;
 	padding-bottom: 17px;
@@ -107,19 +148,10 @@ $promo-offset: 80px;
 	 &:before {
 	 	@include pseudo(n n 0 50%);
 	 	margin-left: -25px;
-	 	width: 50px;
-	 	height: 2px;
-		background-color: currentColor;
+	 	width: 70px;
+	 	height: 5px;
+		background-color: #FFF;
 	 }
-	 &:after {
-	 	@include pseudo(n n -3px 50%);
-	 	width: 8px;
-	 	height: 8px;
-		margin-left: -4px;
-		background-color: currentColor;
-		transform: rotate(45deg);
-		transform-origin: 50% 50%;
-	}
 	@include mq(500px) {
 		padding-bottom: 32px;
 		margin-bottom: 30px;
@@ -128,17 +160,17 @@ $promo-offset: 80px;
 
 
 @media (max-width: 600px) {
-	.portfolio-promo .portfolio-promoH {
+	.portfolio-promo .portfolio-promo__h {
 		font-size: 23px;
 	}
-	.portfolio-promo-kicker {
+	.portfolio-promo__kicker {
 		font-size: 11px;
 	}
 } //mq
 
 
 .portfolio-promo-btm {
-	.portfolio-promo-kicker {
+	.portfolio-promo__kicker {
 		font-size: 11px;
 	}
 	@media(min-width:768px){
@@ -159,7 +191,7 @@ $promo-offset: 80px;
 	margin: 0 auto 20px;
 }
 
-.portfolio-promo--small {
+.portfolio-promo__small {
 	text-align: center;
 	max-width: 400px;
 	margin: 0 auto 40px;
@@ -183,7 +215,7 @@ $promo-offset: 80px;
 }
 
 
-.portfolio-promoH--small {
+.portfolio-promo-h__small {
 	line-height: 100%;
 	margin-bottom: 10px;
 	color: #222;

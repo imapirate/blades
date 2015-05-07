@@ -132,7 +132,14 @@
                                     },
                                     "preview_size": "thumbnail",
                                     "library": "all",
-                                    "return_format": "array"
+                                    "return_format": "array",
+                                    "min_width": 0,
+                                    "min_height": 0,
+                                    "min_size": 0,
+                                    "max_width": 0,
+                                    "max_height": 0,
+                                    "max_size": 0,
+                                    "mime_types": ""
                                 },
                                 {
                                     "key": "field_507c6e5e38916",
@@ -202,7 +209,11 @@
                                 "viz-tablet": "Tablet",
                                 "viz-desktop": "Desktop"
                             },
-                            "default_value": "viz-mobile\r\nviz-tablet\r\nviz-desktop",
+                            "default_value": {
+                                "viz-mobile": "viz-mobile",
+                                "viz-tablet": "viz-tablet",
+                                "viz-desktop": "viz-desktop"
+                            },
                             "layout": "horizontal"
                         }
                     ],
@@ -390,5 +401,5 @@
         "the_content",
         "custom_fields"
     ],
-    "modified": 1424655456
+    "modified": 1430944695
 }
