@@ -381,6 +381,28 @@
                     "max": ""
                 }
             ]
+        },
+        {
+            "key": "field_554cf4584e7c3",
+            "label": "Tease Description",
+            "name": "tease_description",
+            "prefix": "",
+            "type": "textarea",
+            "instructions": "Write a brief description of the project here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "wpautop",
+            "readonly": 0,
+            "disabled": 0
         }
     ],
     "location": [
@@ -401,5 +423,5 @@
         "the_content",
         "custom_fields"
     ],
-    "modified": 1430944695
+    "modified": 1431106690
 }
