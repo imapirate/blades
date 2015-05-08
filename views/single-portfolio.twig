@@ -100,10 +100,10 @@
 	
 </div> <!-- /content-wrapper -->
 
-<div class="portfolio-top__wrapper">
-	<div class="portfolio-top">
-		<div class="portfolio-teaseGrid--small">
-		{% for billboard in billboards %}
+<div class="inset-light">
+	<div class="portfolio-tease-grid__wrapper">
+		<div class="portfolio-tease-grid--three">
+		{% for billboard in billboards | slice(0,6) %}
 			{% include 'mods/portfolio-tease--small.twig' %}
 		{% endfor %}
 		</div>

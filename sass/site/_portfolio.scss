@@ -1,5 +1,7 @@
 
-//  Portfolio Typography - also uses styles from _typography.scss
+/* ============================================= */
+/*	Portfolio Details				   			 */
+/* ============================================= */
 
 .portfolio-overline-mod {
 	text-align: center;
@@ -25,7 +27,7 @@
 
 
 /* ============================================= */
-/*	Portfolio Topper				   			 */
+/*	Portfolio Teases				   			 */
 /* ============================================= */
 
 .portfolio-top__wrapper {
@@ -44,7 +46,7 @@
 
 $promo-offset: 80px;
 
-.portfolio-promo__big {
+.portfolio-promo--big {
 	display: block;
 	position: relative;
 	margin-bottom: 40px;
@@ -75,34 +77,11 @@ $promo-offset: 80px;
 	}
 } //portfolio-top-text
 
-.portfolio-promo-client {
-	position: absolute;
-	height: 180px;
-	width: 180px;
-	background-color: rgba(0,0,0,.75);
-	@include border-radius(180px);
-	transform: scale(.5);
-	opacity: 0;
-	transition: all 0.1s cubic-bezier(0.4, 0, 0.1, 1);
-}
-
-.portfolio-teaseGridItem:hover {
-	.portfolio-promo-client {
-		transform: scale(1);
-		opacity: 1;
-	}
-}
-
-.portfolio-promo-client-p {
-	position: relative;
-  	top: 50%;
-  	transform: translateY(-50%);
-}
 
 .portfolio-promo__h {
 	line-height: 100%;
 	margin-bottom: 0;
-	color: #FFF;
+	color: rgba(0,0,0,.8);
 	font-weight: 700;
 	font-size: 75px;
 	font-family: $proxima;
@@ -112,7 +91,7 @@ $promo-offset: 80px;
 }
 
 .portfolio-promo__kicker {
-	color: #222;
+	color: rgba(0,0,0,.4);
 	position: relative;
 	margin-bottom: 15px;
 	font-family: $proxima;
@@ -150,7 +129,7 @@ $promo-offset: 80px;
 	 	margin-left: -25px;
 	 	width: 70px;
 	 	height: 5px;
-		background-color: #FFF;
+		background-color: rgba(0,0,0,.2);
 	 }
 	@include mq(500px) {
 		padding-bottom: 32px;
@@ -191,7 +170,7 @@ $promo-offset: 80px;
 	margin: 0 auto 20px;
 }
 
-.portfolio-promo__small {
+.portfolio-promo--small {
 	text-align: center;
 	max-width: 400px;
 	margin: 0 auto 40px;
@@ -201,21 +180,68 @@ $promo-offset: 80px;
 	}
 }
 
-.portfolio-teaseGrid--small {
+
+// Portfolio teases
+
+.portfolio-tease-grid__wrapper {
+	padding: 20px 0;
+	max-width: 900px;
+	margin: 0 auto;
+}
+
+.portfolio-tease-grid--small {
 	max-width: 1000px;
 	margin: 0 auto;
 	overflow: hidden;
 }
 
-.portfolio-teaseGridItem {
+.portfolio-tease-grid--two {
 	@include mq(700px) {
-	width: 50%;
-	float: left;
+		@include media-grid(2, 0px);
 	}
 }
 
+.portfolio-tease-grid--three {
+	@include mq(700px, 899px) {
+		@include media-grid(2, 40px);
+	}
+	@include mq(900px) {
+		@include media-grid(3, 30px);
+	}
+}
 
-.portfolio-promo-h__small {
+.portfolio-tease-grid__item {
+	@extend .media-block;
+}
+
+.portfolio-promo-client {
+	position: absolute;
+	height: 180px;
+	width: 180px;
+	background-color: rgba(0,0,0,.75);
+	@include border-radius(180px);
+	transform: scale(.5);
+	opacity: 0;
+	transition: all 0.1s cubic-bezier(0.4, 0, 0.1, 1);
+}
+
+.portfolio-tease-grid__item:hover {
+	.portfolio-promo-client {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.portfolio-promo-client-p {
+	position: relative;
+  	top: 50%;
+  	transform: translateY(-50%);
+}
+
+
+
+
+.portfolio-promo-h--small {
 	line-height: 100%;
 	margin-bottom: 10px;
 	color: #222;
