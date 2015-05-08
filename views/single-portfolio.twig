@@ -45,6 +45,7 @@
 			</div>
 
 			<div class="portfolio-content">
+			
 				{% for layout in post.get_layouts %}
 					{% if layout.images %}
 						<div class="portfolio-image-set image-count-{{layout.images|length}} {{layout.size|length ? layout.size}}">

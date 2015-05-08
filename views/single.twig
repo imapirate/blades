@@ -30,6 +30,8 @@
 					<h1 class="article-h1">{{post.title}}</h1>
 					<h2 class="subline">{{post.subline}}</h2>
 					<p class="blog-author"><span>By</span> {{ post.author.name }} <span>&bull;</span> {{ post.display_date }}</p>
+
+					{% include 'mods/quickshare.twig' %}
 				</div>
 				<article class="article-txt">
 					{{post.content}}
@@ -51,10 +53,10 @@
 					</div> <!-- /read-more-mod -->
 				{% endfor %}
 			</section>
-			<div class="blog-quickshare qs-container">
-			    <a class="qs-twitter qs-link" data-qs-service="twitter">Twitter</a>
-			    <a class="qs-facebook qs-link" data-qs-service="facebook-share">Facebook</a>
-			</div>
+
+			{% include 'mods/cta-hire-us.twig' %}
+
+
 			<div class="comments-mod">
 				<section class="respond">
 					<h3 class="h2 respond-h">
@@ -64,6 +66,7 @@
 				</section>
 			</div> <!-- /comments-mod -->
 		</article>
+
 	</div> <!-- /wrapper -->
 </div> <!-- /content-wrapper -->
 
