@@ -93,7 +93,7 @@ $promo-offset: 80px;
 	margin-bottom: 15px;
 	 &:before {
 	 	@include pseudo(n n 0 50%);
-	 	margin-left: -25px;
+	 	margin-left: -35px;
 	 	width: 70px;
 	 	height: 5px;
 		background-color: rgba(0,0,0,.2);
