@@ -39,7 +39,6 @@
 }
 
 .portfolio-top {
-	// padding: 25px;
 	max-width: 1400px;
 	margin: 0 auto;
 }
@@ -60,10 +59,6 @@ $promo-offset: 80px;
 	}
 }
 
-.porfolio-tile-wrapper {
-	background-color:#111;
-}
-
 .portfolio-promo__hgroup {
 	text-align: center;
 	background: rgba(0,0,0,.75);
@@ -71,7 +66,6 @@ $promo-offset: 80px;
 	@include trans(.15s);
 	width: 100%;
 	margin: 0 auto;
-	// max-width: 500px;
 	@include mq(500px) {
 		padding: 60px 20px;
 	}
@@ -253,7 +247,9 @@ $promo-offset: 80px;
 	}
 }
 
+
 // Portfolio Banner
+
 .portfolio-banner {
 	position: relative;
 	margin-top: -20px;
@@ -411,79 +407,6 @@ $promo-offset: 80px;
 
 	@media(min-width: 750px){
 		@include column-count(4);
-	}
-}
-
-/* ============================================= */
-/*	Project list						   		*/
-/* ============================================= */
-
-.project-list__wrapper {
-	padding: 10px 0;
-	background-color: #E3F3F5;
-	background-attachment: fixed;
-
-	@media(min-width: 640px){
-		padding: 40px 0;
-	}
-}
-
-.project-list {
-	max-width: 600px;
-	margin: 0 auto;
-	text-align: center;
-
-	&__overline {
-		font: 100 16px/150% $proxima;
-		margin: 0 0 20px 0;
-		color: #666;
-		margin: 0 0 8px 0;
-	}
-
-	&__item {
-		color: #1d1d1d;
-		margin: 0 0 10px 0;
-		overflow: hidden;
-		border-bottom: 1px solid #CCC;
-
-		&.last {
-			border-bottom: 0;
-		}
-	}
-
-	&__h { 
-		font-family: $proxima;
-		font-size: 20px;
-		font-weight: bold;
-		margin-bottom: 10px;
-	}
-
-	@media(min-width: 640px){
-		&__item {
-			border-bottom: 0;
-
-			&:hover {
-				.project-list__overline {
-					opacity: 1;
-				}
-			}
-		}
-
-		&__overline {
-			padding: 24px 0 8px 0;
-			position: relative;
-			margin: 0 0 14px 0;
-
-			&::after {
-				@include pseudo(n 0 0 0);
-			  	border-bottom: 1px solid rgba(0,0,0,.1);
-			}
-		}
-
-		&__h {
-			font-size: 33px;
-			line-height: 30px;
-		}
 	}
 }
 
