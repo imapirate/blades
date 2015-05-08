@@ -1,9 +1,8 @@
 @import "compass/css3";
 @import "hechinger-partials/mixins.scss";
+@import "hechinger-partials/variables.scss";
 
-$popupOpacity: 0.9;
-$hechingerBlue: #00aeef;
-$hechingerYellow: #ffcf31;
+// Xray
 
 .thr-xray{
 	width: 100%;
@@ -13,21 +12,22 @@ $hechingerYellow: #ffcf31;
 .thr-xray-content{
 	overflow: visible;
 	width: 95%;
-	margin: 0 auto;
+	float: right;
+	margin: 0;
 	@include box-shadow(#DBDBDB -2px 1px 10px);
 	
 	// breakpoints
 	@include respond-to('tablet-vert'){
 		width: 85%;
-		float: right;
-		margin: 0;
 	}
 	@include respond-to('tablet-horiz'){
 		width: 77%;
 	}
 }
 
-.thr-xray-item,
+// Images
+
+.thr-xray-item,	
 .thr-img-container{	
 	position: relative;
 }
@@ -39,13 +39,31 @@ $hechingerYellow: #ffcf31;
 }
 
 .thr-img-section{
-	max-width: 100%;
+	max-width: 129%;
 	
 	// breakpoints
+	// @include respond-to('tablet-vert'){
+	// 	max-width: 129%;
+	// }
+}
+
+// Icons
+
+.thr-icon{
+	position: relative;
+	width: 32px;
+	display: table-cell;
+	vertical-align: middle;
+
+	// breakpoints
 	@include respond-to('tablet-vert'){
-		max-width: 129%;
+		display: block;
+		margin: 0 auto;	
+		padding-bottom: 15px;
 	}
 }
+
+// Zone
 
 .thr-zone{
 	position: absolute;
@@ -142,6 +160,7 @@ $hechingerYellow: #ffcf31;
 	// breakpoints
 	@include respond-to('tablet-horiz'){
 		display: table-cell;
+		vertical-align: middle;
 		font-size: 80px;
 		font-size: 119px;
 		width: auto;
@@ -173,9 +192,12 @@ $hechingerYellow: #ffcf31;
 	width: 100%;
 	right: -50%;
 	z-index: 1;
+
 	// easeInOutQuart
 	@include transition(compact(all 0.6s cubic-bezier(0.77, 0, 0.175, 1)));
 }
+
+// Popup Bubble
 
 .thr-popup{
 	background-color: rgba(1, 1, 1, $popupOpacity);
@@ -186,17 +208,21 @@ $hechingerYellow: #ffcf31;
 	right: 0;
 	z-index: 20;
 	opacity: 0;
+	display: table;
+
 	// easeInOutQuart
 	@include transition(compact(opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1)));
 	
 	// breakpoints
 	@include respond-to('tablet-vert'){
+		display: block;
 		opacity: 1;
 		display: block;
 		width: 215px;
 		height: 215px;
 		left: -15%;
 		position: absolute;
+
 		// easeInBack
 		@include transition(compact(transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045)));
 		@include scale3d(0, 0, 0, false);
@@ -224,14 +250,29 @@ $hechingerYellow: #ffcf31;
 		top: 50%;
 		margin-top: -20px;
 		display: none;
+
+		// breakpoints
 		@include respond-to('phablet'){
 			display: block;
 		}
 	}
 }
 
+.thr-popup-text{
+	display: table-cell;
+	padding-top: 0;
+	padding-left: 15px;
+
+	// breakpoints
+		@include respond-to('tablet-vert'){
+			padding: 0;
+			display: block;
+	}
+}
+
 .thr-xray-item:nth-of-type(1){
 	.thr-popup{
+
 		// breakpoints
 		@include respond-to('tablet-vert'){
 			top: 140px;
@@ -244,6 +285,7 @@ $hechingerYellow: #ffcf31;
 
 .thr-xray-item:nth-of-type(3){
 	.thr-popup{
+
 		// breakpoints
 		@include respond-to('tablet-vert'){
 			top: 200px;
@@ -256,6 +298,7 @@ $hechingerYellow: #ffcf31;
 
 .thr-xray-item:nth-of-type(5){
 	.thr-popup{
+
 		// breakpoints
 		@include respond-to('tablet-vert'){
 			top: 240px;
@@ -286,25 +329,10 @@ $hechingerYellow: #ffcf31;
 	}
 }
 
-.thr-img-rounded{
-	max-width: 500px;
-	width: 70%;
-	display: block;
-	border-radius: 50%;
-	margin: 30px auto;
-	@include scale3d(0.7, 0.7, 0.7, false);
-	// easeOutExpo
-	@include transition(compact(transform 2s cubic-bezier(0.19, 1, 0.22, 1)));
-	
-	// breakpoints
-	@include respond-to('tablet-horiz'){
-		width: 100%;
-	}
-}
-
 .popup-is-in-view{
 	.thr-popup{
 		opacity: 1;
+
 		// easeInOutQuart
 		@include transition(compact(opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1)));
 	}
@@ -312,6 +340,7 @@ $hechingerYellow: #ffcf31;
 
 .is-in-view{
 	.thr-zone{
+
 		// easeInOutExpo
 		@include transition(compact(all 0.6s cubic-bezier(0.19, 1, 0.22, 1)));
 		right: -11.5%;
@@ -320,6 +349,7 @@ $hechingerYellow: #ffcf31;
 		}
 	}
 	.thr-popup{
+
 		// breakpoints
 		@include respond-to('tablet-vert'){
 			// easeOutBack
@@ -329,11 +359,13 @@ $hechingerYellow: #ffcf31;
 	}
 	.thr-img-rounded{
 		@include scale3d(1, 1, 1, false);
+
 		// easeOutExpo
 		@include transition(compact(transform 2s cubic-bezier(0.19, 1, 0.22, 1)));
 	}
 	.thr-yellow-bar{
 		right: -19%;
+
 		// easeInOutQuart
 		@include transition(compact(all 0.6s cubic-bezier(0.77, 0, 0.175, 1)));
 	}

@@ -6,6 +6,7 @@
 			$thrXrayItem = $('.thr-xray-item'),
 			$thrPopupContent = $('.thr-popup-content'),
 			$thrStats = $('.thr-stats'),
+			$thrIcon = $('.thr-icon img'),
 			inViewHeight,
 			winHeight,
 			statsNum = 0,
@@ -15,6 +16,8 @@
 		$thrXrayItem.each(function(i){
 			$(this).attr('data-index', i);
 		});
+
+		// Scroll position non-mobile
 
 		function scrollPosition(){
 			$thrXrayItem.each(function(){
@@ -29,12 +32,16 @@
 			});
 		}
 
+		// Scroll position as mobile
+
 		function mobileScrollPosition(){
 			$thrXrayItem.each(function(){
 				// the rate items come into view is calculated within the data tag
-				if($(window).scrollTop() >= $(this).offset().top + ($(this).height() / $(this).data('mobile-view-interval')) - $(window).height() && $(window).scrollTop() <= $(this).offset().top + $(this).height()){
-					$(this).addClass('is-in-view popup-is-in-view');
+				if($(window).scrollTop() >= $(this).offset().top + ($(this).height()) - $(window).height() && $(window).scrollTop() <= $(this).offset().top + $(this).height()){
+
 					currentInView = $(this).data('index');
+					$(this).addClass('is-in-view popup-is-in-view');
+
 					if($(this).data('index') == 2 && $(this).hasClass('is-in-view')){
 						setTimeout(function(){ statsCounter(); }, 400);
 					}
@@ -48,6 +55,8 @@
 			});
 		}
 
+		// Stats counter
+
 		function statsCounter(){
 			$thrStats.text(statsNum);
 			timeout = setTimeout(function(){ 
@@ -59,6 +68,17 @@
 					clearTimeout(timeout);
 				} 
 			}, 10);
+		}
+
+		// Test for svg support
+
+		if(!Modernizr.svg){
+			$thrIcon.each(function(){
+				if($(this).attr('src').match(/.*\.svg$/)){
+					console.log('test');
+					$(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
+				}
+			});
 		}
 
 		$(window).scroll(function(){
