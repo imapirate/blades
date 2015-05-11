@@ -1,6 +1,7 @@
 @import "compass/css3";
 @import "hechinger-partials/mixins.scss";
 @import "hechinger-partials/variables.scss";
+@import "hechinger-partials/fonts.scss";
 
 // Xray
 
@@ -133,9 +134,11 @@
 	color: #000000;
 	text-decoration: underline;
 	letter-spacing: -1px;
+	font-weight: 700;
+
 	position: relative;
 	padding-right: 0.85em;
-	font-weight: 700;
+	
 	&:after{
 		position: absolute;
 		display: inline-block;
@@ -149,10 +152,12 @@
 }
 
 .thr-stats{
-	color: $hechingerBlue;
 	font-size: 40px;
 	font-weight: bold;
 	font-family: Tiempos, Georgia, Times, serif;
+	letter-spacing: -1px;
+	color: $hechingerBlue;
+	
 	width: 100%;
 	padding-right: 20px;
 	min-width: 270px;
@@ -195,6 +200,66 @@
 
 	// easeInOutQuart
 	@include transition(compact(all 0.6s cubic-bezier(0.77, 0, 0.175, 1)));
+}
+
+// Newsletter box
+
+.thr-newsletter-box{
+	position: absolute;
+	max-width: 92%;
+	right: -6%;
+	background-color: #FFF;
+	padding: 2%
+}
+
+.thr-newsletter-box-img{
+	max-width: 100%;
+}
+
+// Newsletter box border animation
+
+.border-box-container{
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.border-box--horiz,
+.border-box--vert{
+	background-color: #000;
+	position: absolute;
+}
+
+.border-box--horiz{
+	height: 8px;
+	right: 0;
+
+	@include transition(compact(all 1.2s cubic-bezier(0.77, 0, 0.175, 1)));
+}
+
+.bottom{
+	bottom: 0;
+}
+
+.border-box--horiz{
+	width: 0%;
+	.is-in-view &{
+		width: 100%;
+	}
+}
+
+.border-box--vert{
+	height: 50px;
+	width: 8px;
+
+	@include transition(compact(all 1.2s cubic-bezier(0.77, 0, 0.175, 1) 1.1s));
+}
+
+.border-box--vert{
+	height: 0;
+	.is-in-view &{
+		height: 50px;
+	}
 }
 
 // Popup Bubble

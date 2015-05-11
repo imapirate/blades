@@ -9,8 +9,7 @@
 			$thrIcon = $('.thr-icon img'),
 			inViewHeight,
 			winHeight,
-			statsNum = 0,
-			currentInView;
+			statsNum = 0;
 
 		// set up a data index for each x-ray item
 		$thrXrayItem.each(function(i){
@@ -23,7 +22,7 @@
 			$thrXrayItem.each(function(){
 				winHeight = $(window).height();
 				// the rate items come into view is calculated within the data tag
-				if($(window).scrollTop() >= $(this).offset().top + ($(this).height() / $(this).data('view-interval')) - winHeight){
+				if($(window).scrollTop() >= ($(this).offset().top + $(this).height()) - winHeight){
 					$(this).addClass('is-in-view');
 					if($(this).data('index') == 2 && $(this).hasClass('is-in-view')){
 						setTimeout(function(){ statsCounter(); }, 400);
@@ -34,25 +33,58 @@
 
 		// Scroll position as mobile
 
-		function mobileScrollPosition(){
-			$thrXrayItem.each(function(){
-				// the rate items come into view is calculated within the data tag
-				if($(window).scrollTop() >= $(this).offset().top + ($(this).height()) - $(window).height() && $(window).scrollTop() <= $(this).offset().top + $(this).height()){
+		// function mobileScrollPosition(){
+		// 	$thrXrayItem.each(function(){
+		// 		// the rate items come into view is calculated within the data tag
+		// 		if($(window).scrollTop() >= $(this).offset().top + ($(this).height() / 2) - $(window).height() && $(window).scrollTop() <= $(this).offset().top + $(this).height()){
+		// 			$(this).addClass('is-in-view popup-is-in-view');
+		// 			currentInView = $(this).data('index');
+		// 			if($(this).data('index') == 2 && $(this).hasClass('is-in-view')){
+		// 				setTimeout(function(){ statsCounter(); }, 400);
+		// 			}
+		// 		}
+		// 		else{
+		// 			if($(this).data('index') !== currentInView){
+		// 				$(this).removeClass('popup-is-in-view');
+		// 			}
+		// 			currentInView = null;
+		// 		}
+		// 	});
+		// }
 
-					currentInView = $(this).data('index');
-					$(this).addClass('is-in-view popup-is-in-view');
+		var prevInView = 0,
+			currentInView = 0,
+			nextInView = 0;
+
+		function mobileScrollPosition(){
+
+			$thrXrayItem.each(function(i){
+				// the rate items come into view is calculated within the data tag
+				if($(window).scrollTop() >= $(this).offset().top + $(this).height() - $(window).height()){
+					// console.log(i);
+					
+					currentInView = $thrXrayItem.eq(i).data('index');
+					$thrXrayItem.eq(currentInView).addClass('is-in-view popup-is-in-view');
+
+					if($thrXrayItem.eq(i).data('index') >= 1){
+						$thrXrayItem.eq(currentInView - 1).removeClass('popup-is-in-view');
+					}
+
+					if($thrXrayItem.eq(i).data('index') <= $thrXrayItem.length){
+						$thrXrayItem.eq(currentInView + 1).removeClass('popup-is-in-view');
+					}
 
 					if($(this).data('index') == 2 && $(this).hasClass('is-in-view')){
 						setTimeout(function(){ statsCounter(); }, 400);
 					}
+
 				}
-				else{
-					if($(this).data('index') !== currentInView){
-						$(this).removeClass('popup-is-in-view');
-					}
-					currentInView = null;
-				}
+				
 			});
+
+				if ($(window).scrollTop() <= $thrXray.offset().top - $(window).height() || $(window).scrollTop() >= ($thrXray.offset().top + $thrXray.height())) {
+    				$thrXrayItem.removeClass('popup-is-in-view');
+			}
 		}
 
 		// Stats counter
@@ -72,11 +104,10 @@
 
 		// Test for svg support
 
-		if(!Modernizr.svg){
+		if(Modernizr.svg){
 			$thrIcon.each(function(){
 				if($(this).attr('src').match(/.*\.svg$/)){
-					console.log('test');
-					$(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
+					$(this).attr('src').replace('.svg', '.png');
 				}
 			});
 		}
