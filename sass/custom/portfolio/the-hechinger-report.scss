@@ -207,7 +207,7 @@
 	background-color: $hechingerYellow;
 	height: 50%;
 	width: 100%;
-	right: -50%;
+	right: -60%;
 	z-index: 1;
 
 	// easeInOutQuart
@@ -241,13 +241,14 @@
 	width: 100%;
 }
 
-.thr-box-border--horiz,
-.thr-box-border--vert{
+.thr-box-border--horiz-top,
+.thr-box-border--horiz-bottom{
 	background-color: #000;
 	position: absolute;
 }
 
-.thr-box-border--horiz{
+.thr-box-border--horiz-top,
+.thr-box-border--horiz-bottom{
 	height: 5px;
 	right: 0;
 
@@ -259,30 +260,40 @@
 	}
 }
 
-.bottom{
-	bottom: 0;
-}
-
-.thr-box-border--horiz{
+.thr-box-border--horiz-top,
+.thr-box-border--horiz-bottom{
 	width: 0%;
 	.is-in-view &{
 		width: 100%;
 	}
 }
 
-.thr-box-border--vert{
-	width: 5px;
+.thr-box-border--horiz-top,
+.thr-box-border--horiz-bottom{
+	&:before{
+		position: absolute;
+		content: "";
+		background: #000;
 
-	@include transition(compact(all 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.7s));
+		width: 5px;
 
-	// breakpoints
-	@include respond-to('tablet-horiz'){
-		height: 50px;
-		width: 8px;
+		@include transition(compact(all 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.7s));
+
+		// breakpoints
+		@include respond-to('tablet-horiz'){
+			height: 50px;
+			width: 8px;
+		}
 	}
 }
 
-.thr-box-border--vert{
+.thr-box-border--horiz-bottom,
+.thr-box-border--horiz-bottom:before{
+	bottom: 0;
+}
+
+.thr-box-border--horiz-top:before,
+.thr-box-border--horiz-bottom:before{
 	height: 0;
 	.is-in-view &{
 		height: 35px;
@@ -460,7 +471,6 @@
 
 		// easeInOutQuart
 		@include transition(compact(opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1)));
-	
 	}
 }
 

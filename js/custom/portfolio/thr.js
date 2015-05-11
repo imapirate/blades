@@ -113,7 +113,7 @@
 		}
 
 		$(window).scroll(function(){
-			if($(window).width() > 768){
+			if($(window).width() > 767){
 				scrollPosition();
 			}
 			else{
