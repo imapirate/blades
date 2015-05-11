@@ -22,7 +22,7 @@
 			$thrXrayItem.each(function(){
 				winHeight = $(window).height();
 				// the rate items come into view is calculated within the data tag
-				if($(window).scrollTop() >= ($(this).offset().top + $(this).height()) - winHeight){
+				if($(window).scrollTop() >= $(this).offset().top + ($(this).height() / $(this).data('view-interval')) - winHeight){
 					$(this).addClass('is-in-view');
 					if($(this).data('index') == 2 && $(this).hasClass('is-in-view')){
 						setTimeout(function(){ statsCounter(); }, 400);
@@ -75,6 +75,7 @@
 					}
 
 					if($(this).data('index') == 2 && $(this).hasClass('is-in-view')){
+						console.log('test');
 						setTimeout(function(){ statsCounter(); }, 400);
 					}
 
@@ -82,8 +83,8 @@
 				
 			});
 
-				if ($(window).scrollTop() <= $thrXray.offset().top - $(window).height() || $(window).scrollTop() >= ($thrXray.offset().top + $thrXray.height())) {
-    				$thrXrayItem.removeClass('popup-is-in-view');
+			if($(window).scrollTop() <= $thrXray.offset().top - $(window).height() || $(window).scrollTop() >= ($thrXray.offset().top + $thrXray.height())) {
+    			$thrXrayItem.removeClass('popup-is-in-view');
 			}
 		}
 

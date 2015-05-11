@@ -53,8 +53,7 @@
 .thr-icon{
 	position: relative;
 	width: 32px;
-	display: table-cell;
-	vertical-align: middle;
+	max-height: 38px;
 
 	// breakpoints
 	@include respond-to('tablet-vert'){
@@ -62,6 +61,11 @@
 		margin: 0 auto;	
 		padding-bottom: 15px;
 	}
+}
+
+.thr-icon-img{
+	width: 100%;
+	height: auto;
 }
 
 // Zone
@@ -98,7 +102,6 @@
 }
 
 .thr-text-bd{
-	padding-left: 20px;
 	width: 100%;
 	
 	// breakpoints
@@ -114,12 +117,13 @@
 }
 
 .thr-special-h{
-	position: relative;
 	font-family: Tiempos, Georgia, Times, serif;
 	font-size: 16px;
 	line-height: 1.194444444;
 	font-weight: 900;
 	color: #00aeef;
+
+	position: relative;
 	margin-bottom: 5px;
 
 	// breakpoints
@@ -140,13 +144,14 @@
 	padding-right: 0.85em;
 	
 	&:after{
+		font-size: 0.85em;
+		font-weight: 700;
+		line-height: 1.6;
+		color: inherit;
+
 		position: absolute;
 		display: inline-block;
 		content: '→';
-		color: inherit;
-		font-size: 0.85em;
-		line-height: 1.6;
-		font-weight: 700;
 		padding-left: 10px;
 	}
 }
@@ -209,7 +214,7 @@
 	max-width: 92%;
 	right: -6%;
 	background-color: #FFF;
-	padding: 2%
+	padding: 2%;
 }
 
 .thr-newsletter-box-img{
@@ -218,47 +223,62 @@
 
 // Newsletter box border animation
 
-.border-box-container{
+.thr-box-border-container{
 	position: relative;
 	height: 100%;
 	width: 100%;
 }
 
-.border-box--horiz,
-.border-box--vert{
+.thr-box-border--horiz,
+.thr-box-border--vert{
 	background-color: #000;
 	position: absolute;
 }
 
-.border-box--horiz{
-	height: 8px;
+.thr-box-border--horiz{
+	height: 5px;
 	right: 0;
 
-	@include transition(compact(all 1.2s cubic-bezier(0.77, 0, 0.175, 1)));
+	@include transition(compact(all 0.6s cubic-bezier(0.23, 1, 0.32, 1)));
+
+	// breakpoints
+	@include respond-to('tablet-vert'){
+		height: 8px;
+	}
 }
 
 .bottom{
 	bottom: 0;
 }
 
-.border-box--horiz{
+.thr-box-border--horiz{
 	width: 0%;
 	.is-in-view &{
 		width: 100%;
 	}
 }
 
-.border-box--vert{
-	height: 50px;
-	width: 8px;
+.thr-box-border--vert{
+	width: 5px;
 
-	@include transition(compact(all 1.2s cubic-bezier(0.77, 0, 0.175, 1) 1.1s));
+	@include transition(compact(all 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.7s));
+
+	// breakpoints
+	@include respond-to('tablet-vert'){
+		height: 50px;
+		width: 8px;
+	}
 }
 
-.border-box--vert{
+.thr-box-border--vert{
 	height: 0;
 	.is-in-view &{
-		height: 50px;
+		height: 35px;
+
+		// breakpoints
+		@include respond-to('tablet-vert'){
+			height: 50px;
+		}
 	}
 }
 
@@ -277,7 +297,9 @@
 
 	// easeInOutQuart
 	@include transition(compact(opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1)));
-	
+}
+
+.thr-popup{
 	// breakpoints
 	@include respond-to('tablet-vert'){
 		display: block;
@@ -296,6 +318,7 @@
 	@include respond-to('tablet-horiz'){
 		width: 250px;
 		height: 250px;
+		left: -28%;
 	}
 	@include respond-to('desktop'){
 		left: -15%;
@@ -305,16 +328,17 @@
 .thr-popup{
 	&:after{
 		content: "";
-		width: 0;
-		height: 0;
-		border-style: solid;
-		border-width: 20px 0 20px 30px;
-		border-color: transparent transparent transparent rgba(1, 1, 1, $popupOpacity);
 		position: absolute;
 		right: -28px;
 		top: 50%;
 		margin-top: -20px;
+		width: 0;
+		height: 0;
 		display: none;
+		
+		border-style: solid;
+		border-width: 20px 0 20px 30px;
+		border-color: transparent transparent transparent rgba(1, 1, 1, $popupOpacity);
 
 		// breakpoints
 		@include respond-to('phablet'){
@@ -377,14 +401,16 @@
 .thr-popup-content{
 	color: #FFF;
 	font-size: 12px;
-	padding: 2em 4em;
 	font-family: "proxima-nova", Helvetica, Arial, sans-serif;	
 	font-weight: 300;
+
+	padding: 2em 4em;
 	
 	// breakpoints
 	@include respond-to('tablet-vert'){
-		padding: 0 4em;
 		text-align: center;	
+
+		padding: 0 4em;
 		position: relative;
 		top: 50%;
 		@include transform(translateY(-50%));
@@ -394,12 +420,21 @@
 	}
 }
 
+// In view animations
+
 .popup-is-in-view{
 	.thr-popup{
 		opacity: 1;
 
 		// easeInOutQuart
 		@include transition(compact(opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1)));
+	
+	}
+}
+
+.thr-xray-item:nth-of-type(6){
+	.thr-popup{
+		transition-delay: 0.9s;
 	}
 }
 
