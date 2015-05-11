@@ -7,14 +7,15 @@
 
 .thr-xray{
 	width: 100%;
-	overflow: auto;
+	position: relative;
+	@include clearfix;
 }
 
 .thr-xray-content{
-	overflow: visible;
 	width: 95%;
 	float: right;
 	margin: 0;
+	position: relative;
 	@include box-shadow(#DBDBDB -2px 1px 10px);
 	
 	// breakpoints
@@ -40,12 +41,12 @@
 }
 
 .thr-img-section{
-	max-width: 129%;
+	max-width: 200%;
 	
 	// breakpoints
-	// @include respond-to('tablet-vert'){
-	// 	max-width: 129%;
-	// }
+	@include respond-to('tablet-vert'){
+		max-width: 129%;
+	}
 }
 
 // Icons
@@ -54,12 +55,13 @@
 	position: relative;
 	width: 32px;
 	max-height: 38px;
+	display: table-cell;
+	vertical-align: middle;
 
 	// breakpoints
 	@include respond-to('tablet-vert'){
 		display: block;
 		margin: 0 auto;	
-		padding-bottom: 15px;
 	}
 }
 
@@ -92,19 +94,23 @@
 
 .thr-special-stats{
 	display: table;
-	margin: 20px 0 20px 15%;
+	margin: 20px 0 20px 23%;
+	max-width: 200%;
 
 	// breakpoints
 	@include respond-to('tablet-vert'){
-		max-width: 100%;
+		max-width: 125%;
 		margin: 40px 0 40px 15%;
 	}
 }
 
 .thr-text-bd{
-	width: 100%;
+	width: 200%;
 	
 	// breakpoints
+	@include respond-to('tablet-vert'){
+		width: 125%;
+	}
 	@include respond-to('tablet-horiz'){
 		display: table-cell;
 		vertical-align: middle;
@@ -157,23 +163,24 @@
 }
 
 .thr-stats{
-	font-size: 40px;
 	font-weight: bold;
 	font-family: Tiempos, Georgia, Times, serif;
 	letter-spacing: -1px;
 	color: $hechingerBlue;
+	font-size: 80px;
 	
 	width: 100%;
 	padding-right: 20px;
-	min-width: 270px;
+	min-width: 170px;
 	
+	display: table-cell;
+	vertical-align: middle;
+	width: auto;
+
 	// breakpoints
-	@include respond-to('tablet-horiz'){
-		display: table-cell;
-		vertical-align: middle;
-		font-size: 80px;
+	@include respond-to('tablet-vert'){
 		font-size: 119px;
-		width: auto;
+		min-width: 270px;
 	}
 }
 
@@ -218,7 +225,12 @@
 }
 
 .thr-newsletter-box-img{
-	max-width: 100%;
+	max-width: 200%;
+
+	// breakpoints
+	@include respond-to('tablet-vert'){
+		max-width: 100%;
+	}
 }
 
 // Newsletter box border animation
@@ -240,9 +252,9 @@
 	right: 0;
 
 	@include transition(compact(all 0.6s cubic-bezier(0.23, 1, 0.32, 1)));
-
+	
 	// breakpoints
-	@include respond-to('tablet-vert'){
+	@include respond-to('tablet-horiz'){
 		height: 8px;
 	}
 }
@@ -264,7 +276,7 @@
 	@include transition(compact(all 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.7s));
 
 	// breakpoints
-	@include respond-to('tablet-vert'){
+	@include respond-to('tablet-horiz'){
 		height: 50px;
 		width: 8px;
 	}
@@ -349,12 +361,18 @@
 .thr-popup-text{
 	display: table-cell;
 	padding-top: 0;
-	padding-left: 15px;
+	padding-left: 20px;
+	font-size: 14px;
 
 	// breakpoints
-		@include respond-to('tablet-vert'){
-			padding: 0;
-			display: block;
+	@include respond-to('tablet-vert'){
+		padding: 0;
+		display: block;
+		font-size: 12px;
+		padding-top: 15px;
+	}
+	@include respond-to('tablet-horiz'){
+		font-size: 13px;
 	}
 }
 
@@ -373,10 +391,9 @@
 
 .thr-xray-item:nth-of-type(3){
 	.thr-popup{
-
 		// breakpoints
 		@include respond-to('tablet-vert'){
-			top: 200px;
+			top: 76px;
 		}
 		@include respond-to('desktop'){
 			top: 250px;
@@ -386,13 +403,29 @@
 
 .thr-xray-item:nth-of-type(5){
 	.thr-popup{
-
 		// breakpoints
 		@include respond-to('tablet-vert'){
+			top: -10px;
+		}
+		@include respond-to('tablet-horiz'){
 			top: 240px;
 		}
 		@include respond-to('desktop'){
 			top: 180px;
+		}
+	}
+}
+
+.thr-xray-item:nth-of-type(6){
+	.thr-popup{
+		transition-delay: 0.9s;
+		
+		// breakpoints
+		@include respond-to('tablet-vert'){
+			top: -129px;
+		}
+		@include respond-to('tablet-horiz'){
+			top: 0;
 		}
 	}
 }
@@ -403,7 +436,7 @@
 	font-family: $proxima, Helvetica, Arial, sans-serif;	
 	font-weight: 300;
 
-	padding: 2em 4em;
+	padding: 2em 2em;
 	
 	// breakpoints
 	@include respond-to('tablet-vert'){
@@ -428,12 +461,6 @@
 		// easeInOutQuart
 		@include transition(compact(opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1)));
 	
-	}
-}
-
-.thr-xray-item:nth-of-type(6){
-	.thr-popup{
-		transition-delay: 0.9s;
 	}
 }
 

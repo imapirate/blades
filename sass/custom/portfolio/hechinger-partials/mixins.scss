@@ -25,3 +25,11 @@ $breakpoints: (
         + "Please make sure it is defined in `$breakpoints` map.";
   }
 }
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

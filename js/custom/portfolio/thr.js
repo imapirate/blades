@@ -60,7 +60,7 @@
 
 			$thrXrayItem.each(function(i){
 				// the rate items come into view is calculated within the data tag
-				if($(window).scrollTop() >= $(this).offset().top + $(this).height() - $(window).height()){
+				if($(window).scrollTop() >= $(this).offset().top + ($(this).height() / 2)  - $(window).height()){
 					// console.log(i);
 					
 					currentInView = $thrXrayItem.eq(i).data('index');
