@@ -75,7 +75,6 @@
 					}
 
 					if($(this).data('index') == 2 && $(this).hasClass('is-in-view')){
-						console.log('test');
 						setTimeout(function(){ statsCounter(); }, 400);
 					}
 

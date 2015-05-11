@@ -1,4 +1,4 @@
-@import "compass/css3";
+@import "custom/custom-base";
 @import "hechinger-partials/mixins.scss";
 @import "hechinger-partials/variables.scss";
 @import "hechinger-partials/fonts.scss";
@@ -304,7 +304,6 @@
 	@include respond-to('tablet-vert'){
 		display: block;
 		opacity: 1;
-		display: block;
 		width: 215px;
 		height: 215px;
 		left: -15%;
@@ -401,7 +400,7 @@
 .thr-popup-content{
 	color: #FFF;
 	font-size: 12px;
-	font-family: "proxima-nova", Helvetica, Arial, sans-serif;	
+	font-family: $proxima, Helvetica, Arial, sans-serif;	
 	font-weight: 300;
 
 	padding: 2em 4em;
@@ -440,7 +439,6 @@
 
 .is-in-view{
 	.thr-zone{
-
 		// easeInOutExpo
 		@include transition(compact(all 0.6s cubic-bezier(0.19, 1, 0.22, 1)));
 		right: -11.5%;
