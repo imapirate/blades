@@ -21,7 +21,6 @@
 		function scrollPosition(){
 			$thrXrayItem.each(function(){
 				winHeight = $(window).height();
-				// the rate items come into view is calculated within the data tag
 				if($(window).scrollTop() >= $(this).offset().top + ($(this).height() / $(this).data('view-interval')) - winHeight){
 					$(this).addClass('is-in-view');
 					if($(this).data('index') == 2 && $(this).hasClass('is-in-view')){
@@ -59,7 +58,6 @@
 		function mobileScrollPosition(){
 
 			$thrXrayItem.each(function(i){
-				// the rate items come into view is calculated within the data tag
 				if($(window).scrollTop() >= $(this).offset().top + ($(this).height() / 2)  - $(window).height()){
 					// console.log(i);
 					
