@@ -7,6 +7,8 @@
 			$thrPopupContent = $('.thr-popup-content'),
 			$thrStats = $('.thr-stats'),
 			$thrIcon = $('.thr-icon img'),
+			controller = new ScrollMagic.Controller(),
+			isAndroid,
 			statsNum = 0;
 
 		// Test for android native browser
@@ -25,7 +27,7 @@
 			return false;
 		}
 
-		var isAndroid = isAndroidBrowser();
+		isAndroid = isAndroidBrowser();
 
 		// Stats counter
 
@@ -51,9 +53,6 @@
 				}
 			});
 		}
-
-		// Init controller
-		var controller = new ScrollMagic.Controller();
 
 		var scrollHandler = function(){
 
