@@ -21,6 +21,7 @@
     "QuickShare": "*",
     "jqueryui": "~1.10.4",
     "hammerjs": "~1.1.2",
-    "jquery-hammerjs": "~1.1.2"
+    "jquery-hammerjs": "~1.1.2",
+    "scrollmagic": "~2.0.5"
   }
 }

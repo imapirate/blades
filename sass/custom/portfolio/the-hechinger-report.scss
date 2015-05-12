@@ -56,7 +56,7 @@
 	width: 32px;
 	max-height: 38px;
 	display: table-cell;
-	vertical-align: middle;
+	vertical-align: top;
 
 	// breakpoints
 	@include respond-to('tablet-vert'){
@@ -76,9 +76,9 @@
 	position: absolute;
 	right: -100%;
 	width: 100%;
+
 	// easeInOutExpo
 	@include transition(compact(all 0.8s cubic-bezier(0.895, 0.03, 0.685, 0.22)));
-	
 }
 
 .thr-zone-img{
@@ -176,7 +176,7 @@
 }
 
 .thr-stats{
-	font-weight: bold;
+	font-weight: 900;
 	font-family: Tiempos, Georgia, Times, serif;
 	letter-spacing: -1px;
 	color: $hechingerBlue;
@@ -345,9 +345,11 @@
 		position: absolute;
 
 		// easeInBack
-		@include transition(compact(transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045)));
 		@include scale3d(0, 0, 0, false);
 		@include border-radius(50%);
+	}
+	@include respond-to('tablet-vert'){
+		@include transition(compact(transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s));
 	}
 	@include respond-to('tablet-horiz'){
 		width: 250px;
@@ -401,7 +403,6 @@
 
 .thr-xray-item:nth-of-type(1){
 	.thr-popup{
-
 		// breakpoints
 		@include respond-to('tablet-vert'){
 			top: 140px;
@@ -441,11 +442,10 @@
 
 .thr-xray-item:nth-of-type(6){
 	.thr-popup{
-		transition-delay: 0.9s;
-		
 		// breakpoints
 		@include respond-to('tablet-vert'){
 			top: -129px;
+			transition-delay: 0.9s;
 		}
 		@include respond-to('tablet-horiz'){
 			top: 0;
@@ -456,7 +456,7 @@
 .thr-popup-content{
 	color: #FFF;
 	font-size: 12px;
-	font-family: $proxima, Helvetica, Arial, sans-serif;	
+	font-family: $proxima;	
 	font-weight: 300;
 
 	padding: 2em 2em;
@@ -477,12 +477,9 @@
 
 // In view animations
 
-.popup-is-in-view{
+.is-in-view--toggle{
 	.thr-popup{
 		opacity: 1;
-
-		// easeInOutQuart
-		@include transition(compact(opacity 0.8s cubic-bezier(0.77, 0, 0.175, 1)));
 	}
 }
 
@@ -496,11 +493,9 @@
 		}
 	}
 	.thr-popup{
-
 		// breakpoints
-		@include respond-to('tablet-vert'){
+		@include respond-to('tablet-vert'){	
 			// easeOutBack
-			@include transition(compact(transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s));
 			@include scale3d(1, 1, 1, false);
 		}
 	}
