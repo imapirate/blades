@@ -106,14 +106,17 @@
 
 .thr-text-bd{
 	width: 400%;
+	display: table-cell;
+	vertical-align: middle;
 	
 	// breakpoints
+	@include respond-to('phablet'){
+		width: 125%;
+	}
 	@include respond-to('tablet-vert'){
 		width: 125%;
 	}
 	@include respond-to('tablet-horiz'){
-		display: table-cell;
-		vertical-align: middle;
 		padding-left: 20px;
 		// width: 55%;
 	}
@@ -136,6 +139,10 @@
 	@include respond-to('tablet-vert'){
 		font-size: 24px;
 	}
+
+	@include respond-to('desktop-large'){
+		font-size: 40px;
+	}
 }
 
 .thr-special-link{
@@ -148,6 +155,12 @@
 
 	position: relative;
 	padding-right: 0.85em;
+	width: 400%;
+
+	// breakpoints
+	@include respond-to('desktop-large'){
+		font-size: 32px;
+	}
 	
 	&:after{
 		font-size: 0.85em;
