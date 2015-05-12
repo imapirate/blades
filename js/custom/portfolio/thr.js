@@ -11,10 +11,31 @@
 			winHeight,
 			statsNum = 0;
 
-		// set up a data index for each x-ray item
+		// Set up a data index for each x-ray item
+
 		$thrXrayItem.each(function(i){
 			$(this).attr('data-index', i);
 		});
+
+		// Test for android native browser
+
+		var isAndroid;
+
+		function isAndroidBrowser() {
+			var objAgent = navigator.userAgent;
+			var objfullVersion  = ''+parseFloat(navigator.appVersion);
+
+			if ((objOffsetVersion=objAgent.indexOf("Chrome")) != -1) {
+				objfullVersion = objAgent.substring(objOffsetVersion+7, objOffsetVersion+9);
+				if (objfullVersion < 19) {
+				    isAndroid = true;
+				}
+			}
+
+			isAndroid = false;
+		}
+
+		isAndroidBrowser();
 
 		// Scroll position non-mobile
 
@@ -22,7 +43,9 @@
 			$thrXrayItem.each(function(){
 				winHeight = $(window).height();
 				if($(window).scrollTop() >= $(this).offset().top + ($(this).height() / $(this).data('view-interval')) - winHeight){
+
 					$(this).addClass('is-in-view');
+					
 					if($(this).data('index') == 2 && $(this).hasClass('is-in-view')){
 						setTimeout(function(){ statsCounter(); }, 400);
 					}
@@ -30,33 +53,11 @@
 			});
 		}
 
-		// Scroll position as mobile
-
-		// function mobileScrollPosition(){
-		// 	$thrXrayItem.each(function(){
-		// 		// the rate items come into view is calculated within the data tag
-		// 		if($(window).scrollTop() >= $(this).offset().top + ($(this).height() / 2) - $(window).height() && $(window).scrollTop() <= $(this).offset().top + $(this).height()){
-		// 			$(this).addClass('is-in-view popup-is-in-view');
-		// 			currentInView = $(this).data('index');
-		// 			if($(this).data('index') == 2 && $(this).hasClass('is-in-view')){
-		// 				setTimeout(function(){ statsCounter(); }, 400);
-		// 			}
-		// 		}
-		// 		else{
-		// 			if($(this).data('index') !== currentInView){
-		// 				$(this).removeClass('popup-is-in-view');
-		// 			}
-		// 			currentInView = null;
-		// 		}
-		// 	});
-		// }
-
 		var prevInView = 0,
 			currentInView = 0,
 			nextInView = 0;
 
 		function mobileScrollPosition(){
-
 			$thrXrayItem.each(function(i){
 				if($(window).scrollTop() >= $(this).offset().top + ($(this).height() / 2)  - $(window).height()){
 					// console.log(i);
@@ -77,7 +78,6 @@
 					}
 
 				}
-				
 			});
 
 			if($(window).scrollTop() <= $thrXray.offset().top - $(window).height() || $(window).scrollTop() >= ($thrXray.offset().top + $thrXray.height())) {
@@ -102,10 +102,10 @@
 
 		// Test for svg support
 
-		if(Modernizr.svg){
+		if(!Modernizr.svg || isAndroid){
 			$thrIcon.each(function(){
 				if($(this).attr('src').match(/.*\.svg$/)){
-					$(this).attr('src').replace('.svg', '.png');
+					$(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
 				}
 			});
 		}
@@ -121,4 +121,3 @@
 
 	});
 })(jQuery);
-
