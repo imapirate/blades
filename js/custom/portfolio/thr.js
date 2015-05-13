@@ -1,4 +1,4 @@
-(function($) {
+;(function($) {
 
 	$(document).ready(function() {
 
@@ -17,7 +17,7 @@
 			var objAgent = navigator.userAgent;
 			var objfullVersion  = ''+parseFloat(navigator.appVersion);
 
-			if ((objOffsetVersion=objAgent.indexOf("Chrome")) != -1) {
+			if ((objOffsetVersion=objAgent.indexOf('Chrome')) != -1) {
 				objfullVersion = objAgent.substring(objOffsetVersion+7, objOffsetVersion+9);
 				if (objfullVersion < 19) {
 				    return true;
