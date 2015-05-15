@@ -65,7 +65,9 @@
                     "post_type": [
                         "portfolio"
                     ],
-                    "taxonomy": [],
+                    "taxonomy": [
+
+                    ],
                     "allow_null": 1,
                     "multiple": 0,
                     "return_format": "object",
@@ -91,7 +93,9 @@
             "post_type": [
                 "highlight"
             ],
-            "taxonomy": [],
+            "taxonomy": [
+
+            ],
             "filters": [
                 "search"
             ],
@@ -118,6 +122,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430448028,
+    "modified": 1431656268,
     "local": "json"
 }

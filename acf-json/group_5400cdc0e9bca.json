@@ -41,7 +41,9 @@
                     "post_type": [
                         "portfolio"
                     ],
-                    "taxonomy": [],
+                    "taxonomy": [
+
+                    ],
                     "filters": [
                         "search"
                     ],
@@ -116,6 +118,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430448028,
+    "modified": 1431656268,
     "local": "json"
 }

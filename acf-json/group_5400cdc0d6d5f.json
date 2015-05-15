@@ -64,14 +64,18 @@
             "post_type": [
                 "promos"
             ],
-            "taxonomy": [],
+            "taxonomy": [
+
+            ],
             "max": "",
             "filters": [
                 "search",
                 "post_type",
                 "taxonomy"
             ],
-            "elements": [],
+            "elements": [
+
+            ],
             "return_format": "object",
             "min": 0
         }
@@ -91,6 +95,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430448028,
+    "modified": 1431656267,
     "local": "json"
 }
