@@ -70,13 +70,13 @@
 			<h3 class="pmHome-sectionHeadline">Applications</h3>
 
 			<div class="l-pmHome-section--apps">
-				{% for app in post.get_field('applications') %}
+				{% for app in post.get_applications %}
 					{% if not app.private or (app.private and user.ID) %}
 					<div class="pmHome-gridBlock">
 						<a class="pmHome-apps-link" href="{{app.url}}" target="_blank">
 							<div class="pmHome-apps-logo pmHome-apps-logo--{{app.service}}"></div>
 							<div class="pmHome-apps-textMod">
-								<h4 class="pmHome-apps-title">{{app.service}}</h4>
+								<h4 class="pmHome-apps-title">{{app.service_label}}</h4>
 								<p class="pmHome-apps-text">Design files (InDesign, Photoshop, etc.), related assets, shared media</p>
 							</div> <!-- /pmHome-apps-textMod -->
 						</a>
@@ -113,23 +113,24 @@
 
 			<ul class="pmHome-link-list">
 				{% for item in (post.get_field('important_links')) %}
-
-				<li class="pmHome-link-item">
-					{% if item.acf_fc_layout == 'file' %}
-						{% set file = item.file %}
-						<a class="pmHome-link-item-link" href="{{file.url}}" target="_blank">
-							<div class="pmHome-link-item-logo pmHome-link-item-logo--pdf"></div>
-							<p class="pmHome-link-item-date">{{file.date|date('M j')}}</p>
-							<h5 class="pmHome-link-item-title">{{file.title | default(file.filename)}}</h5>
-						</a>
-					{% else %}
-						<a class="pmHome-link-item-link" href="{{item.link}}" target="_blank">
-							<div class="pmHome-link-item-logo pmHome-link-item-logo--pdf"></div>
-							<p class="pmHome-link-item-date">{{item.date|date('M j')}}</p>
-							<h5 class="pmHome-link-item-title">{{item.title | default(item.link)}}</h5>
-						</a>
+					{% if not item.private or (item.private and user.ID) %}
+					<li class="pmHome-link-item">
+						{% if item.acf_fc_layout == 'file' %}
+							{% set file = item.file %}
+							<a class="pmHome-link-item-link" href="{{file.url}}" target="_blank">
+								<div class="pmHome-link-item-logo pmHome-link-item-logo--pdf"></div>
+								<p class="pmHome-link-item-date">{{file.date|date('M j')}}</p>
+								<h5 class="pmHome-link-item-title">{{file.title | default(file.filename)}}</h5>
+							</a>
+						{% else %}
+							<a class="pmHome-link-item-link" href="{{item.link}}" target="_blank">
+								<div class="pmHome-link-item-logo pmHome-link-item-logo--pdf"></div>
+								<p class="pmHome-link-item-date">{{item.date|date('M j')}}</p>
+								<h5 class="pmHome-link-item-title">{{item.title | default(item.link)}}</h5>
+							</a>
+						{% endif %}
+					</li>
 					{% endif %}
-				</li>
 				{% endfor %}
 				{#
 				<li class="pmHome-link-item">
