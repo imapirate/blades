@@ -4,11 +4,15 @@
     "type":"wordpress-theme",
     "authors": [
         {
-            "name": "thetmkay",
-            "email": "george@upstatement.com"
+            "name": "Jared Novack",
+            "email": "jared@upstatement.com"
         }
     ],
     "repositories": [
+    	{
+            "type":"composer",
+            "url":"http://wpackagist.org"
+        },
         {
             "type": "package",
             "package": {
@@ -33,10 +37,22 @@
             }
         }
     ],
-    "minimum-stability": "stable",
-    "require": {
-        "composer/installers": "~1.0",
+    "minimum-stability": "dev",
+    "extra": {
+        "installer-paths": {
+            "../../plugins/{$name}/": ["wpackagist-plugin/*", "type:wordpress-plugin", "advanced-custom-fields/advanced-custom-fields-pro"]
+        }
+    },
+	"require": {
+		"composer/installers": "~1.0",
         "tan-tan-kanarek/github-php-client" : "*",
-        "advanced-custom-fields/advanced-custom-fields-pro": "*"
-    }
+        "advanced-custom-fields/advanced-custom-fields-pro": "*",
+		"wpackagist-plugin/timber-library":"0.21.*",
+		"wpackagist-plugin/jigsaw":"0.*",
+		"advanced-custom-fields/advanced-custom-fields-pro": "*"
+	},
+	"require-dev" : {
+		"wpackagist-plugin/debug-bar" : "0.8.*",
+		"wpackagist-plugin/debug-bar-timber" : "*"
+	}
 }
