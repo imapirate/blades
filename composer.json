@@ -49,6 +49,7 @@
         "advanced-custom-fields/advanced-custom-fields-pro": "*",
 		"wpackagist-plugin/timber-library":"0.21.*",
 		"wpackagist-plugin/jigsaw":"0.*",
+		"jarednova/mesh" : "*",
 		"advanced-custom-fields/advanced-custom-fields-pro": "*"
 	},
 	"require-dev" : {
