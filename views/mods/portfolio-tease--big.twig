@@ -1,0 +1,14 @@
+<a class="portfolio-promo portfolio-promo--big" href="{{billboard.permalink}}" style="background-image: url({{billboard.billboard.src|default(billboard.billboard.src)}})">
+  <div class="portfolio-promo__hgroup" style="background-color:{{billboard.project_spot_color}};">
+	<h4 class="portfolio-promo__kicker">{{ billboard.client_name }}</h4>
+    <h2 class="portfolio-promo__h">{{ billboard.title }}</h2>
+
+    <i class="portfolio-promo__detail"></i>
+
+    <div class="portfolio-promo__deck">
+      <p class="portfolio-promo__p">{{billboard.tease_description}}</p>
+    </div>
+
+    {# <p class="txt">{{ billboard.billboard_message }}</p> #}
+  </div>
+</a> <!-- /portfolio-promo -->

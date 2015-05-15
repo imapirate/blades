@@ -1,53 +1,33 @@
 {% extends "base.twig" %}
 {% block content %}
 {% if billboards %}
-<div class="inset">
-	<div class="wrapper">
-		{% for billboard in billboards %}
-			{% if billboard == billboards[0] %}
-			<a class="portfolio-promo portfolio-promo-top" href="{{billboard.permalink}}">
-				<div class="portfolio-promo-img">
-					<img src="{{billboard.hero_tease.src|default(billboard.billboard.src)|resize(1200, 620) }}" alt="Banner for {{billboard.title|striptags}}" />
-				</div> <!-- /portfolio-promo-img -->
-				<div class="portfolio-promo-hgroup">
-					{% if billboard.kicker %}
-						<h3 class="h4 portfolio-promo-kicker">{{billboard.kicker}}</h3>
-					{% endif %}
-					<h2 class="h1 portfolio-promo-h">{{ billboard.title }}</h2>
-					{# <p class="txt">{{ billboard.billboard_message }}</p> #}
-				</div>
-			</a> <!-- /portfolio-promo -->
-			<section id="archive-portfolio-promo" class="portfolio-promo-btm">
-			{% else %}
-			<div class="media-block">
-				<a class="portfolio-promo" href="{{billboard.permalink}}">
-					<div class="portfolio-promo-img"><img src="{{billboard.hero_tease.src|default(billboard.billboard.src) | resize(1200, 620)}}" alt="Banner for {{billboard.title|striptags}}" /></div>
-					<div class="portfolio-promo-hgroup">
-						{% if billboard.kicker %}
-						<h3 class="h4 portfolio-promo-kicker">{{billboard.kicker}}</h3>
-						{% endif %}
-						<h2 class="h2 portfolio-promo-h">{{ billboard.title }}</h2>
-						{# <p class="txt">{{ billboard.billboard_message }}</p> #}
-					</div>
-				</a> <!-- /portfolio-promo -->
-			</div> <!-- /media-block -->
-			{% endif %}
+<div class="portfolio-top__wrapper">
+	<div class="portfolio-top">
+		{% for billboard in billboards | slice(0,1)  %}
+			{% include 'mods/portfolio-tease--big.twig' %}
 		{% endfor %}
-	</section><!--archive-portfolio-featured -->
+		<div class="portfolio-tease-grid__wrapper">
+			<div class="portfolio-tease-grid--two">
+			{% for billboard in billboards | slice(1,2)  %}
+				{% include 'mods/portfolio-tease--small.twig' %}
+			{% endfor %}
+			</div>
+		</div>
+		{% for billboard in billboards | slice(3,1)  %}
+			{% include 'mods/portfolio-tease--big.twig' %}
+		{% endfor %}
+		<div class="portfolio-tease-grid__wrapper">
+			<div class="portfolio-tease-grid--two">
+			{% for billboard in billboards | slice(4,4)  %}
+				{% include 'mods/portfolio-tease--small.twig' %}
+			{% endfor %}
+			</div>
+		</div>
 	</div><!-- wrapper -->
+		{% include 'mods/cta-hire-us.twig' %}
 </div><!-- inset -->
 {% endif %}
 
-
-<div class="wrapper">
-	<section id="archive-tiles">
-		{% for tile in tiles %}
-			{% if tile.thumbnail.src %}
-				{% include 'mods/tile.twig' %}
-			{% endif %}
-		{% endfor %}
-	</section>
-</div>
 
 <section id="archive-clients" class="inset">
 	<div class="wrapper">

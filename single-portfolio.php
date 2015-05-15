@@ -22,8 +22,24 @@
 	} else {
 		$data['meta_desc'] = strip_tags($pi->get_preview(30, true, '', true));
 	}
-	$tiles = array('post_type' => 'portfolio', 'meta_key' => '_thumbnail_id', 'numberposts' => '-1', 'post__not_in' => array($pi->ID));
-	$data['tiles'] = Timber::get_posts($tiles);
+	$plist = array('post_type' => 'portfolio', 'meta_key' => '_thumbnail_id', 'numberposts' => '6', 'post__not_in' => array($pi->ID));
+	$data['plist'] = Timber::get_posts($plist);
+
+	$fp = new TimberPost(3251);
+	$fp->squares = get_field('squares', $fp->ID);
+	$billboards = array();
+	$billboard_ids = array();
+	foreach($fp->squares as $square){
+		$bb = new TimberPost($square);
+		$billboard_ids[] = $bb->ID;
+		$bb->billboard = new TimberImage($bb->billboard);
+		if (isset($bb->hero_tease)){
+			$bb->hero_tease = new TimberImage($bb->hero_tease);
+		}
+		$billboards[] = $bb;
+	}
+	$data['billboards'] = $billboards;
+
 	if (post_password_required($post->ID)){
 		Timber::render('single-password.twig', $data);
 	} else {

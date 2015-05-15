@@ -37,9 +37,13 @@
 
 @import "site/partials/buttons";
 
-// Buttons
+// Sliders
 
 @import "site/partials/sliders";
+
+// Modules
+
+@import "site/partials/components";
 
 /* ============================================= */
 /*	Import site Pages 							 */
@@ -65,9 +69,17 @@
 
 @import "site/blog";
 
-// Portfolio
+// Single Portfolio
 
 @import "site/portfolio";
+
+// Archive Portfolio
+
+@import "site/archive-portfolio";
+
+// Tiles
+
+@import "site/tiles";
 
 // Generic Page
 

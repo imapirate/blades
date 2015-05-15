@@ -45,6 +45,7 @@
 			</div>
 
 			<div class="portfolio-content">
+			
 				{% for layout in post.get_layouts %}
 					{% if layout.images %}
 						<div class="portfolio-image-set image-count-{{layout.images|length}} {{layout.size|length ? layout.size}}">
@@ -95,15 +96,19 @@
 		<section class="comments">
 		</section>
 	</article>
+
+	{% include 'mods/cta-hire-us.twig' %}
+	
 </div> <!-- /content-wrapper -->
 
-<div class="wrapper porfolio-tile-wrapper">
-	<section id="archive-tiles">
-		{% for tile in tiles %}
-			{% if tile.thumbnail.src %}
-				{% include 'mods/tile.twig' %}
-			{% endif %}
+<div class="inset-light">
+	<div class="portfolio-tease-grid__wrapper">
+		<div class="portfolio-tease-grid--three">
+		{% for billboard in billboards | slice(0,6) %}
+			{% include 'mods/portfolio-tease--small.twig' %}
 		{% endfor %}
-	</section>
+		</div>
+	</div>
 </div>
+
 {% endblock %}

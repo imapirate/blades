@@ -1,0 +1,15 @@
+<div class="portfolio-tease-grid__item">
+  <a class="portfolio-promo portfolio-promo--small" href="{{billboard.permalink}}">
+    <div class="portfolio-promoImgMod--small">
+	    <div class="portfolio-promo-client">
+	    	<h4 class="portfolio-promo-client-p">{{ billboard.client_name }}</h4>
+	    </div>
+      <img src="{{billboard.billboard.src|resize(350, 350)}}" alt="{{tile.title|striptags}}" class="portfolio-promoImg portfolio-promoImg--small">
+    </div>
+    <h2 class="portfolio-promo-h--small">{{ billboard.title }}</h2>
+
+    <div class="portfolio-promo__deck">
+      <p class="portfolio-promo__p">{{billboard.tease_description}}</p>
+    </div>
+  </a> <!-- /portfolio-promo -->
+</div>
