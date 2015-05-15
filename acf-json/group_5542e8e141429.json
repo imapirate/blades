@@ -73,6 +73,23 @@
                     "maxlength": "",
                     "readonly": 0,
                     "disabled": 0
+                },
+                {
+                    "key": "field_5555581bea32b",
+                    "label": "Private",
+                    "name": "private",
+                    "prefix": "",
+                    "type": "true_false",
+                    "instructions": "Hide from client?",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": 20,
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0
                 }
             ]
         },
@@ -119,6 +136,23 @@
                             "min_size": "",
                             "max_size": "",
                             "mime_types": ""
+                        },
+                        {
+                            "key": "field_55555837ea32c",
+                            "label": "Private",
+                            "name": "private",
+                            "prefix": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0
                         }
                     ],
                     "min": "",
@@ -191,6 +225,23 @@
                             "display_format": "F j, Y",
                             "return_format": "Ymd",
                             "first_day": 0
+                        },
+                        {
+                            "key": "field_5555585444423",
+                            "label": "Private",
+                            "name": "private",
+                            "prefix": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0
                         }
                     ],
                     "min": "",
@@ -214,6 +265,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1431656268,
-    "local": "json"
+    "modified": 1431656566
 }

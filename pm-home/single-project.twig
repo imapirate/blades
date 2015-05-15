@@ -37,23 +37,27 @@
 				<div class="pmHome-comm-etc pmHome-gridBlock">
 					<ul class="pmHome-comm-list">
 						<li class="pmHome-comm-item pmHome-comm-item--screenShare">
-							<a href="https://join.me/upstatement-6" target="_blank" class="pmHome-comm-item-link">
+							<a href="https://{{post.conference_call_link}}" target="_blank" class="pmHome-comm-item-link">
 								<span class="pmHome-comm-item-logo pmHome-comm-item-logo--screenShare"></span>
 								<span class="pmHome-comm-item-text">{{post.conference_call_link}}</span>
 							</a>
 						</li>
+						{% if project_schedule_link %}
 						<li class="pmHome-comm-item pmHome-comm-item--schedule">
 							<a target="_blank" class="pmHome-comm-item-link" href="{{project_schedule_link}}">
 								<span class="pmHome-comm-item-logo pmHome-comm-item-logo--schedule"></span>
 								<span class="pmHome-comm-item-text">Project schedule</span>
 							</a>
 						</li>
+						{% endif %}
+						{% if team_contact_link %}
 						<li class="pmHome-comm-item pmHome-comm-item--contact">
 							<a target="_blank" class="pmHome-comm-item-link" href="{{team_contact_link}}">
 								<span class="pmHome-comm-item-logo pmHome-comm-item-logo--contact"></span>
 								<span class="pmHome-comm-item-text">Team contact info</span>
 							</a>
 						</li>
+						{% endif %}
 					</ul>
 
 				</div> <!-- /pmHome-phone -->
@@ -67,15 +71,17 @@
 
 			<div class="l-pmHome-section--apps">
 				{% for app in post.get_field('applications') %}
-				<div class="pmHome-gridBlock">
-					<a class="pmHome-apps-link" href="{{app.url}}" target="_blank">
-						<div class="pmHome-apps-logo pmHome-apps-logo--{{app.service}}"></div>
-						<div class="pmHome-apps-textMod">
-							<h4 class="pmHome-apps-title">{{app.service}}</h4>
-							<p class="pmHome-apps-text">Design files (InDesign, Photoshop, etc.), related assets, shared media</p>
-						</div> <!-- /pmHome-apps-textMod -->
-					</a>
-				</div> <!-- /pmHome-gridBlock -->
+					{% if not app.private or (app.private and user.ID) %}
+					<div class="pmHome-gridBlock">
+						<a class="pmHome-apps-link" href="{{app.url}}" target="_blank">
+							<div class="pmHome-apps-logo pmHome-apps-logo--{{app.service}}"></div>
+							<div class="pmHome-apps-textMod">
+								<h4 class="pmHome-apps-title">{{app.service}}</h4>
+								<p class="pmHome-apps-text">Design files (InDesign, Photoshop, etc.), related assets, shared media</p>
+							</div> <!-- /pmHome-apps-textMod -->
+						</a>
+					</div> <!-- /pmHome-gridBlock -->
+					{% endif %}
 				{% endfor %}
 
 				{#
