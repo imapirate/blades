@@ -108,6 +108,7 @@
 
 		</section> <!-- pmHome-section--apps -->
 
+		{% if post.get_field('important_links') %}
 		<section class="pmHome-section pmHome-section--links">
 			<h3 class="pmHome-sectionHeadline">Important Links & Files</h3>
 
@@ -172,8 +173,7 @@
 			</ul>
 
 		</section> <!-- pmHome-section--links -->
-
-
+		{% endif %}
 
 	</body>
 
