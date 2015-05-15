@@ -7,6 +7,10 @@ if ( class_exists( 'Timber' ) ) {
 	require_once 'wp/blades-site.php';
 }
 
+if (file_exists(__DIR__.'/vendor/jarednova/mesh/mesh.php')) {
+	require_once 'vendor/jarednova/mesh/mesh.php';
+}
+
 require_once 'pm-home/PHProjects.php';
 new PH_Projects();
 
