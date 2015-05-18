@@ -66,14 +66,15 @@
 						
 						var _$this = $(this.triggerElement());
 
-						if(!_$this.hasClass('is-in-view')){
-							_$this.addClass('is-in-view');
-							if(_$this.index() == 2){
-								statsCounter();
-							}
+						if(_$this.index() == 2){
+							statsCounter();
+						}
+						else{
+							statsNum = 0;
+							$thrStats.text(statsNum);
 						}
 					})
-					.setClassToggle($thrXrayItem[i], 'is-in-view--toggle')
+					.setClassToggle($thrXrayItem[i], 'is-in-view')
 					.duration($($thrXrayItem[i]).height())
 					.addTo(controller);		
 			});

@@ -55,14 +55,11 @@
 	position: relative;
 	width: 32px;
 	max-height: 38px;
-	display: table-cell;
-	vertical-align: top;
+	// display: table-cell;
+	// vertical-align: top;
 
-	// breakpoints
-	@include respond-to('tablet-vert'){
-		display: block;
-		margin: 0 auto;	
-	}
+	display: block;
+	margin: 0 auto;	
 }
 
 .thr-icon-img{
@@ -220,11 +217,19 @@
 	background-color: $hechingerYellow;
 	height: 50%;
 	width: 100%;
-	right: -60%;
 	z-index: 1;
+}
+
+.thr-yellow-bar{
+	right: -60%;
 
 	// easeInOutQuart
 	@include transition(compact(all 0.6s cubic-bezier(0.77, 0, 0.175, 1)));
+	.is-in-view &{
+		right: -19%;
+		// easeInOutQuart
+		@include transition(compact(all 0.6s cubic-bezier(0.77, 0, 0.175, 1)));
+	}
 }
 
 // Newsletter box
@@ -265,7 +270,7 @@
 	height: 5px;
 	right: 0;
 
-	@include transition(compact(all 0.6s cubic-bezier(0.23, 1, 0.32, 1)));
+	@include transition(compact(all 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.7s));
 	
 	// breakpoints
 	@include respond-to('tablet-horiz'){
@@ -278,6 +283,7 @@
 	width: 0%;
 	.is-in-view &{
 		width: 100%;
+		@include transition(compact(all 0.6s cubic-bezier(0.23, 1, 0.32, 1)));
 	}
 }
 
@@ -289,7 +295,7 @@
 		background: #000;
 		width: 5px;
 
-		@include transition(compact(all 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.7s));
+		@include transition(compact(all 0.6s cubic-bezier(0.23, 1, 0.32, 1)));
 
 		// breakpoints
 		@include respond-to('tablet-horiz'){
@@ -309,7 +315,7 @@
 	height: 0;
 	.is-in-view &{
 		height: 35px;
-
+		@include transition(compact(all 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.7s));
 		// breakpoints
 		@include respond-to('tablet-vert'){
 			height: 50px;
@@ -321,35 +327,21 @@
 
 .thr-popup{
 	background-color: rgba(1, 1, 1, $popupOpacity);
-	width: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
+	display: block;	
+	opacity: 1;
+	width: 175px;
+	height: 175px;
+	left: 5%;
+	position: absolute;
 	z-index: 20;
-	opacity: 0;
-	display: table;
 
-	// easeInOutQuart
-	@include transition(compact(opacity 0.6s cubic-bezier(0.77, 0, 0.175, 1)));
-}
-
-.thr-popup{
+	@include border-radius(50%);
+	
 	// breakpoints
 	@include respond-to('tablet-vert'){
-		display: block;
-		opacity: 1;
 		width: 215px;
 		height: 215px;
 		left: -15%;
-		position: absolute;
-
-		// easeInBack
-		@include scale3d(0, 0, 0, false);
-		@include border-radius(50%);
-	}
-	@include respond-to('tablet-vert'){
-		@include transition(compact(transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s));
 	}
 	@include respond-to('tablet-horiz'){
 		width: 250px;
@@ -365,36 +357,46 @@
 	&:after{
 		content: "";
 		position: absolute;
-		right: -28px;
+		right: -18px;
 		top: 50%;
-		margin-top: -20px;
+		margin-top: -10px;
 		width: 0;
 		height: 0;
-		display: none;
 		
 		border-style: solid;
-		border-width: 20px 0 20px 30px;
+		border-width: 10px 0 10px 20px;
 		border-color: transparent transparent transparent rgba(1, 1, 1, $popupOpacity);
 
 		// breakpoints
-		@include respond-to('phablet'){
-			display: block;
+		@include respond-to('tablet-horiz'){
+			right: -28px;
+			top: 50%;
+			margin-top: -20px;
+			border-width: 20px 0 20px 30px;
 		}
 	}
 }
 
+.thr-popup{
+	@include scale3d(0, 0, 0, false);
+	// easeInBack
+	@include transition(compact(transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045)));
+	.is-in-view &{
+		@include scale3d(1, 1, 1, false);
+		// easeOutBack
+		@include transition(compact(transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s));
+	}
+}
+
 .thr-popup-text{
-	display: table-cell;
-	padding-top: 0;
-	padding-left: 20px;
-	font-size: 14px;
+	// display: table-cell;
+	padding: 15px 0 0 0;
+	font-size: 10px;
 
 	// breakpoints
 	@include respond-to('tablet-vert'){
-		padding: 0;
 		display: block;
 		font-size: 12px;
-		padding-top: 15px;
 	}
 	@include respond-to('tablet-horiz'){
 		font-size: 13px;
@@ -458,57 +460,17 @@
 	font-size: 12px;
 	font-family: $proxima;	
 	font-weight: 300;
+	text-align: center;	
+
+	padding: 0 4em;
+	position: relative;
+	top: 50%;
+	@include transform(translateY(-50%));
 
 	padding: 2em 2em;
 	
 	// breakpoints
-	@include respond-to('tablet-vert'){
-		text-align: center;	
-
-		padding: 0 4em;
-		position: relative;
-		top: 50%;
-		@include transform(translateY(-50%));
-	}
 	@include respond-to('laptop'){
 		font-size: 14px;
-	}
-}
-
-// In view animations
-
-.is-in-view--toggle{
-	.thr-popup{
-		opacity: 1;
-	}
-}
-
-.is-in-view{
-	.thr-zone{
-		// easeInOutExpo
-		@include transition(compact(all 0.6s cubic-bezier(0.19, 1, 0.22, 1)));
-		right: -11.5%;
-		@include respond-to('tablet-vert'){
-			right: -15.5%;
-		}
-	}
-	.thr-popup{
-		// breakpoints
-		@include respond-to('tablet-vert'){	
-			// easeOutBack
-			@include scale3d(1, 1, 1, false);
-		}
-	}
-	.thr-img-rounded{
-		@include scale3d(1, 1, 1, false);
-
-		// easeOutExpo
-		@include transition(compact(transform 2s cubic-bezier(0.19, 1, 0.22, 1)));
-	}
-	.thr-yellow-bar{
-		right: -19%;
-
-		// easeInOutQuart
-		@include transition(compact(all 0.6s cubic-bezier(0.77, 0, 0.175, 1)));
 	}
 }
