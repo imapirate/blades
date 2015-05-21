@@ -12,7 +12,7 @@
 }
 
 .thr-xray-content{
-	width: 95%;
+	width: 95%; 
 	float: right;
 	margin: 0;
 	position: relative;
@@ -53,13 +53,19 @@
 
 .thr-icon{
 	position: relative;
-	width: 32px;
-	max-height: 38px;
+	width: 22px;
+	max-height: 28px;
 	// display: table-cell;
 	// vertical-align: top;
 
 	display: block;
 	margin: 0 auto;	
+
+	// breakpoints
+	@include respond-to('tablet-vert'){
+		width: 32px;
+		max-height: 38px;
+	}
 }
 
 .thr-icon-img{
@@ -221,7 +227,7 @@
 }
 
 .thr-yellow-bar{
-	right: -60%;
+	right: -70%;
 
 	// easeInOutQuart
 	@include transition(compact(all 0.6s cubic-bezier(0.77, 0, 0.175, 1)));
@@ -329,8 +335,8 @@
 	background-color: rgba(1, 1, 1, $popupOpacity);
 	display: block;	
 	opacity: 1;
-	width: 175px;
-	height: 175px;
+	width: 155px;
+	height: 155px;
 	left: 5%;
 	position: absolute;
 	z-index: 20;
@@ -338,7 +344,7 @@
 	@include border-radius(50%);
 	
 	// breakpoints
-	@include respond-to('tablet-vert'){
+	@include respond-to('phablet'){
 		width: 215px;
 		height: 215px;
 		left: -15%;
@@ -357,17 +363,27 @@
 	&:after{
 		content: "";
 		position: absolute;
-		right: -18px;
-		top: 50%;
-		margin-top: -10px;
+		right: 50%;
+		bottom: -10%;
+		margin-right: -10px;
 		width: 0;
 		height: 0;
-		
-		border-style: solid;
-		border-width: 10px 0 10px 20px;
-		border-color: transparent transparent transparent rgba(1, 1, 1, $popupOpacity);
+
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-top: 17px solid rgba(1, 1, 1, $popupOpacity);
 
 		// breakpoints
+		@include respond-to('phablet'){
+			right: -18px;
+			top: 50%;
+			margin-top: -10px;
+			margin-right: 0;
+
+			border-style: solid;
+			border-width: 10px 0 10px 20px;
+			border-color: transparent transparent transparent rgba(1, 1, 1, $popupOpacity);
+		}
 		@include respond-to('tablet-horiz'){
 			right: -28px;
 			top: 50%;
@@ -384,17 +400,17 @@
 	.is-in-view &{
 		@include scale3d(1, 1, 1, false);
 		// easeOutBack
-		@include transition(compact(transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s));
+		@include transition(compact(transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)));
 	}
 }
 
 .thr-popup-text{
 	// display: table-cell;
 	padding: 15px 0 0 0;
-	font-size: 10px;
+	font-size: 9px;
 
 	// breakpoints
-	@include respond-to('tablet-vert'){
+	@include respond-to('phablet'){
 		display: block;
 		font-size: 12px;
 	}
@@ -405,6 +421,8 @@
 
 .thr-xray-item:nth-of-type(1){
 	.thr-popup{
+		top: -70px;
+
 		// breakpoints
 		@include respond-to('tablet-vert'){
 			top: 140px;
@@ -415,8 +433,21 @@
 	}
 }
 
+.thr-xray-item:nth-of-type(2){
+	.thr-popup{
+		top: -160px;
+
+		// breakpoints
+		@include respond-to('tablet-vert'){
+			top: 0;
+		}
+	}
+}
+
 .thr-xray-item:nth-of-type(3){
 	.thr-popup{
+		top: -3	0px;
+
 		// breakpoints
 		@include respond-to('tablet-vert'){
 			top: 76px;
@@ -429,6 +460,8 @@
 
 .thr-xray-item:nth-of-type(5){
 	.thr-popup{
+		top: -46px;
+
 		// breakpoints
 		@include respond-to('tablet-vert'){
 			top: -10px;
@@ -444,6 +477,8 @@
 
 .thr-xray-item:nth-of-type(6){
 	.thr-popup{
+		top: -150px;
+
 		// breakpoints
 		@include respond-to('tablet-vert'){
 			top: -129px;

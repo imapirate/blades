@@ -8,6 +8,7 @@
 			$thrStats = $('.thr-stats'),
 			$thrIcon = $('.thr-icon img'),
 			controller = new ScrollMagic.Controller(),
+			statsInView = false,
 			isAndroid,
 			statsNum = 0;
 
@@ -34,13 +35,24 @@
 		function statsCounter(){
 			$thrStats.text(statsNum);
 			timeout = setTimeout(function(){ 
-				if(statsNum < 471){
-					statsNum++;
-					statsCounter();
+				if(statsInView){
+					if(statsNum < 471){
+						statsNum++;
+						statsCounter();
+					}
+					else{
+						clearTimeout(timeout);
+					} 
 				}
 				else{
-					clearTimeout(timeout);
-				} 
+					if(statsNum <= 471 && statsNum >= 1){
+						statsNum--;
+						statsCounter();
+					}
+					else{
+						clearTimeout(timeout);
+					} 
+				}
 			}, 1);
 		}
 
@@ -67,11 +79,15 @@
 						var _$this = $(this.triggerElement());
 
 						if(_$this.index() == 2){
+							statsInView = true;
 							statsCounter();
+							
 						}
 						else{
-							statsNum = 0;
-							$thrStats.text(statsNum);
+							// statsNum = 0;
+							// $thrStats.text(statsNum);
+							statsInView = false;
+							statsCounter();
 						}
 					})
 					.setClassToggle($thrXrayItem[i], 'is-in-view')
@@ -82,6 +98,11 @@
 		};
 
 		scrollHandler();
+
+		// Listen for orientation changes
+		window.addEventListener("orientationchange", function() {
+			scrollHandler();
+		}, false);
 
 		$(window).resize(function() {
     		scrollHandler();
