@@ -335,8 +335,8 @@
 	background-color: rgba(1, 1, 1, $popupOpacity);
 	display: block;	
 	opacity: 1;
-	width: 155px;
-	height: 155px;
+	width: 165px;
+	height: 165px;
 	left: 5%;
 	position: absolute;
 	z-index: 20;
@@ -364,7 +364,7 @@
 		content: "";
 		position: absolute;
 		right: 50%;
-		bottom: -10%;
+		bottom: -9%;
 		margin-right: -10px;
 		width: 0;
 		height: 0;
@@ -406,11 +406,12 @@
 
 .thr-popup-text{
 	// display: table-cell;
-	padding: 15px 0 0 0;
-	font-size: 9px;
+	padding: 10px 0 0 0;
+	font-size: 11px;
 
 	// breakpoints
 	@include respond-to('phablet'){
+		padding: 15px 0 0 0;
 		display: block;
 		font-size: 12px;
 	}
@@ -446,7 +447,7 @@
 
 .thr-xray-item:nth-of-type(3){
 	.thr-popup{
-		top: -3	0px;
+		top: -40px;
 
 		// breakpoints
 		@include respond-to('tablet-vert'){
@@ -460,7 +461,7 @@
 
 .thr-xray-item:nth-of-type(5){
 	.thr-popup{
-		top: -46px;
+		top: -56px;
 
 		// breakpoints
 		@include respond-to('tablet-vert'){
@@ -477,7 +478,7 @@
 
 .thr-xray-item:nth-of-type(6){
 	.thr-popup{
-		top: -150px;
+		top: -160px;
 
 		// breakpoints
 		@include respond-to('tablet-vert'){

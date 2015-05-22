@@ -10,7 +10,7 @@
 			controller = new ScrollMagic.Controller(),
 			statsInView = false,
 			isAndroid,
-			statsNum = 0;
+			statsNum = 100;
 
 		// Test for android native browser
 
@@ -45,7 +45,7 @@
 					} 
 				}
 				else{
-					if(statsNum <= 471 && statsNum >= 1){
+					if(statsNum <= 471 && statsNum >= 101){
 						statsNum--;
 						statsCounter();
 					}
@@ -74,39 +74,30 @@
 					triggerElement: $thrXrayItem[i], 
 					triggerHook: 'onCenter'
 				})
+					.on('leave', function(e) {
+						var _$this = $(this.triggerElement());
+
+						if(e.scrollDirection == 'REVERSE' && _$this.index() == 2){
+							statsInView = false;
+							statsCounter();
+						}
+					})
 					.on('enter', function(e) {
-						
 						var _$this = $(this.triggerElement());
 
 						if(_$this.index() == 2){
 							statsInView = true;
 							statsCounter();
-							
-						}
-						else{
-							// statsNum = 0;
-							// $thrStats.text(statsNum);
-							statsInView = false;
-							statsCounter();
 						}
 					})
 					.setClassToggle($thrXrayItem[i], 'is-in-view')
-					.duration($($thrXrayItem[i]).height())
+					.duration($thrXrayItem[i].height)
 					.addTo(controller);		
 			});
 
 		};
 
 		scrollHandler();
-
-		// Listen for orientation changes
-		window.addEventListener("orientationchange", function() {
-			scrollHandler();
-		}, false);
-
-		$(window).resize(function() {
-    		scrollHandler();
-		});
 
 	});
 })(jQuery);
