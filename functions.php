@@ -46,7 +46,6 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 function load_script( $name, $src, $footer = true ) {
 	wp_register_script( $name, $src, array(), false, $footer );
 	wp_enqueue_script( $name );
-	error_log( $src );
 }
 
 function load_style( $name, $src, $media = 'all' ) {
@@ -64,7 +63,6 @@ function load_scripts() {
 	wp_enqueue_script( 'jquery-migrate' );
 
 	load_script( 'modernizr', get_stylesheet_directory_uri() . '/components/modernizr/modernizr.js', false );
-	error_log( 'loaded scripts' );
 }
 
 function load_footer_scripts() {
