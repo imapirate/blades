@@ -118,12 +118,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Upstatement/mesh.git",
-                "reference": "183c8c91c61344838f6f2fb92908e5e7c08ea9b2"
+                "reference": "9d3c8f7cd9cbae107fe25a6f5c5a631372883577"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Upstatement/mesh/zipball/183c8c91c61344838f6f2fb92908e5e7c08ea9b2",
-                "reference": "183c8c91c61344838f6f2fb92908e5e7c08ea9b2",
+                "url": "https://api.github.com/repos/Upstatement/mesh/zipball/9d3c8f7cd9cbae107fe25a6f5c5a631372883577",
+                "reference": "9d3c8f7cd9cbae107fe25a6f5c5a631372883577",
                 "shasum": ""
             },
             "require": {
@@ -148,7 +148,7 @@
                 "content",
                 "mesh"
             ],
-            "time": "2015-04-30 12:09:12"
+            "time": "2015-05-15 03:14:02"
         },
         {
             "name": "tan-tan-kanarek/github-php-client",
