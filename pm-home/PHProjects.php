@@ -5,6 +5,17 @@ class PH_Projects {
 	function __construct() {
 		$this->autoload();
 		$this->init();
+		$this->add_services();
+	}
+
+	function add_services() {
+		add_filter('acf/load_field/name=service', array($this, 'get_services'));
+	}
+
+	function get_services($services) {
+		$choices = array('dropbox' => 'Dropbox', 'drive' => 'Google Drive', 'github' => 'GitHub', 'trello' => 'Trello', 'link' => 'Link', 'doc' => 'Document', 'pdf' => 'PDF', 'website' => 'Website');
+		$services['choices'] = $choices;
+		return $services;
 	}
 
 	function init() {

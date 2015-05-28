@@ -80,7 +80,7 @@ a {
   margin-bottom: 30px;
   @include pie-clearfix;
   @include mq($bp--header) {
-    padding-top: 60px;
+    padding-top: 30px;
     margin-bottom: 60px;
   }
 }
@@ -309,6 +309,11 @@ a {
   @include svg("dropbox", false);
 }
 
+
+.pmHome-apps-logo--website {
+  @include svg("globe", false);
+}
+
 .pmHome-apps-logo--drive {
   @include svg("drive", false);
 }
@@ -366,6 +371,10 @@ a {
 
 .pmHome-link-item-logo--pdf {
   @include svg("file--pdf", false);
+}
+
+.pmHome-link-item-logo--doc {
+  @include svg("file--doc", false);
 }
 
 .pmHome-link-item-logo--drive {

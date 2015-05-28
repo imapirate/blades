@@ -6,7 +6,6 @@
             "key": "field_5542e8ee4a7f8",
             "label": "Applications",
             "name": "applications",
-            "prefix": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -25,7 +24,6 @@
                     "key": "field_5542e8fc4a7f9",
                     "label": "Service",
                     "name": "service",
-                    "prefix": "",
                     "type": "select",
                     "instructions": "",
                     "required": 0,
@@ -57,7 +55,6 @@
                     "key": "field_555568b288891",
                     "label": "Custom Label",
                     "name": "custom_label",
-                    "prefix": "",
                     "type": "text",
                     "instructions": "Override the Service Label",
                     "required": 0,
@@ -79,7 +76,6 @@
                     "key": "field_55556654c473d",
                     "label": "Description",
                     "name": "description",
-                    "prefix": "",
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
@@ -101,7 +97,6 @@
                     "key": "field_5542e9464a7fa",
                     "label": "URL",
                     "name": "url",
-                    "prefix": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -123,7 +118,6 @@
                     "key": "field_5555581bea32b",
                     "label": "Private",
                     "name": "private",
-                    "prefix": "",
                     "type": "true_false",
                     "instructions": "Hide from client?",
                     "required": 0,
@@ -135,6 +129,134 @@
                     },
                     "message": "",
                     "default_value": 0
+                }
+            ]
+        },
+        {
+            "key": "field_556770ad71643",
+            "label": "Important Links",
+            "name": "important_links",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "layout": "block",
+            "button_label": "Add Link",
+            "sub_fields": [
+                {
+                    "key": "field_556770ad71644",
+                    "label": "Service",
+                    "name": "service",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": 20,
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "pdf": "PDF",
+                        "doc": "Document",
+                        "dropbox": "DropBox",
+                        "drive": "Google",
+                        "github": "GitHub",
+                        "trello": "Trello",
+                        "link": "Link"
+                    },
+                    "default_value": {
+                        "": ""
+                    },
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                },
+                {
+                    "key": "field_556770ad71646",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "maxlength": "",
+                    "rows": 2,
+                    "new_lines": "wpautop",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_556770ad71647",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "http:\/\/github.com\/upstatement\/storey",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_556770ad71648",
+                    "label": "Private",
+                    "name": "private",
+                    "type": "true_false",
+                    "instructions": "Hide from client?",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": 20,
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0
+                },
+                {
+                    "key": "field_556772c00a14e",
+                    "label": "Date",
+                    "name": "date",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "F j, Y",
+                    "return_format": "Ymd",
+                    "first_day": 0
                 }
             ]
         }
@@ -154,5 +276,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1431660745
+    "modified": 1432842986
 }

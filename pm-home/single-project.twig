@@ -31,7 +31,12 @@
 						<div class="pmHome-phone-icon"></div>
 						<div class="pmHome-phoneNumber" itemprop="telephone">{{post.conference_call_number}}</span></div>
 					</a>
+					{% if post.conference_call_code %}
 						<div class="pmHome-phoneCode">Code: {{post.conference_call_code}}</div>
+					{% endif %}
+					{% if post.conference_call_notes %}
+						<div class="pmHome-phoneInfo">{{post.conference_call_notes}}</div>
+					{% endif %}
 				</div> <!-- /pmHome-phone -->
 
 				<div class="pmHome-comm-etc pmHome-gridBlock">
@@ -66,6 +71,7 @@
 
 		</section> <!-- pmHome-section--comm -->
 
+		{% if post.get_applications %}
 		<section class="pmHome-section pmHome-section--apps">
 			<h3 class="pmHome-sectionHeadline">Applications</h3>
 
@@ -77,7 +83,7 @@
 							<div class="pmHome-apps-logo pmHome-apps-logo--{{app.service}}"></div>
 							<div class="pmHome-apps-textMod">
 								<h4 class="pmHome-apps-title">{{app.service_label}}</h4>
-								<p class="pmHome-apps-text">Design files (InDesign, Photoshop, etc.), related assets, shared media</p>
+								<p class="pmHome-apps-text">{{app.description}}</p>
 							</div> <!-- /pmHome-apps-textMod -->
 						</a>
 					</div> <!-- /pmHome-gridBlock -->
@@ -107,7 +113,7 @@
 			</div>
 
 		</section> <!-- pmHome-section--apps -->
-
+		{% endif %}
 		{% if post.get_field('important_links') %}
 		<section class="pmHome-section pmHome-section--links">
 			<h3 class="pmHome-sectionHeadline">Important Links & Files</h3>
@@ -116,20 +122,13 @@
 				{% for item in (post.get_field('important_links')) %}
 					{% if not item.private or (item.private and user.ID) %}
 					<li class="pmHome-link-item">
-						{% if item.acf_fc_layout == 'file' %}
-							{% set file = item.file %}
-							<a class="pmHome-link-item-link" href="{{file.url}}" target="_blank">
-								<div class="pmHome-link-item-logo pmHome-link-item-logo--pdf"></div>
-								<p class="pmHome-link-item-date">{{file.date|date('M j')}}</p>
-								<h5 class="pmHome-link-item-title">{{file.title | default(file.filename)}}</h5>
-							</a>
-						{% else %}
-							<a class="pmHome-link-item-link" href="{{item.link}}" target="_blank">
-								<div class="pmHome-link-item-logo pmHome-link-item-logo--pdf"></div>
-								<p class="pmHome-link-item-date">{{item.date|date('M j')}}</p>
-								<h5 class="pmHome-link-item-title">{{item.title | default(item.link)}}</h5>
-							</a>
-						{% endif %}
+						<a class="pmHome-link-item-link" href="{{item.link}}" target="_blank">
+							<div class="pmHome-link-item-logo pmHome-link-item-logo--{{item.service}}"></div>
+							{% if item.date %}
+								<p class="pmHome-link-item-date">{{item.date|date('M j, Y')}}</p>
+							{% endif %}
+							<h5 class="pmHome-link-item-title">{{item.description | default(item.link)}}</h5>
+						</a>
 					</li>
 					{% endif %}
 				{% endfor %}
