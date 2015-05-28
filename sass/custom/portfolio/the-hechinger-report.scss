@@ -347,6 +347,9 @@
 	@include respond-to('phablet'){
 		width: 215px;
 		height: 215px;
+		left: -4%;
+	}
+	@include respond-to('tablet-vert'){
 		left: -15%;
 	}
 	@include respond-to('tablet-horiz'){
