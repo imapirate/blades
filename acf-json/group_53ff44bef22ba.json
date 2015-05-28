@@ -25,7 +25,8 @@
             ],
             "elements": "",
             "max": "",
-            "return_format": "object"
+            "return_format": "object",
+            "min": 0
         },
         {
             "key": "field_53ff456d35ff9",
@@ -127,7 +128,14 @@
                     },
                     "return_format": "array",
                     "preview_size": "thumbnail",
-                    "library": "all"
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 },
                 {
                     "key": "field_53ff7dd226ae2",
@@ -145,7 +153,14 @@
                     },
                     "return_format": "array",
                     "preview_size": "thumbnail",
-                    "library": "all"
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 }
             ]
         },
@@ -375,7 +390,14 @@
                     },
                     "return_format": "array",
                     "preview_size": "thumbnail",
-                    "library": "all"
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 },
                 {
                     "key": "field_53ff7ed10aee9",
@@ -393,7 +415,14 @@
                     },
                     "return_format": "array",
                     "preview_size": "thumbnail",
-                    "library": "all"
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 }
             ]
         }
@@ -413,5 +442,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1424655410
+    "modified": 1431656267,
+    "local": "json"
 }

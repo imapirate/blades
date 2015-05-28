@@ -6,7 +6,6 @@
             "key": "field_5370d2445ae60",
             "label": "Showcase",
             "name": "showcase",
-            "prefix": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -27,7 +26,6 @@
                     "key": "field_5370d24a5ae61",
                     "label": "Title",
                     "name": "title",
-                    "prefix": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -50,7 +48,6 @@
                     "key": "field_5370d2515ae62",
                     "label": "URL",
                     "name": "url",
-                    "prefix": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -73,7 +70,6 @@
                     "key": "field_5370d25b5ae63",
                     "label": "Image",
                     "name": "image",
-                    "prefix": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
@@ -85,7 +81,14 @@
                     },
                     "preview_size": "thumbnail",
                     "library": "uploadedTo",
-                    "return_format": "array"
+                    "return_format": "array",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 }
             ]
         }
@@ -105,5 +108,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1424655473
+    "modified": 1432842011,
+    "local": "json"
 }

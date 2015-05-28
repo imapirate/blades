@@ -1,0 +1,184 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>{{post.title}} | Project Home</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="/bower_components/modernizr/modernizr.js"></script>
+		<link rel="stylesheet" href="{{theme.path}}/pm-home/css/screen.css">
+		<script src="//use.typekit.net/lzk6wqe.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
+		{{function('wp_head')}}
+	</head>
+
+	<body class="pmHome">
+
+		<header class="pmHome-hdr">
+			<div class="site-width">
+				<a class="pmHome-hdr-ups-logo" href="http://www.upstatement.com" target="_blank"><span class="pmHome-hdr-ups-logo-txt">Upstatement</span></a>
+
+				<h1 class="pmHome-hdr-title">{{post.title}} <span class="pmHome-hdr-subtitle">Project&nbsp;Home</span></h1>
+			</div>
+		</header>
+
+		{% block content %}
+
+		<section class="pmHome-section pmHome-section--comm">
+			<h3 class="pmHome-sectionHeadline">Communication &amp; Scheduling</h3>
+
+			<div class="l-pmHome-section--comm">
+
+				<div class="pmHome-phone pmHome-gridBlock">
+					<a href="tel:{{post.conference_call_number}}">
+						<div class="pmHome-phone-icon"></div>
+						<div class="pmHome-phoneNumber" itemprop="telephone">{{post.conference_call_number}}</span></div>
+					</a>
+					{% if post.conference_call_code %}
+						<div class="pmHome-phoneCode">Code: {{post.conference_call_code}}</div>
+					{% endif %}
+					{% if post.conference_call_notes %}
+						<div class="pmHome-phoneInfo">{{post.conference_call_notes}}</div>
+					{% endif %}
+				</div> <!-- /pmHome-phone -->
+
+				<div class="pmHome-comm-etc pmHome-gridBlock">
+					<ul class="pmHome-comm-list">
+						<li class="pmHome-comm-item pmHome-comm-item--screenShare">
+							<a href="https://{{post.conference_call_link}}" target="_blank" class="pmHome-comm-item-link">
+								<span class="pmHome-comm-item-logo pmHome-comm-item-logo--screenShare"></span>
+								<span class="pmHome-comm-item-text">{{post.conference_call_link}}</span>
+							</a>
+						</li>
+						{% if project_schedule_link %}
+						<li class="pmHome-comm-item pmHome-comm-item--schedule">
+							<a target="_blank" class="pmHome-comm-item-link" href="{{project_schedule_link}}">
+								<span class="pmHome-comm-item-logo pmHome-comm-item-logo--schedule"></span>
+								<span class="pmHome-comm-item-text">Project schedule</span>
+							</a>
+						</li>
+						{% endif %}
+						{% if team_contact_link %}
+						<li class="pmHome-comm-item pmHome-comm-item--contact">
+							<a target="_blank" class="pmHome-comm-item-link" href="{{team_contact_link}}">
+								<span class="pmHome-comm-item-logo pmHome-comm-item-logo--contact"></span>
+								<span class="pmHome-comm-item-text">Team contact info</span>
+							</a>
+						</li>
+						{% endif %}
+					</ul>
+
+				</div> <!-- /pmHome-phone -->
+
+			</div> <!-- /l-pmHome-section--comm -->
+
+		</section> <!-- pmHome-section--comm -->
+
+		{% if post.get_applications %}
+		<section class="pmHome-section pmHome-section--apps">
+			<h3 class="pmHome-sectionHeadline">Applications</h3>
+
+			<div class="l-pmHome-section--apps">
+				{% for app in post.get_applications %}
+					{% if not app.private or (app.private and user.ID) %}
+					<div class="pmHome-gridBlock">
+						<a class="pmHome-apps-link" href="{{app.url}}" target="_blank">
+							<div class="pmHome-apps-logo pmHome-apps-logo--{{app.service}}"></div>
+							<div class="pmHome-apps-textMod">
+								<h4 class="pmHome-apps-title">{{app.service_label}}</h4>
+								<p class="pmHome-apps-text">{{app.description}}</p>
+							</div> <!-- /pmHome-apps-textMod -->
+						</a>
+					</div> <!-- /pmHome-gridBlock -->
+					{% endif %}
+				{% endfor %}
+
+				{#
+				<div class="pmHome-gridBlock">
+					<a class="pmHome-apps-link" href="https://drive.google.com/folderview?id=0B9610zQWs3cLNXhCYzhXTzJLUUk&usp=drive_web#list" target="_blank">
+						<div class="pmHome-apps-logo pmHome-apps-logo--drive"></div>
+						<div class="pmHome-apps-textMod">
+							<h4 class="pmHome-apps-title">Google Drive</h4>
+							<p class="pmHome-apps-text">Text docs, spreadsheets, collaborative documents</p>
+						</div> <!-- /pmHome-apps-textMod -->
+					</a>
+				</div> <!-- /pmHome-gridBlock -->
+				<div class="pmHome-gridBlock">
+					<a class="pmHome-apps-link" href="https://github.com/Upstatement/thetrace" target="_blank">
+						<div class="pmHome-apps-logo pmHome-apps-logo--github"></div>
+						<div class="pmHome-apps-textMod">
+							<h4 class="pmHome-apps-title">GitHub</h4>
+							<p class="pmHome-apps-text">Code, issue tracking, documentation</p>
+						</div> <!-- /pmHome-apps-textMod -->
+					</a>
+				</div> <!-- /pmHome-gridBlock -->
+				#}
+			</div>
+
+		</section> <!-- pmHome-section--apps -->
+		{% endif %}
+		{% if post.get_field('important_links') %}
+		<section class="pmHome-section pmHome-section--links">
+			<h3 class="pmHome-sectionHeadline">Important Links & Files</h3>
+
+			<ul class="pmHome-link-list">
+				{% for item in (post.get_field('important_links')) %}
+					{% if not item.private or (item.private and user.ID) %}
+					<li class="pmHome-link-item">
+						<a class="pmHome-link-item-link" href="{{item.link}}" target="_blank">
+							<div class="pmHome-link-item-logo pmHome-link-item-logo--{{item.service}}"></div>
+							{% if item.date %}
+								<p class="pmHome-link-item-date">{{item.date|date('M j, Y')}}</p>
+							{% endif %}
+							<h5 class="pmHome-link-item-title">{{item.description | default(item.link)}}</h5>
+						</a>
+					</li>
+					{% endif %}
+				{% endfor %}
+				{#
+				<li class="pmHome-link-item">
+					<a class="pmHome-link-item-link" href="https://slack-files.com/files-pri-safe/T024Q08QD-F04G73XF4/trace-brand-proposal-v2-optimized.pdf?c=1430291841-789f72745355db0ab738f1cef01ed6f78e6ac14e" target="_blank">
+						<div class="pmHome-link-item-logo pmHome-link-item-logo--pdf"></div>
+						<p class="pmHome-link-item-date">Apr 21</p>
+						<h5 class="pmHome-link-item-title">Branding Elements</h5>
+					</a>
+				</li>
+				<li class="pmHome-link-item">
+					<a class="pmHome-link-item-link" href="http://thetrace.s3-website-us-east-1.amazonaws.com/" target="_blank">
+						<div class="pmHome-link-item-logo"></div>
+						<p class="pmHome-link-item-date">Apr 12</p>
+						<h5 class="pmHome-link-item-title">Interactive Prototype: Homepage</h5>
+					</a>
+				</li>
+				<li class="pmHome-link-item">
+					<a class="pmHome-link-item-link" href="https://docs.google.com/document/d/1sYfum9NvIYj50-G_xvzSTwuV5PBjzPyG8XNXnyy7VSY/edit" target="_blank">
+						<div class="pmHome-link-item-logo pmHome-link-item-logo--drive"></div>
+						<p class="pmHome-link-item-date">Mar 26</p>
+						<h5 class="pmHome-link-item-title">Creative Brief</h5>
+					</a>
+				</li>
+				<li class="pmHome-link-item">
+					<a class="pmHome-link-item-link" href="https://docs.google.com/document/d/1IyaDgF4MdiGrmRCt5epvnRsSHhRMb3yUhNy-cvS3yO0/edit" target="_blank">
+						<div class="pmHome-link-item-logo pmHome-link-item-logo--drive"></div>
+						<p class="pmHome-link-item-date">Mar 19</p>
+						<h5 class="pmHome-link-item-title">Brand Brief</h5>
+					</a>
+				</li>
+				<li class="pmHome-link-item">
+					<a class="pmHome-link-item-link" href="https://www.pinterest.com/mike5276/the-trace/" target="_blank">
+						<div class="pmHome-link-item-logo"></div>
+						<p class="pmHome-link-item-date">Mar 11</p>
+						<h5 class="pmHome-link-item-title">Pinterest Board</h5>
+					</a>
+				</li>
+				#}
+			</ul>
+
+		</section> <!-- pmHome-section--links -->
+		{% endif %}
+		{% endblock %}
+
+	</body>
+
+	<script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="js/base.js"></script>
+	{{function('wp_footer')}}
+</html>

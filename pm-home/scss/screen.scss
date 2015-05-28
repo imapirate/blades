@@ -1,0 +1,403 @@
+@import "base";
+@import "fonts";
+@import "variables";
+@import "project-mixins";
+
+
+$icon-opacity: .2;
+
+@mixin icon-opacity(
+  $opacity: $icon-opacity,
+  $opacity-hover: .6
+  ){
+  @include trans(.1s);
+  opacity: $opacity;
+  a:hover &,
+  &:hover {
+    opacity: $opacity-hover;
+  }
+}
+
+@mixin icon-attributes(
+  $size-small: 24px,
+  $size-large: 32px,
+  $opacity: $icon-opacity,
+  $opacity-hover: 1
+  ) {
+
+  @include size($size-large);
+  @include icon-opacity;
+}
+
+@mixin font-size-mq {
+  font-size: 21px;
+  @include mq(400px) {
+    font-size: 23px;
+  }
+  @include mq(500px) {
+    font-size: 24px;
+  }
+}
+
+
+
+// --------------------------------------------
+// Layout & Base Styles
+// --------------------------------------------
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pmHome {
+  font-family: $sans;
+  font-weight: $font-weight--reg;
+  color: #ededed;
+  background-color: $site-bg;
+  padding-bottom: 100px;
+}
+
+.site-width {
+  max-width: $site-max-width;
+  margin: 0 $site-margin;
+  @include pie-clearfix;
+
+  @include mq($bp--site-max) {
+    margin: auto;
+  }
+}
+
+
+
+// --------------------------------------------
+// Layout
+// --------------------------------------------
+
+.pmHome-hdr {
+  padding: 20px 0 20px;
+  background-color: #000;
+  margin-bottom: 30px;
+  @include pie-clearfix;
+  @include mq($bp--header) {
+    padding-top: 30px;
+    margin-bottom: 60px;
+  }
+}
+
+.pmHome-hdr-title {
+  margin-right: 12px;
+
+  font: $font-weight--black 26px $serif;
+  letter-spacing: -1px;
+}
+
+.pmHome-hdr-subtitle {
+  display: inline-block;
+  color: $gray-med;
+  margin-left: 0;
+  @include mq($bp--header) {
+    margin-left: 6px;
+  }
+}
+
+.pmHome-hdr-ups-logo {
+  float: right;
+  display: block;
+  width: 26px;
+  height: 30px;
+  margin-bottom: 6px;
+
+  @include hide-text;
+  @include svg("st-logo");
+  @include icon-opacity(.25, .7);
+}
+
+
+
+// --------------------------------------------
+// Section Type & Layout
+// --------------------------------------------
+
+.pmHome-section {
+  @extend .site-width;
+}
+
+.pmHome-section + .pmHome-section {
+  margin-top: 80px;
+}
+
+.pmHome-sectionHeadline {
+  font: $font-weight--black 13px $serif;
+
+  padding: 13px 6px 14px;
+  border-top: 3px solid $gray-light;
+  border-bottom: 1px solid $gray-light;
+  margin-bottom: 16px;
+}
+
+
+
+// --------------------------------------------
+// Communication
+// --------------------------------------------
+
+.l-pmHome-section--comm {
+  @include mq(768px) {
+    padding: 6px 0;
+    @include media-grid(2, 30px, ".pmHome-gridBlock");
+    @include layout-divider(
+      $left: 50%,
+      $divider-color: $gray-light
+    );
+  } //mq
+}
+
+.pmHome-gridBlock + .pmHome-gridBlock {
+  @include mq(768px, max) {
+    margin-top: 20px;
+    border-top: 1px solid $gray-med;
+    padding-top: 19px;
+  }
+}
+
+.pmHome-gridBlock:not(:last-child) {
+  @include mq(768px) {
+    padding-right: 30px;
+  }
+}
+
+.pmHome-phone-icon {
+  margin-bottom: 48px;
+  @include svg("phone");
+  @include icon-attributes(
+    $size-large: 36px
+  );
+}
+
+.pmHome-phoneNumber {
+  font-size: 44px;
+  font-weight: $font-weight--light;
+  line-height: 100%;
+  margin-bottom: 17px;
+  @include mq(400px) {
+    font-size: 54px;
+  }
+  @include mq(500px) {
+    font-size: 66px;
+  }
+}
+
+.pmHome-phoneCode {
+  @include font-size-mq;
+  color: $gray-light;
+}
+
+.pmHome-comm-item-link {
+  display: block;
+  padding: 19px 6px 20px;
+  @include font-size-mq;
+
+  .pmHome-comm-item:first-child & {
+    padding-top: 6px;
+  }
+  .pmHome-comm-item + .pmHome-comm-item & {
+    border-top: 1px solid $gray-med;
+  }
+  .pmHome-comm-item:last-child & {
+    padding-bottom: 12px;
+  }
+}
+
+.pmHome-comm-item-text {
+  position: relative;
+  top: -8px;
+}
+
+.pmHome-comm-item-logo {
+  display: inline-block;
+  @include icon-attributes;
+  margin-right: 10px;
+}
+
+.pmHome-comm-item-logo--screenShare {
+  @include svg("screen");
+}
+
+.pmHome-comm-item-logo--schedule {
+  @include svg("calendar");
+}
+
+.pmHome-comm-item-logo--contact {
+  @include svg("person");
+}
+
+
+
+// --------------------------------------------
+// Apps
+// --------------------------------------------
+
+.l-pmHome-section--apps {
+  @include mq(768px) {
+    padding: 6px 0;
+    @include media-grid(3, 30px, ".pmHome-gridBlock");
+    @include layout-divider(
+      $left: 33.33333%,
+      $divider-color: $gray-light,
+      $pseudo-element: before
+    );
+    @include layout-divider(
+      $left: 66.66666%,
+      $divider-color: $gray-light,
+      $pseudo-element: after
+    );
+    overflow: auto;
+  }
+}
+
+.pmHome-apps-textMod {
+  margin-left: 56px;
+
+  @include mq(768px) {
+    margin-left: 14px;
+  }
+  @include mq(960px) {
+    max-width: 240px;
+  }
+}
+
+
+.pmHome-apps-title {
+  @include font-size-mq;
+  font-weight: $font-weight--reg;
+  margin-bottom: 2px;
+  @include mq(600px) {
+    margin-bottom: 6px;
+  }
+}
+
+.pmHome-apps-text {
+  font-size: 18px;
+  line-height: 120%;
+  color: rgb(100, 100, 100);
+  @include trans(.1s);
+  a:hover & {
+    color: rgb(131, 131, 131);
+  }
+  @include mq(768px) {
+    line-height: 140%;
+  }
+}
+
+.pmHome-apps-logo {
+  float: left;
+  width: 40px;
+  height: 40px;
+  @include icon-opacity(.4, 1);
+  background-size: contain;
+
+  @include mq(768px) {
+    float: none;
+    width: 130px;
+    height: 120px;
+    margin-bottom: 24px;
+  }
+}
+
+.pmHome-apps-logo--dropbox {
+  @include svg("dropbox", false);
+}
+
+
+.pmHome-apps-logo--website {
+  @include svg("globe", false);
+}
+
+.pmHome-apps-logo--drive {
+  @include svg("drive", false);
+}
+
+.pmHome-apps-logo--github {
+  @include svg("github", false);
+}
+
+
+
+// --------------------------------------------
+// Links
+// --------------------------------------------
+
+.pmHome-link-item-link {
+  position: relative;
+  display: block;
+  padding: 19px 6px 20px 6px;
+  @include font-size-mq;
+
+  .pmHome-link-item:first-child & {
+    padding-top: 6px;
+  }
+  .pmHome-link-item + .pmHome-link-item & {
+    border-top: 1px solid $gray-med;
+  }
+  .pmHome-link-item:last-child & {
+    padding-bottom: 12px;
+  }
+}
+
+.pmHome-link-item-logo {
+  float: left;
+  @include size(24px);
+  @include icon-opacity(.15, .5);
+  @include svg("file--link", false);
+  background-size: contain;
+}
+
+.pmHome-link-item-date {
+  margin-left: 50px; // matches pmHome-apps-textMod
+  color: $gray-light;
+  @include mq(600px) {
+    float: right;
+    min-width: 75px;
+    margin-left: 10px;
+  }
+}
+
+.pmHome-link-item-title {
+  display: block;
+  margin-left: 50px; // matches pmHome-apps-textMod
+  font-weight: $font-weight--reg;
+}
+
+.pmHome-link-item-logo--pdf {
+  @include svg("file--pdf", false);
+}
+
+.pmHome-link-item-logo--doc {
+  @include svg("file--doc", false);
+}
+
+.pmHome-link-item-logo--drive {
+  @include svg("file--drive", false);
+}
+
+.pmHome-password-box {
+	margin:auto;
+	border:5px solid rgb(77, 77, 77);
+	background: black;
+	padding:40px;
+	@include mq(400px) {
+    	width:80%
+  	}
+  	@include mq(600px) {
+    	width:50%
+  	}
+}
+
+
+
+
+
+
+
+

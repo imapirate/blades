@@ -1,0 +1,51 @@
+// =============================================
+
+//  Project Mixins
+
+// =============================================
+
+
+// Layout Divider
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Setting a line automatically scales to the
+//       height of the tallest box in the layout
+// WHY: It's tricky to implement and not immediately
+//       transparent when put into action
+// USE: @include layout-divider(
+//          $left: 70%,
+//          $divider: 2px solid #e5e5e5;
+//        );
+
+
+@mixin layout-divider(
+  // Layout position
+  $top: 0,
+  $right: n,
+  $bottom: 0,
+  $left: n,
+
+  // Divider style
+  $divider-width: 1px,
+  $divider-style: solid,
+  $divider-color: #ccc,
+  $divider: $divider-width $divider-style $divider-color,
+
+  // Applied to the before or after element?
+  $pseudo-element: before ){
+
+  $coordinates: $top $right $bottom $left;
+
+  position: relative;
+
+  @if $pseudo-element == "before" {
+    &:before {
+      @include pseudo($coordinates);
+      border-left: $divider;
+    }
+  } @else {
+    &:after {
+      @include pseudo($coordinates);
+      border-left: $divider;
+    }
+  }
+}

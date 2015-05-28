@@ -18,7 +18,14 @@
             },
             "return_format": "array",
             "preview_size": "thumbnail",
-            "library": "all"
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_53ff934210b86",
@@ -164,7 +171,14 @@
                     },
                     "return_format": "array",
                     "preview_size": "thumbnail",
-                    "library": "all"
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 },
                 {
                     "key": "field_53ff944f12a2e",
@@ -269,7 +283,14 @@
                     },
                     "return_format": "array",
                     "preview_size": "thumbnail",
-                    "library": "all"
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 },
                 {
                     "key": "field_53ff955acc20a",
@@ -287,7 +308,14 @@
                     },
                     "return_format": "array",
                     "preview_size": "thumbnail",
-                    "library": "all"
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 }
             ]
         }
@@ -307,5 +335,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1424655406
+    "modified": 1431656267,
+    "local": "json"
 }

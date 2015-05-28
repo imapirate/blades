@@ -7,6 +7,13 @@ if ( class_exists( 'Timber' ) ) {
 	require_once 'wp/blades-site.php';
 }
 
+if (file_exists(__DIR__.'/vendor/jarednova/mesh/mesh.php')) {
+	require_once 'vendor/jarednova/mesh/mesh.php';
+}
+
+require_once 'pm-home/PHProjects.php';
+new PH_Projects();
+
 ACFHacks::map_page_rule_to_slug(48, 'about');
 ACFHacks::map_page_rule_to_slug(506, 'careers');
 ACFHacks::map_page_rule_to_slug(2777, 'jobs');

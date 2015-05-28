@@ -1,0 +1,12 @@
+{
+	"posts" : [
+		{
+			"post_type" : "project",
+			"post_title" : "The Trace",
+			"conference_call_link" : "join.me/upstatement-6",
+			"conference_call_number" : "646-307-1990",
+			"conference_call_code" : "519-022-296"
+
+		}
+	]
+}

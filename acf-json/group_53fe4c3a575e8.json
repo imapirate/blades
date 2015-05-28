@@ -11,6 +11,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "row_min": 0,
             "row_limit": "",
             "layout": "table",
@@ -27,7 +32,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
-                    "column_width": "",
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "default_value": "",
                     "formatting": "html",
                     "maxlength": "",
@@ -46,7 +55,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
-                    "column_width": "",
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "default_value": "",
                     "formatting": "html",
                     "maxlength": "",
@@ -58,30 +71,26 @@
                 },
                 {
                     "key": "field_13",
-                    "label": "Icon",
-                    "name": "icon",
+                    "label": "Kicker",
+                    "name": "kicker",
                     "prefix": "",
-                    "type": "select",
-                    "instructions": "",
+                    "type": "text",
+                    "instructions": "Short (2-3 word) modifier for site. Ex: 'Responsive Design' or 'Branding & Identity'",
                     "required": 0,
                     "conditional_logic": 0,
-                    "choices": {
-                        "home": "home",
-                        "twitter": "twitter",
-                        "instagram": "instagram",
-                        "tumblr": "tumblr"
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
                     },
-                    "column_width": "",
-                    "default_value": [
-
-                    ],
-                    "allow_null": 1,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
+                    "default_value": "",
                     "placeholder": "",
-                    "disabled": 0,
-                    "readonly": 0
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "none",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
                 }
             ]
         },
@@ -94,9 +103,21 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "url",
             "preview_size": "medium",
-            "library": "uploadedTo"
+            "library": "uploadedTo",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_12dsfasd",
@@ -107,9 +128,21 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "preview_size": "medium",
             "return_format": "url",
-            "library": "all"
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         }
     ],
     "location": [
@@ -126,5 +159,7 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "local": "json",
+    "modified": 1431656268
 }

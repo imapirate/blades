@@ -41,14 +41,17 @@
                     "post_type": [
                         "portfolio"
                     ],
-                    "taxonomy": [],
+                    "taxonomy": [
+
+                    ],
                     "filters": [
                         "search"
                     ],
                     "max": 1,
                     "elements": [
                         "post_type"
-                    ]
+                    ],
+                    "min": 0
                 },
                 {
                     "key": "field_5213e182db62e",
@@ -88,7 +91,14 @@
                     },
                     "preview_size": "large",
                     "library": "all",
-                    "return_format": "id"
+                    "return_format": "id",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 }
             ]
         }
@@ -108,5 +118,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1424655433
+    "modified": 1431656268,
+    "local": "json"
 }
