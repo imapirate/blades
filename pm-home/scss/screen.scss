@@ -381,7 +381,18 @@ a {
   @include svg("file--drive", false);
 }
 
-
+.pmHome-password-box {
+	margin:auto;
+	border:5px solid rgb(77, 77, 77);
+	background: black;
+	padding:40px;
+	@include mq(400px) {
+    	width:80%
+  	}
+  	@include mq(600px) {
+    	width:50%
+  	}
+}
 
 
 
