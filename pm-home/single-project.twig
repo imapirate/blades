@@ -123,53 +123,16 @@
 				{% for item in (post.get_field('important_links')) %}
 					{% if not item.private or (item.private and user.ID) %}
 					<li class="pmHome-link-item">
-						<a class="pmHome-link-item-link" href="{{item.link}}" target="_blank">
+						<a class="pmHome-link-item-link" href="{{item.url}}" target="_blank">
 							<div class="pmHome-link-item-logo pmHome-link-item-logo--{{item.service}}"></div>
 							{% if item.date %}
 								<p class="pmHome-link-item-date">{{item.date|date('M j, Y')}}</p>
 							{% endif %}
-							<h5 class="pmHome-link-item-title">{{item.description | default(item.link)}}</h5>
+							<h5 class="pmHome-link-item-title">{{item.description | default(item.url)}}</h5>
 						</a>
 					</li>
 					{% endif %}
 				{% endfor %}
-				{#
-				<li class="pmHome-link-item">
-					<a class="pmHome-link-item-link" href="https://slack-files.com/files-pri-safe/T024Q08QD-F04G73XF4/trace-brand-proposal-v2-optimized.pdf?c=1430291841-789f72745355db0ab738f1cef01ed6f78e6ac14e" target="_blank">
-						<div class="pmHome-link-item-logo pmHome-link-item-logo--pdf"></div>
-						<p class="pmHome-link-item-date">Apr 21</p>
-						<h5 class="pmHome-link-item-title">Branding Elements</h5>
-					</a>
-				</li>
-				<li class="pmHome-link-item">
-					<a class="pmHome-link-item-link" href="http://thetrace.s3-website-us-east-1.amazonaws.com/" target="_blank">
-						<div class="pmHome-link-item-logo"></div>
-						<p class="pmHome-link-item-date">Apr 12</p>
-						<h5 class="pmHome-link-item-title">Interactive Prototype: Homepage</h5>
-					</a>
-				</li>
-				<li class="pmHome-link-item">
-					<a class="pmHome-link-item-link" href="https://docs.google.com/document/d/1sYfum9NvIYj50-G_xvzSTwuV5PBjzPyG8XNXnyy7VSY/edit" target="_blank">
-						<div class="pmHome-link-item-logo pmHome-link-item-logo--drive"></div>
-						<p class="pmHome-link-item-date">Mar 26</p>
-						<h5 class="pmHome-link-item-title">Creative Brief</h5>
-					</a>
-				</li>
-				<li class="pmHome-link-item">
-					<a class="pmHome-link-item-link" href="https://docs.google.com/document/d/1IyaDgF4MdiGrmRCt5epvnRsSHhRMb3yUhNy-cvS3yO0/edit" target="_blank">
-						<div class="pmHome-link-item-logo pmHome-link-item-logo--drive"></div>
-						<p class="pmHome-link-item-date">Mar 19</p>
-						<h5 class="pmHome-link-item-title">Brand Brief</h5>
-					</a>
-				</li>
-				<li class="pmHome-link-item">
-					<a class="pmHome-link-item-link" href="https://www.pinterest.com/mike5276/the-trace/" target="_blank">
-						<div class="pmHome-link-item-logo"></div>
-						<p class="pmHome-link-item-date">Mar 11</p>
-						<h5 class="pmHome-link-item-title">Pinterest Board</h5>
-					</a>
-				</li>
-				#}
 			</ul>
 
 		</section> <!-- pmHome-section--links -->
