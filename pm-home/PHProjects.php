@@ -14,7 +14,9 @@ class PH_Projects {
 
 	function get_services($services) {
 		$choices = array('dropbox' => 'Dropbox', 'drive' => 'Google Drive', 'github' => 'GitHub', 'trello' => 'Trello', 'link' => 'Link', 'doc' => 'Document', 'pdf' => 'PDF', 'website' => 'Website', 'slack' => 'Slack');
+		sort($choices);
 		$services['choices'] = $choices;
+
 		return $services;
 	}
 
