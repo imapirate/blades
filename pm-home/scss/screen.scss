@@ -305,6 +305,10 @@ a {
   }
 }
 
+.pmHome-apps-logo--slack {
+	@include svg("slack", false);
+}
+
 .pmHome-apps-logo--dropbox {
   @include svg("dropbox", false);
 }
