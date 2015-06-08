@@ -16,7 +16,7 @@
 		</video>
 	</div> <!-- /video mod -->
 	{% elseif post.banner_image.src %}
-		<img src="{{post.banner_image.src}}" class="blog-banner-image" alt="{{post.post_title}}" />
+		<img src="{{post.banner_image.src|resize(2000)}}" class="blog-banner-image" alt="{{post.post_title}}" />
 	{% endif %}
 
 
