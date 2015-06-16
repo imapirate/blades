@@ -24,6 +24,7 @@ class PH_Projects {
 		register_post_type('project', array(
 			'label' => 'Projects',
 			'public' => true,
+			'has_archive' => true,
 			'menu_icon' => 'dashicons-welcome-view-site',
 			'rewrite' => array('slug' => 'projects', 'with_front' => false),
 			'supports' => array('title','revisions','page-attributes')
