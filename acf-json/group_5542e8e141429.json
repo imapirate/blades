@@ -33,13 +33,17 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": {
-                        "dropbox": "DropBox",
-                        "drive": "Google",
-                        "github": "GitHub",
-                        "trello": "Trello",
-                        "link": "Link"
-                    },
+                    "choices": [
+                        "Document",
+                        "Dropbox",
+                        "GitHub",
+                        "Google Drive",
+                        "Link",
+                        "PDF",
+                        "Slack",
+                        "Trello",
+                        "Website"
+                    ],
                     "default_value": {
                         "": ""
                     },
@@ -163,15 +167,17 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": {
-                        "pdf": "PDF",
-                        "doc": "Document",
-                        "dropbox": "DropBox",
-                        "drive": "Google",
-                        "github": "GitHub",
-                        "trello": "Trello",
-                        "link": "Link"
-                    },
+                    "choices": [
+                        "Document",
+                        "Dropbox",
+                        "GitHub",
+                        "Google Drive",
+                        "Link",
+                        "PDF",
+                        "Slack",
+                        "Trello",
+                        "Website"
+                    ],
                     "default_value": {
                         "": ""
                     },
@@ -276,5 +282,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1432842986
+    "modified": 1434465703
 }
