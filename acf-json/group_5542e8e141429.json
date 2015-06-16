@@ -34,11 +34,15 @@
                         "id": ""
                     },
                     "choices": {
-                        "dropbox": "DropBox",
-                        "drive": "Google",
+                        "doc": "Document",
+                        "drive": "Google Drive",
+                        "dropbox": "Dropbox",
                         "github": "GitHub",
+                        "link": "Link",
+                        "pdf": "PDF",
+                        "slack": "Slack",
                         "trello": "Trello",
-                        "link": "Link"
+                        "website": "Website"
                     },
                     "default_value": {
                         "": ""
@@ -164,13 +168,15 @@
                         "id": ""
                     },
                     "choices": {
-                        "pdf": "PDF",
                         "doc": "Document",
-                        "dropbox": "DropBox",
-                        "drive": "Google",
+                        "drive": "Google Drive",
+                        "dropbox": "Dropbox",
                         "github": "GitHub",
+                        "link": "Link",
+                        "pdf": "PDF",
+                        "slack": "Slack",
                         "trello": "Trello",
-                        "link": "Link"
+                        "website": "Website"
                     },
                     "default_value": {
                         "": ""
@@ -257,6 +263,25 @@
                     "display_format": "F j, Y",
                     "return_format": "Ymd",
                     "first_day": 0
+                },
+                {
+                    "key": "field_5580392df2809",
+                    "label": "File",
+                    "name": "file",
+                    "type": "file",
+                    "instructions": "This will override a URL",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "uploadedTo",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": ""
                 }
             ]
         }
@@ -276,5 +301,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1432842986
+    "modified": 1434469543
 }

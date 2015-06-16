@@ -1,0 +1,10 @@
+{% extends "tease-link.twig" %}
+{% block content %}
+<a class="pmHome-link-item-link" href="{{item.file.url}}" target="_blank">
+	<div class="pmHome-link-item-logo pmHome-link-item-logo--{{item.service}}"></div>
+	{% if item.date %}
+		<p class="pmHome-link-item-date">{{item.date|date('M j, Y')}}</p>
+	{% endif %}
+	<h5 class="pmHome-link-item-title">{{ item.description ? item.description|striptags ~ '<span class="pmHome-link-item-filename">' ~ item.file.filename ~ '</span>' : item.file.filename}}</h5>
+</a>
+{% endblock %}

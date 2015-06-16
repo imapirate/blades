@@ -13,8 +13,8 @@ class PH_Projects {
 	}
 
 	function get_services($services) {
-		$choices = array('dropbox' => 'Dropbox', 'drive' => 'Google Drive', 'github' => 'GitHub', 'trello' => 'Trello', 'link' => 'Link', 'doc' => 'Document', 'pdf' => 'PDF', 'website' => 'Website', 'slack' => 'Slack');
-		sort($choices);
+		$choices = array('basecamp' => 'Basecamp', 'dropbox' => 'Dropbox', 'drive' => 'Google Drive', 'github' => 'GitHub', 'trello' => 'Trello', 'link' => 'Link', 'doc' => 'Document', 'pdf' => 'PDF', 'website' => 'Website', 'slack' => 'Slack');
+		ksort($choices);
 		$services['choices'] = $choices;
 
 		return $services;
@@ -24,6 +24,7 @@ class PH_Projects {
 		register_post_type('project', array(
 			'label' => 'Projects',
 			'public' => true,
+			'has_archive' => true,
 			'menu_icon' => 'dashicons-welcome-view-site',
 			'rewrite' => array('slug' => 'projects', 'with_front' => false),
 			'supports' => array('title','revisions','page-attributes')

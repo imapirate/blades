@@ -17,4 +17,18 @@ class PH_Project extends TimberPost {
 		return $apps;
 	}
 
+	function get_important_links() {
+		$links = $this->get_field('important_links');
+		if (is_array($links)) {
+			foreach($links as &$link) {
+				if ($link['file']) {
+					if (!$link['date']) {
+						$link['date'] = $link['file']['date'];
+					}
+				}
+			}
+		}
+		return $links;
+	}
+
 }
