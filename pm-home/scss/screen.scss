@@ -228,6 +228,10 @@ a {
   @include svg("calendar");
 }
 
+.pmHome-comm-item-logo--password {
+  @include svg("lock");
+}
+
 .pmHome-comm-item-logo--contact {
   @include svg("person");
 }

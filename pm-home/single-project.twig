@@ -48,6 +48,14 @@
 								<span class="pmHome-comm-item-text">{{post.conference_call_link}}</span>
 							</a>
 						</li>
+						{% if post.post_password %}
+						<li class="pmHome-comm-item pmHome-comm-item--password">
+							<a target="_blank" class="pmHome-comm-item-link" href="{{project_schedule_link}}">
+								<span class="pmHome-comm-item-logo pmHome-comm-item-logo--password"></span>
+								<span class="pmHome-comm-item-text">Password: {{post.post_password}}</span>
+							</a>
+						</li>
+						{% endif %}
 						{% if project_schedule_link %}
 						<li class="pmHome-comm-item pmHome-comm-item--schedule">
 							<a target="_blank" class="pmHome-comm-item-link" href="{{project_schedule_link}}">
