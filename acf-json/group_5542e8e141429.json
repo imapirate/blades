@@ -33,17 +33,17 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": [
-                        "Document",
-                        "Dropbox",
-                        "GitHub",
-                        "Google Drive",
-                        "Link",
-                        "PDF",
-                        "Slack",
-                        "Trello",
-                        "Website"
-                    ],
+                    "choices": {
+                        "doc": "Document",
+                        "drive": "Google Drive",
+                        "dropbox": "Dropbox",
+                        "github": "GitHub",
+                        "link": "Link",
+                        "pdf": "PDF",
+                        "slack": "Slack",
+                        "trello": "Trello",
+                        "website": "Website"
+                    },
                     "default_value": {
                         "": ""
                     },
@@ -167,17 +167,17 @@
                         "class": "",
                         "id": ""
                     },
-                    "choices": [
-                        "Document",
-                        "Dropbox",
-                        "GitHub",
-                        "Google Drive",
-                        "Link",
-                        "PDF",
-                        "Slack",
-                        "Trello",
-                        "Website"
-                    ],
+                    "choices": {
+                        "doc": "Document",
+                        "drive": "Google Drive",
+                        "dropbox": "Dropbox",
+                        "github": "GitHub",
+                        "link": "Link",
+                        "pdf": "PDF",
+                        "slack": "Slack",
+                        "trello": "Trello",
+                        "website": "Website"
+                    },
                     "default_value": {
                         "": ""
                     },
@@ -263,6 +263,25 @@
                     "display_format": "F j, Y",
                     "return_format": "Ymd",
                     "first_day": 0
+                },
+                {
+                    "key": "field_5580392df2809",
+                    "label": "File",
+                    "name": "file",
+                    "type": "file",
+                    "instructions": "This will override a URL",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "uploadedTo",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": ""
                 }
             ]
         }
@@ -282,5 +301,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1434465703
+    "modified": 1434469543
 }

@@ -13,7 +13,7 @@ class PH_Projects {
 	}
 
 	function get_services($services) {
-		$choices = array('dropbox' => 'Dropbox', 'drive' => 'Google Drive', 'github' => 'GitHub', 'trello' => 'Trello', 'link' => 'Link', 'doc' => 'Document', 'pdf' => 'PDF', 'website' => 'Website', 'slack' => 'Slack');
+		$choices = array('basecamp' => 'Basecamp', 'dropbox' => 'Dropbox', 'drive' => 'Google Drive', 'github' => 'GitHub', 'trello' => 'Trello', 'link' => 'Link', 'doc' => 'Document', 'pdf' => 'PDF', 'website' => 'Website', 'slack' => 'Slack');
 		ksort($choices);
 		$services['choices'] = $choices;
 

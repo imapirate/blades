@@ -98,27 +98,6 @@
 					</div> <!-- /pmHome-gridBlock -->
 					{% endif %}
 				{% endfor %}
-
-				{#
-				<div class="pmHome-gridBlock">
-					<a class="pmHome-apps-link" href="https://drive.google.com/folderview?id=0B9610zQWs3cLNXhCYzhXTzJLUUk&usp=drive_web#list" target="_blank">
-						<div class="pmHome-apps-logo pmHome-apps-logo--drive"></div>
-						<div class="pmHome-apps-textMod">
-							<h4 class="pmHome-apps-title">Google Drive</h4>
-							<p class="pmHome-apps-text">Text docs, spreadsheets, collaborative documents</p>
-						</div> <!-- /pmHome-apps-textMod -->
-					</a>
-				</div> <!-- /pmHome-gridBlock -->
-				<div class="pmHome-gridBlock">
-					<a class="pmHome-apps-link" href="https://github.com/Upstatement/thetrace" target="_blank">
-						<div class="pmHome-apps-logo pmHome-apps-logo--github"></div>
-						<div class="pmHome-apps-textMod">
-							<h4 class="pmHome-apps-title">GitHub</h4>
-							<p class="pmHome-apps-text">Code, issue tracking, documentation</p>
-						</div> <!-- /pmHome-apps-textMod -->
-					</a>
-				</div> <!-- /pmHome-gridBlock -->
-				#}
 			</div>
 
 		</section> <!-- pmHome-section--apps -->
@@ -128,17 +107,13 @@
 			<h3 class="pmHome-sectionHeadline">Important Links & Files</h3>
 
 			<ul class="pmHome-link-list">
-				{% for item in (post.get_field('important_links')) %}
+				{% for item in post.get_important_links %}
 					{% if not item.private or (item.private and user.ID) %}
-					<li class="pmHome-link-item">
-						<a class="pmHome-link-item-link" href="{{item.url}}" target="_blank">
-							<div class="pmHome-link-item-logo pmHome-link-item-logo--{{item.service}}"></div>
-							{% if item.date %}
-								<p class="pmHome-link-item-date">{{item.date|date('M j, Y')}}</p>
-							{% endif %}
-							<h5 class="pmHome-link-item-title">{{item.description | default(item.url)}}</h5>
-						</a>
-					</li>
+						{% if item.file %}
+							{% include "tease-file.twig" %}
+						{% else %}
+							{% include "tease-link.twig" %}
+						{% endif %}
 					{% endif %}
 				{% endfor %}
 			</ul>
