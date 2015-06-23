@@ -6,24 +6,20 @@ WordPress theme for Upstatement.com
 
 ## Getting started with Development
 
-> Requires [WPCLI](http://wp-cli.org/), try `brew install wp-cli`
-> brew requires homebrew to be installed and assumes OSX http://brew.sh/
-> if you have brew installed, but it's not working, run `brew doctor`
+Clone this repo
 
-### 1. Create a directory for your work & download WordPress
 ```
-mkdir [wherever you'd like]/wordpress-blades
-cd [whereever]/wordpress-blades
-wp core download
+cd ~/Sites
+git clone git@github.com:Upstatement/blades.git
 ```
 
-### 2. Install WordPress and connect to the database
+After it has downloaded, navigate inside the directory and run the setup script
 ```
-wp core config --dbuser=[your db user] --dbpass=[yourpw] --dbname=[your db name]
-wp core install
+cd blades
+sh vvv-setup.sh
 ```
 
-> if using MAMP, include a flag for dbhost that looks like this: `--dbhost=localhost:/Applications/MAMP/tmp/mysql/mysql.sock`
+When asked for what setup (nginx or apache) enter nginx
 
 ### 3. Fetch & import the database
 1. get a copy of the database dump you'd like to use (we store lots of these on Dropbox, ask Jared where)
