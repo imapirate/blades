@@ -52,21 +52,21 @@
 						<li class="pmHome-comm-item pmHome-comm-item--password">
 							<a target="_blank" class="pmHome-comm-item-link" href="{{project_schedule_link}}">
 								<span class="pmHome-comm-item-logo pmHome-comm-item-logo--password"></span>
-								<span class="pmHome-comm-item-text">Password: {{post.post_password}}</span>
+								<span class="pmHome-comm-item-text"><span class="pmHome-password-label">Password:</span> {{post.post_password}}</span>
 							</a>
 						</li>
 						{% endif %}
-						{% if project_schedule_link %}
+						{% if post.project_schedule_link %}
 						<li class="pmHome-comm-item pmHome-comm-item--schedule">
-							<a target="_blank" class="pmHome-comm-item-link" href="{{project_schedule_link}}">
+							<a target="_blank" class="pmHome-comm-item-link" href="{{post.project_schedule_link}}">
 								<span class="pmHome-comm-item-logo pmHome-comm-item-logo--schedule"></span>
 								<span class="pmHome-comm-item-text">Project schedule</span>
 							</a>
 						</li>
 						{% endif %}
-						{% if team_contact_link %}
+						{% if post.team_contact_link %}
 						<li class="pmHome-comm-item pmHome-comm-item--contact">
-							<a target="_blank" class="pmHome-comm-item-link" href="{{team_contact_link}}">
+							<a target="_blank" class="pmHome-comm-item-link" href="{{post.team_contact_link}}">
 								<span class="pmHome-comm-item-logo pmHome-comm-item-logo--contact"></span>
 								<span class="pmHome-comm-item-text">Team contact info</span>
 							</a>
