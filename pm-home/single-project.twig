@@ -122,6 +122,34 @@
 		{% endif %}
 		{% endblock %}
 
+		{% if post.get_field('roster') %}
+		<section class="pmHome-section pmHome-section--links">
+			<h3 class="pmHome-sectionHeadline">Team Rosters</h3>
+			<div class="pmHome-table-mod">
+				<table class="pmHome-teamRoster">
+					<tr class="pmHome-tableHeading">
+						<th>Organization</th>
+						<th>Name</th>
+						<th>Title</th>
+						<th>Role</th>
+						<th>Phone</th>
+					</tr>
+					{% for person in post.get_field('roster') %}
+					<tr class="row-{{loop.index}}">
+						<td class="pmHome-roster-org">{{person.company}}</td>
+						<td><a href="mailto:{{person.email|trim}}">{{person.name}}</a></td>
+						<td>{{person.title}}</td>
+						<td>{{person.role}}</td>
+						<td>{{person.phone}}</td>
+
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</section> <!-- pmHome-section--links -->
+		{% endif %}
+
+
 	</body>
 
 	<script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>

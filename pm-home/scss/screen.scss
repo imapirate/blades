@@ -409,6 +409,37 @@ a {
   	}
 }
 
+/* added by jared, tito might not like but he is free to refactor */
+.pmHome-password-label {
+	@include opacity(0.5);
+}
+
+.pmHome-table-mod {
+	padding:0px 7px;
+}
+
+.pmHome-teamRoster {
+	width:100%;
+	td, th {
+		text-align:left;
+		font-size:1.25em;
+	}
+	tbody {
+		padding:0px 5px;
+	}
+	td {
+		border-bottom:1px solid rgba(white, 0.1);
+		padding:7px 0px;
+	}
+}
+
+.pmHome-tableHeading th {
+	padding-bottom:7px;
+}
+
+.pmHome-roster-org {
+	opacity:0.5;
+}
 
 
 
