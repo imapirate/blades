@@ -71,6 +71,13 @@
 								<span class="pmHome-comm-item-text">Team contact info</span>
 							</a>
 						</li>
+						{% elseif post.get_field('roster') %}
+						<li class="pmHome-comm-item pmHome-comm-item--contact">
+							<a class="pmHome-comm-item-link" href="#roster">
+								<span class="pmHome-comm-item-logo pmHome-comm-item-logo--contact"></span>
+								<span class="pmHome-comm-item-text">Team contact info</span>
+							</a>
+						</li>
 						{% endif %}
 					</ul>
 
@@ -123,7 +130,7 @@
 		{% endblock %}
 
 		{% if post.get_field('roster') %}
-		<section class="pmHome-section pmHome-section--links">
+		<section class="pmHome-section pmHome-section--links" id="roster">
 			<h3 class="pmHome-sectionHeadline">Team Rosters</h3>
 			<div class="pmHome-table-mod">
 				<table class="pmHome-teamRoster">
