@@ -123,17 +123,17 @@
 	    function animateStrokes(index, speed, delay, callback){
 	        setTimeout(function(){
 	            allStrokes[index].animate({
-	                "stroke-dashoffset": 0
+	                'stroke-dashoffset': 0
 	            }, speed, mina.easeinout, function(){
 	                if(callback === true){
 	                    allStrokes[allStrokes.length - 1].animate({
-	                        "stroke-dashoffset": 0
+	                        'stroke-dashoffset': 0
 	                    }, speedArray[speedArray.length - 1], mina.easeinout);
 	                }
 	            });
 	        }, delay);
 	    }
-
+	    
 	    for(i = 0; i < allStrokes.length; i++){
 	        length = allStrokes[i].getTotalLength();
 	        speed = length < 100 ? 500 : Math.floor(length * 4);
@@ -147,17 +147,17 @@
 		    animateStrokes(2, speedArray[2], 500, true);
 	    }
 
-	    // allBooks[0].animate({"transform": "scale(0.98, 0.98, 0.98)", "opacity": 0.5 }, 5000, mina.elastic, function(){
-	    // 		allBooks[0].animate({"transform": "scale(1, 1, 1)", "opacity": 1}, 5000, mina.elastic);
+	    // allBooks[0].animate({'transform': 'scale(0.98, 0.98, 0.98)', 'opacity': 0.5 }, 5000, mina.elastic, function(){
+	    // 		allBooks[0].animate({'transform': 'scale(1, 1, 1)', 'opacity': 1}, 5000, mina.elastic);
 	    // });
 
 	    function animateBooks(element, index, duration, delay){
 	       	setTimeout(function(){
 	            element[index].animate({
-	                "transform": "scale(0.98, 0.98, 0.98)", 
-	                "opacity": 0.5 
+	                'transform': 'scale(0.98, 0.98, 0.98)', 
+	                'opacity': 0.5 
 	            }, duration, mina.elastic, function(){
-	                element[index].animate({"transform": "scale(1, 1, 1)", "opacity": 1}, duration, mina.elastic);
+	                element[index].animate({'transform': 'scale(1, 1, 1)', 'opacity': 1}, duration, mina.elastic);
 	            });
 	        }, delay);
 	    }

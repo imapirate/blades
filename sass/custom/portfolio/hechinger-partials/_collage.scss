@@ -59,8 +59,10 @@
 	bottom: 16%;
 	left: 10%;
 	width: 20%;
-
 	z-index: 20;
+	img{
+		width: 100%;
+	}
 }
 
 .h-book-bg--1{
@@ -92,16 +94,11 @@
 
 .h-hand-drawn{
 	position: absolute;
-	width: 60%;
+	width: 90%;
 	bottom: 0;
-	right: 0;
-	&__container{
-		position: relative;
-		overflow: hidden;
-	}
-	&__img{
-		position: relative;
-		margin-right: 30px * -10;
+	right: -35%;
+	img {
+		width: 100%;
 	}
 }
 
