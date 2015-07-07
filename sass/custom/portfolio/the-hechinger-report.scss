@@ -13,8 +13,162 @@
 
 // =============================================
 
-//	Collage
+//	Main
 
 // =============================================
 
-@import "hechinger-partials/collage.scss";
+// Portfolio Mod
+.portfolio-h1 {
+	font-family: Tiempos, Georgia, Times, serif;
+	font-weight: 900;
+	color: #FFFFFF;
+}
+
+.txt-width--thr {
+	max-width: 700px;
+}
+
+.portfolio-image-set--full img {
+	width: 100%;
+}
+
+.portfolio-kicker--thr {
+	&:after {
+		width: 100%;
+	}
+}
+
+.thr__h {
+	font-family: Tiempos, Georgia, Times, serif;
+	color: $black;
+	font-size: 64px;
+	line-height: 82px;
+	font-weight: 900;
+	text-align: center;
+	@include mq($h-tablet--lg) {
+		font-size: 82px;
+		line-height: 91px;
+	}
+}
+
+.thr__h--lg {
+	font-size: 125px;
+}
+
+.thr__sub-h {
+	font-family: Tiempos, Georgia, Times, serif;
+	color: $black;
+	font-weight: 300;
+	font-size: 42px;
+	line-height: 62px;
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+.thr__topic-h {
+	font-family: National, sans-serif;
+	color: $black;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: 20px;
+	line-height: 36px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.thr__topic-h--bdr {
+	border-bottom: 1px solid $black;
+}
+
+.thr__text {
+	p {
+		font-family: Tiempos, Georgia, Times, serif;
+		font-weight: 300;
+		font-size: 24px;
+		line-height: 42px;
+		color: $black;
+	}
+
+	.dropcap {
+		font-family: Tiempos, Georgia, Times, serif;
+		font-weight: 700;
+	}
+}
+
+.thr__scroll-nav {
+	margin-bottom: 80px;
+}
+
+.thr__nav-items {
+
+}
+
+.thr__nav-item {
+	counter-increment: step-counter;
+	padding: 25px 30px;
+	border-top: 1px solid $black;
+	color: $black;
+	font-size: 22px;
+	line-height: 1;
+	&:last-child {
+		border-bottom: 1px solid $black;
+	}
+	&:before {
+		content: counter(step-counter);
+		margin-right: 12px;
+		background-color: $hechingerBlue;
+		padding: 5px 10px;
+		border-radius: 50%;
+		font-size: 16px;
+		font-weight: 300;
+		color: #FFFFFF;
+	}
+}
+
+.thr__nav-link {
+	color: $hechingerBlue;
+	text-decoration: none;
+	&:hover {
+		border-bottom: 2px solid $hechingerBlue;	
+	}
+}
+
+.badge-a {
+	background-color: $black;
+	margin: 100px auto;
+	padding: 10px 15px;
+	max-width: 80px;
+	width: 100%;
+	text-align: center;
+	position: relative;
+	&:after,
+	&:before {
+		content: "";
+		position: absolute;
+		width: 80px;
+		height: 1px;
+		background-color: #000;
+		top: 50%;
+		margin-top: 1px;
+	}
+	&:after {
+		left: -100px;
+	}
+	&:before {
+		right: -100px;
+	}
+}
+
+.badge-a__h {
+	font-family: Tiempos, Georgia, Times, serif;
+	font-weight: 900;
+	font-size: 30px;
+	line-height: 30px;
+	color: #FFFFFF;
+}
+
+.badge-a__h-sub {
+	font-size: 16px;
+	margin-bottom: 8px;
+} 
