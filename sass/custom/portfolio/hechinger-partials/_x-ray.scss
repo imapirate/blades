@@ -8,6 +8,7 @@
 	width: 100%;
 	position: relative;
 	@include clearfix;
+	z-index: 10;
 }
 
 .thr-xray-content{
@@ -15,7 +16,7 @@
 	float: right;
 	margin: 0;
 	position: relative;
-	@include box-shadow(#DBDBDB -2px 1px 10px);
+	@include box-shadow(rgba(0, 0, 0, 0.3) -2px 1px 10px);
 	
 	// breakpoints
 	@include respond-to('tablet-vert'){

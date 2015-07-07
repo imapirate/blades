@@ -11,21 +11,53 @@
 
 @import "hechinger-partials/x-ray.scss";
 
-// =============================================
-
-//	Main
 
 // =============================================
 
-// Portfolio Mod
+//	Main -> Placeholders
+
+// =============================================
+
+%__h {
+	font-family: Tiempos, Georgia, Times, serif;
+	font-size: 42px;
+	line-height: 64px;
+	font-weight: 900;
+}
+
+%__text {
+	font-family: Tiempos, Georgia, Times, serif;
+	font-weight: 300;
+}
+
+%sub__h {
+	font-family: Tiempos, Georgia, Times, serif;
+	font-size: 24px;
+	line-height: 36px;
+	font-weight: 300;
+}
+
+// main -> placeholders
+
+// =============================================
+
+//	Main -> Portfolio Mod
+
+// =============================================
+
 .portfolio-h1 {
 	font-family: Tiempos, Georgia, Times, serif;
 	font-weight: 900;
-	color: #FFFFFF;
+	color: $white;
 }
 
 .txt-width--thr {
 	max-width: 700px;
+	margin-bottom: 60px;
+}
+
+.txt-width--center {
+	text-align: center;
 }
 
 .portfolio-image-set--full img {
@@ -33,36 +65,65 @@
 }
 
 .portfolio-kicker--thr {
+	padding-bottom: 6px;
 	&:after {
+		background-color: $white;
 		width: 100%;
 	}
 }
 
+// main -> portfolio mod
+
+// =============================================
+
+//	Main
+
+// =============================================
+
 .thr__h {
-	font-family: Tiempos, Georgia, Times, serif;
+	@extend %__h;
 	color: $black;
-	font-size: 64px;
-	line-height: 82px;
-	font-weight: 900;
 	text-align: center;
+	@include mq($h-mobile--lg) {
+		font-size: 82px;
+		line-height: 91px;
+	}
 	@include mq($h-tablet--lg) {
 		font-size: 82px;
 		line-height: 91px;
 	}
-}
 
-.thr__h--lg {
-	font-size: 125px;
+	&--white {
+		color: $white;
+	}
+
+	&--lg {
+		font-size: 64px;
+		@include mq($h-mobile--lg) {
+			font-size: 82px;
+		}
+		@include mq($h-tablet--lg) {
+			font-size: 125px;
+		}
+	}
+
+	&--sm {
+		font-size: 40px;
+		line-height: 1;
+		margin-bottom: 30px;
+	}
 }
 
 .thr__sub-h {
-	font-family: Tiempos, Georgia, Times, serif;
+	@extend %sub__h;
 	color: $black;
-	font-weight: 300;
-	font-size: 42px;
-	line-height: 62px;
 	text-align: center;
 	margin-bottom: 60px;
+
+	@include mq($h-tablet--lg) {
+		font-size: 42px;
+		line-height: 62px;
+	}
 }
 
 .thr__topic-h {
@@ -74,25 +135,44 @@
 	font-size: 20px;
 	line-height: 36px;
 	text-align: center;
-	margin-bottom: 20px;
-}
+	margin-bottom: 40px;
 
-.thr__topic-h--bdr {
-	border-bottom: 1px solid $black;
+	&--bdr {
+		border-bottom: 1px solid currentColor;
+		display: inline-block;
+	}
+	
+	&--white {
+		color: $white;
+	}
 }
 
 .thr__text {
 	p {
-		font-family: Tiempos, Georgia, Times, serif;
-		font-weight: 300;
-		font-size: 24px;
-		line-height: 42px;
+		@extend %__text;
+		font-size: 18px;
+		line-height: 26px;
 		color: $black;
+
+		@include mq($h-tablet--lg) {
+			font-size: 23px;
+			line-height: 42px;
+		}
 	}
 
 	.dropcap {
 		font-family: Tiempos, Georgia, Times, serif;
 		font-weight: 700;
+	}
+
+	&--white p {
+		color: $white;
+	}
+}
+
+.thr__text-mod {
+	&--center {
+		text-align: center;
 	}
 }
 
@@ -100,47 +180,53 @@
 	margin-bottom: 80px;
 }
 
-.thr__nav-items {
-
-}
+.thr__nav-items {}
 
 .thr__nav-item {
 	counter-increment: step-counter;
-	padding: 25px 30px;
 	border-top: 1px solid $black;
 	color: $black;
 	font-size: 22px;
 	line-height: 1;
+	position: relative;
 	&:last-child {
 		border-bottom: 1px solid $black;
 	}
 	&:before {
 		content: counter(step-counter);
-		margin-right: 12px;
+		margin-top: -14px;
 		background-color: $hechingerBlue;
-		padding: 5px 10px;
+		padding: 5px 9px;
 		border-radius: 50%;
 		font-size: 16px;
 		font-weight: 300;
-		color: #FFFFFF;
+		color: $white;
+		position: absolute;
+		top: 50%;
+		left: 50px;
+		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	}
+
+	&:hover {
+		&:before {background-color: $black; color: $white;}
 	}
 }
 
 .thr__nav-link {
-	color: $hechingerBlue;
+	padding: 25px 30px 25px 90px;
 	text-decoration: none;
+	display: block;
+	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
 	&:hover {
-		border-bottom: 2px solid $hechingerBlue;	
+		background-color: $hechingerBlue;
+		.thr__txt-mod { color: $white; }
 	}
 }
 
-.badge-a {
-	background-color: $black;
-	margin: 100px auto;
-	padding: 10px 15px;
-	max-width: 80px;
-	width: 100%;
-	text-align: center;
+.thr__divider {
+	max-width: 30px;
+	margin: 0 auto;
 	position: relative;
 	&:after,
 	&:before {
@@ -148,9 +234,9 @@
 		position: absolute;
 		width: 80px;
 		height: 1px;
-		background-color: #000;
+		background-color: $white;
 		top: 50%;
-		margin-top: 1px;
+		margin-top: -7px;
 	}
 	&:after {
 		left: -100px;
@@ -160,15 +246,290 @@
 	}
 }
 
+.thr__icon--badge {
+	width: 100%;
+	fill: $white;
+}
+
+.thr__bg {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+
+	&--blue {
+		background-color: $hechingerBlue;
+	}
+
+	&--yellow {
+		background-color: $hechingerYellow;
+	}
+
+	&--light-gray {
+		background-color: $lightGray;
+	}
+}
+
+.thr__pad {
+	&--horiz {
+		padding-top: 140px;
+		padding-bottom: 140px;
+	}
+
+	&--top-lg{
+		padding-top: 25%;
+	}
+
+	&--horiz-med {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+}
+
+.thr__txt-mod {
+	&--blue { color: $hechingerBlue; }
+}
+
+// main 
+
+// =============================================
+
+//	Main -> Quote Box
+
+// =============================================
+
+.thr__quote-box {
+	border: 10px solid lighten($hechingerBlue, 10%);
+	padding: 45px;
+	position: relative;
+	margin-bottom: 100px;
+
+	@include mq($h-tablet--lg) {
+		padding: 90px;
+		padding: 75px;
+	}
+	&:before,
+	&:after {
+		content: "";
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-color: transparent;
+	}
+	&:before {
+		bottom: -100px;
+		left: 70px;
+		border-width: 0 100px 100px 0;
+		border-color: transparent lighten($hechingerBlue, 10%) transparent transparent;
+	}
+	&:after {
+		bottom: -75px;
+		left: 85px;
+		border-width: 0px 75px 75px 0;
+		border-color: transparent $hechingerBlue transparent transparent;
+	}
+}
+
+.thr__quote-text {
+	@extend %sub__h;
+	font-size: 18px;
+	line-height: 28px;
+	font-weight: 300;
+	color: $white;
+
+	@include mq($h-tablet--lg) {
+		font-size: 42px;
+		line-height: 62px;
+	}
+}
+
+// main -> quote box
+
+// =============================================
+
+//	Main -> Bite In
+
+// =============================================
+
+.thr__bite-in {
+	position: relative;
+	background-color: $black;
+	width: 100%;
+	margin-top: -110px;
+	padding: 180px 0 100px 0;
+
+	&--txt-center {
+		text-align: center;
+	}
+}
+
+// main -> bite in
+
+// =============================================
+
+//	Main -> Badge
+
+// =============================================
+
+.badge-a {
+	max-width: 80px;
+	margin: 100px auto;
+	position: relative;
+
+	&--bite-in {
+		margin-top: -50px;
+	}
+}
+
+.badge-a__content {
+	background-color: $black;
+	padding: 14px 10px 0 10px;
+	width: 100%;
+	text-align: center;
+	&:after,
+	&:before {
+		content: "";
+		position: absolute;
+		width: 80px;
+		height: 1px;
+		background-color: $black;
+		top: 50%;
+		margin-top: -15px;
+	}
+	&:after {
+		left: -100px;
+	}
+	&:before {
+		right: -100px;
+	}
+}
+
+.badge-a__content {
+	&--no-bdr {
+		&:before,
+		&:after {
+			display: none;
+		}
+	}
+}
+
 .badge-a__h {
 	font-family: Tiempos, Georgia, Times, serif;
 	font-weight: 900;
 	font-size: 30px;
 	line-height: 30px;
-	color: #FFFFFF;
+	color: $white;
 }
 
 .badge-a__h-sub {
 	font-size: 16px;
 	margin-bottom: 8px;
 } 
+
+.triangle__item--badge-a--left {
+	&:after {
+		border-color: transparent transparent transparent $black;
+	}
+}
+
+.triangle__item--badge-a--right {
+	&:after {
+		border-color: transparent transparent $black transparent;
+	}
+}
+
+.triangle__item--badge-a--down {
+	&:after {
+		border-top: 260px solid $black;
+		margin-top: -279px;
+	}
+}
+
+// main -> badge
+
+// =============================================
+
+//	Main -> Exam Books
+
+// =============================================
+
+.thr__exam-books {
+	position: relative;
+	padding: 100px 0;
+	@include clearfix;
+}
+
+.thr__exam-book {
+	width: 33.33%;
+	position: relative;
+	float: left;
+	padding-right: 10px;
+	&:nth-of-type(2) {
+		margin-top: -50px;
+	}
+	&:last-child {
+		padding: 0;
+	}
+}
+
+.thr__exam-book-img {
+	width: 100%;
+}
+
+// main -> exam books
+
+// =============================================
+
+//	Main -> Typeface Spec
+
+// =============================================
+
+.thr__logo {
+	width: 20%;
+	max-width: 300px;
+	margin: 0 auto -11% auto;
+	position: relative;
+	z-index: 10;
+
+	@include mq($h-desktop--lg) {
+		font-size: 82px;
+		line-height: 91px;
+		margin-bottom: -180px;
+	}
+}
+
+.thr__type-spec {
+	width: 100%;
+	border-top: 4px solid $black;
+	border-bottom: 2px solid rgba(0,0,0, 0.2); 
+	color: $black;
+	margin-bottom: 45px;
+}
+
+.thr__type {
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+
+	&--tiempos {
+		margin: -10% auto 100px auto;
+	}
+
+	&--national {
+		margin: -2% auto 100px auto;
+	}
+}
+
+.thr__svg {
+	width: 100%;
+
+	&--yellow {
+		fill: $hechingerYellow;
+	}
+
+	&--blue {
+		fill: darken($hechingerBlue, 5%);
+	}
+}
+
+// main -> typeface spec
