@@ -1,8 +1,16 @@
+// =============================================
+
+//	Hechinger Dependencies
+
+// =============================================
+
 @import "custom/custom-base";
 @import "hechinger-partials/mixins.scss";
 @import "hechinger-partials/variables.scss";
 @import "hechinger-partials/fonts.scss";
 @import "site/partials/buttons";
+
+// hechinger dependencies
 
 // =============================================
 
@@ -12,6 +20,7 @@
 
 @import "hechinger-partials/x-ray.scss";
 
+// x-ray
 
 // =============================================
 
@@ -117,7 +126,7 @@
 
 // =============================================
 
-//	Main
+//	Main -> Character Styles
 
 // =============================================
 
@@ -140,18 +149,34 @@
 
 	&--lg {
 		font-size: 64px;
+		margin-bottom: 30px;
 		@include mq($h-mobile--lg) {
-			font-size: 82px;
+			font-size: 94px;
+			margin-bottom: 40px;
 		}
 		@include mq($h-tablet--lg) {
 			font-size: 125px;
+			margin-bottom: 60px;
 		}
 	}
 
-	&--sm {
+	&--med {
 		font-size: 40px;
 		line-height: 1;
 		margin-bottom: 30px;
+	}
+
+	&--sm {
+		font-size: 24px;
+		line-height: 1;
+
+		@include mq($h-mobile--lg) {
+			font-size: 30px;
+		}
+
+		@include mq($h-tablet--lg) {
+			font-size: 32px;
+		}
 	}
 }
 
@@ -265,6 +290,14 @@
 	}
 }
 
+// main -> character styles
+
+// =============================================
+
+//	Main -> Layout
+
+// =============================================
+
 .thr__divider {
 	max-width: 30px;
 	margin: 0 auto;
@@ -323,6 +356,10 @@
 		padding-top: 25%;
 	}
 
+	&--bottom-med {
+		padding-bottom: 80px;
+	}
+
 	&--horiz-med {
 		padding-top: 80px;
 		padding-bottom: 80px;
@@ -354,9 +391,30 @@
 .thr__l {
 	@extend %__l;
 	&--wide { @extend %__l--wide; }
+
+	&--rule {
+		border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+		> .thr__grid-item:nth-of-type(2n+2) { border-left: 1px solid rgba(0, 0, 0, 0.5); }
+	}
 }
 
-// main 
+.thr__grid {
+	padding-bottom: 10px;
+	@include media-grid(2, 40px, '.thr__grid-item');
+	text-align: center;
+	margin-left: 0;
+}
+
+.thr__grid-item {
+	padding-top: 10px;
+	padding-bottom: 60px;
+
+	&:nth-of-type(1) {
+		padding-right: 40px;
+	}
+}
+
+// main -> layout
 
 // =============================================
 
