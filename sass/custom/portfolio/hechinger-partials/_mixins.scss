@@ -34,3 +34,20 @@ $breakpoints: (
     clear: both;
   }
 }
+
+// Padding 
+@mixin pad($args) {
+ 
+  $offsets: top right bottom left;
+
+  @each $o in $offsets {
+
+    $i: index($args, $o);
+
+    @if $i
+    and $i + 1 <= length($args)                 
+    and type-of( nth($args, $i + 1) ) == number  {
+      #{padding- + $o}: nth($args, $i + 1);
+    }
+  }
+}

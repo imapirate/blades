@@ -2,6 +2,7 @@
 @import "hechinger-partials/mixins.scss";
 @import "hechinger-partials/variables.scss";
 @import "hechinger-partials/fonts.scss";
+@import "site/partials/buttons";
 
 // =============================================
 
@@ -37,6 +38,40 @@
 	font-weight: 300;
 }
 
+%thr__btn {
+	@extend %btn-large;
+	max-width: 200px;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 18px;
+	transition: background-color 0.2s ease-in-out; 
+
+	&:hover {
+		background-color: $black;
+	}
+
+	&--blue {
+		@extend %thr__btn;
+		background-color: $hechingerBlue;
+	}
+
+	&--yellow {
+		@extend %thr__btn;
+		background-color: $hechingerYellow;
+	}
+}
+
+%__l {
+	margin: 0 auto;
+	position: relative;
+
+	&--wide {
+		@extend %__l;
+		width: 80%;
+	}
+}
+
 // main -> placeholders
 
 // =============================================
@@ -53,7 +88,11 @@
 
 .txt-width--thr {
 	max-width: 700px;
-	margin-bottom: 60px;
+	margin-bottom: 25px;
+
+	@include mq($h-mobile--lg) {
+		margin-bottom: 60px;
+	}
 }
 
 .txt-width--center {
@@ -71,6 +110,8 @@
 		width: 100%;
 	}
 }
+
+// .full-width img { width: 100%; }
 
 // main -> portfolio mod
 
@@ -254,7 +295,10 @@
 .thr__bg {
 	position: relative;
 	width: 100%;
-	overflow: hidden;
+
+	&--hidden {
+		overflow: hidden;
+	}
 
 	&--blue {
 		background-color: $hechingerBlue;
@@ -283,10 +327,33 @@
 		padding-top: 80px;
 		padding-bottom: 80px;
 	}
+
+	&--bite-in {
+		padding-top: 160px;
+		padding-bottom: 80px;
+	}
 }
 
 .thr__txt-mod {
 	&--blue { color: $hechingerBlue; }
+}
+
+.thr__img {
+	width: 100%;
+	&--pad {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	&--bdr-shadow{
+		border: 1px solid $mediumGray;
+		box-shadow: rgba(0, 0, 0, 0.2) -2px 1px 10px;
+	}
+}
+
+.thr__l {
+	@extend %__l;
+	&--wide { @extend %__l--wide; }
 }
 
 // main 
@@ -343,6 +410,12 @@
 	}
 }
 
+.thr__btn {
+	@extend %thr__btn;
+	&--blue { @extend %thr__btn--blue; }
+	&--yellow { @extend %thr__btn--yellow; }
+}
+
 // main -> quote box
 
 // =============================================
@@ -373,11 +446,20 @@
 
 .badge-a {
 	max-width: 80px;
-	margin: 100px auto;
+	margin: 60px auto;
 	position: relative;
+	z-index: 10;
+
+	@include mq($h-tablet--lg) {
+		margin: 100px auto;
+	}
 
 	&--bite-in {
 		margin-top: -50px;
+	}
+
+	&--bite-down {
+		margin-bottom: -80px;
 	}
 }
 
@@ -455,7 +537,12 @@
 
 .thr__exam-books {
 	position: relative;
-	padding: 100px 0;
+	padding: 60px 0;
+	
+	@include mq($h-tablet) {
+		padding: 100px 0;
+	}
+
 	@include clearfix;
 }
 
@@ -504,19 +591,47 @@
 	border-bottom: 2px solid rgba(0,0,0, 0.2); 
 	color: $black;
 	margin-bottom: 45px;
+	display: flex;
+	flex-direction: column;
+
+	@include mq($h-mobile--lg) {
+		flex-direction: row;
+	}
+}
+
+.thr__type-item {
+	flex-grow: 1;
+	font-size: 18px;
+	padding: 10px 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+	@include mq($h-mobile--lg) {
+		border-bottom: 0;
+	}
+	
+	@include mq($h-tablet) {
+		font-size: 24px;
+	}
+
+	&:last-child {
+		flex-grow: 3;
+		border-bottom: 0;
+
+		@include mq($h-mobile--lg) {
+			text-align: right;
+			padding-right: 20px;
+		}
+	}
 }
 
 .thr__type {
-	position: relative;
-	width: 80%;
-	margin: 0 auto;
-
+	@extend %__l--wide;
 	&--tiempos {
-		margin: -10% auto 100px auto;
+		margin: -10% auto 14% auto;
 	}
 
 	&--national {
-		margin: -2% auto 100px auto;
+		margin: -2% auto 14% auto;
 	}
 }
 
@@ -533,3 +648,27 @@
 }
 
 // main -> typeface spec
+
+// =============================================
+
+//	Main -> Brand Guidelines
+
+// =============================================
+
+.thr__guidelines {
+	@extend %__l--wide;
+	@include clearfix;
+}
+
+.thr__guideline-item {
+	width: 100%;
+	position: relative;
+
+	@include mq($h-mobile--lg) {
+		width: 50%;
+		float: left;
+		padding-left: 10px;
+	}
+}
+
+// main -> brand guidelines
