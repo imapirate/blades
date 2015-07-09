@@ -70,13 +70,15 @@
 	// @include rgba-bg(black, .6);
 	color: #fff;
 	max-width: 250px;
-	@media (min-width: 400px) {
-		// reset negative margin
-		margin-left: auto;
-		margin-right: auto;
-		// effectively increases border size
-		padding: 8px;
-	}
+	margin-left: auto;
+	margin-right: auto;
+	// @media (min-width: 400px) {
+	// 	// reset negative margin
+	// 	margin-left: auto;
+	// 	margin-right: auto;
+	// 	// effectively increases border size
+	// 	padding: 8px;
+	// }
 
 	.billboard-on & {
 		margin-top: -20%;

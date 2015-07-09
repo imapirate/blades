@@ -31,8 +31,63 @@
 %__h {
 	font-family: Tiempos, Georgia, Times, serif;
 	font-size: 42px;
-	line-height: 64px;
+	line-height: 1;
 	font-weight: 900;
+
+	@include mq($h-mobile--lg) {
+		font-size: 82px;
+		line-height: 91px;
+	}
+	@include mq($h-tablet--lg) {
+		font-size: 82px;
+		line-height: 91px;
+	}
+
+	&--lg {
+		@extend %__h;
+		font-size: 52px;
+		margin-bottom: 30px;
+		@include mq($h-mobile) {
+			font-size: 64px;
+		}
+		@include mq($h-mobile--lg) {
+			font-size: 94px;
+			margin-bottom: 40px;
+		}
+		@include mq($h-tablet--lg) {
+			font-size: 125px;
+			margin-bottom: 60px;
+		}
+	}
+
+	&--med {
+		@extend %__h;
+		font-size: 32px;
+		line-height: 1;
+		margin-bottom: 30px;
+
+		@include mq($h-mobile--lg) {
+			font-size: 40px;
+		}
+	}
+
+	&--sm {
+		@extend %__h;
+		font-size: 16px;
+		line-height: 1;
+
+		@include mq($h-mobile) {
+			font-size: 18px;
+		}
+
+		@include mq($h-mobile--lg) {
+			font-size: 30px;
+		}
+
+		@include mq($h-tablet--lg) {
+			font-size: 32px;
+		}
+	}
 }
 
 %__text {
@@ -81,6 +136,43 @@
 	}
 }
 
+%thr__count-list {
+	counter-increment: step-counter;
+	
+	color: $black;
+	line-height: 1;
+	position: relative;
+	font: 500 18px "proxima-nova", Helvetica, Arial, sans-serif;
+
+	@include mq($h-tablet) {
+		font-size: 22px;
+	}
+
+	&:before {
+		content: counter(step-counter);
+		margin-top: -14px;
+		background-color: $hechingerBlue;
+		text-align: center;
+		border-radius: 50%;
+		font-size: 16px;
+		font-weight: 300;
+		color: $white;
+		position: absolute;
+		top: 50%;
+		left: 20px;
+		height: 28px;
+		width: 28px;
+		line-height: 28px;
+
+		@include mq($h-mobile) {
+			left: 50px;
+			height: 30px;
+			width: 30px;
+			line-height: 30px;
+		}
+	}
+}
+
 // main -> placeholders
 
 // =============================================
@@ -97,7 +189,7 @@
 
 .txt-width--thr {
 	max-width: 700px;
-	margin-bottom: 25px;
+	margin-bottom: 45px;
 
 	@include mq($h-mobile--lg) {
 		margin-bottom: 60px;
@@ -134,61 +226,23 @@
 	@extend %__h;
 	color: $black;
 	text-align: center;
-	@include mq($h-mobile--lg) {
-		font-size: 82px;
-		line-height: 91px;
-	}
-	@include mq($h-tablet--lg) {
-		font-size: 82px;
-		line-height: 91px;
-	}
 
-	&--white {
-		color: $white;
-	}
-
-	&--lg {
-		font-size: 64px;
-		margin-bottom: 30px;
-		@include mq($h-mobile--lg) {
-			font-size: 94px;
-			margin-bottom: 40px;
-		}
-		@include mq($h-tablet--lg) {
-			font-size: 125px;
-			margin-bottom: 60px;
-		}
-	}
-
-	&--med {
-		font-size: 40px;
-		line-height: 1;
-		margin-bottom: 30px;
-	}
-
-	&--sm {
-		font-size: 24px;
-		line-height: 1;
-
-		@include mq($h-mobile--lg) {
-			font-size: 30px;
-		}
-
-		@include mq($h-tablet--lg) {
-			font-size: 32px;
-		}
-	}
+	&--white { color: $white; }
+	&--lg { @extend %__h--lg; }
+	&--med { @extend %__h--med; }
+	&--sm { @extend %__h--sm; }
 }
 
 .thr__sub-h {
 	@extend %sub__h;
 	color: $black;
 	text-align: center;
-	margin-bottom: 60px;
+	margin-bottom: 40px;
 
 	@include mq($h-tablet--lg) {
 		font-size: 42px;
 		line-height: 62px;
+		margin-bottom: 60px;
 	}
 }
 
@@ -246,48 +300,83 @@
 	margin-bottom: 80px;
 }
 
-.thr__nav-items {}
+.thr__nav-items { list-style: none; }
 
 .thr__nav-item {
-	counter-increment: step-counter;
+	@extend %thr__count-list;
+	
 	border-top: 1px solid $black;
-	color: $black;
-	font-size: 22px;
-	line-height: 1;
-	position: relative;
-	&:last-child {
-		border-bottom: 1px solid $black;
-	}
-	&:before {
-		content: counter(step-counter);
-		margin-top: -14px;
-		background-color: $hechingerBlue;
-		padding: 5px 9px;
-		border-radius: 50%;
-		font-size: 16px;
-		font-weight: 300;
-		color: $white;
-		position: absolute;
-		top: 50%;
-		left: 50px;
-		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-	}
 
-	&:hover {
-		&:before {background-color: $black; color: $white;}
+	&:last-child { border-bottom: 1px solid $black; }
+	&:before { transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; }
+	
+	html.no-touch & {
+		&:hover {
+			&:before { background-color: $black; color: $white; }
+		}
 	}
 }
 
 .thr__nav-link {
-	padding: 25px 30px 25px 90px;
+	padding: 20px 25px 20px 60px;
 	text-decoration: none;
 	display: block;
 	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
-	&:hover {
-		background-color: $hechingerBlue;
-		.thr__txt-mod { color: $white; }
+	@include mq($h-mobile) {
+		padding: 25px 30px 25px 90px;
 	}
+
+	html.no-touch & {
+		&:hover {
+			background-color: $hechingerBlue;
+			.thr__txt-mod { color: $white; }
+		}
+	}
+}
+
+.thr__count-item {
+	@extend %thr__count-list;
+
+	&--topic {
+		border-bottom: 1px solid $mediumGray;
+		font-size: 18px;
+		padding: 15px 1% 15px 20%;
+
+		@include mq($h-mobile) {
+			padding: 15px 1% 15px 15%;
+		}
+
+		@include mq($h-tablet) {
+			display: inline-block;
+			padding: 22px 1% 22px 10%;
+			float: left;
+			width: 33.3%;
+		}
+		
+		@include mq($h-tablet--lg) {
+			font-size: 22px;
+		}
+
+		&:before {
+			left: 5%;
+			@include mq($h-tablet) {
+				left: 12%;
+			}
+		}
+
+		// &:nth-child(n+4) {
+		// 	@include mq($h-tablet) {
+		// 		border-bottom: 0;
+		// 	}
+		// }
+	}
+}
+
+.thr__count-items {
+	list-style: none;
+	border-top: 1px solid $mediumGray;
+	overflow: auto;
 }
 
 // main -> character styles
@@ -348,8 +437,18 @@
 
 .thr__pad {
 	&--horiz {
-		padding-top: 140px;
-		padding-bottom: 140px;
+		padding-top: 80px;
+		padding-bottom: 80px;
+
+		@include mq($h-mobile--lg) {
+			padding-top: 100px;
+			padding-bottom: 100px;
+		}
+
+		@include mq($h-tablet--lg) {
+			padding-top: 140px;
+			padding-bottom: 140px;
+		}
 	}
 
 	&--top-lg{
@@ -357,17 +456,41 @@
 	}
 
 	&--bottom-med {
-		padding-bottom: 80px;
+		padding-bottom: 60px;
+
+		@include mq($h-mobile--lg) {
+			padding-bottom: 80px;
+		}
 	}
 
 	&--horiz-med {
-		padding-top: 80px;
+		padding-top: 40px;
+		padding-bottom: 40px;
+
+		@include mq($h-mobile--lg) {
+			padding-top: 60px;
+		padding-bottom: 60px;;
+		}
+
+		@include mq($h-tablet--lg) {
+			padding-top: 80px;
 		padding-bottom: 80px;
+		}
 	}
 
 	&--bite-in {
-		padding-top: 160px;
-		padding-bottom: 80px;
+		padding-top: 100px;
+		padding-bottom: 50px;
+
+		@include mq($h-mobile--lg) {
+			padding-top: 120px;
+			padding-bottom: 60px;
+		}
+
+		@include mq($h-tablet--lg) {
+			padding-top: 160px;
+			padding-bottom: 80px;
+		}
 	}
 }
 
@@ -400,18 +523,57 @@
 
 .thr__grid {
 	padding-bottom: 10px;
-	@include media-grid(2, 40px, '.thr__grid-item');
+	margin-bottom: 40px;
+	@include pie-clearfix;
 	text-align: center;
-	margin-left: 0;
 }
 
 .thr__grid-item {
-	padding-top: 10px;
-	padding-bottom: 60px;
+	padding: 10px 20px 60px 20px;
+	float: left;
+  	width: 50%;
 
-	&:nth-of-type(1) {
-		padding-right: 40px;
+  	&:nth-of-type(2n+3) {
+		clear: left;
 	}
+}
+
+.thr__accolade-item {
+	@extend %__h--sm;
+	line-height: 30px;
+	margin-bottom: 25px;
+	
+	@include mq($h-mobile--lg) {
+		line-height: 42px;
+		margin-bottom: 30px;
+	}
+
+	@include mq($h-tablet--lg) {
+		font-size: 35px;
+		line-height: 54px;
+	}
+}
+
+.thr__client {
+	@include clearfix;
+	display: table;
+}
+
+.thr__client-img {
+	overflow: hidden;
+	border-radius: 40px;
+	max-width: 80px;
+	width: 100%;
+	position: relative;
+	float: left;
+}
+
+.thr__client-desc {
+	padding: 10px 0 10px 10px;
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 24px;
+	> p { margin-bottom: 0; }
 }
 
 // main -> layout
@@ -423,10 +585,15 @@
 // =============================================
 
 .thr__quote-box {
-	border: 10px solid lighten($hechingerBlue, 10%);
-	padding: 45px;
+	border: 8px solid lighten($hechingerBlue, 10%);
+	padding: 30px;
 	position: relative;
 	margin-bottom: 100px;
+	
+	@include mq($h-mobile--lg) {
+		padding: 45px;
+		border: 10px solid lighten($hechingerBlue, 10%);
+	}
 
 	@include mq($h-tablet--lg) {
 		padding: 90px;
@@ -442,16 +609,28 @@
 		border-color: transparent;
 	}
 	&:before {
-		bottom: -100px;
-		left: 70px;
-		border-width: 0 100px 100px 0;
+		bottom: -70px;
+		left: 30px;
+		border-width: 0 70px 70px 0;
 		border-color: transparent lighten($hechingerBlue, 10%) transparent transparent;
+
+		@include mq($h-mobile--lg) {
+			bottom: -100px;
+			left: 70px;
+			border-width: 0 100px 100px 0;
+		}
 	}
 	&:after {
-		bottom: -75px;
-		left: 85px;
-		border-width: 0px 75px 75px 0;
+		bottom: -50px;
+		left: 42px;
+		border-width: 0px 50px 50px 0;
 		border-color: transparent $hechingerBlue transparent transparent;
+
+		@include mq($h-mobile--lg) {
+			bottom: -75px;
+			left: 85px;
+			border-width: 0px 75px 75px 0;
+		}
 	}
 }
 
@@ -461,6 +640,11 @@
 	line-height: 28px;
 	font-weight: 300;
 	color: $white;
+
+	@include mq($h-mobile--lg) {
+		font-size: 26px;
+		line-height: 44px;
+	}
 
 	@include mq($h-tablet--lg) {
 		font-size: 42px;
@@ -721,6 +905,7 @@
 .thr__guideline-item {
 	width: 100%;
 	position: relative;
+	padding-bottom: 10px;
 
 	@include mq($h-mobile--lg) {
 		width: 50%;
@@ -730,3 +915,94 @@
 }
 
 // main -> brand guidelines
+
+// =============================================
+
+//	Main -> Tablet
+
+// =============================================
+
+.thr__tablet {
+	background: $mediumGray;
+	padding: 11.7% 4.3%;
+	border-radius: 20px;
+	width: 100%;
+	position: relative;
+
+	@include mq($h-mobile) {
+		border-radius: 30px;
+	}
+
+	@include mq($h-mobile--lg) {
+  		border-radius: 36px;
+  	}
+	@include mq($h-tablet--lg) {
+  		border-radius: 44px;
+  	}
+	&:before {
+		width: calc(100% - 6px);
+		height: calc(100% - 6px);
+		position: absolute;
+		content: '';
+		display: block;
+		top: 3px;
+		left: 3px;
+		border-radius: 17px;
+		background: $black;
+		
+		@include mq($h-mobile) {
+			border-radius: 26px;
+		}
+
+		@include mq($h-mobile--lg) {
+  			border-radius: 33px;
+  			width: calc(100% - 8px);
+			height: calc(100% - 8px);
+			top: 4px;
+			left: 4px;
+  		}
+		@include mq($h-tablet--lg) {
+  			border-radius: 40px;
+  		}
+	}
+}
+
+.thr__tablet-screen {
+	width: 100%;
+	position: relative;
+	height: 100%;
+	color: white;
+	z-index: 2;
+	text-align: center;
+	display: block;
+	border-radius: 1px;
+	box-shadow: 0 0 0 3px #111;
+}
+
+.thr__tablet-home {
+  background: #000000;
+  width: 6%;
+  height: 4.13%;
+  position: absolute;
+  left: 50%;
+  margin-left: -4%;
+  bottom: 2%;
+  border-radius: 35px;
+  border: 2px solid $mediumGray;
+  @include mq($h-tablet--lg) {
+  	border: 3px solid $mediumGray;
+  }
+}
+
+.thr__tablet-camera {
+	background: #b2b2b2;
+	width: 1.65%;
+  	height: 1.1%;
+	position: absolute;
+	left: 50%;
+	margin-left: -5px;
+	top: 3.7%;
+	border-radius: 35px;
+}
+
+// main -> tablet
