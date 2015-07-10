@@ -333,6 +333,9 @@ a {
   @include svg("github", false);
 }
 
+.pmHome-apps-logo--trello {
+  @include svg("trello", false);
+}
 
 
 // --------------------------------------------
