@@ -335,8 +335,8 @@
 
 	html.no-touch & {
 		&:hover {
-			background-color: $hechingerBlue;
-			.thr__txt-mod { color: $white; }
+			// background-color: $hechingerBlue;
+			.thr__txt-mod { color: $mediumGray; }
 		}
 	}
 }
@@ -413,7 +413,11 @@
 
 .thr__icon--badge {
 	width: 100%;
-	fill: $white;
+	
+	&--black { fill: $black; }
+	&--white { fill: $white; }
+
+	&--up { transform: rotate(180deg); }
 }
 
 .thr__bg {
@@ -540,7 +544,7 @@
 
 .thr__accolade-item {
 	@extend %__h--sm;
-	line-height: 30px;
+	line-height: 25px;
 	margin-bottom: 25px;
 	
 	@include mq($h-mobile--lg) {
@@ -607,6 +611,7 @@
 	&--exam-book { @include scale-ratio(378.9, 296.8); }
 	&--logo { @include scale-ratio(320.3, 299.4); }
 	&--type { @include scale-ratio(194.3, 452.2); }
+	&--badge-icon { @include scale-ratio(45.4, 31); }
 }
 
 .thr__scale-svg {
@@ -652,7 +657,7 @@
 	}
 	&:before {
 		bottom: -70px;
-		left: 30px;
+		left: 20px;
 		border-width: 0 70px 70px 0;
 		border-color: transparent lighten($hechingerBlue, 10%) transparent transparent;
 
@@ -664,7 +669,7 @@
 	}
 	&:after {
 		bottom: -50px;
-		left: 42px;
+		left: 32px;
 		border-width: 0px 50px 50px 0;
 		border-color: transparent $hechingerBlue transparent transparent;
 
@@ -697,7 +702,7 @@
 .thr__quote-by-line {
 	position: absolute;
 	bottom: -85px;
-  	left: 120px;
+  	left: 110px;
   	color: $white;
   	line-height: 22px;
 
@@ -738,9 +743,7 @@
 		padding-bottom: 100px;
 	}
 
-	&--txt-center {
-		text-align: center;
-	}
+	&--txt-center { text-align: center; }
 }
 
 // main -> bite in
@@ -752,10 +755,11 @@
 // =============================================
 
 .badge-a {
-	max-width: 80px;
+	width: 80px;
 	margin: 60px auto 30px auto;
 	position: relative;
 	z-index: 10;
+	padding-top: 110px;
 
 	@include mq($h-tablet--lg) {
 		margin: 100px auto 80px auto;
@@ -768,13 +772,30 @@
 	&--bite-down {
 		margin-bottom: -80px;
 	}
+
+	&--hidden {
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		height: 32px;
+	}
+}
+
+.badge-a__container {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 .badge-a__content {
+	position: relative;
 	background-color: $black;
 	padding: 14px 10px 0 10px;
 	width: 100%;
 	text-align: center;
+
 	&:after,
 	&:before {
 		content: "";
@@ -785,12 +806,8 @@
 		top: 50%;
 		margin-top: -15px;
 	}
-	&:after {
-		left: -100px;
-	}
-	&:before {
-		right: -100px;
-	}
+	&:after { left: -100px; }
+	&:before { right: -100px; }
 }
 
 .badge-a__content {
@@ -808,6 +825,16 @@
 	font-size: 30px;
 	line-height: 30px;
 	color: $white;
+	transition: $trans--thr-h;
+
+	&--js {
+		position: relative;
+		transform: translate(0, -50px);
+
+		.thr__js--is-in-view & {
+			transform: translate(0, 0);
+		}
+	}
 }
 
 .badge-a__h-sub {
@@ -815,16 +842,32 @@
 	margin-bottom: 8px;
 } 
 
-.triangle__item--badge-a--left {
-	&:after {
-		border-color: transparent transparent transparent $black;
+.triangle {
+	&--js--up {
+		transform: translate(0, 10px);
+		transition: $trans--thr-badge-triangles;
+
+		.thr__js--is-in-view & {
+			transform: translate(0, 0);
+		}
+	}
+
+	&--js--down {
+		transform: translate(0, -30px);
+		transition: $trans--thr-badge-triangles;
+
+		.thr__js--is-in-view & {
+			transform: translate(0, 0);
+		}
 	}
 }
 
+.triangle__item--badge-a--left {
+	&:after { border-color: transparent transparent transparent $black; }
+}
+
 .triangle__item--badge-a--right {
-	&:after {
-		border-color: transparent transparent $black transparent;
-	}
+	&:after { border-color: transparent transparent $black transparent; }
 }
 
 .triangle__item--badge-a--down {
@@ -857,12 +900,29 @@
 	width: 33.33%;
 	position: relative;
 	float: left;
-	padding-right: 10px;
+	// padding-right: 10px;
 	&:nth-of-type(2) {
 		margin-top: -50px;
 	}
 	&:last-child {
 		padding: 0;
+	}
+
+	&--js {
+		transition: $trans--thr-exam-book;
+		&:nth-of-type(1) {
+			transform: translate(100%, -12%);
+			z-index: 10;
+		}
+
+		&:nth-of-type(3) {
+			transform: translate(-100%, -12%);
+			z-index: 10;
+		}
+
+		.thr__js--is-in-view & {
+			transform: translate(0, 0);
+		}
 	}
 }
 
@@ -950,6 +1010,13 @@
 	&--national { margin: -2% auto 14% auto; }
 }
 
+.thr__type-icon {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 10px;
+	width: 15px;
+}
+
 .thr__svg {
 	width: 100%;
 	&--yellow { fill: $hechingerYellow; }
@@ -992,16 +1059,16 @@
 .thr__tablet {
 	background: $mediumGray;
 	padding: 11.7% 4.3%;
-	border-radius: 20px;
+	border-radius: 14px;
 	width: 100%;
 	position: relative;
 
 	@include mq($h-mobile) {
-		border-radius: 25px;
+		border-radius: 18px;
 	}
 
 	@include mq($h-mobile--lg) {
-  		border-radius: 36px;
+  		border-radius: 30px;
   	}
 	@include mq($h-tablet--lg) {
   		border-radius: 44px;
@@ -1014,11 +1081,11 @@
 		display: block;
 		top: 2px;
 		left: 2px;
-		border-radius: 17px;
+		border-radius: 12px;
 		background: $black;
 		
 		@include mq($h-mobile) {
-			border-radius: 23px;
+			border-radius: 16px;
 			width: calc(100% - 6px);
 			height: calc(100% - 6px);
 			top: 3px;
@@ -1026,7 +1093,7 @@
 		}
 
 		@include mq($h-mobile--lg) {
-  			border-radius: 33px;
+  			border-radius: 27px;
   			width: calc(100% - 8px);
 			height: calc(100% - 8px);
 			top: 4px;
@@ -1036,12 +1103,14 @@
   			border-radius: 40px;
   		}
 	}
+	
+	&--white {
+		&:before { background-color: $white; };
+	}
 
 	&--shadow { 
 		box-shadow: -15px 15px 0px -6px rgba(0,0,0,0.10); 
-		
 		@include mq($h-mobile--lg) { box-shadow: -20px 20px 0px -8px rgba(0,0,0,0.10); }
-
 		@include mq($h-tablet--lg) { box-shadow: -30px 30px 0px -12px rgba(0,0,0,0.10); }
 	}
 }
@@ -1059,7 +1128,7 @@
 }
 
 .thr__tablet-home {
-	background: #000000;
+	background: $black;
 	width: 6%;
 	height: 4.13%;
 	position: absolute;
@@ -1074,6 +1143,8 @@
 	@include mq($h-tablet--lg) {
 		border: 3px solid $mediumGray;
 	}
+
+	.thr__tablet--white & { background: $white; }
 }
 
 .thr__tablet-camera {
@@ -1088,3 +1159,13 @@
 }
 
 // main -> tablet
+
+// =============================================
+
+//	Main -> Swiper
+
+// =============================================
+
+.thr__swiper {}
+
+// main -> swiper

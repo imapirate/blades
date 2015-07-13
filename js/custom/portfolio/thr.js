@@ -8,9 +8,12 @@
 			$thrStats = $('.thr-stats'),
 			$thrIcon = $('.thr-icon img'),
 			$thrNavLink = $('.thr__nav-link'),
+			$thrScrollItem = $('.thr__js--scroll-item'),
 		
 			controller = new ScrollMagic.Controller(),
 			statsInView = false,
+			thrInView,
+			thrSwiper,
 			isAndroid,
 			statsNum = 100;
 
@@ -97,6 +100,19 @@
 				.addTo(controller);		
 			});
 
+			$thrScrollItem.each(function(i){
+				thrInView = new ScrollMagic.Scene({
+					triggerElement: $thrScrollItem[i], 
+					triggerHook: 'onCenter'
+				})
+				.on('enter', function() {
+					var _$this = $(this.triggerElement());
+
+					_$this.addClass('thr__js--is-in-view');
+				})
+				.addTo(controller);
+			});
+
 		};
 
 		scrollHandler();
@@ -112,6 +128,18 @@
 				easing: 'easeInOutExpo'
 			}, 600);
 		});
+
+		// Swiper
+		
+		thrSwiper = new Swiper('.thr__swiper', {
+			calculateHeight: true,
+		    mode: 'horizontal',
+		    roundLengths: true,
+		    resistance: '100%',
+		    grabCursor: true,
+		    autoplay: 3000,
+		    speed: 500
+		}); 
 
 	});
 })(jQuery);

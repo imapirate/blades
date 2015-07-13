@@ -86,7 +86,7 @@
 }
 
 .portfolio-h-inner {
-	padding: 18px 18px 20px;
+	padding: 18px 18px 5px;
 	@include rgba-bg(black, .9);
 	@media (min-width: 500px) {
 		padding: 25px 25px 0;
@@ -194,7 +194,7 @@ $triangle-height: 50px;
 }
 
 .portfolio-h1 {
-	font-size: 17px;
+	font-size: 18px;
 	// Matches portfolio-kicker
 	@media (min-width: 500px) {
 		font-size: 22px;
