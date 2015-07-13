@@ -86,7 +86,7 @@
 }
 
 .portfolio-h-inner {
-	padding: 18px 18px 28px;
+	padding: 18px 18px 20px;
 	@include rgba-bg(black, .9);
 	@media (min-width: 500px) {
 		padding: 25px 25px 0;
@@ -153,7 +153,7 @@ $triangle-height: 50px;
 		display: block;
 		width: 0;
 		height: 0;
-		border-style: inset;
+		border-style: solid;
 		border-width: $triangle-height 0 0 210px;
 		border-color: transparent transparent transparent rgba(0,0,0,0.9);
 	}

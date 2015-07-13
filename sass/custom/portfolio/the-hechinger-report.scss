@@ -33,14 +33,16 @@
 	font-size: 42px;
 	line-height: 1;
 	font-weight: 900;
+	margin-bottom: 30px;
 
 	@include mq($h-mobile--lg) {
-		font-size: 82px;
-		line-height: 91px;
+		font-size: 64px;
+		margin-bottom: 40px;
 	}
 	@include mq($h-tablet--lg) {
 		font-size: 82px;
 		line-height: 91px;
+		margin-bottom: 60px;
 	}
 
 	&--lg {
@@ -97,9 +99,14 @@
 
 %sub__h {
 	font-family: Tiempos, Georgia, Times, serif;
-	font-size: 24px;
-	line-height: 36px;
+	font-size: 20px;
+	line-height: 32px;
 	font-weight: 300;
+
+	@include mq($h-mobile--lg) {
+		font-size: 24px;
+		line-height: 36px;
+	}
 }
 
 %thr__btn {
@@ -189,11 +196,6 @@
 
 .txt-width--thr {
 	max-width: 700px;
-	margin-bottom: 45px;
-
-	@include mq($h-mobile--lg) {
-		margin-bottom: 60px;
-	}
 }
 
 .txt-width--center {
@@ -270,9 +272,13 @@
 .thr__text {
 	p {
 		@extend %__text;
-		font-size: 18px;
+		font-size: 16px;
 		line-height: 26px;
 		color: $black;
+
+		@include mq($h-mobile--lg) {
+			font-size: 18px;
+		}
 
 		@include mq($h-tablet--lg) {
 			font-size: 23px;
@@ -401,12 +407,8 @@
 		top: 50%;
 		margin-top: -7px;
 	}
-	&:after {
-		left: -100px;
-	}
-	&:before {
-		right: -100px;
-	}
+	&:after { left: -100px; }
+	&:before { right: -100px; }
 }
 
 .thr__icon--badge {
@@ -417,22 +419,10 @@
 .thr__bg {
 	position: relative;
 	width: 100%;
-
-	&--hidden {
-		overflow: hidden;
-	}
-
-	&--blue {
-		background-color: $hechingerBlue;
-	}
-
-	&--yellow {
-		background-color: $hechingerYellow;
-	}
-
-	&--light-gray {
-		background-color: $lightGray;
-	}
+	&--hidden { overflow: hidden; }
+	&--blue { background-color: $hechingerBlue; }
+	&--yellow { background-color: $hechingerYellow; }
+	&--light-gray { background-color: $lightGray; }
 }
 
 .thr__pad {
@@ -456,26 +446,35 @@
 	}
 
 	&--bottom-med {
-		padding-bottom: 60px;
+		// padding-bottom: 60px;
+		
+		@include mq($h-tablet) {
+			padding-bottom: 40px;
+		}
 
-		@include mq($h-mobile--lg) {
+		@include mq($h-tablet--lg) {
 			padding-bottom: 80px;
 		}
 	}
 
 	&--horiz-med {
-		padding-top: 40px;
-		padding-bottom: 40px;
+		padding-top: 50px;
+		padding-bottom: 50px;
 
 		@include mq($h-mobile--lg) {
 			padding-top: 60px;
-		padding-bottom: 60px;;
+			padding-bottom: 60px;;
 		}
 
 		@include mq($h-tablet--lg) {
 			padding-top: 80px;
 		padding-bottom: 80px;
 		}
+	}
+
+	&--article{
+		padding-top: 4%;
+		padding-bottom: 50%;
 	}
 
 	&--bite-in {
@@ -500,6 +499,7 @@
 
 .thr__img {
 	width: 100%;
+	display: block;
 	&--pad {
 		padding-left: 10px;
 		padding-right: 10px;
@@ -514,7 +514,7 @@
 .thr__l {
 	@extend %__l;
 	&--wide { @extend %__l--wide; }
-
+	&--hidden { overflow: hidden; }
 	&--rule {
 		border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 		> .thr__grid-item:nth-of-type(2n+2) { border-left: 1px solid rgba(0, 0, 0, 0.5); }
@@ -529,7 +529,7 @@
 }
 
 .thr__grid-item {
-	padding: 10px 20px 60px 20px;
+	padding: 10px 20px 0 20px;
 	float: left;
   	width: 50%;
 
@@ -576,6 +576,47 @@
 	> p { margin-bottom: 0; }
 }
 
+.thr__offset {
+	position: absolute;
+	
+	&--bottom { bottom: 0; }
+	&--left { left: -16.5%; }
+	&--right { right: -16.5%; }
+
+	&--tablet-lg {
+		width: 85%;
+  		left: -16.5%;
+	}
+
+	&--tablet-med {
+		width: 67%;
+		right: -16.5%;
+		z-index: 10;
+	}
+}
+
+.thr__scale-svg-container {
+	 position: relative; 
+	 height: 0; 
+	 width: 100%; 
+	 padding: 0;
+	 padding-bottom: 100%; 
+}
+
+.thr__svg-pad {
+	&--exam-book { @include scale-ratio(378.9, 296.8); }
+	&--logo { @include scale-ratio(320.3, 299.4); }
+	&--type { @include scale-ratio(194.3, 452.2); }
+}
+
+.thr__scale-svg {
+	 position: absolute; 
+	 height: 100%; 
+	 width: 100%; 
+	 left: 0; 
+	 top: 0;
+}
+
 // main -> layout
 
 // =============================================
@@ -589,6 +630,7 @@
 	padding: 30px;
 	position: relative;
 	margin-bottom: 100px;
+	position: relative;
 	
 	@include mq($h-mobile--lg) {
 		padding: 45px;
@@ -652,6 +694,19 @@
 	}
 }
 
+.thr__quote-by-line {
+	position: absolute;
+	bottom: -85px;
+  	left: 120px;
+  	color: $white;
+  	line-height: 22px;
+
+  	@include mq($h-mobile--lg) {
+		bottom: -90px;
+  		left: 190px;
+  	}
+}
+
 .thr__btn {
 	@extend %thr__btn;
 	&--blue { @extend %thr__btn--blue; }
@@ -671,7 +726,17 @@
 	background-color: $black;
 	width: 100%;
 	margin-top: -110px;
-	padding: 180px 0 100px 0;
+	padding: 160px 0 70px 0;
+
+	@include mq($h-mobile--lg) {
+		padding-top: 170px;
+		padding-bottom: 80px;
+	}
+
+	@include mq($h-tablet--lg) {
+		padding-top: 180px;
+		padding-bottom: 100px;
+	}
 
 	&--txt-center {
 		text-align: center;
@@ -688,12 +753,12 @@
 
 .badge-a {
 	max-width: 80px;
-	margin: 60px auto;
+	margin: 60px auto 30px auto;
 	position: relative;
 	z-index: 10;
 
 	@include mq($h-tablet--lg) {
-		margin: 100px auto;
+		margin: 100px auto 80px auto;
 	}
 
 	&--bite-in {
@@ -833,30 +898,43 @@
 	border-bottom: 2px solid rgba(0,0,0, 0.2); 
 	color: $black;
 	margin-bottom: 45px;
-	display: flex;
-	flex-direction: column;
+	position: relative;
+	
+	.no-flexbox & { overflow: auto; }
 
-	@include mq($h-mobile--lg) {
-		flex-direction: row;
+	.flexbox & {
+		display: flex;
+		flex-direction: column;
+		@include mq($h-mobile--lg) { flex-direction: row; }
 	}
 }
 
 .thr__type-item {
-	flex-grow: 1;
 	font-size: 18px;
 	padding: 10px 0;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	position: relative;
 
 	@include mq($h-mobile--lg) {
 		border-bottom: 0;
 	}
 	
-	@include mq($h-tablet) {
+	@include mq($h-tablet--lg) {
 		font-size: 24px;
 	}
 
+	.no-flexbox & { 
+		width: 100%;
+		@include mq($h-mobile--lg) {
+			float: left;
+			width: 33.3%;
+		}
+	}
+
+	.flexbox & { flex-grow: 1; }
+
 	&:last-child {
-		flex-grow: 3;
+		.flexbox & { flex-grow: 3; }
 		border-bottom: 0;
 
 		@include mq($h-mobile--lg) {
@@ -868,25 +946,14 @@
 
 .thr__type {
 	@extend %__l--wide;
-	&--tiempos {
-		margin: -10% auto 14% auto;
-	}
-
-	&--national {
-		margin: -2% auto 14% auto;
-	}
+	&--tiempos { margin: -10% auto 14% auto; }
+	&--national { margin: -2% auto 14% auto; }
 }
 
 .thr__svg {
 	width: 100%;
-
-	&--yellow {
-		fill: $hechingerYellow;
-	}
-
-	&--blue {
-		fill: darken($hechingerBlue, 5%);
-	}
+	&--yellow { fill: $hechingerYellow; }
+	&--blue { fill: darken($hechingerBlue, 5%); }
 }
 
 // main -> typeface spec
@@ -930,7 +997,7 @@
 	position: relative;
 
 	@include mq($h-mobile) {
-		border-radius: 30px;
+		border-radius: 25px;
 	}
 
 	@include mq($h-mobile--lg) {
@@ -940,18 +1007,22 @@
   		border-radius: 44px;
   	}
 	&:before {
-		width: calc(100% - 6px);
-		height: calc(100% - 6px);
+		width: calc(100% - 4px);
+		height: calc(100% - 4px);
 		position: absolute;
 		content: '';
 		display: block;
-		top: 3px;
-		left: 3px;
+		top: 2px;
+		left: 2px;
 		border-radius: 17px;
 		background: $black;
 		
 		@include mq($h-mobile) {
-			border-radius: 26px;
+			border-radius: 23px;
+			width: calc(100% - 6px);
+			height: calc(100% - 6px);
+			top: 3px;
+			left: 3px;
 		}
 
 		@include mq($h-mobile--lg) {
@@ -964,6 +1035,14 @@
 		@include mq($h-tablet--lg) {
   			border-radius: 40px;
   		}
+	}
+
+	&--shadow { 
+		box-shadow: -15px 15px 0px -6px rgba(0,0,0,0.10); 
+		
+		@include mq($h-mobile--lg) { box-shadow: -20px 20px 0px -8px rgba(0,0,0,0.10); }
+
+		@include mq($h-tablet--lg) { box-shadow: -30px 30px 0px -12px rgba(0,0,0,0.10); }
 	}
 }
 
@@ -980,18 +1059,21 @@
 }
 
 .thr__tablet-home {
-  background: #000000;
-  width: 6%;
-  height: 4.13%;
-  position: absolute;
-  left: 50%;
-  margin-left: -4%;
-  bottom: 2%;
-  border-radius: 35px;
-  border: 2px solid $mediumGray;
-  @include mq($h-tablet--lg) {
-  	border: 3px solid $mediumGray;
-  }
+	background: #000000;
+	width: 6%;
+	height: 4.13%;
+	position: absolute;
+	left: 50%;
+	margin-left: -4%;
+	bottom: 2.1%;
+	border-radius: 50px;
+	border: 1px solid $mediumGray;
+	@include mq($h-mobile--lg) {
+		border: 2px solid $mediumGray;
+	}
+	@include mq($h-tablet--lg) {
+		border: 3px solid $mediumGray;
+	}
 }
 
 .thr__tablet-camera {

@@ -400,10 +400,20 @@
 	@include scale3d(0, 0, 0, false);
 	// easeInBack
 	@include transition(compact(transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045)));
+	
+	.no-csstransforms3d & {
+		opacity: 0;
+		transition: opacity 0.5s ease-in-out;
+	}
+
 	.is-in-view &{
 		@include scale3d(1, 1, 1, false);
 		// easeOutBack
 		@include transition(compact(transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)));
+
+		.no-csstransforms3d & {
+			opacity: 1;
+		}
 	}
 }
 
@@ -428,6 +438,9 @@
 		top: -70px;
 
 		// breakpoints
+		@include respond-to('phablet'){
+			top: 40px;
+		}
 		@include respond-to('tablet-vert'){
 			top: 140px;
 		}
