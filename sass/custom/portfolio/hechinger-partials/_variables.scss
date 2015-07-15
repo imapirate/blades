@@ -43,5 +43,12 @@ $trans--thr-exam-book: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1) 0.8s;
 
 // Badge
 $trans--thr-badge-triangles: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-$trans--thr-h: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.4s;
+$trans--thr-h: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
+$trans--badge-divider: width 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 $trans--badge-pad: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+// Buttons 
+$trans--button: background-color 0.2s ease-in-out; 
+
+// Tablet screen
+$trans--tablet-screen: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);

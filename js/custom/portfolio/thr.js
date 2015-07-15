@@ -37,24 +37,24 @@
 
 		// Stats counter
 
-		function statsCounter(){
+		function statsCounter() {
 			$thrStats.text(statsNum);
-			timeout = setTimeout(function(){ 
+			timeout = setTimeout(function() { 
 				if(statsInView){
-					if(statsNum < 471){
+					if(statsNum < 471) {
 						statsNum++;
 						statsCounter();
 					}
-					else{
+					else {
 						clearTimeout(timeout);
 					} 
 				}
-				else{
+				else {
 					if(statsNum <= 471 && statsNum >= 101){
 						statsNum--;
 						statsCounter();
 					}
-					else{
+					else {
 						clearTimeout(timeout);
 					} 
 				}
@@ -63,7 +63,7 @@
 
 		// Test for svg support
 
-		if(!Modernizr.svg || isAndroid){
+		if(!Modernizr.svg || isAndroid) {
 			$thrIcon.each(function(){
 				if($(this).attr('src').match(/.*\.svg$/)){
 					$(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
@@ -71,9 +71,9 @@
 			});
 		}
 
-		var scrollHandler = function(){
+		function scrollHandler() {
 
-			$thrXrayItem.each(function(i){
+			$thrXrayItem.each(function(i) {
 
 				new ScrollMagic.Scene({
 					triggerElement: $thrXrayItem[i], 
@@ -113,7 +113,7 @@
 				.addTo(controller);
 			});
 
-		};
+		}
 
 		scrollHandler();
 		
@@ -131,15 +131,26 @@
 
 		// Swiper
 		
-		thrSwiper = new Swiper('.thr__swiper', {
-			calculateHeight: true,
-		    mode: 'horizontal',
-		    roundLengths: true,
-		    resistance: '100%',
-		    grabCursor: true,
-		    autoplay: 3000,
-		    speed: 500
-		}); 
+		function thrSwiperInit() {
+			thrSwiper = new Swiper('.thr__swiper', {
+				resizeReInit: true,
+				calculateHeight: true,
+			    mode: 'horizontal',
+			    roundLengths: true,
+			    resistance: '100%',
+			    grabCursor: true,
+			    autoplay: 4000,
+			    speed: 500
+			}); 
+		}
+
+		thrSwiperInit();
+
+		window.addEventListener('orientationchange', function() {
+			thrSwiper.destroy();
+			thrSwiperInit();
+		}, false);
 
 	});
+
 })(jQuery);
