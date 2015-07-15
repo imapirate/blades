@@ -557,8 +557,12 @@
 	@extend %__h--sm;
 	line-height: 25px;
 	margin-bottom: 25px;
+	text-indent: -10px;
+	padding-left: 10px;
 	
 	@include mq($h-mobile--lg) {
+		text-indent: -20px;
+		padding-left: 20px;
 		line-height: 42px;
 		margin-bottom: 30px;
 	}
@@ -698,6 +702,8 @@
 	line-height: 28px;
 	font-weight: 300;
 	color: $white;
+	text-indent: -12px;
+	padding-left: 12px;
 
 	@include mq($h-mobile--lg) {
 		font-size: 26px;
@@ -705,6 +711,8 @@
 	}
 
 	@include mq($h-tablet--lg) {
+		text-indent: -25px;
+		padding-left: 25px;
 		font-size: 42px;
 		line-height: 62px;
 	}
