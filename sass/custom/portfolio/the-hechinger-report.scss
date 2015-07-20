@@ -339,6 +339,8 @@
 	text-decoration: none;
 	display: block;
 	transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	font-family: "proxima-nova", Helvetica, Arial, sans-serif;
+	font-weight: 700;
 
 	@include mq($h-mobile) {
 		padding: 25px 30px 25px 90px;
@@ -1241,3 +1243,16 @@
 .thr__swiper {}
 
 // main -> swiper
+
+// =============================================
+
+//	Main -> Video
+
+// =============================================
+
+#thr__video {
+	width: 100%;
+	height: 100%;
+}
+
+// main -> video

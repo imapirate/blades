@@ -9,10 +9,13 @@
 			$thrIcon = $('.thr-icon img'),
 			$thrNavLink = $('.thr__nav-link'),
 			$thrScrollItem = $('.thr__js--scroll-item'),
+			$thrToggleScroll = $('.thr__js--toggle-scroll'),
+			$thrVideo = $('#thr__video'),
 		
 			controller = new ScrollMagic.Controller(),
 			statsInView = false,
 			thrInView,
+			thrToggle,
 			thrSwiper,
 			isAndroid,
 			statsNum = 100;
@@ -101,6 +104,7 @@
 			});
 
 			$thrScrollItem.each(function(i){
+
 				thrInView = new ScrollMagic.Scene({
 					triggerElement: $thrScrollItem[i], 
 					triggerHook: 'onCenter'
@@ -111,6 +115,24 @@
 					_$this.addClass('thr__js--is-in-view');
 				})
 				.addTo(controller);
+				
+			});
+
+			$thrToggleScroll.each(function(i) {
+
+				thrToggle = new ScrollMagic.Scene({
+					triggerElement: $thrToggleScroll[i],
+					triggerHook: 'onCenter'
+				})
+				.on('enter', function() {
+					$thrVideo.get(0).play();
+				})
+				.on('leave', function() {
+					$thrVideo.get(0).pause();
+				})
+				.duration(600)
+				.addTo(controller);	
+
 			});
 
 		}
@@ -134,6 +156,7 @@
 		function thrSwiperInit() {
 			thrSwiper = new Swiper('.thr__swiper', {
 				resizeReInit: true,
+				loop: true,
 				calculateHeight: true,
 			    mode: 'horizontal',
 			    roundLengths: true,
@@ -150,6 +173,8 @@
 			thrSwiper.destroy();
 			thrSwiperInit();
 		}, false);
+
+		// Video 
 
 	});
 
