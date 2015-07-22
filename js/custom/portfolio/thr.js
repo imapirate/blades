@@ -1,7 +1,5 @@
 ;(function($) {
 
-	$(document).ready(function() {
-
 		var $thrXray = $('.thr-xray'),
 			$thrXrayItem = $('.thr-xray-item'),
 			$thrPopupContent = $('.thr-popup-content'),
@@ -10,7 +8,9 @@
 			$thrNavLink = $('.thr__nav-link'),
 			$thrScrollItem = $('.thr__js--scroll-item'),
 			$thrToggleScroll = $('.thr__js--toggle-scroll'),
-			$thrVideo = $('#thr__video'),
+			$thrVideoOverview = $('.thr__video-overview'),
+			$thrVideo,
+			$thrVideoTemplate,
 		
 			controller = new ScrollMagic.Controller(),
 			statsInView = false,
@@ -32,7 +32,6 @@
 				    return true;
 				}
 			}
-
 			return false;
 		}
 
@@ -71,6 +70,55 @@
 				if($(this).attr('src').match(/.*\.svg$/)){
 					$(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
 				}
+			});
+		}
+
+		function injectVideo() {
+			$thrVideoTemplate = $('<video/>', {
+					'id': 'thr__video',
+					'preload': 'auto',
+					'poster': '/wp-content/themes/blades/images/portfolio/hechinger/hechinger-video-overview-cover.jpg'
+				}).append(
+					$('<source/>', {
+					'source': 'video-mp4',
+					'type': 'video/mp4; codecs=avc1.42E01E,mp4a.40.2',
+					'src': '/wp-content/themes/blades/images/portfolio/hechinger/video/hechinger-overview.mp4'
+				})
+				).append(
+					$('<source/>', {
+					'class': 'video-ogg',
+					'type': 'video/ogg; codecs=theora,vorbis',
+					'src': '/wp-content/themes/blades/images/portfolio/hechinger/video/hechinger-overview.ogv'
+				})
+				).append(
+					$('<source/>', {
+					'class': 'video-webm',
+					'type': 'video/webm; codecs=vp8,vorbis',
+					'src': '/wp-content/themes/blades/images/portfolio/hechinger/video/hechinger-overview.mp4'
+				})
+			);
+
+			if(!Modernizr.touch) {
+				$thrVideoTemplate.attr('loop', 'true');
+			}
+		}
+
+		function bindVideoScroll() {
+			$thrVideo = $('#thr__video').get(0);
+
+			$thrToggleScroll.each(function(i) {
+				thrToggle = new ScrollMagic.Scene({
+					triggerElement: $thrToggleScroll[i],
+					triggerHook: 'onCenter'
+				})
+				.on('enter', function() {
+					$thrVideo.play();
+				})
+				.on('leave', function() {
+					$thrVideo.pause();
+				})
+				.duration(600)
+				.addTo(controller);	
 			});
 		}
 
@@ -118,26 +166,21 @@
 				
 			});
 
-			$thrToggleScroll.each(function(i) {
-
-				thrToggle = new ScrollMagic.Scene({
-					triggerElement: $thrToggleScroll[i],
-					triggerHook: 'onCenter'
-				})
-				.on('enter', function() {
-					$thrVideo.get(0).play();
-				})
-				.on('leave', function() {
-					$thrVideo.get(0).pause();
-				})
-				.duration(600)
-				.addTo(controller);	
-
-			});
-
 		}
 
-		scrollHandler();
+		// $thrVideo.addEventListener('playing', vidHandler, false);
+		// $thrVideo.addEventListener('ended', vidHandler, false);
+
+		// function vidHandler(event) {
+		// 	switch(event.type){
+		// 		case 'playing':
+		// 			// console.log('video is playing');
+		// 		break;
+		// 		case 'ended':
+		// 			// console.log('video has ended');
+		// 		break;
+		// 	}
+		// }
 		
 		// Navigation Smooth Scroll
 
@@ -167,15 +210,19 @@
 			}); 
 		}
 
-		thrSwiperInit();
-
 		window.addEventListener('orientationchange', function() {
 			thrSwiper.destroy();
 			thrSwiperInit();
 		}, false);
 
-		// Video 
-
+	$(document).ready(function() {
+		scrollHandler();
+		thrSwiperInit();
+		if($(window).width() > 499) {
+			injectVideo();
+			$thrVideoOverview.html($thrVideoTemplate);
+			bindVideoScroll();
+		}
 	});
 
 })(jQuery);

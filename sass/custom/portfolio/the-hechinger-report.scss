@@ -908,11 +908,15 @@
 }
 
 .triangle__item--badge-a--left {
-	&:after { border-color: transparent transparent transparent $black; }
+	&:after { border-color: transparent transparent transparent $black; 
+		-moz-transform: scale(.9999);
+	}
 }
 
 .triangle__item--badge-a--right {
-	&:after { border-color: transparent transparent $black transparent; }
+	&:after { border-color: transparent transparent $black transparent; 
+		-moz-transform: scale(.9999);
+	}
 }
 
 .triangle__item--badge-a--down {
@@ -1302,11 +1306,17 @@
 
 // =============================================
 
-#thr__video {
+.thr__video-overview {
 	position: relative;
 	width: 100%;
 	height: 100%;
 	z-index: 10;
+}
+
+#thr__video {
+	position: relative;
+	width: 100%;
+	height: 100%;
 	display: block;
 }
 

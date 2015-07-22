@@ -139,6 +139,7 @@ $triangle-height: 50px;
 		margin-top: -$triangle-height;
 		border-width: 0 0 $triangle-height 210px;
 		border-color: transparent transparent rgba(0,0,0,0.9) transparent;
+		-moz-transform: scale(.9999);
 	}
 }
 
@@ -147,7 +148,6 @@ $triangle-height: 50px;
 	padding-bottom: 12%;
 	width: 50%;
 	float: left;
-	
 	&:after {
 		content: "";
 		display: block;
@@ -156,6 +156,7 @@ $triangle-height: 50px;
 		border-style: solid;
 		border-width: $triangle-height 0 0 210px;
 		border-color: transparent transparent transparent rgba(0,0,0,0.9);
+		-moz-transform: scale(.9999);
 	}
 }
 
