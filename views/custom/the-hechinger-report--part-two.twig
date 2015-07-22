@@ -134,7 +134,13 @@
 </div>
 
 <div class="full-width">
-	<img class="thr__img thr__img--pad" src="{{theme.path}}/images/portfolio/hechinger/hechinger-branding.jpg">
+	<picture>
+		<!--[if IE 9]><video style="display: none;"><![endif]-->
+		<source srcset="/wp-content/themes/blades/images/portfolio/hechinger/hechinger-branding.jpg" media="(min-width: 1000px)">
+		<source srcset="{{'/wp-content/themes/blades/images/portfolio/hechinger/hechinger-branding.jpg'| resize(800)}}" media="(min-width: 600px)">
+		<!--[if IE 9]></video><![endif]-->
+		<img class="thr__img thr__img--pad" srcset="{{'/wp-content/themes/blades/images/portfolio/hechinger/hechinger-branding.jpg'| resize(450)}}">
+	</picture>
 </div>
 
 <div class="site-width thr__pad--horiz-med">

@@ -23,6 +23,7 @@
     "hammerjs": "~1.1.2",
     "jquery-hammerjs": "~1.1.2",
     "scrollmagic": "~2.0.5",
-    "snap.svg": "~0.4.1"
+    "snap.svg": "~0.4.1",
+    "picturefill": "~2.3.1"
   }
 }

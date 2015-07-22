@@ -48,7 +48,12 @@
 
 		</div>
 	</div>
-	<img class="lazy viz-resp viz-mobile viz-tablet viz-desktop thr__img" data-original="{{site.url}}/wp-content/uploads/2015/01/phones_flat.jpg" data-src="{{site.url}}/wp-content/uploads/2015/01/phones_flat.jpg" src="{{site.url}}/wp-content/uploads/2015/01/phones_flat.jpg" alt="" id="portfolio-img-5417">
+
+	<picture>
+		<source srcset="/wp-content/uploads/2015/01/phones_flat.jpg" media="(min-width: 1000px)">
+		<source srcset="{{'/wp-content/uploads/2015/01/phones_flat.jpg'| resize(800)}}" media="(min-width: 600px)">
+		<img class="thr__img" srcset="{{'/wp-content/uploads/2015/01/phones_flat.jpg'| resize(450)}}">
+	</picture>
 	
 	<div class="site-width thr__pad--horiz-med">
 	<h4 class="thr__topic-h">What We Did</h4>

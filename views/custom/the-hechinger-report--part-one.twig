@@ -56,7 +56,13 @@
 					<div class="thr__tablet-screen">
 						<div class="thr__screen-pad">
 							<div class="thr__screen-content">
-								<img class="thr__img" src="{{theme.path}}/images/portfolio/hechinger/hechinger-article-tablet.jpg">
+								<picture>
+									<!--[if IE 9]><video style="display: none;"><![endif]-->
+									<source srcset="/wp-content/themes/blades/images/portfolio/hechinger/hechinger-article-tablet.jpg" media="(min-width: 1000px)">
+									<source srcset="{{'/wp-content/themes/blades/images/portfolio/hechinger/hechinger-article-tablet.jpg'| resize(800)}}" media="(min-width: 600px)">
+									<!--[if IE 9]></video><![endif]-->
+									<img class="thr__img" srcset="{{'/wp-content/themes/blades/images/portfolio/hechinger/hechinger-article-tablet.jpg'| resize(450)}}">
+								</picture>
 							</div>
 						</div>
 					</div>
