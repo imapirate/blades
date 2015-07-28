@@ -52,8 +52,15 @@
 
 <div class="full-width thr__l--hidden">
 	<div class="thr__l thr__l--wide thr__pad--article">
-		<img class="thr__img" src="{{theme.path}}/images/portfolio/hechinger/hechinger-article-grid.jpg">
 		
+		<picture>
+			<!--[if IE 9]><video style="display: none;"><![endif]-->
+			<source srcset="/wp-content/themes/blades/images/portfolio/hechinger/hechinger-article-grid.jpg" media="(min-width: 1000px)">
+			<source srcset="{{'/wp-content/themes/blades/images/portfolio/hechinger/hechinger-article-grid.jpg'| resize(1000)}}" media="(min-width: 600px)">
+			<!--[if IE 9]></video><![endif]-->
+			<img class="thr__img" srcset="{{'/wp-content/themes/blades/images/portfolio/hechinger/hechinger-article-grid.jpg'| resize(600)}}">
+		</picture>
+
 		<div class="thr__tablets thr__js--scroll-item">
 
 			<div class="thr__offset thr__offset--bottom thr__offset--left thr__offset--tablet-lg">
@@ -65,9 +72,9 @@
 								<picture>
 									<!--[if IE 9]><video style="display: none;"><![endif]-->
 									<source srcset="/wp-content/themes/blades/images/portfolio/hechinger/hechinger-article-tablet.jpg" media="(min-width: 1000px)">
-									<source srcset="{{'/wp-content/themes/blades/images/portfolio/hechinger/hechinger-article-tablet.jpg'| resize(800)}}" media="(min-width: 600px)">
+									<source srcset="{{'/wp-content/themes/blades/images/portfolio/hechinger/hechinger-article-tablet.jpg'| resize(1000)}}" media="(min-width: 600px)">
 									<!--[if IE 9]></video><![endif]-->
-									<img class="thr__img" srcset="{{'/wp-content/themes/blades/images/portfolio/hechinger/hechinger-article-tablet.jpg'| resize(450)}}">
+									<img class="thr__img" srcset="{{'/wp-content/themes/blades/images/portfolio/hechinger/hechinger-article-tablet.jpg'| resize(600)}}">
 								</picture>
 							</div>
 						</div>

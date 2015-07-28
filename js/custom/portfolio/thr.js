@@ -7,7 +7,7 @@
 			$thrIcon = $('.thr-icon img'),
 			$thrNavLink = $('.thr__nav-link'),
 			$thrScrollItem = $('.thr__js--scroll-item'),
-			$thrToggleScroll = $('.thr__js--toggle-scroll'),
+			$thrVideoToggle = $('.thr__js--video-toggle'),
 			$thrVideoOverview = $('.thr__video-overview'),
 			$thrVideo,
 			$thrVideoTemplate,
@@ -15,7 +15,7 @@
 			controller = new ScrollMagic.Controller(),
 			statsInView = false,
 			thrInView,
-			thrToggle,
+			thrVidToggle,
 			thrSwiper,
 			isAndroid,
 			statsNum = 100;
@@ -24,10 +24,10 @@
 
 		function isAndroidBrowser() {
 			var objAgent = navigator.userAgent;
-			var objfullVersion  = ''+parseFloat(navigator.appVersion);
+			var objfullVersion = ''+parseFloat(navigator.appVersion);
 
 			if ((objOffsetVersion=objAgent.indexOf('Chrome')) != -1) {
-				objfullVersion = objAgent.substring(objOffsetVersion+7, objOffsetVersion+9);
+				objfullVersion = objAgent.substring(objOffsetVersion + 7, objOffsetVersion + 9);
 				if (objfullVersion < 19) {
 				    return true;
 				}
@@ -75,47 +75,76 @@
 
 		function injectVideo() {
 			$thrVideoTemplate = $('<video/>', {
-					'id': 'thr__video',
-					'preload': 'auto',
-					'poster': '/wp-content/themes/blades/images/portfolio/hechinger/hechinger-video-overview-cover.jpg'
+					'preload': 'auto'
 				}).append(
 					$('<source/>', {
-					'source': 'video-mp4',
-					'type': 'video/mp4; codecs=avc1.42E01E,mp4a.40.2',
-					'src': '/wp-content/themes/blades/images/portfolio/hechinger/video/hechinger-overview.mp4'
+					'class': 'video-mp4',
+					'type': 'video/mp4; codecs=avc1.42E01E,mp4a.40.2'
 				})
 				).append(
 					$('<source/>', {
 					'class': 'video-ogg',
-					'type': 'video/ogg; codecs=theora,vorbis',
-					'src': '/wp-content/themes/blades/images/portfolio/hechinger/video/hechinger-overview.ogv'
+					'type': 'video/ogg; codecs=theora,vorbis'
 				})
 				).append(
 					$('<source/>', {
 					'class': 'video-webm',
-					'type': 'video/webm; codecs=vp8,vorbis',
-					'src': '/wp-content/themes/blades/images/portfolio/hechinger/video/hechinger-overview.mp4'
+					'type': 'video/webm; codecs=vp8,vorbis'
 				})
 			);
 
 			if(!Modernizr.touch) {
 				$thrVideoTemplate.attr('loop', 'true');
 			}
+
+			// Swaps video out
+			var video_elements = {
+				video_overview: $thrVideoTemplate.clone()
+					.attr('poster', '/wp-content/themes/blades/images/portfolio/hechinger/hechinger-video-overview-cover.jpg')
+					.attr('class', 'thr__video')
+					.attr('id', 'thr__video--overview')
+					.find('.video-mp4')
+						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hechinger-overview.mp4')
+						.end()
+					.find('.video-ogg')
+						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hechinger-overview.ogv')
+						.end()
+					.find('.video-webm')
+						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hechinger-overview.webm')
+						.end(),
+				video_stream: $thrVideoTemplate.clone()
+					.attr('poster', '/wp-content/themes/blades/images/portfolio/hechinger/hechinger-video-overview-cover.jpg')
+					.attr('class', 'thr__video')
+					.attr('id', 'thr__video--stream')
+					.find('.video-mp4')
+						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-split-screen-test.mp4')
+						.end()
+					.find('.video-ogg')
+						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-split-screen-test.ogv')
+						.end()
+					.find('.video-webm')
+						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-split-screen-test.webm')
+						.end(),
+				};
+
+			$.each(video_elements, function(el_class, video_html) {
+				$('.thr__' + el_class).replaceWith(video_html);
+			});
 		}
 
 		function bindVideoScroll() {
-			$thrVideo = $('#thr__video').get(0);
 
-			$thrToggleScroll.each(function(i) {
-				thrToggle = new ScrollMagic.Scene({
-					triggerElement: $thrToggleScroll[i],
+			$thrVideoToggle.each(function(i) {
+
+				thrVidToggle = new ScrollMagic.Scene({
+					triggerElement: $thrVideoToggle[i],
 					triggerHook: 'onCenter'
 				})
 				.on('enter', function() {
-					$thrVideo.play();
+					$('.thr__video')[i].play();
 				})
 				.on('leave', function() {
-					$thrVideo.pause();
+					$('.thr__video')[i].pause();
 				})
 				.duration(600)
 				.addTo(controller);	
@@ -124,6 +153,7 @@
 
 		function scrollHandler() {
 
+			// Xray Items
 			$thrXrayItem.each(function(i) {
 
 				new ScrollMagic.Scene({
@@ -151,6 +181,7 @@
 				.addTo(controller);		
 			});
 
+			// Add class when item is in view
 			$thrScrollItem.each(function(i){
 
 				thrInView = new ScrollMagic.Scene({
@@ -220,7 +251,6 @@
 		thrSwiperInit();
 		if($(window).width() > 499) {
 			injectVideo();
-			$thrVideoOverview.html($thrVideoTemplate);
 			bindVideoScroll();
 		}
 	});

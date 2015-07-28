@@ -50,9 +50,11 @@
 	</div>
 
 	<picture>
+		<!--[if IE 9]><video style="display: none;"><![endif]-->
 		<source srcset="/wp-content/uploads/2015/01/phones_flat.jpg" media="(min-width: 1000px)">
-		<source srcset="{{'/wp-content/uploads/2015/01/phones_flat.jpg'| resize(800)}}" media="(min-width: 600px)">
-		<img class="thr__img" srcset="{{'/wp-content/uploads/2015/01/phones_flat.jpg'| resize(450)}}">
+		<source srcset="{{'/wp-content/uploads/2015/01/phones_flat.jpg'| resize(1000)}}" media="(min-width: 600px)">
+		<!--[if IE 9]></video><![endif]-->
+		<img class="thr__img" srcset="{{'/wp-content/uploads/2015/01/phones_flat.jpg'| resize(600)}}">
 	</picture>
 	
 	<div class="site-width thr__pad--horiz-med">
