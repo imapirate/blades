@@ -112,18 +112,44 @@
 					.find('.video-webm')
 						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hechinger-overview.webm')
 						.end(),
-				video_stream: $thrVideoTemplate.clone()
+				video_stream_click_drag: $thrVideoTemplate.clone()
 					.attr('poster', '/wp-content/themes/blades/images/portfolio/hechinger/hechinger-video-overview-cover.jpg')
 					.attr('class', 'thr__video')
 					.attr('id', 'thr__video--stream')
 					.find('.video-mp4')
-						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-split-screen-test.mp4')
+						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-stream--click-drag.mp4')
 						.end()
 					.find('.video-ogg')
-						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-split-screen-test.ogv')
+						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-stream--click-drag.ogv')
 						.end()
 					.find('.video-webm')
-						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-split-screen-test.webm')
+						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-stream--click-drag.webm')
+						.end(),
+				video_stream_pin: $thrVideoTemplate.clone()
+					.attr('poster', '/wp-content/themes/blades/images/portfolio/hechinger/hechinger-video-overview-cover.jpg')
+					.attr('class', 'thr__video')
+					.attr('id', 'thr__video--stream')
+					.find('.video-mp4')
+						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-stream--pin.mp4')
+						.end()
+					.find('.video-ogg')
+						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-stream--pin.ogv')
+						.end()
+					.find('.video-webm')
+						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-stream--pin.webm')
+						.end(),
+				video_stream_search: $thrVideoTemplate.clone()
+					.attr('poster', '/wp-content/themes/blades/images/portfolio/hechinger/hechinger-video-overview-cover.jpg')
+					.attr('class', 'thr__video')
+					.attr('id', 'thr__video--stream')
+					.find('.video-mp4')
+						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-stream--search.mp4')
+						.end()
+					.find('.video-ogg')
+						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-stream--search.ogv')
+						.end()
+					.find('.video-webm')
+						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-stream--search.webm')
 						.end(),
 				};
 
@@ -136,7 +162,7 @@
 
 			$thrVideoToggle.each(function(i) {
 
-				// Fixes video load issue in iOS
+				// Fixes a repaint issue in iOS
 				$('.thr__video')[i].load();
 
 				thrVidToggle = new ScrollMagic.Scene({
