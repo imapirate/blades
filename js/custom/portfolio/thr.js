@@ -96,7 +96,7 @@
 			if(!Modernizr.touch) {
 				$thrVideoTemplate.attr('loop', 'true');
 			}
-
+			
 			// Swaps video out
 			var video_elements = {
 				video_overview: $thrVideoTemplate.clone()
@@ -135,6 +135,9 @@
 		function bindVideoScroll() {
 
 			$thrVideoToggle.each(function(i) {
+
+				// Fixes video load issue in iOS
+				$('.thr__video')[i].load();
 
 				thrVidToggle = new ScrollMagic.Scene({
 					triggerElement: $thrVideoToggle[i],
@@ -198,20 +201,6 @@
 			});
 
 		}
-
-		// $thrVideo.addEventListener('playing', vidHandler, false);
-		// $thrVideo.addEventListener('ended', vidHandler, false);
-
-		// function vidHandler(event) {
-		// 	switch(event.type){
-		// 		case 'playing':
-		// 			// console.log('video is playing');
-		// 		break;
-		// 		case 'ended':
-		// 			// console.log('video has ended');
-		// 		break;
-		// 	}
-		// }
 		
 		// Navigation Smooth Scroll
 
@@ -245,14 +234,12 @@
 			thrSwiper.destroy();
 			thrSwiperInit();
 		}, false);
-
+	
 	$(document).ready(function() {
 		scrollHandler();
 		thrSwiperInit();
-		if($(window).width() > 499) {
-			injectVideo();
-			bindVideoScroll();
-		}
+		injectVideo();
+		bindVideoScroll();
 	});
 
 })(jQuery);
