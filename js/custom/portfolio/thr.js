@@ -9,6 +9,7 @@
 			$thrScrollItem = $('.thr__js--scroll-item'),
 			$thrVideoToggle = $('.thr__js--video-toggle'),
 			$thrVideoOverview = $('.thr__video-overview'),
+			$thrVideoProgressBar = $('.thr__video-progress-bar'),
 			$thrVideo,
 			$thrVideoTemplate,
 		
@@ -113,9 +114,8 @@
 						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hechinger-overview.webm')
 						.end(),
 				video_stream_click_drag: $thrVideoTemplate.clone()
-					.attr('poster', '/wp-content/themes/blades/images/portfolio/hechinger/hechinger-video-overview-cover.jpg')
-					.attr('class', 'thr__video')
-					.attr('id', 'thr__video--stream')
+					.attr('poster', '/wp-content/themes/blades/images/portfolio/hechinger/hechinger-stream-cover--click-drag.jpg')
+					.attr('class', 'thr__video thr__video--stream thr__video--progress')
 					.find('.video-mp4')
 						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-stream--click-drag.mp4')
 						.end()
@@ -126,9 +126,8 @@
 						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-stream--click-drag.webm')
 						.end(),
 				video_stream_pin: $thrVideoTemplate.clone()
-					.attr('poster', '/wp-content/themes/blades/images/portfolio/hechinger/hechinger-video-overview-cover.jpg')
-					.attr('class', 'thr__video')
-					.attr('id', 'thr__video--stream')
+					.attr('poster', '/wp-content/themes/blades/images/portfolio/hechinger/hechinger-stream-cover--pin.jpg')
+					.attr('class', 'thr__video thr__video--stream thr__video--progress')
 					.find('.video-mp4')
 						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-stream--pin.mp4')
 						.end()
@@ -139,9 +138,8 @@
 						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-stream--pin.webm')
 						.end(),
 				video_stream_search: $thrVideoTemplate.clone()
-					.attr('poster', '/wp-content/themes/blades/images/portfolio/hechinger/hechinger-video-overview-cover.jpg')
-					.attr('class', 'thr__video')
-					.attr('id', 'thr__video--stream')
+					.attr('poster', '/wp-content/themes/blades/images/portfolio/hechinger/hechinger-stream-cover--search.jpg')
+					.attr('class', 'thr__video thr__video--stream thr__video--progress')
 					.find('.video-mp4')
 						.attr('src', '/wp-content/themes/blades/images/portfolio/hechinger/video/hech-stream--search.mp4')
 						.end()
@@ -158,12 +156,32 @@
 			});
 		}
 
+		function bindVideos() {
+			$('.thr__video').each(function(i) {
+				// Fixes a repaint issue in iOS
+				this.load();
+			});
+
+			videoProgressBar();
+		}
+
+		function videoProgressBar() {
+			$('.thr__video--progress').each(function(i) {
+
+				this.addEventListener('loadeddata', function() {
+   					var barWidth = 0;
+
+					this.addEventListener('timeupdate', function() {
+						barWidth = this.currentTime / this.duration * 100;
+						$thrVideoProgressBar.eq(i).css('width', barWidth.toFixed(2) + '%');
+			     	}, false);
+				}, false);
+			});
+		}
+
 		function bindVideoScroll() {
 
 			$thrVideoToggle.each(function(i) {
-
-				// Fixes a repaint issue in iOS
-				$('.thr__video')[i].load();
 
 				thrVidToggle = new ScrollMagic.Scene({
 					triggerElement: $thrVideoToggle[i],
@@ -174,6 +192,7 @@
 				})
 				.on('leave', function() {
 					$('.thr__video')[i].pause();
+					// $('.thr__video')[i].currentTime = 0;
 				})
 				.duration(600)
 				.addTo(controller);	
@@ -265,6 +284,7 @@
 		scrollHandler();
 		thrSwiperInit();
 		injectVideo();
+		bindVideos();
 		bindVideoScroll();
 	});
 

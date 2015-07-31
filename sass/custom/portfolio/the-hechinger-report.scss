@@ -450,15 +450,6 @@
 	&:before { right: -100px; }
 }
 
-.thr__icon--badge {
-	width: 100%;
-	
-	&--black { fill: $black; }
-	&--white { fill: $white; }
-
-	&--up { transform: rotate(180deg); }
-}
-
 .thr__bg {
 	position: relative;
 	width: 100%;
@@ -669,6 +660,7 @@
 	&--logo { @include scale-ratio(320.3, 299.4); }
 	&--type { @include scale-ratio(194.3, 452.2); }
 	&--badge-icon { @include scale-ratio(45.4, 31); }
+	&--stream { @include scale-ratio(110, 110); }
 }
 
 .thr__scale-svg {
@@ -677,6 +669,21 @@
 	 width: 100%; 
 	 left: 0; 
 	 top: 0;
+}
+
+.thr__icon {
+	&--stream {
+		fill: $hechingerBlue;
+	}
+
+	&--badge {
+		width: 100%;
+
+		&--black { fill: $black; }
+		&--white { fill: $white; }
+
+		&--up { transform: rotate(180deg); }
+	}
 }
 
 // main -> layout
@@ -998,8 +1005,12 @@
 	&--js {
 		transition: $trans--thr-exam-book;
 		&:nth-of-type(1) {
-			transform: translate(100%, -24%);
+			transform: translate(100%, -38%);
 			z-index: 10;
+
+			@include mq($h-mobile--lg) {
+				transform: translate(100%, -24%);
+			}
 
 			@include mq($h-tablet) {
 				transform: translate(100%, -12%);
@@ -1007,8 +1018,12 @@
 		}
 
 		&:nth-of-type(3) {
-			transform: translate(-100%, -24%);
+			transform: translate(100%, -38%);
 			z-index: 10;
+
+			@include mq($h-mobile--lg) {
+				transform: translate(-100%, -24%);
+			}
 
 			@include mq($h-tablet) {
 				transform: translate(-100%, -12%);
@@ -1354,4 +1369,96 @@
 	display: block;
 }
 
+.thr__video-progress {
+	margin-top: 40px;
+	position: relative;
+	width: 100%;
+	height: 6px;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.thr__video-progress-bar {
+	background: $black;
+	height: 100%;
+	width: 0;
+	position: relative;
+}
+
 // main -> video
+
+// =============================================
+
+//	Main -> Stream
+
+// =============================================
+
+.thr__stream {
+	position: relative;
+	overflow: hidden;
+}
+
+.thr__video-stream {
+	padding-top: 60px;
+
+	@include mq($h-mobile--lg) {
+		padding-top: 80px;
+	}
+	@include mq($h-tablet--lg) {
+		padding-top: 100px;
+	}
+}
+
+.thr__stream{
+	box-shadow: 0 0 7px rgba(0,0,0,0.2);
+}
+
+.thr__stream-overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+	z-index: 20;
+}
+
+.thr__stream-content {
+	display: table;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	padding: 20px;
+}
+
+.thr__stream-text {
+	display: table-cell;
+	vertical-align: middle;
+	color: $white;
+}
+
+.thr__stream-icon {
+	position: relative;
+	margin: 0 auto 10px auto;
+	max-width: 25px;
+
+	@include mq($h-mobile--lg) {
+		max-width: 35px;
+	}
+	@include mq($h-tablet--lg) {
+		max-width: 55px;
+		margin-bottom: 20px;
+
+	}
+
+	&--pin {
+		max-width: 30px;
+		@include mq($h-mobile--lg) {
+			max-width: 40px;
+		}
+		@include mq($h-tablet--lg) {
+			max-width: 70px;
+		}
+	}
+}
+
+// main -> stream
