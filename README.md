@@ -30,14 +30,21 @@ composer update
 When asked for what setup (nginx or apache) enter nginx
 
 ### Fetch & import the database
-1. get a copy of the database dump you'd like to use. It's located in:`Dropbox/Upstatement Team Folder/Website/DB`. Open up Sequel Pro. Connect to your database using [this info](http://i.imgur.com/xe5RspM.png)
-- SSH button
-- **MySQL Host:** `127.0.0.1`
-- **Username:** `root`
-- **Password:** `root`
-- **SSH Host:** `192.168.50.48` (this may be different on your machine, check the hosts file (which you can access in Chrome via file:///etc/hosts) and look for different IP address. Try those if this doesn't work for you)
-- **SSH User:** `vagrant`
-- **SSH Password:** `vagrant`
+1. **Conenect to your local database.** Open up Sequel Pro. Connect to your database using [this info](http://i.imgur.com/xe5RspM.png)
+  - SSH button
+  - **MySQL Host:** `127.0.0.1`
+  - **Username:** `root`
+  - **Password:** `root`
+  - **SSH Host:** `192.168.50.48` (this may be different on your machine, check the hosts file (which you can access in Chrome via file:///etc/hosts) and look for different IP address. Try those if this doesn't work for you)
+  - **SSH User:** `vagrant`
+  - **SSH Password:** `vagrant`
+
+2. **Import a copy of the current database dump.** 
+   - In Sequel Pro, click the `Choose Database` dropdown button in the upper left corner
+   - Choose `wordpress_blades`
+   - Hit `Shift+Command+I` or go to `File > Import`
+   - Choose the database dump on Dropbox:`Dropbox/Upstatement Team Folder/Website/DB`
+   - And you're done!
 
 ### Grab the uploads
 What's a website without images? The uploads directory is located in `Dropbox/Upstatement Team Folder/Website/uploads` COPY (don't move) it to your uploads directory through finder: `~/Sites/blades_env/www/wordpress-blades/wp-content/uploads`
