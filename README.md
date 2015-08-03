@@ -20,7 +20,7 @@ sh vvv-setup.sh
 ```
 
 ### Use composer to download plugins
-
+_Note: If you used the setup script, this step may not be necessary_
 ```
 vagrant ssh
 cd /srv/www/wordpress-blades/wp-content/themes/blades
@@ -35,11 +35,13 @@ When asked for what setup (nginx or apache) enter nginx
 - **MySQL Host:** `127.0.0.1`
 - **Username:** `root`
 - **Password:** `root`
-- **SSH Host:** `192.168.50.4` (this may be different on your machine, check the hosts file (which you can access in Chrome via file:///etc/hosts) and look for different IP address. Try those if this doesn't work for you)
+- **SSH Host:** `192.168.50.48` (this may be different on your machine, check the hosts file (which you can access in Chrome via file:///etc/hosts) and look for different IP address. Try those if this doesn't work for you)
 - **SSH User:** `vagrant`
 - **SSH Password:** `vagrant`
 
 ### Grab the uploads
 What's a website without images? The uploads directory is located in `Dropbox/Upstatement Team Folder/Website/uploads` COPY (don't move) it to your uploads directory through finder: `~/Sites/blades_env/www/wordpress-blades/wp-content/uploads`
 
-
+### Install Bower Components
+1. Navigate to the theme folder in Terminal (`Sites/blades`)
+2. Run `bower install`
