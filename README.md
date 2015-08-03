@@ -30,7 +30,7 @@ composer update
 When asked for what setup (nginx or apache) enter nginx
 
 ### Fetch & import the database
-1. **Conenect to your local database.** Open up Sequel Pro. Connect to your database using [this info](http://i.imgur.com/xe5RspM.png)
+1. **Connect to your local database.** Open up Sequel Pro. Connect to your database using [this info](http://i.imgur.com/xe5RspM.png)
   - SSH button
   - **MySQL Host:** `127.0.0.1`
   - **Username:** `root`
