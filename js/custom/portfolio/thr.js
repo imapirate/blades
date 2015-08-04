@@ -47,8 +47,7 @@
 					if(statsNum < 471) {
 						statsNum++;
 						statsCounter();
-					}
-					else {
+					} else {
 						clearTimeout(timeout);
 					} 
 				}
@@ -56,8 +55,7 @@
 					if(statsNum <= 471 && statsNum >= 101){
 						statsNum--;
 						statsCounter();
-					}
-					else {
+					} else {
 						clearTimeout(timeout);
 					} 
 				}
@@ -160,6 +158,17 @@
 			$('.thr__video').each(function(i) {
 				// Fixes a repaint issue in iOS
 				this.load();
+
+				$(this).on('click', function() {
+
+					if($(this).hasClass('is-playing')){
+						this.pause();
+						$(this).removeClass('is-playing');
+					} else {
+						this.play();
+						$(this).addClass('is-playing');
+					}
+				});
 			});
 
 			videoProgressBar();
@@ -189,10 +198,11 @@
 				})
 				.on('enter', function() {
 					$('.thr__video')[i].play();
+					$('.thr__video').eq(i).addClass('is-playing');
 				})
 				.on('leave', function() {
 					$('.thr__video')[i].pause();
-					// $('.thr__video')[i].currentTime = 0;
+					$('.thr__video').eq().removeClass('is-playing');
 				})
 				.duration(600)
 				.addTo(controller);	
@@ -242,7 +252,6 @@
 					_$this.addClass('thr__js--is-in-view');
 				})
 				.addTo(controller);
-				
 			});
 
 		}
