@@ -1,0 +1,198 @@
+// =============================================
+
+//	Collage
+
+// =============================================
+
+.h-overflow {
+	overflow: hidden;
+}
+
+.h-container{
+	width: 100%;
+	overflow: visible;
+	position: relative;
+	padding-top: 68%;
+}
+
+.h-signature-container{
+	position: absolute;
+	width: 85%;
+	top: 10%;
+}
+
+.h-signature{
+	width: 100%;
+	margin-left: -16%;
+	position: relative;
+	z-index: 10;
+	padding-top: 50%;
+	top: 0;
+
+	#h-dash__stroke{
+		position: absolute;
+		top: 0;
+	}
+}
+
+.h-yellow-stroke-container{
+	position: absolute;
+	width: 100%;
+	left: -10%;
+	top: 24%;
+}
+
+.h-yellow-stroke{
+	position: relative;
+	width: 100%;
+	padding-bottom: 30%;
+	z-index: 4;
+
+	#h-yellow-stroke__svg{
+		position: absolute;
+		top: 0;
+	}
+}
+
+.h-logo-switch{
+	position: absolute;
+	bottom: 16%;
+	left: 10%;
+	width: 20%;
+	z-index: 20;
+	img{
+		width: 100%;
+	}
+}
+
+.h-book-bg--1{
+	position: absolute;
+	width: 20%;
+	transform: translateY(10px);
+	left: -3%;
+	top: 0;
+	
+	z-index: 2;
+
+	animation-name: slowFloatOne;
+	animation-duration: 3000ms;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in;
+	animation-iteration-count: infinite;
+}
+
+.h-book-stack{
+	position: absolute;
+	right: -18%;
+	top: 0;
+	width: 36%;
+	z-index: 10;
+	img {
+		width: 100%;
+	}
+}
+
+.h-hand-drawn{
+	position: absolute;
+	width: 90%;
+	bottom: 0;
+	right: -35%;
+	img {
+		width: 100%;
+	}
+}
+
+.h-line-books-container{
+	width: 30%;
+	right: 30%;
+	width: 30%;
+	top: 42%;
+	position: absolute;
+}
+
+.h-line-books{
+	position: relative;
+	width: 100%;
+	padding-top: 80%;
+	#h-books{
+		position: absolute;
+		top: 0;
+	}
+}
+
+.h-line-book{
+	&--1{
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	&--6{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+}
+
+.h-circles{
+	width: 20%;
+	position: absolute;
+	bottom: 0;
+}
+
+.h-book-hand-drawn {
+	position: absolute;
+	bottom: 10%;
+	right: 61%;
+	width: 8%;
+}
+
+.h-book-script{
+	position: absolute;
+	right: 20%;
+	top: 12%;
+	width: 30%;
+}
+
+@keyframes slowFloatOne{
+	0%{transform: translateY(10px)}
+	30%{transform: translateY(11px)}
+	60%{transform: translateY(14px)}
+	90%{transform: translateY(11px)}
+	100%{transform: translateY(10px)}
+}
+
+.h-book-bg--2{
+	position: absolute;
+	width: 10%;
+	top: 10%;
+	transform: translateY(10px);
+	left: 10%;
+	opacity: 0.8;
+
+	z-index: 2;
+
+	animation-name: slowFloatTwo;
+	animation-duration: 3000ms;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-in;
+	animation-iteration-count: infinite;
+}
+
+@keyframes slowFloatTwo{
+	0%{transform: translateY(10px)}
+	30%{transform: translateY(9px)}
+	60%{transform: translateY(6px)}
+	90%{transform: translateY(9px)}
+	100%{transform: translateY(10px)}
+}
+
+#h-dash__stroke,
+#h-yellow-stroke__svg,
+#h-signature,
+#h-books{
+	width: 100%;
+}
+
+svg{
+	display: block;
+}

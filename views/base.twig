@@ -32,7 +32,7 @@
     
 {% endblock %}
 </head>
-    <body class="{{body_class}}" data-source="base.twig">
+    <body class="{{body_class}} {{post.post_title|striptags|lower|replace(' ', '-')}}" data-source="base.twig">
 
         {% include "mods/header.twig" %}
 

@@ -64,35 +64,104 @@
 
 .portfolio-h-outer {
 	position: relative;
-	margin: 0 -10px 80px;
+	margin: 0;
 	padding: 5px;
 	text-align: center;
-	@include rgba-bg(black, .6);
+	// @include rgba-bg(black, .6);
 	color: #fff;
-	max-width: 525px;
-	@media (min-width: 400px) {
-		// reset negative margin
-		margin-left: auto;
-		margin-right: auto;
-		// effectively increases border size
-		padding: 8px;
-	}
+	max-width: 250px;
+	margin-left: auto;
+	margin-right: auto;
+	// @media (min-width: 400px) {
+	// 	// reset negative margin
+	// 	margin-left: auto;
+	// 	margin-right: auto;
+	// 	// effectively increases border size
+	// 	padding: 8px;
+	// }
 
 	.billboard-on & {
-		margin-top: -12%;
+		margin-top: -20%;
 	}
 }
 
 .portfolio-h-inner {
-	padding: 18px 18px 28px;
+	padding: 18px 18px 5px;
 	@include rgba-bg(black, .9);
 	@media (min-width: 500px) {
-		padding: 25px 25px 35px;
+		padding: 25px 25px 0;
+	}
+}
+
+// Triangle shapes for the Portfolio Headline
+
+$triangle-height: 50px;
+
+.triangles {
+	overflow: auto;
+}
+
+.triangle__item {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 0;
+	position: relative;
+}
+
+.triangle__item--down {
+	padding-left: 50%;
+	padding-top: 50%;
+	&:after {
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		margin-left: -500px;
+		margin-top: -305px;
+		border-left: 500px inset transparent;
+		border-right: 500px inset transparent;
+		border-top: 260px solid rgba(0,0,0,0.9);
+	}
+}
+
+.triangle__item--right {
+	padding-left: 0;
+	padding-top: 12%;
+	width: 50%;
+	float: right;
+	&:after {
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		margin-top: -$triangle-height;
+		border-width: 0 0 $triangle-height 210px;
+		border-color: transparent transparent rgba(0,0,0,0.9) transparent;
+		-moz-transform: scale(.9999);
+	}
+}
+
+.triangle__item--left {
+	padding-left: 0;
+	padding-bottom: 12%;
+	width: 50%;
+	float: left;
+	&:after {
+		content: "";
+		display: block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: $triangle-height 0 0 210px;
+		border-color: transparent transparent transparent rgba(0,0,0,0.9);
+		-moz-transform: scale(.9999);
 	}
 }
 
 .portfolio-kicker {
-	color: #e5e5e5;
+	color: #FFFFFF;
 	position: relative;
 	padding-bottom: 12px;
 	margin-bottom: 21px;
@@ -103,7 +172,7 @@
 	&:after {
 		@include content;
 		height: 0;
-		width: 200px;
+		width: 70%	;
 		margin: auto;
 		border-top: 1px solid #aaa;
 		@include absolute(n 0 0 0);
@@ -126,10 +195,10 @@
 }
 
 .portfolio-h1 {
-	font-size: 30px;
+	font-size: 18px;
 	// Matches portfolio-kicker
 	@media (min-width: 500px) {
-		font-size: 42px;
+		font-size: 22px;
 	}
 	> a {
 		border-bottom: 1px solid rgba(255,255,255,0);
