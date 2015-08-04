@@ -35,7 +35,7 @@
 			}
 			return false;
 		}
-
+		
 		isAndroid = isAndroidBrowser();
 
 		// Stats counter
@@ -158,35 +158,41 @@
 			$('.thr__video').each(function(i) {
 				// Fixes a repaint issue in iOS
 				this.load();
-
-				$(this).on('click', function() {
-
-					if($(this).hasClass('is-playing')){
-						this.pause();
-						$(this).removeClass('is-playing');
-					} else {
-						this.play();
-						$(this).addClass('is-playing');
-					}
-				});
 			});
 
-			videoProgressBar();
+			// videoProgressBar();
+			// videoControls();
 		}
 
-		function videoProgressBar() {
-			$('.thr__video--progress').each(function(i) {
+		// function videoControls() {
+		// 	$('.thr__video-controls').each(function(i) {
+				
+		// 		$(this).on('click', function() {
 
-				this.addEventListener('loadeddata', function() {
-   					var barWidth = 0;
+		// 			if($(this).hasClass('is-playing')){
+		// 				$('.thr__video--stream')[i].pause();
+		// 				$(this).removeClass('is-playing');
+		// 			} else {
+		// 				$('.thr__video')[i].play();
+		// 				$(this).addClass('is-playing');
+		// 			}
+		// 		});
+		// 	});
+		// }
 
-					this.addEventListener('timeupdate', function() {
-						barWidth = this.currentTime / this.duration * 100;
-						$thrVideoProgressBar.eq(i).css('width', barWidth.toFixed(2) + '%');
-			     	}, false);
-				}, false);
-			});
-		}
+		// function videoProgressBar() {
+		// 	$('.thr__video--progress').each(function(i) {
+
+		// 		this.addEventListener('loadeddata', function() {
+  //  					var barWidth = 0;
+
+		// 			this.addEventListener('timeupdate', function() {
+		// 				barWidth = this.currentTime / this.duration * 100;
+		// 				$thrVideoProgressBar.eq(i).css('width', barWidth.toFixed(2) + '%');
+		// 	     	}, false);
+		// 		}, false);
+		// 	});
+		// }
 
 		function bindVideoScroll() {
 
@@ -198,11 +204,11 @@
 				})
 				.on('enter', function() {
 					$('.thr__video')[i].play();
-					$('.thr__video').eq(i).addClass('is-playing');
+					// $('.thr__video-controls').eq(i).addClass('is-playing');
 				})
 				.on('leave', function() {
 					$('.thr__video')[i].pause();
-					$('.thr__video').eq().removeClass('is-playing');
+					// $('.thr__video-controls').eq().removeClass('is-playing');
 				})
 				.duration(600)
 				.addTo(controller);	
