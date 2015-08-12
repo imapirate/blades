@@ -12,12 +12,12 @@
 }
 
 .thr-xray-content{
-	width: 95%; 
+	width: 95%;
 	float: right;
 	margin: 0;
 	position: relative;
 	@include box-shadow(rgba(0, 0, 0, 0.3) -2px 1px 10px);
-	
+
 	// breakpoints
 	@include respond-to('tablet-vert'){
 		width: 85%;
@@ -29,8 +29,8 @@
 
 // Images
 
-.thr-xray-item,	
-.thr-img-container{	
+.thr-xray-item,
+.thr-img-container{
 	position: relative;
 }
 
@@ -42,7 +42,7 @@
 
 .thr-img-section{
 	max-width: 200%;
-	
+
 	// breakpoints
 	@include respond-to('tablet-vert'){
 		max-width: 129%;
@@ -59,7 +59,7 @@
 	// vertical-align: top;
 
 	display: block;
-	margin: 0 auto;	
+	margin: 0 auto;
 
 	// breakpoints
 	@include respond-to('tablet-vert'){
@@ -111,7 +111,7 @@
 	width: 400%;
 	display: table-cell;
 	vertical-align: middle;
-	
+
 	// breakpoints
 	@include respond-to('phablet'){
 		width: 125%;
@@ -164,7 +164,7 @@
 	@include respond-to('desktop-large'){
 		font-size: 32px;
 	}
-	
+
 	&:after{
 		font-size: 0.85em;
 		font-weight: 700;
@@ -184,11 +184,11 @@
 	letter-spacing: -1px;
 	color: $hechingerBlue;
 	font-size: 80px;
-	
+
 	width: 100%;
 	padding-right: 20px;
 	min-width: 180px;
-	
+
 	display: table-cell;
 	vertical-align: middle;
 	width: auto;
@@ -277,7 +277,7 @@
 	right: 0;
 
 	@include transition(compact(all 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.7s));
-	
+
 	// breakpoints
 	@include respond-to('tablet-horiz'){
 		height: 8px;
@@ -333,7 +333,7 @@
 
 .thr-popup{
 	background-color: rgba(1, 1, 1, $popupOpacity);
-	display: block;	
+	display: block;
 	opacity: 1;
 	width: 165px;
 	height: 165px;
@@ -342,7 +342,7 @@
 	z-index: 20;
 
 	@include border-radius(50%);
-	
+
 	// breakpoints
 	@include respond-to('phablet'){
 		width: 215px;
@@ -400,7 +400,7 @@
 	@include scale3d(0, 0, 0, false);
 	// easeInBack
 	@include transition(compact(transform 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045)));
-	
+
 	.no-csstransforms3d & {
 		opacity: 0;
 		transition: opacity 0.5s ease-in-out;
@@ -421,6 +421,8 @@
 	// display: table-cell;
 	padding: 10px 0 0 0;
 	font-size: 11px;
+	line-height: 1.4;
+  font-weight: 500;
 
 	// breakpoints
 	@include respond-to('phablet'){
@@ -429,7 +431,7 @@
 		font-size: 12px;
 	}
 	@include respond-to('tablet-horiz'){
-		font-size: 13px;
+		font-size: 14px;
 	}
 }
 
@@ -526,9 +528,9 @@
 .thr-popup-content{
 	color: #FFF;
 	font-size: 12px;
-	font-family: $proxima;	
+	font-family: $proxima;
 	font-weight: 300;
-	text-align: center;	
+	text-align: center;
 
 	padding: 0 4em;
 	position: relative;
@@ -536,7 +538,7 @@
 	@include transform(translateY(-50%));
 
 	padding: 2em 2em;
-	
+
 	// breakpoints
 	@include respond-to('laptop'){
 		font-size: 14px;

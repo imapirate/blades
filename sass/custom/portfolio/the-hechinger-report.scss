@@ -28,6 +28,10 @@
 
 // =============================================
 
+::selection {
+  background-color: $hechingerBlue;
+}
+
 %__h {
 	font-family: Tiempos, Georgia, Times, serif;
 	font-size: 42px;
@@ -120,7 +124,7 @@
 	margin: 0 auto;
 	text-align: center;
 	font-size: 18px;
-	transition: background-color 0.2s ease-in-out; 
+	transition: background-color 0.2s ease-in-out;
 
 	&:hover {
 		background-color: $black;
@@ -163,7 +167,7 @@
 
 %thr__count-list {
 	counter-increment: step-counter;
-	
+
 	color: $black;
 	line-height: 1;
 	position: relative;
@@ -291,7 +295,7 @@
 		border-bottom: 1px solid currentColor;
 		display: inline-block;
 	}
-	
+
 	&--white {
 		color: $white;
 	}
@@ -361,12 +365,12 @@
 
 .thr__nav-item {
 	@extend %thr__count-list;
-	
+
 	border-top: 1px solid $black;
 
 	&:last-child { border-bottom: 1px solid $black; }
 	&:before { transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; }
-	
+
 	html.no-touch & {
 		&:hover {
 			&:before { background-color: $black; color: $white; }
@@ -410,7 +414,7 @@
 			float: left;
 			width: 33.3%;
 		}
-		
+
 		@include mq($h-tablet--lg) {
 			font-size: 22px;
 		}
@@ -490,15 +494,15 @@
 			padding-bottom: 140px;
 		}
 	}
-	
+
 	&--top-left {
-		
-		
+
+
 		@include mq($h-mobile--lg) {
 			padding-top: 7%;
 			padding-left: 12%;
 		}
-		
+
 		@include mq($h-tablet--lg) {
 			padding-top: 12%;
 			padding-left: 25%;
@@ -511,7 +515,7 @@
 
 	&--bottom-med {
 		// padding-bottom: 60px;
-		
+
 		@include mq($h-tablet) {
 			padding-bottom: 40px;
 		}
@@ -608,7 +612,7 @@
 	margin-bottom: 25px;
 	text-indent: -10px;
 	padding-left: 10px;
-	
+
 	@include mq($h-mobile--lg) {
 		text-indent: -20px;
 		padding-left: 20px;
@@ -646,7 +650,7 @@
 
 .thr__offset {
 	position: absolute;
-	
+
 	&--bottom { bottom: 0; }
 	&--left { left: -16.5%; }
 	&--right { right: -16.5%; }
@@ -664,11 +668,11 @@
 }
 
 .thr__scale-svg-container {
-	 position: relative; 
-	 height: 0; 
-	 width: 100%; 
+	 position: relative;
+	 height: 0;
+	 width: 100%;
 	 padding: 0;
-	 padding-bottom: 100%; 
+	 padding-bottom: 100%;
 }
 
 .thr__svg-pad {
@@ -681,10 +685,10 @@
 }
 
 .thr__scale-svg {
-	 position: absolute; 
-	 height: 100%; 
-	 width: 100%; 
-	 left: 0; 
+	 position: absolute;
+	 height: 100%;
+	 width: 100%;
+	 left: 0;
 	 top: 0;
 }
 
@@ -717,7 +721,7 @@
 	position: relative;
 	margin-bottom: 100px;
 	position: relative;
-	
+
 	@include mq($h-mobile--lg) {
 		padding: 45px;
 		border: 10px solid lighten($hechingerBlue, 10%);
@@ -933,7 +937,7 @@
 			transform: translate(0, 0);
 		}
 	}
-} 
+}
 
 .badge-a__divider {
 	height: 1px;
@@ -972,13 +976,13 @@
 }
 
 .triangle__item--badge-a--left {
-	&:after { border-color: transparent transparent transparent $black; 
+	&:after { border-color: transparent transparent transparent $black;
 		-moz-transform: scale(.9999);
 	}
 }
 
 .triangle__item--badge-a--right {
-	&:after { border-color: transparent transparent $black transparent; 
+	&:after { border-color: transparent transparent $black transparent;
 		-moz-transform: scale(.9999);
 	}
 }
@@ -1001,7 +1005,7 @@
 .thr__exam-books {
 	position: relative;
 	padding: 60px 0;
-	
+
 	@include mq($h-tablet) {
 		padding: 100px 0;
 	}
@@ -1082,11 +1086,11 @@
 .thr__type-spec {
 	width: 100%;
 	border-top: 4px solid $black;
-	border-bottom: 2px solid rgba(0,0,0, 0.2); 
+	border-bottom: 2px solid rgba(0,0,0, 0.2);
 	color: $black;
 	margin-bottom: 45px;
 	position: relative;
-	
+
 	.no-flexbox & { overflow: auto; }
 
 	.flexbox & {
@@ -1106,12 +1110,12 @@
 	@include mq($h-mobile--lg) {
 		border-bottom: 0;
 	}
-	
+
 	@include mq($h-tablet--lg) {
 		font-size: 24px;
 	}
 
-	.no-flexbox & { 
+	.no-flexbox & {
 		width: 100%;
 		@include mq($h-mobile--lg) {
 			float: left;
@@ -1238,13 +1242,13 @@
   			border-radius: 40px;
   		}
 	}
-	
+
 	&--white {
 		&:before { background-color: $white; };
 	}
 
-	&--shadow { 
-		box-shadow: -15px 15px 0px -6px rgba(0,0,0,0.10); 
+	&--shadow {
+		box-shadow: -15px 15px 0px -6px rgba(0,0,0,0.10);
 		@include mq($h-mobile--lg) { box-shadow: -20px 20px 0px -8px rgba(0,0,0,0.10); }
 		@include mq($h-tablet--lg) { box-shadow: -30px 30px 0px -12px rgba(0,0,0,0.10); }
 	}
@@ -1363,7 +1367,7 @@
 	overflow: hidden;
 	border-bottom-left-radius: 8px;
 	border-top-right-radius: 10px;
-	
+
 }
 
 .thr__browser-chrome {
