@@ -12,7 +12,7 @@
 			$thrVideoProgressBar = $('.thr__video-progress-bar'),
 			$thrVideo,
 			$thrVideoTemplate,
-		
+
 			controller = new ScrollMagic.Controller(),
 			statsInView = false,
 			thrInView,
@@ -35,29 +35,29 @@
 			}
 			return false;
 		}
-		
+
 		isAndroid = isAndroidBrowser();
 
 		// Stats counter
 
 		function statsCounter() {
 			$thrStats.text(statsNum);
-			timeout = setTimeout(function() { 
+			timeout = setTimeout(function() {
 				if(statsInView){
-					if(statsNum < 471) {
+					if(statsNum < 473) {
 						statsNum++;
 						statsCounter();
 					} else {
 						clearTimeout(timeout);
-					} 
+					}
 				}
 				else {
-					if(statsNum <= 471 && statsNum >= 101){
+					if(statsNum <= 473 && statsNum >= 101){
 						statsNum--;
 						statsCounter();
 					} else {
 						clearTimeout(timeout);
-					} 
+					}
 				}
 			}, 1);
 		}
@@ -95,7 +95,7 @@
 			if(!Modernizr.touch) {
 				$thrVideoTemplate.attr('loop', 'true');
 			}
-			
+
 			// Swaps video out
 			var video_elements = {
 				video_overview: $thrVideoTemplate.clone()
@@ -166,7 +166,7 @@
 
 		// function videoControls() {
 		// 	$('.thr__video-controls').each(function(i) {
-				
+
 		// 		$(this).on('click', function() {
 
 		// 			if($(this).hasClass('is-playing')){
@@ -211,7 +211,7 @@
 					// $('.thr__video-controls').eq().removeClass('is-playing');
 				})
 				.duration(600)
-				.addTo(controller);	
+				.addTo(controller);
 			});
 		}
 
@@ -221,7 +221,7 @@
 			$thrXrayItem.each(function(i) {
 
 				new ScrollMagic.Scene({
-					triggerElement: $thrXrayItem[i], 
+					triggerElement: $thrXrayItem[i],
 					triggerHook: 'onCenter'
 				})
 				.on('leave', function(e) {
@@ -242,14 +242,14 @@
 				})
 				.setClassToggle($thrXrayItem[i], 'is-in-view')
 				.duration($thrXrayItem[i].height)
-				.addTo(controller);		
+				.addTo(controller);
 			});
 
 			// Add class when item is in view
 			$thrScrollItem.each(function(i){
 
 				thrInView = new ScrollMagic.Scene({
-					triggerElement: $thrScrollItem[i], 
+					triggerElement: $thrScrollItem[i],
 					triggerHook: 'onCenter'
 				})
 				.on('enter', function() {
@@ -261,7 +261,7 @@
 			});
 
 		}
-		
+
 		// Navigation Smooth Scroll
 
 		$('.thr__nav-link').click(function(e) {
@@ -275,7 +275,7 @@
 		});
 
 		// Swiper
-		
+
 		function thrSwiperInit() {
 			thrSwiper = new Swiper('.thr__swiper', {
 				resizeReInit: true,
@@ -287,14 +287,14 @@
 			    grabCursor: true,
 			    autoplay: 4000,
 			    speed: 500
-			}); 
+			});
 		}
 
 		window.addEventListener('orientationchange', function() {
 			thrSwiper.destroy();
 			thrSwiperInit();
 		}, false);
-	
+
 	$(document).ready(function() {
 		scrollHandler();
 		thrSwiperInit();

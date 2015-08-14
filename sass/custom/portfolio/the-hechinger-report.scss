@@ -28,6 +28,10 @@
 
 // =============================================
 
+body.the-hechinger-report {
+	overflow: hidden;
+}
+
 ::selection {
   background-color: $hechingerBlue;
 }
@@ -35,17 +39,22 @@
 %__h {
 	font-family: Tiempos, Georgia, Times, serif;
 	font-size: 42px;
-	line-height: 1;
+	line-height: 1.2;
 	font-weight: 900;
+	letter-spacing: -0.5px;
 	margin-bottom: 30px;
+
+	@include mq(500px) {
+		font-size: 48px;
+	}
 
 	@include mq($h-mobile--lg) {
 		font-size: 64px;
 		margin-bottom: 40px;
 	}
 	@include mq($h-tablet--lg) {
-		font-size: 82px;
-		line-height: 91px;
+		font-size: 88px;
+		line-height: 1.1;
 		margin-bottom: 60px;
 	}
 
@@ -65,7 +74,6 @@
 		@include mq($h-tablet--lg) {
 			font-size: 125px;
 			line-height: 132px;
-			margin-bottom: 60px;
 		}
 	}
 
@@ -83,11 +91,11 @@
 
 	&--sm {
 		@extend %__h;
-		font-size: 16px;
+		font-size: 17px;
 		line-height: 1;
 
 		@include mq($h-mobile) {
-			font-size: 18px;
+			font-size: 19px;
 		}
 
 		@include mq($h-mobile--lg) {
@@ -107,13 +115,17 @@
 
 %sub__h {
 	font-family: Tiempos, Georgia, Times, serif;
-	font-size: 20px;
-	line-height: 32px;
+	font-size: 22px;
+	line-height: 1.6;
 	font-weight: 300;
+	letter-spacing: -0.5px;
+
+	@include mq(500px) {
+		font-size: 24px;
+	}
 
 	@include mq($h-mobile--lg) {
-		font-size: 24px;
-		line-height: 36px;
+		font-size: 28px;
 	}
 }
 
@@ -184,7 +196,7 @@
 		text-align: center;
 		border-radius: 50%;
 		font-size: 16px;
-		font-weight: 300;
+		font-weight: 600;
 		color: $white;
 		position: absolute;
 		top: 50%;
@@ -193,7 +205,7 @@
 		width: 28px;
 		line-height: 28px;
 
-		@include mq($h-mobile) {
+		@include mq(550px) {
 			left: 50px;
 			height: 30px;
 			width: 30px;
@@ -209,6 +221,13 @@
 //	Main -> Portfolio Mod
 
 // =============================================
+
+.portfolio-desc {
+	margin-bottom: 12px;
+	@include mq(1000px) {
+		margin-bottom: 16px;
+	}
+}
 
 .portfolio-h1 {
 	font-family: Tiempos, Georgia, Times, serif;
@@ -256,6 +275,10 @@
 
 // =============================================
 
+.thr__title {
+	margin-bottom: 0;
+}
+
 .thr__h {
 	@extend %__h;
 	color: $black;
@@ -271,12 +294,15 @@
 	@extend %sub__h;
 	color: $black;
 	text-align: center;
-	margin-bottom: 40px;
+	margin-bottom: 60px;
+
+	@include mq(500px) {
+		margin-bottom: 80px;
+	}
 
 	@include mq($h-tablet--lg) {
-		font-size: 42px;
-		line-height: 62px;
-		margin-bottom: 60px;
+		font-size: 38px;
+		line-height: 1.4;
 	}
 }
 
@@ -325,25 +351,41 @@
 }
 
 .thr__text {
+	a {
+		color: $hechingerBlue;
+	}
+	a:hover {
+		color: $hechingerDarkBlue;
+	}
 	p {
 		@extend %__text;
-		font-size: 16px;
-		line-height: 26px;
+		font-size: 17px;
+		line-height: 1.7;
 		color: $black;
 
 		@include mq($h-mobile--lg) {
-			font-size: 18px;
+			font-size: 19px;
 		}
 
 		@include mq($h-tablet--lg) {
-			font-size: 23px;
-			line-height: 42px;
+			font-size: 21px;
+			line-height: 1.8;
 		}
 	}
 
 	.dropcap {
 		font-family: Tiempos, Georgia, Times, serif;
 		font-weight: 700;
+		font-size: 58px;
+    line-height: .88;
+    @media (min-width: 600px) {
+    	font-size: 67px;
+    	line-height: .9;
+    }
+    @media (min-width: 1000px) {
+	    font-size: 77px;
+	    line-height: .91;
+    }
 	}
 
 	&--white p {
@@ -384,16 +426,18 @@
 	display: block;
 	font-weight: 700;
 
-	@include mq($h-mobile) {
+	@include mq(550px) {
 		padding: 25px 30px 25px 90px;
 	}
 
-	html.no-touch & {
-		&:hover {
-			// background-color: $hechingerBlue;
-			.thr__txt-mod { color: $mediumGray; }
-		}
+	&:hover {
+		opacity: 1;
 	}
+}
+
+.thr__topic-h--case-study {
+    margin-bottom: 15px;
+    margin-top: 40px;
 }
 
 .thr__count-item {
@@ -454,7 +498,7 @@
 
 .thr__divider {
 	max-width: 30px;
-	margin: 0 auto;
+	margin: 50px auto 0;
 	position: relative;
 	&:after,
 	&:before {
@@ -799,6 +843,14 @@
 		bottom: -90px;
   		left: 190px;
   	}
+
+  a {
+  	color: $white;
+  }
+  a:hover {
+  	color: $white;
+  	text-decoration: underline;
+  }
 }
 
 .thr__btn {
@@ -1072,9 +1124,17 @@
 .thr__logo {
 	width: 20%;
 	max-width: 300px;
-	margin: 0 auto -11% auto;
+	margin: 60px auto -11% auto;
 	position: relative;
 	z-index: 10;
+
+	@include mq($h-tablet) {
+		margin-top: 75px;
+	}
+
+	@include mq($h-tablet--lg) {
+		margin-top: 90px;
+	}
 
 	@include mq($h-desktop--lg) {
 		font-size: 82px;
@@ -1173,10 +1233,14 @@
 	position: relative;
 	padding-bottom: 10px;
 
+	&:first-child {
+    z-index: 3;
+    position: relative;
+	}
+
 	@include mq($h-mobile--lg) {
 		width: 50%;
 		float: left;
-		padding-left: 10px;
 	}
 }
 
@@ -1499,3 +1563,34 @@
 }
 
 // main -> stream
+
+.goals-list {
+	margin-bottom: 18px;
+	padding-left: 30px;
+
+	@include mq(500px) {
+		padding-left: 50px;
+	}
+}
+
+.goals-item {
+	font-family: Tiempos, Georgia, Times, serif;
+	font-weight: 800;
+	letter-spacing: 2px;
+
+	> p {
+		font-weight: 300;
+		letter-spacing: 0;
+	}
+	> p > strong {
+		font-weight: 800;
+	}
+}
+
+.results-number-mod {
+	margin-top: 60px;
+}
+
+.results-number {
+	margin-bottom: 10px;
+}

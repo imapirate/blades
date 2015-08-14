@@ -9,6 +9,7 @@
 	position: relative;
 	@include clearfix;
 	z-index: 10;
+	margin-top: 60px;
 }
 
 .thr-xray-content{
@@ -99,6 +100,7 @@
 	display: table;
 	margin: 20px 0 20px 23%;
 	max-width: 200%;
+	min-height: 77px;
 
 	// breakpoints
 	@include respond-to('tablet-vert'){
@@ -108,30 +110,23 @@
 }
 
 .thr-text-bd{
-	width: 400%;
-	display: table-cell;
-	vertical-align: middle;
+	width: 240%;
+	display: block;
+	margin-left: 155px;
 
 	// breakpoints
 	@include respond-to('phablet'){
 		width: 125%;
 	}
 	@include respond-to('tablet-vert'){
-		width: 125%;
-	}
-	@include respond-to('tablet-horiz'){
-		padding-left: 20px;
-		// width: 55%;
-	}
-	@include respond-to('laptop'){
-		// width: 70%;
+		margin-left: 235px;
 	}
 }
 
-.thr-special-h{
+.thr-special-h {
 	font-family: Tiempos, Georgia, Times, serif;
 	font-size: 16px;
-	line-height: 1.194444444;
+	line-height: 1.3;
 	font-weight: 900;
 	color: #00aeef;
 
@@ -140,17 +135,17 @@
 
 	// breakpoints
 	@include respond-to('tablet-vert'){
-		font-size: 24px;
+		font-size: 26px;
 	}
 
 	@include respond-to('desktop-large'){
-		font-size: 40px;
+		font-size: 30px;
 	}
 }
 
-.thr-special-link{
+.thr-special-link {
 	font-family: National, Helvetica, Arial, sans-serif;
-	font-size: 24px;
+	font-size: 18px;
 	color: #000000;
 	text-decoration: underline;
 	letter-spacing: -1px;
@@ -161,8 +156,13 @@
 	width: 400%;
 
 	// breakpoints
+	@include respond-to('tablet-vert'){
+		font-size: 24px;
+	}
+
 	@include respond-to('desktop-large'){
 		font-size: 32px;
+		display: block;
 	}
 
 	&:after{
@@ -192,11 +192,13 @@
 	display: table-cell;
 	vertical-align: middle;
 	width: auto;
+	position: absolute;
+	line-height: .75;
 
 	// breakpoints
 	@include respond-to('tablet-vert'){
 		font-size: 119px;
-		min-width: 270px;
+		min-width: 240px;
 	}
 }
 
@@ -335,8 +337,8 @@
 	background-color: rgba(1, 1, 1, $popupOpacity);
 	display: block;
 	opacity: 1;
-	width: 165px;
-	height: 165px;
+	width: 185px;
+	height: 185px;
 	left: 5%;
 	position: absolute;
 	z-index: 20;
