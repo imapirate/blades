@@ -31,7 +31,7 @@
 							{% if post.client_link %}
 								<a href="{{post.client_link}}" target="_blank">
 							{% endif %}
-								{{post.post_title}}
+								{{post.client_name}}
 							{% if post.client_link %}
 								</a>
 							{% endif %}
@@ -51,7 +51,13 @@
 			</div>
 
 			<div class="portfolio-content">
-			
+
+				<div class="portfolio__hgroup site-width">
+					<h1 class="portfolio__title">{{post.post_title}}</h1>
+					<h2 class="portfolio__subtitle">{{post.tease_description}}</h2>
+				</div> <!-- /portfolio-hgroup -->
+
+
 				{% for layout in post.get_layouts %}
 					{% if layout.images %}
 						<div class="portfolio-image-set image-count-{{layout.images|length}} {{layout.size|length ? layout.size}}">
@@ -104,7 +110,7 @@
 	</article>
 
 	{% include 'mods/cta-hire-us.twig' %}
-	
+
 </div> <!-- /content-wrapper -->
 
 <div class="inset-light">
