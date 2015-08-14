@@ -52,10 +52,12 @@
 
 			<div class="portfolio-content">
 
+				{% block hgroup %}
 				<div class="portfolio__hgroup site-width">
 					<h1 class="portfolio__title">{{post.post_title}}</h1>
 					<h2 class="portfolio__subtitle">{{post.tease_description}}</h2>
 				</div> <!-- /portfolio-hgroup -->
+				{% endblock hgroup %}
 
 
 				{% for layout in post.get_layouts %}
