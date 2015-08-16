@@ -422,7 +422,7 @@ body.the-hechinger-report {
 
 .thr__nav-link {
 	@extend %thr__link;
-	padding: 20px 25px 20px 60px;
+	padding: 20px 25px 20px 47px;
 	display: block;
 	font-weight: 700;
 
@@ -786,7 +786,7 @@ body.the-hechinger-report {
 	}
 	&:before {
 		bottom: -70px;
-		left: 20px;
+		left: 6px;
 		border-width: 0 70px 70px 0;
 		border-color: transparent lighten($hechingerBlue, 10%) transparent transparent;
 
@@ -1566,7 +1566,7 @@ body.the-hechinger-report {
 
 .goals-list {
 	margin-bottom: 18px;
-	padding-left: 30px;
+	padding-left: 40px;
 
 	@include mq(500px) {
 		padding-left: 50px;
