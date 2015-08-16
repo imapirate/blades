@@ -15,10 +15,10 @@
 					{% for highlight in hl_group %}
 					<div class="alt-tile tile-border ui-block-{{loop.index}}">
 						<!--<h3 class="h4">{{highlight.kicker}}</h3>-->
-						<a href="{{highlight.link}}">
+						<a href="{{highlight.get_field('link')}}">
  							<img class="alt-tile-img" src="{{highlight.thumbnail.src}}" alt="{{highlight.title|e}}"/>
  						</a>
-						<h2 class="highlight-headline"><a href="{{highlight.link}}">{{highlight.title}}</a></h2>
+						<h2 class="highlight-headline"><a href="{{highlight.get_field('link')}}">{{highlight.title}}</a></h2>
 						<div class="txt-lg txt-dark">{{highlight.content}}</div>
 					</div><!-- /alt-tile -->
 					{% endfor %}
