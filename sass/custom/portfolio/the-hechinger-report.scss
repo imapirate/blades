@@ -28,7 +28,9 @@
 
 // =============================================
 
-body.the-hechinger-report {
+// Keeps homepage graphic from spilling out
+// on mobile and breaking the layout
+body {
 	overflow: hidden;
 }
 
