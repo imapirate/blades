@@ -1,59 +1,65 @@
 {
-    "name": "upstatement/blades",
-    "description": "Blades repo",
-    "type":"wordpress-theme",
-    "authors": [
-        {
-            "name": "Jared Novack",
-            "email": "jared@upstatement.com"
-        }
-    ],
-    "repositories": [
-    	{
-            "type":"composer",
-            "url":"http://wpackagist.org"
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "tan-tan-kanarek/github-php-client",
-                "version": "1.0",
-                "dist": {
-                    "url": "https://github.com/tan-tan-kanarek/github-php-client/archive/master.zip",
-                    "type": "zip"
-                }
-            }
-        },
-        {
-            "type": "package",
-            "package": {
-                "name": "advanced-custom-fields/advanced-custom-fields-pro",
-                "version": "5.0",
-                "type": "wordpress-plugin",
-                "dist": {
-                    "type": "zip",
-                    "url": "http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9MzQwMzh8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA3LTA5IDEyOjU4OjA4"
-                }
-            }
-        }
-    ],
-    "minimum-stability": "dev",
-    "extra": {
-        "installer-paths": {
-            "../../plugins/{$name}/": ["wpackagist-plugin/*", "type:wordpress-plugin", "advanced-custom-fields/advanced-custom-fields-pro"]
-        }
+  "name": "upstatement/blades",
+  "description": "Blades repo",
+  "type": "wordpress-theme",
+  "authors": [
+    {
+      "name": "Jared Novack",
+      "email": "jared@upstatement.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://wpackagist.org"
     },
-	"require": {
-		"composer/installers": "~1.0",
-        "tan-tan-kanarek/github-php-client" : "*",
-        "advanced-custom-fields/advanced-custom-fields-pro": "*",
-		"wpackagist-plugin/timber-library":"0.21.*",
-		"wpackagist-plugin/jigsaw":"0.*",
-		"jarednova/mesh" : "*",
-		"advanced-custom-fields/advanced-custom-fields-pro": "*"
-	},
-	"require-dev" : {
-		"wpackagist-plugin/debug-bar" : "0.8.*",
-		"wpackagist-plugin/debug-bar-timber" : "*"
-	}
+    {
+      "type": "package",
+      "package": {
+        "name": "tan-tan-kanarek/github-php-client",
+        "version": "1.0",
+        "dist": {
+          "url": "https://github.com/tan-tan-kanarek/github-php-client/archive/master.zip",
+          "type": "zip"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "5.0",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9MzQwMzh8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE0LTA3LTA5IDEyOjU4OjA4"
+        }
+      }
+    }
+  ],
+  "minimum-stability": "dev",
+  "extra": {
+    "installer-paths": {
+      "../../plugins/{$name}/": [
+        "wpackagist-plugin/*",
+        "type:wordpress-plugin",
+        "advanced-custom-fields/advanced-custom-fields-pro"
+      ]
+    }
+  },
+  "require": {
+    "composer/installers": "~1.0",
+    "tan-tan-kanarek/github-php-client": "*",
+    "advanced-custom-fields/advanced-custom-fields-pro": "*",
+    "wpackagist-plugin/timber-library": "0.21.*",
+    "wpackagist-plugin/jigsaw": "0.*"
+  },
+  "require-dev": {
+    "wpackagist-plugin/debug-bar": "0.8.*",
+    "wpackagist-plugin/debug-bar-timber": "*"
+  },
+  "suggest": {
+    "jarednova/mesh": "*",
+    "wpackagist-plugin/safe-redirect-manager": "*"
+  }
 }

@@ -13,6 +13,15 @@ var upSite;
 		this.initQuickShare();
 	}
 
+	UpSite.prototype.trackClick = function() {
+		var $link = $(this);
+		var cat = $link.data('ga-category');
+		var action = $link.data('ga-action');
+		var label = $link.data('ga-label');
+		console.log('track', cat, action, label);
+		_gaq.push(['_trackEvent', cat, action, label]);
+	}
+
 	UpSite.prototype.initQuickShare = function(){
 		console.log('initQuickShare');
 		if (typeof quickShare == 'function') {
@@ -66,6 +75,8 @@ var upSite;
 		});
 
 		$(window).load(this.resizeTwitter);
+
+		$('.js-analytics').on('click', this.trackClick);
 	};
 
 	UpSite.prototype.resizeTwitter = function(){

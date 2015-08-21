@@ -107,7 +107,7 @@
 
 	<!-- Apply form -->
 	{% block career_form %}
-		{% if post.application_form %}
+		{% if post.application_form or post.application_email %}
 			<div class="career-mod career-apply">
 				<div class="site-width">
 					<div class="pull-up">
@@ -116,10 +116,13 @@
 									<h2 class="h2 h-centered">Are you ready to Apply?</h2>
 								</div> <!-- /career-desc-head -->
 
-								<div class="career-form">
-									{{ post.application_form|shortcodes }}
+								<div class="career-form article-txt txt-lg txt-width">
+									{% if post.application_email %}
+										Interested? Send a resume, cover letter and a link to your portfolio (and anything else that helps us understand what makes you awesome) to <a href="mailto:{{post.application_email}}?subject={{post.title}}" class="js-analytics" data-ga-label="{{post.title}}" data-ga-action="email-link-click" data-ga-category="job-apply">{{post.application_email}}</a>. Please include “{{post.title}}” in the subject line.
+									{% else %}
+										{{ post.application_form|shortcodes }}
+									{% endif %}
 								</div> <!-- career-form -->
-
 						</div> <!-- /pull-up-inner -->
 					</div> <!-- /pull-up -->
 				</div> <!-- /site-width -->
