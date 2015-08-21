@@ -28,7 +28,9 @@
 
 // =============================================
 
-body.the-hechinger-report {
+// Keeps homepage graphic from spilling out
+// on mobile and breaking the layout
+body {
 	overflow: hidden;
 }
 
@@ -200,7 +202,7 @@ body.the-hechinger-report {
 		color: $white;
 		position: absolute;
 		top: 50%;
-		left: 20px;
+		left: 6px;
 		height: 28px;
 		width: 28px;
 		line-height: 28px;
@@ -422,7 +424,7 @@ body.the-hechinger-report {
 
 .thr__nav-link {
 	@extend %thr__link;
-	padding: 20px 25px 20px 60px;
+	padding: 20px 25px 20px 47px;
 	display: block;
 	font-weight: 700;
 
@@ -446,11 +448,7 @@ body.the-hechinger-report {
 	&--topic {
 		border-bottom: 1px solid $mediumGray;
 		font-size: 18px;
-		padding: 15px 1% 15px 20%;
-
-		@include mq($h-mobile) {
-			padding: 15px 1% 15px 15%;
-		}
+		padding: 15px 1% 15px 15%;
 
 		@include mq($h-tablet) {
 			display: inline-block;
@@ -464,7 +462,7 @@ body.the-hechinger-report {
 		}
 
 		&:before {
-			left: 5%;
+			left: 6px;
 			@include mq($h-tablet) {
 				left: 12%;
 			}
@@ -786,7 +784,7 @@ body.the-hechinger-report {
 	}
 	&:before {
 		bottom: -70px;
-		left: 20px;
+		left: 6px;
 		border-width: 0 70px 70px 0;
 		border-color: transparent lighten($hechingerBlue, 10%) transparent transparent;
 
@@ -1566,7 +1564,7 @@ body.the-hechinger-report {
 
 .goals-list {
 	margin-bottom: 18px;
-	padding-left: 30px;
+	padding-left: 40px;
 
 	@include mq(500px) {
 		padding-left: 50px;
