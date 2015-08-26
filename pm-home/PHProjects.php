@@ -31,8 +31,12 @@ class PH_Projects {
 		));
 	}
 
-	function autoload() {
+	protected function autoload() {
 		require_once('PHProject.php');
+	}
+
+	public static function is_client() {
+		return !is_user_logged_in();
 	}
 
 }

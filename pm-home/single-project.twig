@@ -1,26 +1,9 @@
-{# App Quantity Query
-   ~~~~~~~~~~~~~~~~~~~~~~~~
-
-   Decide whether the grid should be 3-across or 4-across
-   based on the number of applications that are visible
-
-#}
-
-{% if post.get_applications|length is divisible by(3)
-	 or post.get_applications|length in [1,2,5]
-%}
-    {% set pmHome_section_grid__apps = 'l-pmHome-section--grid-3' %}
-{% else %}
-    {% set pmHome_section_grid__apps = 'l-pmHome-section--grid-4' %}
-{% endif %}
-
-
 <!DOCTYPE HTML>
 <html>
 	<head>
 		<title>{{post.title}} | Project Home</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="text/javascript" src="/bower_components/modernizr/modernizr.js"></script>
+		<script type="text/javascript" src="{{theme.path}}/components/modernizr/modernizr.js"></script>
 		<link rel="stylesheet" href="{{theme.path}}/pm-home/css/screen.css">
 		<script src="//use.typekit.net/lzk6wqe.js"></script>
 		<script>try{Typekit.load();}catch(e){}</script>
@@ -104,13 +87,28 @@
 
 		</section> <!-- pmHome-section--comm -->
 
+		{# App Quantity Query
+   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Decide whether the grid should be 3-across or 4-across
+   based on the number of applications that are visible
+
+#}
+
+{% if post.get_applications|length is divisible by(3)
+	 or post.get_applications|length in [1,2,5]
+%}
+    {% set pmHome_section_grid__apps = 'l-pmHome-section--grid-3' %}
+{% else %}
+    {% set pmHome_section_grid__apps = 'l-pmHome-section--grid-4' %}
+{% endif %}
+
 		{% if post.get_applications %}
 		<section class="pmHome-section pmHome-section--apps">
 			<h3 class="pmHome-sectionHeadline">Applications</h3>
 
 			<div class="l-pmHome-section l-pmHome-section--apps {{ pmHome_section_grid__apps }}">
 				{% for app in post.get_applications %}
-					{% if not app.private or (app.private and user.ID) %}
 					<div class="pmHome-gridBlock">
 						<a class="pmHome-apps-link" href="{{app.url}}" target="_blank">
 							<div class="pmHome-apps-logo pmHome-apps-logo--{{app.service}}"></div>
@@ -120,7 +118,6 @@
 							</div> <!-- /pmHome-apps-textMod -->
 						</a>
 					</div> <!-- /pmHome-gridBlock -->
-					{% endif %}
 				{% endfor %}
 			</div>
 
@@ -132,12 +129,10 @@
 
 			<ul class="pmHome-link-list">
 				{% for item in post.get_important_links %}
-					{% if not item.private or (item.private and user.ID) %}
-						{% if item.file %}
-							{% include "tease-file.twig" %}
-						{% else %}
-							{% include "tease-link.twig" %}
-						{% endif %}
+					{% if item.file %}
+						{% include "tease-file.twig" %}
+					{% else %}
+						{% include "tease-link.twig" %}
 					{% endif %}
 				{% endfor %}
 			</ul>
@@ -178,7 +173,6 @@
 
 	</body>
 
-	<script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
-	<script type="text/javascript" src="js/base.js"></script>
+	<script type="text/javascript" src="{{theme.path}}/components/jquery/dist/jquery.js"></script>
 	{{function('wp_footer')}}
 </html>
