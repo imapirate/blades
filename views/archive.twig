@@ -1,0 +1,33 @@
+{% extends base %}
+{% block content %}
+<section id="archive-blog">
+	{% if title %}
+		<div class="wrapper">
+			<hgroup><h1 class="archive-blog-h1">{{title}}</h1></hgroup>
+		</div>
+	{% endif %}
+
+	{% if blog_featured %}
+	<div class="featured-wrapper inset">
+		<div class="wrapper">
+		<section id="archive-blog-featured" class="blog-featured-mod">
+			{% for post in blog_featured %}
+				{% include "mods/tz-blog-l.twig" %}
+			{% endfor %}
+		</section><!--archive-blog-featured -->
+		</div><!-- wrapper -->
+	</div><!-- inset -->
+	{% endif %}
+	<div class="inset-dark">
+		<div class="wrapper">
+			<section id="archive-blog-cron" class="blog-cron">
+				{% include "mods/archive-blog-loop.twig" %}
+			</section>
+			{% if next_button_url %}
+				<a href="{{next_button_url}}" class="blog-load-more api-next" data-target="#archive-blog-cron" data-api-items=".blog-small"><span class="more-txt">More</span><span class="arrow"></span></a>
+			{% endif %}
+		</div><!-- wrapper -->
+	</div>
+</section><!-- archive-blog -->
+	{# include "sidebar.twig" #}
+{% endblock %}

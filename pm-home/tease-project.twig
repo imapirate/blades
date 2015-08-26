@@ -1,0 +1,6 @@
+<article class="media-block blog blog-small" id="post-{{post.post_name}}">
+	<a href="{{post.link}}">
+		<img src="{{post.thumbnail.src|default(site.theme.link~'/images/st-tile-gray.png')|resize(300, 168, 'center')}}" />
+	</a>
+	<h3 class="h3"><a href="{{post.link}}">{{post.title}}</a></h3>
+</article>

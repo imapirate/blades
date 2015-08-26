@@ -27,7 +27,7 @@ class PH_Projects {
 			'has_archive' => true,
 			'menu_icon' => 'dashicons-welcome-view-site',
 			'rewrite' => array('slug' => 'projects', 'with_front' => false),
-			'supports' => array('title','revisions','page-attributes')
+			'supports' => array('title','revisions','page-attributes', 'thumbnail')
 		));
 	}
 

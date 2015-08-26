@@ -16,28 +16,11 @@
 		$page = $wp_query->query_vars['paged'];
 	}
 
-	$term = new TimberTerm();
 	$data['title'] = "Project Homes";
-
+	$data['posts'] = null;
 	if (is_user_logged_in()) {
-		$data['blog_cron'] = Timber::get_posts(array('orderby' => 'title', 'post_type' => 'project', 'order' => 'ASC'));
-	}
-
-	$data['tags'] = Timber::get_terms(array(
-		'tax' => 'tags',
-		'orderby' => 'count'
-	));
-	shuffle($data['tags']);
-	$data['tags'] = TimberHelper::array_truncate($data['tags'], 10);
-
-	$next_page = $page + 1;
-	if ($page == 0){
-		$next_page = 2;
-	}
-
-	if ($api){
-		Timber::render('archive-blog-loop.twig', $data);
+		$data['posts'] = Timber::get_posts(array('orderby' => 'title', 'post_type' => 'project', 'order' => 'ASC'));
+		Timber::render('archive-project.twig', $data);
 	} else {
-		$data['sidebar'] = Timber::get_sidebar('sidebar.php');
-		Timber::render('archive-blog.twig', $data);
+		Timber::render('404.twig', $data);
 	}
