@@ -512,23 +512,63 @@ a {
   @include svg("file--drive", false);
 }
 
-.pmHome-password-box {
-	margin:auto;
-	border:5px solid rgb(77, 77, 77);
-	background: black;
-	padding:40px;
-	@include mq(400px) {
-    	width:80%
-  	}
-  	@include mq(600px) {
-    	width:50%
-  	}
+
+// --------------------------------------------
+// Password
+// --------------------------------------------
+
+.password-page-mod {
+  margin:auto;
+  padding:40px;
+  width: 90%;
+  max-width: 500px;
 }
 
-/* added by jared, tito might not like but he is free to refactor */
-.pmHome-password-label {
-	@include opacity(0.5);
+.password-h {
+  font-family: $sans;
+  font-weight: $font-weight--bold;
+  color: #fff;
+  @include font-size-mq;
+  margin-bottom: 20px;
 }
+
+.password-input-mod {
+  position: relative;
+}
+
+.password-label {
+  display: none;
+}
+
+.password-box {
+  @include input-default;
+  border-bottom: 1px solid $gray-med;
+  height: 30px;
+  width: 100%;
+  padding-right: 40px;
+  padding-bottom: 10px;
+
+  font-family: $sans;
+  font-weight: $font-weight--reg;
+  @include font-size-mq;
+}
+
+.password-btn {
+  @include input-default;
+  @include font-size-mq;
+
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+}
+
+
+// --------------------------------------------
+// Phone List / Roster
+// --------------------------------------------
 
 .pmHome-table-mod {
 	padding:0px 7px;
