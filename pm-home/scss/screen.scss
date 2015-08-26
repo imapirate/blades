@@ -56,6 +56,11 @@ a {
   color: #ededed;
   background-color: $site-bg;
   padding-bottom: 100px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: “liga” on;
+  text-rendering: optimizeLegibility;
 }
 
 .site-width {
@@ -119,8 +124,14 @@ a {
 // Section Type & Layout
 // --------------------------------------------
 
+.l-pmHome-section {
+  // Makes layout dividers display properly
+  position: relative;
+}
+
 .pmHome-section {
   @extend .site-width;
+  overflow: hidden;
 }
 
 .pmHome-section + .pmHome-section {
@@ -128,7 +139,7 @@ a {
 }
 
 .pmHome-sectionHeadline {
-  font: $font-weight--black 13px $serif;
+  font: $font-weight--black 14px $serif;
 
   padding: 13px 6px 14px;
   border-top: 3px solid $gray-light;
@@ -193,6 +204,20 @@ a {
   color: $gray-light;
 }
 
+.pmHome-phoneInfo {
+  // matches app-text
+  font-size: 18px;
+  line-height: 120%;
+  color: rgb(100, 100, 100);
+  @include trans(.1s);
+  a:hover & {
+    color: rgb(131, 131, 131);
+  }
+  @include mq(768px) {
+    line-height: 140%;
+  }
+}
+
 .pmHome-comm-item-link {
   display: block;
   padding: 19px 6px 20px;
@@ -242,20 +267,102 @@ a {
 // Apps
 // --------------------------------------------
 
-.l-pmHome-section--apps {
-  @include mq(768px) {
-    padding: 6px 0;
-    @include media-grid(3, 30px, ".pmHome-gridBlock");
+@mixin grid-3 {
+  padding: 6px 0;
+  @include grid(3, 30px, ".pmHome-gridBlock");
+
+  .pmHome-gridBlock {
     @include layout-divider(
-      $left: 33.33333%,
-      $divider-color: $gray-light,
+      $bottom: 5px,
+      $divider-color: $gray-med,
       $pseudo-element: before
     );
+    // Remove divider when it's the first element
+    // and every third element after that
+    &:first-child:before,
+    &:nth-child(4n):before {
+      display: none;
+    }
+    &:before {
+      margin-left: -15px;
+    }
+  }
+
+  // Grid Spacing
+  // ------------------
+  // - Support for up to 6 items
+  // - Add space below the first three
+  //   grid blocks when more than 3 elements
+  //   are present (at this point, we know
+  //   the grid is at least two rows high)
+  //
+  // - REF: http://alistapart.com/article/quantity-queries-for-css
+  .pmHome-gridBlock:nth-child(n+4) {
+    margin-top: 60px;
+  }
+
+  .pmHome-gridBlock:nth-child(3n+4):after {
+    @include pseudo(n 0 46% 0);
+    border-top: 1px solid $gray-med;
+  }
+
+} // eo grid-3
+
+@mixin grid-4 {
+  padding: 6px 0;
+  @include grid(4, 30px, ".pmHome-gridBlock");
+
+  .pmHome-gridBlock {
     @include layout-divider(
-      $left: 66.66666%,
-      $divider-color: $gray-light,
-      $pseudo-element: after
+      $divider-color: $gray-med,
+      $pseudo-element: before
     );
+    // Remove divider when it's the first element
+    // and every fourth element after that
+    &:first-child:before,
+    &:nth-child(5n):before {
+      display: none;
+    }
+    &:before {
+      margin-left: -15px;
+    }
+  }
+
+  // Grid Spacing
+  // ------------------
+  // - Support for up to 8 items
+  // - Add space below the first three
+  //   grid blocks when more than 4 elements
+  //   are present (at this point, we know
+  //   the grid is at least two rows high)
+  //
+  // - REF: http://alistapart.com/article/quantity-queries-for-css
+  .pmHome-gridBlock:nth-child(n+5) {
+    margin-top: 60px;
+  }
+
+  .pmHome-gridBlock:nth-child(3n+4):after {
+    @include pseudo(n 0 46% 0);
+    border-top: 1px solid $gray-med;
+  }
+
+} // eo grid-4
+
+.l-pmHome-section--grid-3 {
+  @include mq(768px) {
+    @include grid-3;
+  }
+}
+
+.l-pmHome-section--grid-4 {
+  @include mq(768px) {
+    @include grid-4;
+  }
+}
+
+
+.l-pmHome-section--apps {
+  @include mq(768px) {
     overflow: auto;
   }
 }
@@ -268,6 +375,12 @@ a {
   }
   @include mq(960px) {
     max-width: 240px;
+  }
+
+  // todo: Remove. this is a hack until the text renders
+  // properly
+  > p {
+    @extend .pmHome-apps-text;
   }
 }
 
@@ -303,8 +416,8 @@ a {
 
   @include mq(768px) {
     float: none;
-    width: 130px;
-    height: 120px;
+    width: 110px;
+    height: 100px;
     margin-bottom: 24px;
   }
 }
@@ -399,23 +512,63 @@ a {
   @include svg("file--drive", false);
 }
 
-.pmHome-password-box {
-	margin:auto;
-	border:5px solid rgb(77, 77, 77);
-	background: black;
-	padding:40px;
-	@include mq(400px) {
-    	width:80%
-  	}
-  	@include mq(600px) {
-    	width:50%
-  	}
+
+// --------------------------------------------
+// Password
+// --------------------------------------------
+
+.password-page-mod {
+  margin:auto;
+  padding:40px;
+  width: 90%;
+  max-width: 500px;
 }
 
-/* added by jared, tito might not like but he is free to refactor */
-.pmHome-password-label {
-	@include opacity(0.5);
+.password-h {
+  font-family: $sans;
+  font-weight: $font-weight--bold;
+  color: #fff;
+  @include font-size-mq;
+  margin-bottom: 20px;
 }
+
+.password-input-mod {
+  position: relative;
+}
+
+.password-label {
+  display: none;
+}
+
+.password-box {
+  @include input-default;
+  border-bottom: 1px solid $gray-med;
+  height: 30px;
+  width: 100%;
+  padding-right: 40px;
+  padding-bottom: 10px;
+
+  font-family: $sans;
+  font-weight: $font-weight--reg;
+  @include font-size-mq;
+}
+
+.password-btn {
+  @include input-default;
+  @include font-size-mq;
+
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+  height: 30px;
+  width: 30px;
+  background-color: transparent;
+}
+
+
+// --------------------------------------------
+// Phone List / Roster
+// --------------------------------------------
 
 .pmHome-table-mod {
 	padding:0px 7px;
@@ -425,19 +578,43 @@ a {
 	width:100%;
 	td, th {
 		text-align:left;
-		font-size:1.25em;
+		font-size:15px;
+    @include mq(400px) {
+      font-size: 17px;
+    }
 	}
 	tbody {
 		padding:0px 5px;
 	}
 	td {
 		border-bottom:1px solid rgba(white, 0.1);
-		padding:7px 0px;
+		padding:10px 0px;
 	}
 }
 
 .pmHome-tableHeading th {
-	padding-bottom:7px;
+	padding-bottom:5px;
+  font-size: 14px;
+}
+
+.pmHome-th--org,
+.pmHome-td--org {
+  @include mq(max, 360px) {
+    display: none;
+  }
+}
+
+.pmHome-th--title,
+.pmHome-td--title {
+  @include mq(max, 500px) {
+    display: none;
+  }
+}
+.pmHome-th--role,
+.pmHome-td--role {
+  @include mq(max, 600px) {
+    display: none;
+  }
 }
 
 .pmHome-roster-org {

@@ -35,8 +35,6 @@
 
   $coordinates: $top $right $bottom $left;
 
-  position: relative;
-
   @if $pseudo-element == "before" {
     &:before {
       @include pseudo($coordinates);
@@ -49,3 +47,68 @@
     }
   }
 }
+
+
+//
+// Media Grid Mixin - Neue
+// ------
+//
+
+//Upbase variables
+$support-ie7: false !default;
+$ie-conditional-classes: true !default;
+$grid-target: '*' !default;
+
+@mixin grid(
+  $items: 2,
+  $gutter: 20px,
+  $target: $grid-target ) {
+
+  //Variables
+  $list-length: length($items);
+  $items-per-row: null; //determined later in mixin, globally defined here
+  $gutter: $gutter/2;
+
+  //Parent container styles
+  @include clearfix;
+  margin-left: -#{$gutter};
+  margin-right: -#{$gutter};
+
+
+  //Child grid styles
+  //If length of items list is gt 1, means multi-column widths provided
+  @if $list-length > 1 {
+    $items-per-row: $list-length;
+    @for $i from 1 through $list-length {
+      $item-size: nth($items, $i);
+      > #{$target}:nth-child(#{$i}) {
+        float: left;
+        padding-left: #{$gutter};
+        padding-right: #{$gutter};
+        width: $item-size;
+      }
+    }
+  } @elseif $list-length == 1 {
+    //If length of list is 1, use evenly-sized items
+    $items-per-row: $items;
+    $item-size: 100% / $items;
+    > #{$target} {
+      float: left;
+      padding-left: #{$gutter};
+      padding-right: #{$gutter};
+      width: $item-size;
+    }
+  }
+
+  //Clears all clears; when used across media queries, for example
+  & > #{$target}:nth-child(1n) {
+    clear: none;
+  }
+
+  //Clear first item in each row
+  $items-per-row-n: $items-per-row + 'n';
+  & > #{$target}:nth-child( #{$items-per-row-n} + 1 ) {
+    clear: both;
+  }
+
+}// eo grid

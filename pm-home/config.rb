@@ -16,7 +16,7 @@ output_style = :compressed
 
 
 
-add_import_path "components/Upbase/components"
+add_import_path "../components/Upbase/components"
 # - - - - - - - - - - - - -
 
 # Autoprefixer

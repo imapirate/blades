@@ -12,7 +12,7 @@
   $font-style: normal
   ){
     @font-face {
-      $font-path: "/fonts/#{$file-name}";
+      $font-path: "/wp-content/themes/blades/pm-home/fonts/#{$file-name}";
       font-family: "#{$family-name}";
       src: url($font-path + '.eot');
       src: local('☺'),
@@ -31,7 +31,7 @@
 //
 
 @include font-face(
-  $family-name: Galaxie,
-  $file-name: galaxie-heavy,
+  $family-name: Tiempos,
+  $file-name: TiemposHeadlineWeb-Black,
   $font-weight: 900
 );
