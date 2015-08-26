@@ -1,3 +1,20 @@
+{# App Quantity Query
+   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Decide whether the grid should be 3-across or 4-across
+   based on the number of applications that are visible
+
+#}
+
+{% if post.get_applications|length is divisible by(3)
+	 or post.get_applications|length in [1,2,5]
+%}
+    {% set pmHome_section_grid__apps = 'l-pmHome-section--grid-3' %}
+{% else %}
+    {% set pmHome_section_grid__apps = 'l-pmHome-section--grid-4' %}
+{% endif %}
+
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -25,7 +42,7 @@
 		<section class="pmHome-section pmHome-section--comm">
 			<h3 class="pmHome-sectionHeadline">Communication &amp; Scheduling</h3>
 
-			<div class="l-pmHome-section--comm">
+			<div class="l-pmHome-section l-pmHome-section--comm">
 
 				<div class="pmHome-phone pmHome-gridBlock">
 					<a href="tel:{{post.conference_call_number}}">
@@ -91,7 +108,7 @@
 		<section class="pmHome-section pmHome-section--apps">
 			<h3 class="pmHome-sectionHeadline">Applications</h3>
 
-			<div class="l-pmHome-section--apps">
+			<div class="l-pmHome-section l-pmHome-section--apps {{ pmHome_section_grid__apps }}">
 				{% for app in post.get_applications %}
 					{% if not app.private or (app.private and user.ID) %}
 					<div class="pmHome-gridBlock">
@@ -99,7 +116,7 @@
 							<div class="pmHome-apps-logo pmHome-apps-logo--{{app.service}}"></div>
 							<div class="pmHome-apps-textMod">
 								<h4 class="pmHome-apps-title">{{app.service_label}}</h4>
-								<p class="pmHome-apps-text">{{app.description}}</p>
+								<p class="pmHome-apps-text">{{app.description | striptags }}</p>
 							</div> <!-- /pmHome-apps-textMod -->
 						</a>
 					</div> <!-- /pmHome-gridBlock -->
@@ -134,19 +151,19 @@
 			<div class="pmHome-table-mod">
 				<table class="pmHome-teamRoster">
 					<tr class="pmHome-tableHeading">
-						<th>Organization</th>
-						<th>Name</th>
-						<th>Title</th>
-						<th>Role</th>
-						<th>Phone</th>
+						<th class="pmHome-th pmHome-th--org">Organization</th>
+						<th class="pmHome-th pmHome-th--name">Name</th>
+						<th class="pmHome-th pmHome-th--title">Title</th>
+						<th class="pmHome-th pmHome-th--role">Role</th>
+						<th class="pmHome-th pmHome-th--phone">Phone</th>
 					</tr>
 					{% for person in post.get_field('roster') %}
 					<tr class="row-{{loop.index}}">
-						<td class="pmHome-roster-org">{{person.company}}</td>
-						<td><a href="mailto:{{person.email|trim}}">{{person.name}}</a></td>
-						<td>{{person.title}}</td>
-						<td>{{person.role}}</td>
-						<td>{{person.phone}}</td>
+						<td class="pmHome-td pmHome-td--org pmHome-roster-org">{{person.company}}</td>
+						<td class="pmHome-td pmHome-td--name"><a href="mailto:{{person.email|trim}}">{{person.name}}</a></td>
+						<td class="pmHome-td pmHome-td--title">{{person.title}}</td>
+						<td class="pmHome-td pmHome-td--role">{{person.role}}</td>
+						<td class="pmHome-td pmHome-td--phone">{{person.phone}}</td>
 
 					</tr>
 					{% endfor %}
@@ -157,7 +174,7 @@
 
 		{% endblock %}
 
-	
+
 
 	</body>
 
