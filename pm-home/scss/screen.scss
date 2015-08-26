@@ -272,6 +272,8 @@ a {
   @include grid(3, 30px, ".pmHome-gridBlock");
 
   .pmHome-gridBlock {
+    margin-bottom: 30px;
+
     @include layout-divider(
       $bottom: 5px,
       $divider-color: $gray-med,
@@ -280,7 +282,7 @@ a {
     // Remove divider when it's the first element
     // and every third element after that
     &:first-child:before,
-    &:nth-child(4n):before {
+    &:nth-child(3n+4):before {
       display: none;
     }
     &:before {
@@ -290,21 +292,37 @@ a {
 
   // Grid Spacing
   // ------------------
-  // - Support for up to 6 items
-  // - Add space below the first three
-  //   grid blocks when more than 3 elements
-  //   are present (at this point, we know
-  //   the grid is at least two rows high)
+  // - 1. Add space above every element that
+  //      falls to the second row of grid
+  // - 2. If a second row is present, add a line
+  //      that spans the length of the row.
+  // - 3. Line is added as a psuedo-element to the
+  //      first element of the second row and then
+  //      to first element of third row
+  // - 4. If more than 8 items (which triggers a
+  //      third row), re-align the divider lines
   //
   // - REF: http://alistapart.com/article/quantity-queries-for-css
+
+  // 1.
   .pmHome-gridBlock:nth-child(n+4) {
-    margin-top: 60px;
+    margin-top: 30px;
   }
 
+  // 2. + 3.
   .pmHome-gridBlock:nth-child(3n+4):after {
     @include pseudo(n 0 46% 0);
     border-top: 1px solid $gray-med;
   }
+
+  // 4.
+  .pmHome-gridBlock:nth-last-child(n+6) ~ .pmHome-gridBlock:nth-child(4):after {
+    top: 33%;
+  }
+  .pmHome-gridBlock:nth-last-child(n+6) ~ .pmHome-gridBlock:nth-child(7):after {
+    top: 66%;
+  }
+
 
 } // eo grid-3
 
@@ -313,6 +331,8 @@ a {
   @include grid(4, 30px, ".pmHome-gridBlock");
 
   .pmHome-gridBlock {
+    margin-bottom: 30px;
+
     @include layout-divider(
       $divider-color: $gray-med,
       $pseudo-element: before
@@ -320,7 +340,7 @@ a {
     // Remove divider when it's the first element
     // and every fourth element after that
     &:first-child:before,
-    &:nth-child(5n):before {
+    &:nth-child(4n+5):before {
       display: none;
     }
     &:before {
@@ -330,20 +350,35 @@ a {
 
   // Grid Spacing
   // ------------------
-  // - Support for up to 8 items
-  // - Add space below the first three
-  //   grid blocks when more than 4 elements
-  //   are present (at this point, we know
-  //   the grid is at least two rows high)
+  // - 1. Add space above every element that
+  //      falls to the second row of grid
+  // - 2. If a second row is present, add a line
+  //      that spans the length of the row.
+  // - 3. Line is added as a psuedo-element to the
+  //      first element of the second row and then
+  //      to first element of third row
+  // - 4. If more than 8 items (which triggers a
+  //      third row), re-align the divider lines
   //
   // - REF: http://alistapart.com/article/quantity-queries-for-css
+
+  // 1.
   .pmHome-gridBlock:nth-child(n+5) {
-    margin-top: 60px;
+    margin-top: 30px;
   }
 
-  .pmHome-gridBlock:nth-child(3n+4):after {
+  // 2. + 3.
+  .pmHome-gridBlock:nth-child(4n+5):after {
     @include pseudo(n 0 46% 0);
     border-top: 1px solid $gray-med;
+  }
+
+  // 4.
+  .pmHome-gridBlock:nth-last-child(n+9) ~ .pmHome-gridBlock:nth-child(5):after {
+    top: 33%;
+  }
+  .pmHome-gridBlock:nth-last-child(n+9) ~ .pmHome-gridBlock:nth-child(9):after {
+    top: 66%;
   }
 
 } // eo grid-4
@@ -518,10 +553,20 @@ a {
 // --------------------------------------------
 
 .password-page-mod {
-  margin:auto;
-  padding:40px;
-  width: 90%;
   max-width: 500px;
+  margin: 0 20px;
+
+  // Vertically center
+  transform: translateY(-50%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+
+
+  @include mq(540px) {
+    margin: auto;
+  }
 }
 
 .password-h {
@@ -545,24 +590,38 @@ a {
   border-bottom: 1px solid $gray-med;
   height: 30px;
   width: 100%;
-  padding-right: 40px;
-  padding-bottom: 10px;
+  padding: 0 40px 10px 0;
 
   font-family: $sans;
   font-weight: $font-weight--reg;
   @include font-size-mq;
+
+  @include placeholder-state($gray-med, $gray-med, #fff);
+  transition: all .2s ease-in;
 }
 
 .password-btn {
   @include input-default;
-  @include font-size-mq;
 
   position: absolute;
   bottom: 5px;
   right: 0;
   height: 30px;
   width: 30px;
-  background-color: transparent;
+  padding: 1px 5px;
+
+  font-size: 20px;
+  @include mq(400px) {
+    font-size: 22px;
+  }
+}
+
+.password-hint {
+  display: none;
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: $font-weight--reg;
+  color: $gray-med;
 }
 
 
