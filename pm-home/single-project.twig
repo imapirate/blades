@@ -148,16 +148,14 @@
 					<tr class="pmHome-tableHeading">
 						<th class="pmHome-th pmHome-th--org">Organization</th>
 						<th class="pmHome-th pmHome-th--name">Name</th>
-						<th class="pmHome-th pmHome-th--title">Title</th>
-						<th class="pmHome-th pmHome-th--role">Role</th>
+						<th class="pmHome-th pmHome-th--title">Role</th>
 						<th class="pmHome-th pmHome-th--phone">Phone</th>
 					</tr>
 					{% for person in post.get_field('roster') %}
 					<tr class="row-{{loop.index}}">
 						<td class="pmHome-td pmHome-td--org pmHome-roster-org">{{person.company}}</td>
 						<td class="pmHome-td pmHome-td--name"><a href="mailto:{{person.email|trim}}">{{person.name}}</a></td>
-						<td class="pmHome-td pmHome-td--title">{{person.title}}</td>
-						<td class="pmHome-td pmHome-td--role">{{person.role}}</td>
+						<td class="pmHome-td pmHome-td--title">{{person.title}} <span style="opacity:0.5">{{person.role}}</span></td>
 						<td class="pmHome-td pmHome-td--phone">{{person.phone}}</td>
 
 					</tr>
