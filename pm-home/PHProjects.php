@@ -12,6 +12,13 @@ class PH_Projects {
 		add_filter('acf/load_field/name=service', array($this, 'get_services'));
 	}
 
+	static function get_projects() {
+		if ( self::is_client() ) {
+			return array();
+		}
+		return Timber::get_posts(array('orderby' => 'title', 'post_type' => 'project', 'order' => 'ASC'));
+	}
+
 	function get_services($services) {
 		$choices = array('basecamp' => 'Basecamp', 'dropbox' => 'Dropbox', 'drive' => 'Google Drive', 'github' => 'GitHub', 'trello' => 'Trello', 'link' => 'Link', 'doc' => 'Document', 'pdf' => 'PDF', 'website' => 'Website', 'slack' => 'Slack');
 		ksort($choices);

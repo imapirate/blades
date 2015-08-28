@@ -17,9 +17,8 @@
 	}
 
 	$data['title'] = "Project Homes";
-	$data['posts'] = null;
-	if (is_user_logged_in()) {
-		$data['posts'] = Timber::get_posts(array('orderby' => 'title', 'post_type' => 'project', 'order' => 'ASC'));
+	$data['posts'] = PH_Projects::get_projects();
+	if ( count($data['posts']) ) {
 		Timber::render('archive-project.twig', $data);
 	} else {
 		Timber::render('404.twig', $data);
