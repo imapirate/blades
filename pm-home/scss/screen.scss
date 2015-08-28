@@ -124,10 +124,6 @@ a {
 // Section Type & Layout
 // --------------------------------------------
 
-.l-pmHome-section {
-  // Makes layout dividers display properly
-  position: relative;
-}
 
 .pmHome-section {
   @extend .site-width;
@@ -155,6 +151,7 @@ a {
 
 .l-pmHome-section--comm {
   @include mq(768px) {
+    position: relative;
     padding: 6px 0;
     @include media-grid(2, 30px, ".pmHome-gridBlock");
     @include layout-divider(
@@ -267,27 +264,24 @@ a {
 // Apps
 // --------------------------------------------
 
+.pmHome-gridBlock:first-child:after {
+  @include pseudo(n 0 -30px -1px);
+  border-top: 1px solid $gray-med;
+}
+
 @mixin grid-3 {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+
   padding: 6px 0;
   @include grid(3, 30px, ".pmHome-gridBlock");
 
   .pmHome-gridBlock {
-    margin-bottom: 30px;
-
-    @include layout-divider(
-      $bottom: 5px,
-      $divider-color: $gray-med,
-      $pseudo-element: before
-    );
-    // Remove divider when it's the first element
-    // and every third element after that
-    &:first-child:before,
-    &:nth-child(3n+4):before {
-      display: none;
-    }
-    &:before {
-      margin-left: -15px;
-    }
+    position: relative;
+    border-left: 1px solid $gray-med;
+    padding-top: 10px;
+    padding-bottom: 30px;
   }
 
   // Grid Spacing
@@ -295,92 +289,65 @@ a {
   // - 1. Add space above every element that
   //      falls to the second row of grid
   // - 2. If a second row is present, add a line
-  //      that spans the length of the row.
-  // - 3. Line is added as a psuedo-element to the
-  //      first element of the second row and then
-  //      to first element of third row
-  // - 4. If more than 8 items (which triggers a
-  //      third row), re-align the divider lines
+  //      that spans the length of the row. This
+  //      comes in the form of a pseudo-element
+  //      that is absolutely positioned to the bottom
+  //      of each the items in the row above.
   //
   // - REF: http://alistapart.com/article/quantity-queries-for-css
 
   // 1.
   .pmHome-gridBlock:nth-child(n+4) {
-    margin-top: 30px;
+    margin-top: 60px;
   }
 
-  // 2. + 3.
-  .pmHome-gridBlock:nth-child(3n+4):after {
-    @include pseudo(n 0 46% 0);
-    border-top: 1px solid $gray-med;
+  // 2.
+  .pmHome-gridBlock:nth-last-child(n+4) ~ .pmHome-gridBlock:nth-child(-n+5):after,
+  .pmHome-gridBlock:nth-last-child(n+7) ~ .pmHome-gridBlock:nth-child(-n+8):after  {
+    @include pseudo(n 0 -30px -1px);
+    border-bottom: 1px solid $gray-med;
   }
-
-  // 4.
-  .pmHome-gridBlock:nth-last-child(n+6) ~ .pmHome-gridBlock:nth-child(4):after {
-    top: 33%;
-  }
-  .pmHome-gridBlock:nth-last-child(n+6) ~ .pmHome-gridBlock:nth-child(7):after {
-    top: 66%;
-  }
-
-
 } // eo grid-3
 
 @mixin grid-4 {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+
   padding: 6px 0;
   @include grid(4, 30px, ".pmHome-gridBlock");
 
   .pmHome-gridBlock {
-    margin-bottom: 30px;
-
-    @include layout-divider(
-      $divider-color: $gray-med,
-      $pseudo-element: before
-    );
-    // Remove divider when it's the first element
-    // and every fourth element after that
-    &:first-child:before,
-    &:nth-child(4n+5):before {
-      display: none;
-    }
-    &:before {
-      margin-left: -15px;
-    }
+    position: relative;
+    border-left: 1px solid $gray-med;
+    padding-top: 10px;
+    padding-bottom: 30px;
   }
 
   // Grid Spacing
   // ------------------
+  //
   // - 1. Add space above every element that
   //      falls to the second row of grid
   // - 2. If a second row is present, add a line
-  //      that spans the length of the row.
-  // - 3. Line is added as a psuedo-element to the
-  //      first element of the second row and then
-  //      to first element of third row
-  // - 4. If more than 8 items (which triggers a
-  //      third row), re-align the divider lines
+  //      that spans the length of the row. This
+  //      comes in the form of a pseudo-element
+  //      that is absolutely positioned to the bottom
+  //      of each the items in the row above.
   //
-  // - REF: http://alistapart.com/article/quantity-queries-for-css
 
   // 1.
   .pmHome-gridBlock:nth-child(n+5) {
-    margin-top: 30px;
+    margin-top: 60px;
   }
 
-  // 2. + 3.
-  .pmHome-gridBlock:nth-child(4n+5):after {
-    @include pseudo(n 0 46% 0);
-    border-top: 1px solid $gray-med;
+  // 2.
+  .pmHome-gridBlock:nth-last-child(n+5) ~ .pmHome-gridBlock:first-child:after,
+  .pmHome-gridBlock:nth-last-child(n+5) ~ .pmHome-gridBlock:nth-child(-n+6):after,
+  .pmHome-gridBlock:nth-last-child(n+9) ~ .pmHome-gridBlock:nth-child(-n+10):after  {
+    @include pseudo(n 0 -30px -1px);
+    border-bottom: 1px solid $gray-med;
   }
-
-  // 4.
-  .pmHome-gridBlock:nth-last-child(n+9) ~ .pmHome-gridBlock:nth-child(5):after {
-    top: 33%;
-  }
-  .pmHome-gridBlock:nth-last-child(n+9) ~ .pmHome-gridBlock:nth-child(9):after {
-    top: 66%;
-  }
-
 } // eo grid-4
 
 .l-pmHome-section--grid-3 {
@@ -397,9 +364,7 @@ a {
 
 
 .l-pmHome-section--apps {
-  @include mq(768px) {
-    overflow: auto;
-  }
+
 }
 
 .pmHome-apps-textMod {
