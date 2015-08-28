@@ -8,13 +8,12 @@
 	foreach($data['heros'] as &$slide){
 		$slide['post'] = new TimberPost($slide['portfolio'][0]);
 	}
-	$data['rand'] = rand();
-
 	/* organize the promos */
 	$promos = get_field('homepage_promos', 'option');
 	$data['promos'] = Timber::get_posts($promos);
 
-	$data['blogs'] = Timber::get_posts('post_type=post&numberposts=3');
+	$data['blogs'] = Blades_Home::get_blog_posts();
+
 	$highlights = get_field('highlights', 'options');
 	$highlight_posts = Timber::get_posts(array(
 		"post__in" => $highlights,

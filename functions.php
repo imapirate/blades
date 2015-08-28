@@ -5,6 +5,7 @@ require_once __DIR__.'/wp/acf-hacks.php';
 if ( class_exists( 'Timber' ) ) {
 	require_once 'wp/portfolio-entry.php';
 	require_once 'wp/blades-site.php';
+	require_once 'wp/blades-home.php';
 }
 
 if (file_exists(__DIR__.'/vendor/jarednova/mesh/mesh.php')) {
