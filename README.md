@@ -1,5 +1,7 @@
 # Blades
 
+[![Build Status](https://travis-ci.org/Upstatement/blades.svg?branch=master)](https://travis-ci.org/Upstatement/blades)
+
 WordPress theme for Upstatement.com
 
 * * *
