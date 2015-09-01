@@ -1,0 +1,680 @@
+// Portfolio Shared Components
+//
+//
+// 1. Typography
+//    Basic text styles, and color options shared across the page
+//
+// 2. Portfolio Basics
+//    Helper classes and layout for generated portfolio markup
+//
+// 3. Layout
+//    Padding layouts for different sets
+//    Results grid layout
+//
+// 4. Count lists
+//    Used for the section link navigation at the top of the case study
+//    Used in the "What We Did" section after results
+//
+// 4. Badge
+//    The down arrow used to indicate section breaks
+//
+
+// =============================================
+
+//	1. Typography
+
+// =============================================
+
+.portfolio__h1 {
+	font-family: $fontFamily-serif;
+	font-weight: 900;
+	font-size: 52px;
+	line-height: 64px;
+	text-align: center;
+	color: $color-gray-0;
+	margin-bottom: 30px;
+
+	@include mq($bp-mobile) {
+		font-size: 64px;
+	}
+
+	@include mq($bp-mobile--lg) {
+		font-size: 94px;
+		line-height: 108px;
+		margin-bottom: 40px;
+	}
+
+	@include mq($bp-tablet--lg) {
+		font-size: 125px;
+		line-height: 132px;
+		margin-bottom: 60px;
+	}
+}
+
+.portfolio__h2 {
+	font-family: $fontFamily-serif;
+	font-weight: 900;
+	font-size: 42px;
+	line-height: 1;
+	text-align: center;
+	color: $color-gray-0;
+	margin-bottom: 30px;
+
+	@include mq($bp-mobile--lg) {
+		font-size: 64px;
+		margin-bottom: 40px;
+	}
+
+	@include mq($bp-tablet--lg) {
+		font-size: 82px;
+		line-height: 91px;
+		margin-bottom: 60px;
+	}
+}
+
+.portfolio__h3 {
+	font-family: $fontFamily-serif;
+	font-weight: 900;
+	font-size: 32px;
+	line-height: 34px;
+	text-align: center;
+	color: $color-gray-0;
+	margin-bottom: 30px;
+
+	@include mq($bp-mobile--lg) {
+		font-size: 40px;
+		line-height: 42px;
+	}
+}
+
+.portfolio__h4 {
+	font-family: $fontFamily-serif;
+	font-weight: 900;
+	font-size: 16px;
+	line-height: 1;
+	text-align: center;
+	color: $color-gray-0;
+	margin-bottom: 30px;
+
+	@include mq($bp-mobile) {
+		font-size: 18px;
+	}
+
+	@include mq($bp-mobile--lg) {
+		font-size: 30px;
+	}
+
+	@include mq($bp-tablet--lg) {
+		font-size: 32px;
+	}
+}
+
+.portfolio__sub-h {
+	font-family: $fontFamily-serif;
+	font-size: 22px;
+	line-height: 32px;
+	font-weight: 300;
+	color: $color-gray-0;
+	text-align: center;
+	margin-bottom: 40px;
+
+	@include mq($bp-mobile) {
+		font-size: 28px;
+		line-height: 42px;
+	}
+
+	@include mq($bp-mobile--lg) {
+		font-size: 36px;
+		line-height: 50px;
+	}
+
+	@include mq($bp-tablet--lg) {
+		font-size: 42px;
+		line-height: 62px;
+		margin-bottom: 60px;
+	}
+}
+
+.portfolio__topic-h {
+	font-family: $fontFamily-sans;
+	color: $color-gray-0;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: 18px;
+	line-height: 36px;
+	text-align: center;
+	margin-bottom: 40px;
+	border-bottom: 1px solid currentColor;
+	display: inline-block;
+}
+
+.portfolio__topic-h--no-bdr {
+	border-bottom: none;
+	display: block;
+}
+
+.portfolio-text p,
+.portfolio-text--default {
+	font-family: $fontFamily-serif;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 28px;
+	color: $color-gray-0;
+
+	@include mq($bp-mobile) {
+		font-size: 18px;
+		line-height: 32px;
+	}
+
+	@include mq($bp-mobile--lg) {
+		font-size: 20px;
+		line-height: 36px;
+	}
+
+	@include mq($bp-tablet--lg) {
+		font-size: 23px;
+		line-height: 42px;
+	}
+}
+
+.portfolio-text .dropcap {
+	font-family: $fontFamily-serif;
+	font-weight: 400;
+
+	@include mq($bp-mobile--lg) {
+		font-size: 85px;
+	    margin-top: -6px;
+	}
+}
+
+.portfolio__text--center {
+	text-align: center;
+}
+
+.portfolio__text--left {
+	text-align: left;
+}
+
+.portfolio__text--white {
+	color: $color-gray-f;
+}
+
+.portfolio__text--white p {
+	color: $color-gray-f;
+}
+
+.portfolio__link {
+	color: $color-gray-0;
+	text-decoration: none;
+	transition: all 0.2s ease-in-out;
+	font-family: $fontFamily-sans;
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
+// main -> placeholders
+
+// =============================================
+
+//	2. Portfolio Basics
+
+// =============================================
+
+.portfolio-h1 {
+	font-family: $fontFamily-serif;
+	font-weight: 900;
+	color: $color-gray-f;
+}
+
+.full-width,
+.site-width {
+	position: relative;
+}
+
+.portfolio__l {
+	margin: 0 auto;
+	position: relative;
+}
+
+.portfolio__l--wide {
+	margin: 0 auto;
+	position: relative;
+	width: 80%;
+}
+
+.portfolio__l--hidden {
+	overflow: hidden;
+}
+
+.txt-width-neue {
+	max-width: 700px;
+}
+
+.portfolio-kicker--thr {
+	padding-bottom: 6px;
+
+	&:after {
+		background-color: $color-gray-f;
+		width: 100%;
+	}
+}
+
+// main -> portfolio basics
+
+// =============================================
+
+//	3. Layout
+
+// =============================================
+
+// Padding for containers
+
+.portfolio__pad--horiz {
+	padding-top: 80px;
+	padding-bottom: 80px;
+
+	@include mq($bp-mobile--lg) {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
+
+	@include mq($bp-tablet--lg) {
+		padding-top: 140px;
+		padding-bottom: 140px;
+	}
+}
+
+.portfolio__pad--horiz-md {
+	padding-top: 50px;
+	padding-bottom: 50px;
+
+	@include mq($bp-mobile--lg) {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+
+	@include mq($bp-tablet--lg) {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+}
+	
+.portfolio__pad--top-lg {
+	padding-top: 25%;
+}
+
+.portfolio__pad--bottom-md {
+	padding-bottom: 40px;
+		
+	@include mq($bp-tablet) {
+		padding-bottom: 50px;
+	}
+
+	@include mq($bp-tablet--lg) {
+		padding-bottom: 80px;
+	}
+}
+
+.portfolio__pad--bite-in {
+	padding-top: 80px;
+	padding-bottom: 50px;
+
+	@include mq($bp-mobile--lg) {
+		padding-top: 120px;
+		padding-bottom: 60px;
+	}
+
+	@include mq($bp-tablet--lg) {
+		padding-top: 160px;
+		padding-bottom: 80px;
+	}
+}
+
+// Images
+
+.portfolio-image-set--full img {
+	width: 100%;
+}
+
+.portfolio__img {
+	width: 100%;
+	display: block;
+}
+
+.portfolio__img--pad {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.portfolio__img--bdr-shadow {
+	border: 1px solid $color-gray-b;
+	box-shadow: rgba(0, 0, 0, 0.2) -2px 1px 10px;
+}
+
+// Results Grid
+
+.portfolio__l--rule {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+
+	> .results__grid-item:nth-of-type(2n+2) {
+		border-left: 1px solid rgba(0, 0, 0, 0.5);
+	}
+}
+
+.results__grid {
+	padding-bottom: 10px;
+	margin-bottom: 40px;
+	@include pie-clearfix;
+	text-align: center;
+}
+
+.results__grid-item {
+	padding: 10px 20px 0 20px;
+	float: left;
+  	width: 50%;
+
+  	&:nth-of-type(2n+3) {
+		clear: left;
+	}
+}
+
+// =============================================
+
+//	4. Count Lists
+
+// =============================================
+
+.portfolio__count-items {
+	border-bottom: 1px solid $color-gray-d;
+	list-style: none;
+	overflow: auto;
+}
+
+.portfolio__count-list {
+	counter-increment: step-counter;
+	position: relative;
+	color: $color-gray-0;
+	line-height: 1;
+	font: 500 18px $fontFamily-sans;
+	border-top: 1px solid $color-gray-d;
+
+	@include mq($bp-tablet--lg) {
+		font-size: 22px;
+	}
+
+	&:before {
+		content: counter(step-counter);
+		margin-top: -14px;
+		background-color: $color-blue;
+		text-align: center;
+		border-radius: 50%;
+		font-size: 16px;
+		font-weight: 300;
+		color: $color-gray-f;
+		position: absolute;
+		top: 50%;
+		left: 20px;
+		height: 28px;
+		width: 28px;
+		line-height: 28px;
+
+		@include mq($bp-mobile) {
+			left: 50px;
+			height: 30px;
+			width: 30px;
+			line-height: 30px;
+		}
+	}
+}
+
+.portfolio__scroll-nav {
+	margin-bottom: 80px;
+}
+
+.portfolio__nav-item {
+	
+	&:before {
+		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	}
+	
+	html.no-touch & {
+		&:hover {
+			&:before { background-color: $color-gray-0; color: $color-gray-f; }
+		}
+	}
+}
+
+.portfolio__nav-link {
+	color: $color-gray-0;
+	font-weight: 700;
+	display: block;
+	padding: 20px 25px 20px 60px;
+	transition: all 0.2s ease-in-out;
+
+	&:hover {
+		opacity: 0.7;
+	}
+
+	@include mq($bp-mobile) {
+		padding: 25px 30px 25px 90px;
+	}
+}
+
+.portfolio__count-item--topic {
+	padding: 15px 1% 15px 20%;
+
+	@include mq($bp-mobile) {
+		padding: 15px 1% 15px 15%;
+	}
+
+	@include mq($bp-tablet) {
+		display: inline-block;
+		padding: 22px 1% 22px 10%;
+		float: left;
+		width: 33.3%;
+	}
+
+	&:before {
+		left: 5%;
+		@include mq($bp-tablet) {
+			left: 12%;
+		}
+	}
+}
+
+// main -> count lists
+
+// =============================================
+
+//	5. Badge
+
+// =============================================
+
+.badge-a {
+	width: 50px;
+	margin: 0 auto;
+	padding: 30px 0;
+	position: relative;
+	z-index: 10;
+
+	@include mq($bp-mobile--lg) {
+		width: 60px;
+	}
+
+	@include mq($bp-tablet) {
+		padding: 60px 0 50px;
+		width: 80px;
+	}
+
+	@include mq($bp-tablet--lg) {
+		padding: 90px 0 70px;
+	}
+}
+
+.badge-a--overlap {
+	padding: 0;
+	position: absolute;
+	top: -38px;
+	left: 50%;
+	margin-left: -25px;
+
+	@include mq($bp-mobile--lg) {
+		top: -43px;
+		margin-left: -30px;
+	}
+
+	@include mq($bp-tablet) {
+		top: -54px;
+		margin-left: -40px;
+	}
+}
+
+.badge-a--hidden {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	padding: 5px 0;
+}
+
+.badge-a__content {
+	position: relative;
+	background-color: $color-gray-0;
+	padding: 10px 10px 0 10px;
+	width: 100%;
+	text-align: center;
+
+	&:after,
+	&:before {
+		content: "";
+		position: absolute;
+		width: 80px;
+		height: 1px;
+		background-color: $color-gray-0;
+		top: 50%;
+	}
+
+	&:after {
+		left: -100px;
+	}
+	
+	&:before {
+		right: -100px;
+	}
+
+	@include mq($bp-mobile--lg) {
+		padding: 11px 10px 0 10px;
+	}
+
+	@include mq($bp-tablet) {
+		padding: 14px 10px 0 10px;
+	}
+}
+
+.badge-a__content--no-bdr {
+	&:before,
+	&:after {
+		display: none;
+	}
+}
+
+
+.badge-a__h {
+	font-family: $fontFamily-serif;
+	font-weight: 900;
+	font-size: 20px;
+	line-height: 20px;
+	color: $color-gray-f;
+	transition: $trans--h;
+
+	&--js {
+		position: relative;
+		transform: translate(0, -50px);
+
+		.thr__js--is-in-view & {
+			transform: translate(0, 0);
+		}
+	}
+
+	@include mq($bp-mobile--lg) {
+		font-size: 25px;
+		line-height: 25px;
+	}
+
+	@include mq($bp-tablet) {
+		font-size: 30px;
+		line-height: 30px;
+	}
+}
+
+.badge-a__h-sub {
+	font-size: 10px;
+	letter-spacing: 1px;
+	margin: 0;
+	transition: $trans--h;
+
+	&--js {
+		position: relative;
+		transform: translate(0, 50px);
+
+		.thr__js--is-in-view & {
+			transform: translate(0, 0);
+		}
+	}
+
+	@include mq($bp-mobile--lg) {
+		font-size: 12px;
+		letter-spacing: 2px;
+	}
+
+	@include mq($bp-tablet) {
+		font-size: 16px;
+		letter-spacing: 3px;
+	}
+} 
+
+.badge-a__divider {
+	height: 1px;
+	width: 10px;
+	margin: 0 auto;
+	background: $color-gray-f;
+	transition: $trans--badge-divider;
+
+	&--js {
+		width: 0;
+
+		.thr__js--is-in-view & {
+			width: 100%;
+		}
+	}
+}
+
+.triangle__item--badge-a--left {
+	&:after { border-color: transparent transparent transparent $color-gray-0; 
+		-moz-transform: scale(.9999);
+	}
+}
+
+.triangle__item--badge-a--right {
+	&:after { border-color: transparent transparent $color-gray-0 transparent; 
+		-moz-transform: scale(.9999);
+	}
+}
+
+.triangle__item--badge-a--down {
+	&:after {
+		border-top: 260px solid $color-gray-0;
+    	margin-top: -272px;
+
+		@include mq($bp-mobile--lg) {
+			margin-top: -275px;
+		}
+
+		@include mq($bp-tablet) {
+			margin-top: -279px;
+		}
+	}
+}
+
+// main -> badge
