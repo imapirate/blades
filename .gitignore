@@ -4,3 +4,4 @@ components*
 vendor
 auth.json
 npm-debug.log
+node_modules
