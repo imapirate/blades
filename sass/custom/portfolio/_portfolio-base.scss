@@ -357,10 +357,6 @@
 
 .portfolio__l--rule {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-
-	> .results__grid-item:nth-of-type(2n+2) {
-		border-left: 1px solid rgba(0, 0, 0, 0.5);
-	}
 }
 
 .results__grid {
@@ -368,6 +364,14 @@
 	margin-bottom: 40px;
 	@include pie-clearfix;
 	text-align: center;
+
+	> .results__grid-item:nth-of-type(2n+2) {
+		border-left: 1px solid rgba(0, 0, 0, 0.5);
+	}
+
+	+ .results__grid {
+		margin-top: -30px;
+	}
 }
 
 .results__grid-item {
