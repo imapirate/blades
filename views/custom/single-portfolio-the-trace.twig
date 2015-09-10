@@ -1,0 +1,16 @@
+{% extends 'single-portfolio.twig' %}
+{% block head %}
+	<link rel="stylesheet" href="{{theme.path}}/css/custom/portfolio/the-trace.css">
+	<link rel="stylesheet" href="{{theme.path}}/components/swiper/dist/idangerous.swiper.css">
+	<script src="{{theme.path}}/components/picturefill/dist/picturefill.min.js" async></script>
+	<script src="http://cdn.upstatement.com/wp-content/themes/blades/components/picturefill/dist/picturefill.min.js" async></script>
+{% endblock %}
+
+{% if layout.images %}{% endif %}
+
+{% block scripts %}
+	<script src="{{theme.path}}/components/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+	<script src="http://cdn.upstatement.com/wp-content/themes/blades/components/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+	<script src="{{theme.path}}/components/swiper/dist/idangerous.swiper.min.js"></script>
+	<script src="{{theme.path}}/js/custom/portfolio/trace.js"></script>
+{% endblock %}

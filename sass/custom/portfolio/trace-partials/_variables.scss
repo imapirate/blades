@@ -1,0 +1,103 @@
+// =============================================
+
+// Variables
+
+// =============================================
+
+// --------------------------------------------
+// Color
+// --------------------------------------------
+
+// Gray
+$color-gray-0:               #010e17;
+$color-gray-2:               #20272b;
+$color-gray-3:               #313233;
+$color-gray-4:               #434445;
+$color-gray-5:               #525354;
+$color-gray-6:               #686869;
+$color-gray-7:               #757779;
+$color-gray-8:               #818385;
+$color-gray-9:               #929596;
+$color-gray-a:               #aeb0b2;
+$color-gray-b:               #b9bbbd;
+$color-gray-c:               #c8c9cb;
+$color-gray-d:               #d4d5d6;
+$color-gray-e:               #e8eaeb;
+$color-gray-f0:              #f0f3f5;
+$color-gray-f5:              #f5f6f7;
+$color-gray-f7:              #f6f8f9;
+$color-gray-f9:              #f9fcff;
+$color-gray-f:               #ffffff;
+
+// Blue
+$color-navy:                 #082336;
+$color-navy-light:           #245475;
+$color-lighter-blue:         #edf8ff;
+$color-light-blue:           #9ad6ff;
+$color-medium-blue:          #33abff;
+$color-blue:                 #099aff;
+$color-blue-dark:            #178bdc;
+$color-blue-darkest:         #2274ae;
+
+// Red
+$color-red:                  #e52516;
+$color-red-hot:              #fa2c1c;
+
+//Gold
+$color-gold:                 #efc852;
+$color-gold-dark:            #e0b739;
+$color-gold-darkest:         #646541;
+
+// --------------------------------------------
+// Typography
+// --------------------------------------------
+
+// Font Family
+$fontFamily-base:            "Tiempos", Georgia, Times, serif;
+$fontFamily-sansSerif:       "proxima-nova", sans-serif;
+$fontFamily-sans:            "proxima-nova", sans-serif;
+$fontFamily-serif:           "Tiempos", Georgia, Times, serif;
+
+// --------------------------------------------
+// Opacity
+// --------------------------------------------
+
+$popupOpacity:               0.9;
+
+// --------------------------------------------
+// Breakpoints
+// --------------------------------------------
+
+$bp-desktop--lg:              1200px;
+$bp-desktop:                  1100px;
+$bp-tablet--lg:               1000px;
+$bp-tablet:                   760px;
+$bp-mobile--lg:               600px;
+$bp-mobile:                   400px;
+
+// --------------------------------------------
+// Transitions
+// --------------------------------------------
+
+$easeInOutExpo:              cubic-bezier(1, 0, 0, 1);
+
+// Exam books
+$trans--thr-exam-book:       transform 0.6s cubic-bezier(0.77, 0, 0.175, 1) 0.8s;
+
+// Badge
+$trans--badge-triangles:     transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+$trans--h:                   transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
+$trans--badge-divider:       width 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+$trans--badge-pad:           all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+$timing:                     cubic-bezier(0.645,0.045,0.355,1);
+$timing-butter:              cubic-bezier(0.215, 0.61, 0.355, 1);
+
+// Buttons 
+$trans--button:              background-color 0.2s ease-in-out; 
+
+// Tablet screen
+$trans--tablet-screen:       all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+
+
+
+// end variables

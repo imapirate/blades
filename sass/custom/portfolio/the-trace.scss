@@ -1,0 +1,557 @@
+// =============================================
+
+//	trace Dependencies
+
+// =============================================
+
+@import "custom/custom-base";
+@import "trace-partials/mixins.scss";
+@import "trace-partials/variables.scss";
+@import "trace-partials/fonts.scss";
+@import "site/partials/buttons";
+@import "custom/portfolio/portfolio-base";
+
+// trace dependencies
+
+
+// Things from basics
+
+
+%portfolio__btn {
+	@extend %btn-large;
+	max-width: 200px;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 18px;
+	transition: background-color 0.2s ease-in-out; 
+
+	&:hover {
+		background-color: $color-gray-0;
+	}
+}
+
+.portfolio__btn--blue {
+	@extend %portfolio__btn;
+	background-color: $color-blue;
+}
+
+.portfolio__btn--yellow {
+	@extend %portfolio__btn;
+	background-color: $color-gold;
+}
+
+// use background colors with .full-width
+.portfolio__bg--blue { 
+	background-color: $color-blue;
+}
+
+.portfolio__bg--navy {
+	background-color: $color-navy;
+}
+
+.portfolio__bg--light-gray {
+	background-color: $color-gray-f5;
+}
+
+.portfolio-hgroup {
+	text-align: center;
+}
+
+.portfolio-text a {
+	color: $color-blue;
+	border-bottom: 2px solid currentColor;
+	transition: all 0.3s $timing-butter;
+
+	&:hover, &:focus {
+		color: $color-gray-0;
+		border-bottom-color: transparent;
+	}
+}
+
+.portfolio__text--white a {
+	color: $color-gray-f;
+
+	&:hover, &:focus {
+		color: $color-gray-f;
+	}
+}
+
+.portfolio-text--small {
+	font-family: $fontFamily-serif;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 20px;
+	color: $color-gray-0;
+
+	@include mq($bp-mobile) {
+		font-size: 16px;
+		line-height: 22px;
+	}
+
+	@include mq($bp-tablet--lg) {
+		font-size: 18px;
+		line-height: 24px;
+	}
+}
+
+// =============================================
+
+//	Main -> Layout
+
+// =============================================
+
+
+.trace__txt-mod {
+	&--blue { color: $color-blue; }
+}
+
+.thr__offset {
+	position: absolute;
+	
+	&--bottom { bottom: 0; }
+	&--left { left: -16.5%; }
+	&--right { right: -16.5%; }
+
+	&--tablet-lg {
+		width: 85%;
+  		left: -16.5%;
+	}
+
+	&--tablet-med {
+		width: 67%;
+		right: -16.5%;
+		z-index: 10;
+	}
+}
+
+.thr__scale-svg-container {
+	 position: relative; 
+	 height: 0; 
+	 width: 100%; 
+	 padding: 0;
+	 padding-bottom: 100%; 
+}
+
+.thr__svg-pad {
+	&--exam-book { @include scale-ratio(378.9, 296.8); }
+	&--logo { @include scale-ratio(320.3, 299.4); }
+	&--type { @include scale-ratio(194.3, 452.2); }
+	&--badge-icon { @include scale-ratio(45.4, 31); }
+	&--stream { @include scale-ratio(110, 110); }
+	&--pause { @include scale-ratio(70.4, 53.9); }
+}
+
+.thr__scale-svg {
+	 position: absolute; 
+	 height: 100%; 
+	 width: 100%; 
+	 left: 0; 
+	 top: 0;
+}
+
+.thr__icon {
+	&--stream {
+		fill: $color-blue;
+	}
+
+	&--badge {
+		width: 100%;
+
+		&--black { fill: $color-gray-0; }
+		&--white { fill: $color-gray-f; }
+
+		&--up { transform: rotate(180deg); }
+	}
+}
+
+// main -> layout
+
+// =============================================
+
+//	Main -> Brand
+
+// =============================================
+
+.trace-brand-sketches {
+	margin-bottom: 50px;
+
+	@include mq($bp-desktop--lg) {
+		margin-bottom: 100px;
+	}
+}
+
+.trace-design-sketches {
+	max-width: 720px;
+
+	@include mq($bp-desktop--lg) {
+		margin: 0 -10px;
+	}
+}
+
+.swiper-slide {
+	opacity: 0;
+	transition: $trans--tablet-screen;
+
+	&.swiper-slide-visible {
+		opacity: 1;
+	}
+}
+
+.trace__img {
+	max-width: 100%;
+	height: auto;
+}
+
+.trace-brand-final {
+	background: $color-navy url("/wp-content/uploads/2015/08/trace-topper-splash-1600x0-c-default.jpg") no-repeat 50% 50%;
+	background-size: cover;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+	@include mq($bp-desktop) {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+}
+
+.trace-brand__wrapper {
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+	@include mq($bp-desktop) {
+		padding-top: 50px;
+		padding-bottom: 100px;
+	}
+}
+
+.trace-brand__logo {
+	fill: $color-gray-f;
+	width: 240px;
+	height: 240px;
+	margin: 0 auto;
+	display: block;
+
+	@include mq($bp-mobile--lg) {
+		width: 360px;
+		height: 360px;
+	}
+
+	@include mq($bp-desktop--lg) {
+		width: 480px;
+		height: 480px;
+	}
+}
+
+.trace-brand__logo-text {
+	fill: $color-gray-f;
+}
+
+.trace-brand__logo-box {
+	fill: transparent;
+	stroke: $color-gray-f;
+}
+
+.portfolio__topic-h--branding {
+	margin-bottom: 0;
+}
+
+.trace-brand-book {
+	@include pie-clearfix;
+	position: relative;
+}
+
+.trace-brand-book__image-container {
+	width: 50%;
+	float: right;
+}
+
+.trace-brand-book__content {
+	position: absolute;
+	top: 50%;
+	left: 15%;
+    width: 30vw;
+	transform: translateY(-50%);
+}
+
+// main -> brand guidelines
+
+
+// =============================================
+
+// Main -> Design List
+
+// =============================================
+
+.trace-design-item {
+	@include pie-clearfix;
+	position: relative;
+	max-width: 100%;
+	height: 34vw;
+	overflow: hidden;
+}
+
+.design-item__text {
+	width: 40%;
+	position: absolute;
+	top: 50%;
+	left: -30%;
+	transform: translateY(-50%);
+	padding: 0 5vw;
+	opacity: 0;
+	transition: all 0.5s $timing-butter;
+
+	.is-in-view & {
+		left: 0;
+		opacity: 1;
+	}
+
+	.trace-design-item--right & {
+		left: auto;
+		right: -30%;
+	}
+
+	.trace-design-item--right.is-in-view & {
+		right: 0;
+	}
+}
+
+.design-item__number {
+	font-family: $fontFamily-sans;
+	font-weight: 700;
+	color: $color-red;
+	font-size: 16px;
+	line-height: 1;
+
+	@include mq($bp-mobile) {
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+
+	@include mq($bp-mobile--lg) {
+		font-size: 30px;
+	}
+
+	@include mq($bp-tablet--lg) {
+		font-size: 32px;
+	}
+}
+
+.design-item__title {
+	line-height: 1.2;
+	margin-bottom: 10px;
+}
+
+.design-item__desc {
+	text-align: center;
+}
+
+.design-item__image-wrapper {
+	width: 60%;
+	position: absolute;
+	top: 0;
+	right: -50%;
+	opacity: 0;
+	transition: all 0.7s $timing-butter;
+
+	.is-in-view & {
+		right: 0;
+		opacity: 1;
+	}
+
+	.trace-design-item--right & {
+		right: auto;
+		left: -50%;
+	}
+
+	.trace-design-item--right.is-in-view & {
+		left: 0;
+	}
+}
+
+.design-item__figure {
+	//padding-bottom: 57.1428%;
+	background-color: $color-gray-f;
+}
+
+.design-item__image {
+	width: 100%;
+}
+
+// main -> design list
+
+// =============================================
+
+// Main -> Design Managements
+
+// =============================================
+
+.trace-design-management-intro,
+.trace-design-management-image,
+.trace-design-management-example {
+	padding: 60px 0;
+	text-align: center;
+}
+
+.portfolio__divider {
+	max-width: 30px;
+	margin: 0 auto;
+	position: relative;
+	&:after,
+	&:before {
+		content: "";
+		position: absolute;
+		width: 80px;
+		height: 1px;
+		background-color: $color-gray-0;
+		top: 50%;
+		margin-top: -7px;
+	}
+	&:after { left: -100px; }
+	&:before { right: -100px; }
+}
+
+.portfolio__divider--white {
+
+	&:after,
+	&:before {
+		background-color: $color-gray-f;
+	}
+}
+
+.portfolio__svg-pad--badge-icon {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding: 0;
+	@include scale-ratio(45.4, 31);
+}
+
+.portfolio__scale-svg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.portfolio__icon--badge {
+	fill: $color-gray-0;
+}
+
+.portfolio__icon--badge--white {
+	fill: $color-gray-f;
+}
+
+// main -> design management
+
+// =============================================
+
+// Main -> Typography
+
+// =============================================
+
+.trace-typography,
+.trace-typography-info {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+// main -> typography
+
+// =============================================
+
+// Main -> Build
+
+// =============================================
+
+.trace-management-build,
+.trace-development-components,
+.trace-launch {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.trace-component__h {
+	margin-top: -78px;
+
+	@include mq($bp-mobile) {
+		margin-top: -80px;
+	}
+
+	@include mq($bp-mobile--lg) {
+		margin-top: -84px;
+	}
+}
+
+.trace-workflow .portfolio__img {
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// main -> build
+
+// =============================================
+
+// Main -> Results
+
+// =============================================
+
+.trace-results {
+	padding-bottom: 25%;
+}
+
+.results__grid-item .portfolio__h1 {
+	margin-bottom: 15px;
+
+	@include mq($bp-mobile--lg) {
+		font-size: 76px;
+		line-height: 1;
+	}
+
+	@include mq($bp-tablet--lg) {
+		font-size: 96px;
+		line-height: 1;
+	}
+}
+
+.trace-mobile-bottom .portfolio__img {
+	margin-top: -20%;
+	padding-left: 1.5%;
+	padding-right: 1.5%;
+}
+
+// main -> results
+
+// =============================================
+
+//	Main -> Video
+
+// =============================================
+
+.thr__video {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	display: block;
+}
+
+.thr__video-progress {
+	margin-top: 40px;
+	position: relative;
+	width: 100%;
+	height: 2px;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.thr__video-progress-bar {
+	background: $color-gray-0;
+	height: 100%;
+	width: 0;
+	position: relative;
+}
+
+// main -> video
