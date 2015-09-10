@@ -28,19 +28,20 @@
 .portfolio__h1 {
 	font-family: $fontFamily-serif;
 	font-weight: 900;
-	font-size: 52px;
-	line-height: 64px;
+	font-size: 42px;
+	line-height: 54px;
 	text-align: center;
 	color: $color-gray-0;
 	margin-bottom: 30px;
 
 	@include mq($bp-mobile) {
-		font-size: 64px;
+		font-size: 56px;
+		line-height: 64px;
 	}
 
 	@include mq($bp-mobile--lg) {
-		font-size: 94px;
-		line-height: 108px;
+		font-size: 76px;
+		line-height: 84px;
 		margin-bottom: 40px;
 	}
 
