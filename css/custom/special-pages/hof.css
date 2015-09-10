@@ -1,1 +1,79 @@
-.visuallyhidden.focusable:active,.visuallyhidden.focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.ui-block:last-child,.ui-block.last{margin-right:0}body{-webkit-font-smoothing:antialiased}.hof-cover{background-size:cover;background-image:url("../../../images/hof/john-2.jpg");background-repeat:no-repeat}@media (min-width: 768px){.hof-cover{padding:200px 0 0 0;background-attachment:fixed;background-size:cover;background-position:top center;height:800px}}@media (max-width: 767px){.hof-cover .wrapper{padding:50px 30px}}.hof-cover-text{position:relative;padding:50px;border:5px solid #FFF;max-width:600px;margin:0 auto;background-color:rgba(255,255,255,0.4);text-align:center;color:#FFF;-webkit-transition:all 0.2s ease-in;transition:all 0.2s ease-in}.hof-cover-text.dark{border:5px solid #000;background-color:rgba(0,0,0,0.2);color:#000}.hof-cover-text:hover{background-color:rgba(255,255,255,0.9);color:#666}.hof-overline{font-family:"proxima-nova",Helvetica,Arial,sans-serif;font-size:14px;letter-spacing:5px;text-transform:uppercase;color:#CCC}.hof-overline.center{text-align:center;margin:0 0 40px 0}.hof-h1{font-size:24px;font-family:"adelle",Georgia,Times,"Times New Roman",serif;font-weight:800;padding-bottom:20px;border-bottom:1px solid #FFF;color:#2d2d2d;margin-bottom:20px}@media (min-width: 600px){.hof-h1{font-size:62px;padding-bottom:0}}.hof-quote-hed{font-family:"adelle",Georgia,Times,"Times New Roman",serif;font-weight:400;font-size:22px;text-shadow:1px 1px 1px rgba(0,0,0,0.3)}@media (min-width: 768px){.hof-quote-hed{font-size:32px}}.hof-cover-text:hover .hof-quote-hed{text-shadow:0px 0px 0px rgba(0,0,0,0.3)}.hof-quote-wrapper{*zoom:1}.hof-quote-wrapper:after{content:"";display:table;clear:both}.hof-quote-mod{font-family:"adelle",Georgia,Times,"Times New Roman",serif;font-weight:400;font-size:18px;line-height:26px;max-width:600px;border-top:5px solid #EEE;padding:20px 0;clear:both;font-size:18px;margin:0 auto;text-align:left;text-align:center}@media (max-width: 767px){.hof-quote-mod{color:#555}}@media (min-width: 768px){.hof-quote-mod{-webkit-transition:all 0.2s ease-in;transition:all 0.2s ease-in;font-size:24px;line-height:34px;position:relative;padding:60px;border:5px solid #EEE;margin:0 auto 60px auto}.hof-quote-mod:hover{color:#222}}.hof-quote-attr{padding:8px;font-weight:800;font-size:16px;background-color:#FFF;margin:20px auto;line-height:16px;text-align:center;border:3px solid #EEE}.hof-quote-attr.gus{bottom:-32px}.hof-quote-attr:hover{color:#000}@media (min-width: 768px){.hof-quote-attr{border:5px solid #EEE;margin:0 auto;width:295px;position:absolute;bottom:-23px;left:25%}}.hof-icon{position:absolute;width:75px;margin-left:-37.5px;left:50%;top:-40px}.hof-imagebreak{padding:50px 0;background-size:cover;background-position:center center}.hof-imagebreak.john-1{background-image:url("../../../images/hof/cover.jpg")}.hof-imagebreak.john-npr{background-image:url("../../../images/hof/john-npr.jpg")}.hof-imagebreak.john-3{background-image:url("../../../images/hof/john-3.jpg")}@media (min-width: 768px){.hof-imagebreak{background-attachment:fixed;height:800px;padding:200px 0 0 0}}
+/*
+Error: File to import not found or unreadable: ../components/Upbase/components/variables.
+       Load paths:
+         Compass::SpriteImporter
+         /Users/emmabaker/Sites/uv/www/rh-bookmark/wp-content/themes/blades/sass
+         /Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets
+        on line 51 of /Users/emmabaker/Sites/uv/www/rh-bookmark/wp-content/themes/blades/sass/custom/_custom-base.scss
+        from line 1 of /Users/emmabaker/Sites/uv/www/rh-bookmark/wp-content/themes/blades/sass/custom/special-pages/hof.scss
+
+46: 
+47: 	&:hover {
+48: 		background-color: rgba(255,255,255,.9);
+49: 		color: #666;
+50: 	}
+51: }
+52: 
+53: .hof-overline {
+54: 	font-family: $proxima;
+55: 	font-size: 14px;
+56: 	letter-spacing: 5px;
+
+Backtrace:
+/Users/emmabaker/Sites/uv/www/rh-bookmark/wp-content/themes/blades/sass/custom/_custom-base.scss:51
+/Users/emmabaker/Sites/uv/www/rh-bookmark/wp-content/themes/blades/sass/custom/special-pages/hof.scss:1
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:66:in `rescue in import'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:45:in `import'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `block in with_base'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:325:in `block (2 levels) in visit_import'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:325:in `map'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:325:in `block in visit_import'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:88:in `block in with_import'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:88:in `with_import'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `block in with_base'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/root_node.rb:20:in `render'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/engine.rb:268:in `render'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:282:in `call'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:282:in `_process_changes'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:246:in `block in _wait_for_changes'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:229:in `loop'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:229:in `_wait_for_changes'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:318:in `block in _start_wait_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: ../components/Upbase/components/variables.\A        Load paths:\A          Compass::SpriteImporter\A          /Users/emmabaker/Sites/uv/www/rh-bookmark/wp-content/themes/blades/sass\A          /Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets\A         on line 51 of /Users/emmabaker/Sites/uv/www/rh-bookmark/wp-content/themes/blades/sass/custom/_custom-base.scss\A         from line 1 of /Users/emmabaker/Sites/uv/www/rh-bookmark/wp-content/themes/blades/sass/custom/special-pages/hof.scss\A \A 46: \A 47: 	&:hover {\A 48: 		background-color: rgba(255,255,255,.9);\A 49: 		color: #666;\A 50: 	}\A 51: }\A 52: \A 53: .hof-overline {\A 54: 	font-family: $proxima;\A 55: 	font-size: 14px;\A 56: 	letter-spacing: 5px;"; }

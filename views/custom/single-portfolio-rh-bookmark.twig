@@ -1,0 +1,24 @@
+{% extends 'single-portfolio.twig' %}
+{% block head %}
+	<link rel="stylesheet" href="{{theme.path}}/css/custom/portfolio/rh-bookmark.css">
+	<link rel="stylesheet" href="{{theme.path}}/components/swiper/dist/idangerous.swiper.css">
+	<script src="{{theme.path}}/components/picturefill/dist/picturefill.min.js" async></script>
+{% endblock %}
+
+{% block hgroup %}{% endblock hgroup %}
+
+
+{% if layout.images %}{% endif %}
+
+{% block scripts %}
+	<script src="{{theme.path}}/components/scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+	<script src="{{theme.path}}/components/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+	<script src="{{theme.path}}/components/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+	<script src="{{theme.path}}/components/swiper/dist/idangerous.swiper.min.js"></script>
+	<script src="{{theme.path}}/js/custom/portfolio/thr.js"></script>
+	<script src="{{theme.path}}/js/custom/portfolio/rh-bookmark.js"></script>
+	<script src="{{theme.path}}/js/custom/portfolio/rh-bookmark.background-shifter.js"></script>
+	<script src="{{theme.path}}/js/custom/portfolio/rh-bookmark.math-scroller.js"></script>
+	<script src="{{theme.path}}/js/custom/portfolio/rh-bookmark.api-scroller.js"></script>
+{% endblock %}

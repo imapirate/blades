@@ -1,1 +1,79 @@
-.visuallyhidden.focusable:active,.visuallyhidden.focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.ui-block:last-child,.ui-block.last{margin-right:0}@-webkit-keyframes slideLeft{0%{opacity:.5;-ms-transform:translate3d(50%, 0, 0);-webkit-transform:translate3d(50%, 0, 0);transform:translate3d(50%, 0, 0)}10%{opacity:.5;-ms-transform:translate3d(50%, 0, 0);-webkit-transform:translate3d(50%, 0, 0);transform:translate3d(50%, 0, 0)}100%{opacity:1;-ms-transform:translate3d(0, 0, 0);-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}}@keyframes slideLeft{0%{opacity:.5;-ms-transform:translate3d(50%, 0, 0);-webkit-transform:translate3d(50%, 0, 0);transform:translate3d(50%, 0, 0)}10%{opacity:.5;-ms-transform:translate3d(50%, 0, 0);-webkit-transform:translate3d(50%, 0, 0);transform:translate3d(50%, 0, 0)}100%{opacity:1;-ms-transform:translate3d(0, 0, 0);-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}}@-webkit-keyframes slideRight{0%{opacity:.5;-ms-transform:translate3d(-50%, 0, 0);-webkit-transform:translate3d(-50%, 0, 0);transform:translate3d(-50%, 0, 0)}10%{opacity:.5;-ms-transform:translate3d(-50%, 0, 0);-webkit-transform:translate3d(-50%, 0, 0);transform:translate3d(-50%, 0, 0)}100%{opacity:1;-ms-transform:translate3d(0, 0, 0);-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}}@keyframes slideRight{0%{opacity:.5;-ms-transform:translate3d(-50%, 0, 0);-webkit-transform:translate3d(-50%, 0, 0);transform:translate3d(-50%, 0, 0)}10%{opacity:.5;-ms-transform:translate3d(-50%, 0, 0);-webkit-transform:translate3d(-50%, 0, 0);transform:translate3d(-50%, 0, 0)}100%{opacity:1;-ms-transform:translate3d(0, 0, 0);-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}}.hlr-bg-slider{margin-bottom:60px;overflow:hidden}.hlr-bg-slider.site-width{padding:0}.hlr-bg-imgs{margin:0 -20% 20px}@media (min-width: 450px){.hlr-bg-imgs{margin-left:-12%;margin-right:-12%}}@media (min-width: 850px){.hlr-bg-imgs{margin-left:0;margin-right:0}}.hlr-bg-img{max-width:100%;width:100%}.hlr-bg-controls{margin:0 20px}.hlr-bg-btn{float:left;display:block;position:relative;width:31px;height:31px;padding:6px 5px;border:2px solid #efefef;-webkit-transition:all 0.2s ease-in;transition:all 0.2s ease-in;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none}@media (min-width: 600px){.hlr-bg-btn{width:41px;height:41px;padding:8px}}.hlr-bg-btn:hover{border-color:#999;cursor:pointer}.hlr-bg-btn-play,.hlr-bg-btn-pause{position:relative;-webkit-transition:border-color 0.2s ease-in;transition:border-color 0.2s ease-in}.hlr-bg-btn-play{display:none;-ms-transform:rotate(0.1deg);-webkit-transform:rotate(0.1deg);transform:rotate(0.1deg);border-top:7.7px solid transparent;border-bottom:7.7px solid transparent;border-left:11px solid #ccc;border-right:0px solid transparent;margin-left:4px}.hlr-bg-btn:hover .hlr-bg-btn-play{border-left-color:#999}@media (min-width: 600px){.hlr-bg-btn-play{-ms-transform:rotate(0.1deg);-webkit-transform:rotate(0.1deg);transform:rotate(0.1deg);border-top:10.5px solid transparent;border-bottom:10.5px solid transparent;border-left:15px solid #ccc;border-right:0px solid transparent}}.hlr-bg-paused .hlr-bg-btn-play{display:block}.hlr-bg-btn-pause{display:none;margin:auto;top:1px;width:10px;height:14px;border-left:4px solid #ccc;border-right:4px solid #ccc}@media (min-width: 600px){.hlr-bg-btn-pause{width:14px;height:19px;border-left-width:5px;border-right-width:5px}}.hlr-bg-btn:hover .hlr-bg-btn-pause{border-left-color:#999;border-right-color:#999}.hlr-bg-playing .hlr-bg-btn-pause{display:block}.hlr-bg-timeline{position:relative;display:block;height:31px;margin-left:46px;border:2px solid #efefef;background:transparent url("/wp-content/themes/blades/images/portfolio/hlr/slash-bg.png") 50% 50% repeat-x}@media (min-width: 600px){.hlr-bg-timeline{height:41px;margin-left:61px}}.hlr-bg-scrubber{display:block;width:31px;height:31px;position:absolute;top:-2px;left:-2px;background-color:#27b99e;-webkit-transition:background-color 0.15s ease-in;transition:background-color 0.15s ease-in}.hlr-bg-scrubber:hover{cursor:pointer;background-color:#209781}@media (min-width: 600px){.hlr-bg-scrubber{width:41px;height:41px}}.hlr-type-slider{background-color:#fff;margin-bottom:60px}.hlr-type-imgs{margin:auto;position:relative;cursor:col-resize}.hlr-type-mask-mod{position:absolute;top:0;bottom:-25px;left:0;width:50%;height:100%;padding-bottom:25px;border-right:4px solid #27b99e;overflow:visible !important;box-sizing:content-box}.hlr-type-mask{overflow:hidden;display:block;height:100%;width:100%}.hlr-type-img{display:block;width:100%}@media (min-width: 600px){.hlr-type-img{width:1024px}}.hlr-type-label{font:800 14px "proxima-nova",Helvetica,Arial,sans-serif;color:#999;position:absolute;bottom:0px}@media (min-width: 600px){.hlr-type-label{font-size:16px}}.hlr-type-label-oldseven{right:-97px}.hlr-type-label-hoefler{color:#000;right:21px}.hlr-chars-mod{max-width:550px;margin:0 auto 60px;text-align:center;*zoom:1}.hlr-chars-mod:after{content:"";display:table;clear:both}.hlr-char{float:left;width:50%}.hlr-char-img{padding:20px;max-width:100%}.hlr-char-name{font:800 16px "proxima-nova",Helvetica,Arial,sans-serif;color:#000}.hlr-char-hoefler,.hlr-char-oldseven{-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-timing-function:cubic-bezier(0.49, 0.37, 0.445, 0.715);animation-timing-function:cubic-bezier(0.49, 0.37, 0.445, 0.715);-webkit-animation-duration:1s;animation-duration:1s}#hlr-char-hoefler.start-pos{opacity:.5;-ms-transform:translate3d(-50%, 0, 0);-webkit-transform:translate3d(-50%, 0, 0);transform:translate3d(-50%, 0, 0)}#hlr-char-oldseven.start-pos{opacity:.5;-ms-transform:translate3d(50%, 0, 0);-webkit-transform:translate3d(50%, 0, 0);transform:translate3d(50%, 0, 0)}.hlr-char-hoefler{-webkit-animation-name:slideRight;animation-name:slideRight}.hlr-char-oldseven{-webkit-animation-name:slideLeft;animation-name:slideLeft}.hlr-type-wallpaper-mod{margin-bottom:-80px}.hlr-type-wallpaper{width:100%}.hlr-type-wallpaper-caption{font:400 16px "proxima-nova",Helvetica,Arial,sans-serif;color:#999;text-transform:uppercase;letter-spacing:2px;text-align:center;margin-bottom:10px}.hlr-type-wallpaper-arrow{display:block;text-indent:-9999em;width:25px;height:25px;background:transparent url("/wp-content/themes/blades/images/portfolio/hlr/circle-arrow.svg") 50% 50% repeat-x;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=30);opacity:0.3;margin:12px auto 18px}.hlr-video-overview-mod{margin-bottom:50px}.hlr-video{width:100%;height:100%}.hlr-video-article,.hlr-video-overview,.hlr-poster-article,.hlr-poster-overview{border-radius:3px;box-shadow:0 0 7px rgba(0,0,0,0.2)}.hlr-video-article-mod,.hlr-video-footnote-mod,.layout-subhead-blending-form-function{margin-bottom:90px}@media (min-width: 600px){.hlr-video-article-mod,.hlr-video-footnote-mod,.layout-subhead-blending-form-function{margin-bottom:140px}}.portfolio-color-splash{margin-bottom:90px}@media (min-width: 600px){.portfolio-color-splash{margin-bottom:120px}}
+/*
+Error: File to import not found or unreadable: ../components/Upbase/components/variables.
+       Load paths:
+         Compass::SpriteImporter
+         /Users/emmabaker/Sites/uv/www/rh-bookmark/wp-content/themes/blades/sass
+         /Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets
+        on line 51 of /Users/emmabaker/Sites/uv/www/rh-bookmark/wp-content/themes/blades/sass/custom/_custom-base.scss
+        from line 1 of /Users/emmabaker/Sites/uv/www/rh-bookmark/wp-content/themes/blades/sass/custom/portfolio/harvard-law-review.scss
+
+46: .hlr-bg-imgs {
+47: 	margin: 0 -20% 20px;
+48: 	@include mq(450px) {
+49: 		margin-left: -12%;
+50: 		margin-right: -12%;
+51: 	}
+52: 	@include mq(850px) {
+53: 		margin-left: 0;
+54: 		margin-right: 0;
+55: 	}
+56: }
+
+Backtrace:
+/Users/emmabaker/Sites/uv/www/rh-bookmark/wp-content/themes/blades/sass/custom/_custom-base.scss:51
+/Users/emmabaker/Sites/uv/www/rh-bookmark/wp-content/themes/blades/sass/custom/portfolio/harvard-law-review.scss:1
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:66:in `rescue in import'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:45:in `import'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:28:in `imported_file'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/import_node.rb:37:in `css_import?'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `block in with_base'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:325:in `block (2 levels) in visit_import'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:325:in `map'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:325:in `block in visit_import'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:88:in `block in with_import'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:88:in `with_import'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `block in with_base'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:115:in `with_frame'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/stack.rb:79:in `with_base'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:157:in `visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/tree/root_node.rb:20:in `render'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/engine.rb:268:in `render'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/sass-3.4.13/lib/sass/plugin/compiler.rb:328:in `block in watch'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:282:in `call'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:282:in `_process_changes'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:246:in `block in _wait_for_changes'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:229:in `loop'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:229:in `_wait_for_changes'
+/Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/listen-2.8.5/lib/listen/listener.rb:318:in `block in _start_wait_thread'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: ../components/Upbase/components/variables.\A        Load paths:\A          Compass::SpriteImporter\A          /Users/emmabaker/Sites/uv/www/rh-bookmark/wp-content/themes/blades/sass\A          /Users/emmabaker/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets\A         on line 51 of /Users/emmabaker/Sites/uv/www/rh-bookmark/wp-content/themes/blades/sass/custom/_custom-base.scss\A         from line 1 of /Users/emmabaker/Sites/uv/www/rh-bookmark/wp-content/themes/blades/sass/custom/portfolio/harvard-law-review.scss\A \A 46: .hlr-bg-imgs {\A 47: 	margin: 0 -20% 20px;\A 48: 	@include mq(450px) {\A 49: 		margin-left: -12%;\A 50: 		margin-right: -12%;\A 51: 	}\A 52: 	@include mq(850px) {\A 53: 		margin-left: 0;\A 54: 		margin-right: 0;\A 55: 	}\A 56: }"; }
