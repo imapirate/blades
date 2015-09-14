@@ -22,3 +22,31 @@ $cdn_theme_path: 'http://www.upstatement.com/wp-content/themes/blades/';
 
 $gray:#CCC;
 $theme-dir: '/wp-content/themes/blades';
+
+// -------
+// Portfolio Variables
+
+// Colors
+$portfolio-color-gray-0:            #010e17;
+$portfolio-color-gray-b:            #b9bbbd;
+$portfolio-color-gray-d:            #d4d5d6;
+$portfolio-color-gray-f:            #ffffff;
+$portfolio-color-blue:              #099aff;
+
+// Font Family
+$portfolio-fontFamily-base:         "Tiempos", Georgia, Times, serif;
+$portfolio-fontFamily-sansSerif:    "proxima-nova", sans-serif;
+$portfolio-fontFamily-sans:         "proxima-nova", sans-serif;
+$portfolio-fontFamily-serif:        "Tiempos", Georgia, Times, serif;
+
+// Breakpoints
+$portfolio-bp-desktop--lg:          1200px;
+$portfolio-bp-desktop:              1100px;
+$portfolio-bp-tablet--lg:           1000px;
+$portfolio-bp-tablet:               760px;
+$portfolio-bp-mobile--lg:           600px;
+$portfolio-bp-mobile:               400px;
+
+// Transitions
+$portfolio-trans--h:                   transform 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.4s;
+$portfolio-trans--badge-divider:       width 0.5s cubic-bezier(0.19, 1, 0.22, 1);
