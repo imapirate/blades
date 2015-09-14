@@ -1956,6 +1956,13 @@ body {
   max-width: 940px;
   text-align: center;
   margin: 50px auto;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  transition-delay: 0.5s;
+
+    &.rh__js--is-in-view {
+  	opacity: 1;
+  }
 }
 
 #math-result {

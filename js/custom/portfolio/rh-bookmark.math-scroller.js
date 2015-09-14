@@ -21,8 +21,8 @@
           $this.addClass('rh__js--is-in-view');
         }
         if ( $this[0] === $numberContainer[0] ) {
-          shuffle();
-          setInterval(unshuffle, 100);
+          setTimeout(shuffle, 500);
+          setInterval(unshuffle, 90);
         }
       })    
       .addTo(controller);
