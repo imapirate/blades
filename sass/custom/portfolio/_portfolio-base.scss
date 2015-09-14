@@ -26,26 +26,26 @@
 // =============================================
 
 .portfolio__h1 {
-	font-family: $fontFamily-serif;
+	font-family: $portfolio-fontFamily-serif;
 	font-weight: 900;
 	font-size: 42px;
 	line-height: 54px;
 	text-align: center;
-	color: $color-gray-0;
+	color: $portfolio-color-gray-0;
 	margin-bottom: 30px;
 
-	@include mq($bp-mobile) {
+	@include mq($portfolio-bp-mobile) {
 		font-size: 56px;
 		line-height: 64px;
 	}
 
-	@include mq($bp-mobile--lg) {
+	@include mq($portfolio-bp-mobile--lg) {
 		font-size: 76px;
 		line-height: 84px;
 		margin-bottom: 40px;
 	}
 
-	@include mq($bp-tablet--lg) {
+	@include mq($portfolio-bp-tablet--lg) {
 		font-size: 125px;
 		line-height: 132px;
 		margin-bottom: 60px;
@@ -53,20 +53,20 @@
 }
 
 .portfolio__h2 {
-	font-family: $fontFamily-serif;
+	font-family: $portfolio-fontFamily-serif;
 	font-weight: 900;
 	font-size: 42px;
 	line-height: 1;
 	text-align: center;
-	color: $color-gray-0;
+	color: $portfolio-color-gray-0;
 	margin-bottom: 30px;
 
-	@include mq($bp-mobile--lg) {
+	@include mq($portfolio-bp-mobile--lg) {
 		font-size: 64px;
 		margin-bottom: 40px;
 	}
 
-	@include mq($bp-tablet--lg) {
+	@include mq($portfolio-bp-tablet--lg) {
 		font-size: 82px;
 		line-height: 91px;
 		margin-bottom: 60px;
@@ -74,62 +74,62 @@
 }
 
 .portfolio__h3 {
-	font-family: $fontFamily-serif;
+	font-family: $portfolio-fontFamily-serif;
 	font-weight: 900;
 	font-size: 32px;
 	line-height: 34px;
 	text-align: center;
-	color: $color-gray-0;
+	color: $portfolio-color-gray-0;
 	margin-bottom: 30px;
 
-	@include mq($bp-mobile--lg) {
+	@include mq($portfolio-bp-mobile--lg) {
 		font-size: 40px;
 		line-height: 42px;
 	}
 }
 
 .portfolio__h4 {
-	font-family: $fontFamily-serif;
+	font-family: $portfolio-fontFamily-serif;
 	font-weight: 900;
 	font-size: 16px;
 	line-height: 1;
 	text-align: center;
-	color: $color-gray-0;
+	color: $portfolio-color-gray-0;
 	margin-bottom: 30px;
 
-	@include mq($bp-mobile) {
+	@include mq($portfolio-bp-mobile) {
 		font-size: 18px;
 	}
 
-	@include mq($bp-mobile--lg) {
+	@include mq($portfolio-bp-mobile--lg) {
 		font-size: 30px;
 	}
 
-	@include mq($bp-tablet--lg) {
+	@include mq($portfolio-bp-tablet--lg) {
 		font-size: 32px;
 	}
 }
 
 .portfolio__sub-h {
-	font-family: $fontFamily-serif;
+	font-family: $portfolio-fontFamily-serif;
 	font-size: 22px;
 	line-height: 32px;
 	font-weight: 300;
-	color: $color-gray-0;
+	color: $portfolio-color-gray-0;
 	text-align: center;
 	margin-bottom: 40px;
 
-	@include mq($bp-mobile) {
+	@include mq($portfolio-bp-mobile) {
 		font-size: 28px;
 		line-height: 42px;
 	}
 
-	@include mq($bp-mobile--lg) {
+	@include mq($portfolio-bp-mobile--lg) {
 		font-size: 36px;
 		line-height: 50px;
 	}
 
-	@include mq($bp-tablet--lg) {
+	@include mq($portfolio-bp-tablet--lg) {
 		font-size: 42px;
 		line-height: 62px;
 		margin-bottom: 60px;
@@ -137,8 +137,8 @@
 }
 
 .portfolio__topic-h {
-	font-family: $fontFamily-sans;
-	color: $color-gray-0;
+	font-family: $portfolio-fontFamily-sans;
+	color: $portfolio-color-gray-0;
 	font-weight: 700;
 	text-transform: uppercase;
 	letter-spacing: 3px;
@@ -157,33 +157,33 @@
 
 .portfolio-text p,
 .portfolio-text--default {
-	font-family: $fontFamily-serif;
+	font-family: $portfolio-fontFamily-serif;
 	font-weight: 300;
 	font-size: 16px;
 	line-height: 28px;
-	color: $color-gray-0;
+	color: $portfolio-color-gray-0;
 
-	@include mq($bp-mobile) {
+	@include mq($portfolio-bp-mobile) {
 		font-size: 18px;
 		line-height: 32px;
 	}
 
-	@include mq($bp-mobile--lg) {
+	@include mq($portfolio-bp-mobile--lg) {
 		font-size: 20px;
 		line-height: 36px;
 	}
 
-	@include mq($bp-tablet--lg) {
+	@include mq($portfolio-bp-tablet--lg) {
 		font-size: 23px;
 		line-height: 42px;
 	}
 }
 
 .portfolio-text .dropcap {
-	font-family: $fontFamily-serif;
+	font-family: $portfolio-fontFamily-serif;
 	font-weight: 400;
 
-	@include mq($bp-mobile--lg) {
+	@include mq($portfolio-bp-mobile--lg) {
 		font-size: 85px;
 	    margin-top: -6px;
 	}
@@ -198,18 +198,18 @@
 }
 
 .portfolio__text--white {
-	color: $color-gray-f;
+	color: $portfolio-color-gray-f;
 }
 
 .portfolio__text--white p {
-	color: $color-gray-f;
+	color: $portfolio-color-gray-f;
 }
 
 .portfolio__link {
-	color: $color-gray-0;
+	color: $portfolio-color-gray-0;
 	text-decoration: none;
 	transition: all 0.2s ease-in-out;
-	font-family: $fontFamily-sans;
+	font-family: $portfolio-fontFamily-sans;
 	&:hover {
 		opacity: 0.5;
 	}
@@ -224,9 +224,9 @@
 // =============================================
 
 .portfolio-h1 {
-	font-family: $fontFamily-serif;
+	font-family: $portfolio-fontFamily-serif;
 	font-weight: 900;
-	color: $color-gray-f;
+	color: $portfolio-color-gray-f;
 }
 
 .full-width,
@@ -257,7 +257,7 @@
 	padding-bottom: 6px;
 
 	&:after {
-		background-color: $color-gray-f;
+		background-color: $portfolio-color-gray-f;
 		width: 100%;
 	}
 }
@@ -276,12 +276,12 @@
 	padding-top: 80px;
 	padding-bottom: 80px;
 
-	@include mq($bp-mobile--lg) {
+	@include mq($portfolio-bp-mobile--lg) {
 		padding-top: 100px;
 		padding-bottom: 100px;
 	}
 
-	@include mq($bp-tablet--lg) {
+	@include mq($portfolio-bp-tablet--lg) {
 		padding-top: 140px;
 		padding-bottom: 140px;
 	}
@@ -291,12 +291,12 @@
 	padding-top: 50px;
 	padding-bottom: 50px;
 
-	@include mq($bp-mobile--lg) {
+	@include mq($portfolio-bp-mobile--lg) {
 		padding-top: 60px;
 		padding-bottom: 60px;
 	}
 
-	@include mq($bp-tablet--lg) {
+	@include mq($portfolio-bp-tablet--lg) {
 		padding-top: 80px;
 		padding-bottom: 80px;
 	}
@@ -309,11 +309,11 @@
 .portfolio__pad--bottom-md {
 	padding-bottom: 40px;
 		
-	@include mq($bp-tablet) {
+	@include mq($portfolio-bp-tablet) {
 		padding-bottom: 50px;
 	}
 
-	@include mq($bp-tablet--lg) {
+	@include mq($portfolio-bp-tablet--lg) {
 		padding-bottom: 80px;
 	}
 }
@@ -322,12 +322,12 @@
 	padding-top: 80px;
 	padding-bottom: 50px;
 
-	@include mq($bp-mobile--lg) {
+	@include mq($portfolio-bp-mobile--lg) {
 		padding-top: 120px;
 		padding-bottom: 60px;
 	}
 
-	@include mq($bp-tablet--lg) {
+	@include mq($portfolio-bp-tablet--lg) {
 		padding-top: 160px;
 		padding-bottom: 80px;
 	}
@@ -350,7 +350,7 @@
 }
 
 .portfolio__img--bdr-shadow {
-	border: 1px solid $color-gray-b;
+	border: 1px solid $portfolio-color-gray-b;
 	box-shadow: rgba(0, 0, 0, 0.2) -2px 1px 10px;
 }
 
@@ -392,7 +392,7 @@
 // =============================================
 
 .portfolio__count-items {
-	border-bottom: 1px solid $color-gray-d;
+	border-bottom: 1px solid $portfolio-color-gray-d;
 	list-style: none;
 	overflow: auto;
 }
@@ -400,24 +400,24 @@
 .portfolio__count-list {
 	counter-increment: step-counter;
 	position: relative;
-	color: $color-gray-0;
+	color: $portfolio-color-gray-0;
 	line-height: 1;
-	font: 500 18px $fontFamily-sans;
-	border-top: 1px solid $color-gray-d;
+	font: 500 18px $portfolio-fontFamily-sans;
+	border-top: 1px solid $portfolio-color-gray-d;
 
-	@include mq($bp-tablet--lg) {
+	@include mq($portfolio-bp-tablet--lg) {
 		font-size: 22px;
 	}
 
 	&:before {
 		content: counter(step-counter);
 		margin-top: -14px;
-		background-color: $color-blue;
+		background-color: $portfolio-color-blue;
 		text-align: center;
 		border-radius: 50%;
 		font-size: 16px;
 		font-weight: 300;
-		color: $color-gray-f;
+		color: $portfolio-color-gray-f;
 		position: absolute;
 		top: 50%;
 		left: 20px;
@@ -425,7 +425,7 @@
 		width: 28px;
 		line-height: 28px;
 
-		@include mq($bp-mobile) {
+		@include mq($portfolio-bp-mobile) {
 			left: 50px;
 			height: 30px;
 			width: 30px;
@@ -446,13 +446,13 @@
 	
 	html.no-touch & {
 		&:hover {
-			&:before { background-color: $color-gray-0; color: $color-gray-f; }
+			&:before { background-color: $portfolio-color-gray-0; color: $portfolio-color-gray-f; }
 		}
 	}
 }
 
 .portfolio__nav-link {
-	color: $color-gray-0;
+	color: $portfolio-color-gray-0;
 	font-weight: 700;
 	display: block;
 	padding: 20px 25px 20px 60px;
@@ -462,7 +462,7 @@
 		opacity: 0.7;
 	}
 
-	@include mq($bp-mobile) {
+	@include mq($portfolio-bp-mobile) {
 		padding: 25px 30px 25px 90px;
 	}
 }
@@ -470,11 +470,11 @@
 .portfolio__count-item--topic {
 	padding: 15px 1% 15px 20%;
 
-	@include mq($bp-mobile) {
+	@include mq($portfolio-bp-mobile) {
 		padding: 15px 1% 15px 15%;
 	}
 
-	@include mq($bp-tablet) {
+	@include mq($portfolio-bp-tablet) {
 		display: inline-block;
 		padding: 22px 1% 22px 10%;
 		float: left;
@@ -483,7 +483,7 @@
 
 	&:before {
 		left: 5%;
-		@include mq($bp-tablet) {
+		@include mq($portfolio-bp-tablet) {
 			left: 12%;
 		}
 	}
@@ -504,16 +504,16 @@
 	position: relative;
 	z-index: 10;
 
-	@include mq($bp-mobile--lg) {
+	@include mq($portfolio-bp-mobile--lg) {
 		width: 60px;
 	}
 
-	@include mq($bp-tablet) {
+	@include mq($portfolio-bp-tablet) {
 		padding: 60px 0 50px;
 		width: 80px;
 	}
 
-	@include mq($bp-tablet--lg) {
+	@include mq($portfolio-bp-tablet--lg) {
 		padding: 90px 0 70px;
 	}
 }
@@ -525,12 +525,12 @@
 	left: 50%;
 	margin-left: -25px;
 
-	@include mq($bp-mobile--lg) {
+	@include mq($portfolio-bp-mobile--lg) {
 		top: -43px;
 		margin-left: -30px;
 	}
 
-	@include mq($bp-tablet) {
+	@include mq($portfolio-bp-tablet) {
 		top: -54px;
 		margin-left: -40px;
 	}
@@ -545,7 +545,7 @@
 
 .badge-a__content {
 	position: relative;
-	background-color: $color-gray-0;
+	background-color: $portfolio-color-gray-0;
 	padding: 10px 10px 0 10px;
 	width: 100%;
 	text-align: center;
@@ -556,7 +556,7 @@
 		position: absolute;
 		width: 80px;
 		height: 1px;
-		background-color: $color-gray-0;
+		background-color: $portfolio-color-gray-0;
 		top: 50%;
 	}
 
@@ -568,11 +568,11 @@
 		right: -100px;
 	}
 
-	@include mq($bp-mobile--lg) {
+	@include mq($portfolio-bp-mobile--lg) {
 		padding: 11px 10px 0 10px;
 	}
 
-	@include mq($bp-tablet) {
+	@include mq($portfolio-bp-tablet) {
 		padding: 14px 10px 0 10px;
 	}
 }
@@ -586,12 +586,12 @@
 
 
 .badge-a__h {
-	font-family: $fontFamily-serif;
+	font-family: $portfolio-fontFamily-serif;
 	font-weight: 900;
 	font-size: 20px;
 	line-height: 20px;
-	color: $color-gray-f;
-	transition: $trans--h;
+	color: $portfolio-color-gray-f;
+	transition: $portfolio-trans--h;
 
 	&--js {
 		position: relative;
@@ -602,12 +602,12 @@
 		}
 	}
 
-	@include mq($bp-mobile--lg) {
+	@include mq($portfolio-bp-mobile--lg) {
 		font-size: 25px;
 		line-height: 25px;
 	}
 
-	@include mq($bp-tablet) {
+	@include mq($portfolio-bp-tablet) {
 		font-size: 30px;
 		line-height: 30px;
 	}
@@ -617,7 +617,7 @@
 	font-size: 10px;
 	letter-spacing: 1px;
 	margin: 0;
-	transition: $trans--h;
+	transition: $portfolio-trans--h;
 
 	&--js {
 		position: relative;
@@ -628,12 +628,12 @@
 		}
 	}
 
-	@include mq($bp-mobile--lg) {
+	@include mq($portfolio-bp-mobile--lg) {
 		font-size: 12px;
 		letter-spacing: 2px;
 	}
 
-	@include mq($bp-tablet) {
+	@include mq($portfolio-bp-tablet) {
 		font-size: 16px;
 		letter-spacing: 3px;
 	}
@@ -643,8 +643,8 @@
 	height: 1px;
 	width: 10px;
 	margin: 0 auto;
-	background: $color-gray-f;
-	transition: $trans--badge-divider;
+	background: $portfolio-color-gray-f;
+	transition: $portfolio-trans--badge-divider;
 
 	&--js {
 		width: 0;
@@ -656,27 +656,27 @@
 }
 
 .triangle__item--badge-a--left {
-	&:after { border-color: transparent transparent transparent $color-gray-0; 
+	&:after { border-color: transparent transparent transparent $portfolio-color-gray-0; 
 		-moz-transform: scale(.9999);
 	}
 }
 
 .triangle__item--badge-a--right {
-	&:after { border-color: transparent transparent $color-gray-0 transparent; 
+	&:after { border-color: transparent transparent $portfolio-color-gray-0 transparent; 
 		-moz-transform: scale(.9999);
 	}
 }
 
 .triangle__item--badge-a--down {
 	&:after {
-		border-top: 260px solid $color-gray-0;
+		border-top: 260px solid $portfolio-color-gray-0;
     	margin-top: -272px;
 
-		@include mq($bp-mobile--lg) {
+		@include mq($portfolio-bp-mobile--lg) {
 			margin-top: -275px;
 		}
 
-		@include mq($bp-tablet) {
+		@include mq($portfolio-bp-tablet) {
 			margin-top: -279px;
 		}
 	}
