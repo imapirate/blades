@@ -218,7 +218,6 @@
 // main -> placeholders
 
 
-
 // =============================================
 
 //	2. Portfolio Basics
@@ -243,11 +242,11 @@
 
 .portfolio__txt-width {
 	max-width: 700px;
-	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 // main -> portfolio basics
-
 
 
 // =============================================
@@ -294,6 +293,7 @@
 
 .portfolio__pad--bottom-md {
 	padding-bottom: 40px;
+
 	@include mq($portfolio-bp-tablet) {
 		padding-bottom: 50px;
 	}
@@ -371,8 +371,6 @@
 }
 
 
-
-
 // =============================================
 
 //	4. Count Lists
@@ -427,7 +425,6 @@
 }
 
 .portfolio__nav-item {
-
 	&:before {
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 	}
@@ -474,8 +471,6 @@
 }
 
 // main -> count lists
-
-
 
 
 // =============================================

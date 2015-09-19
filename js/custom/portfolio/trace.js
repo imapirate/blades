@@ -12,7 +12,6 @@
 			$thrVideoProgressBar = $('.thr__video-progress-bar'),
 			$thrVideo,
 			$thrVideoTemplate,
-
 			controller = new ScrollMagic.Controller(),
 			statsInView = false,
 			thrInView,
@@ -35,7 +34,6 @@
 			}
 			return false;
 		}
-
 		isAndroid = isAndroidBrowser();
 
 		// Stats counter
@@ -49,7 +47,7 @@
 						statsCounter();
 					} else {
 						clearTimeout(timeout);
-					}
+					} 
 				}
 				else {
 					if(statsNum <= 471 && statsNum >= 101){
@@ -57,7 +55,7 @@
 						statsCounter();
 					} else {
 						clearTimeout(timeout);
-					}
+					} 
 				}
 			}, 1);
 		}
@@ -166,7 +164,6 @@
 
 		// function videoControls() {
 		// 	$('.thr__video-controls').each(function(i) {
-
 		// 		$(this).on('click', function() {
 
 		// 			if($(this).hasClass('is-playing')){
@@ -211,7 +208,7 @@
 					// $('.thr__video-controls').eq().removeClass('is-playing');
 				})
 				.duration(600)
-				.addTo(controller);
+				.addTo(controller);	
 			});
 		}
 
@@ -221,7 +218,7 @@
 			$thrXrayItem.each(function(i) {
 
 				new ScrollMagic.Scene({
-					triggerElement: $thrXrayItem[i],
+					triggerElement: $thrXrayItem[i], 
 					triggerHook: 'onCenter'
 				})
 				.on('leave', function(e) {
@@ -242,14 +239,14 @@
 				})
 				.setClassToggle($thrXrayItem[i], 'is-in-view')
 				.duration($thrXrayItem[i].height)
-				.addTo(controller);
+				.addTo(controller);		
 			});
 
 			// Add class when item is in view
 			$thrScrollItem.each(function(i){
 
 				thrInView = new ScrollMagic.Scene({
-					triggerElement: $thrScrollItem[i],
+					triggerElement: $thrScrollItem[i], 
 					triggerHook: 'onCenter'
 				})
 				.on('enter', function() {
@@ -263,7 +260,6 @@
 		}
 
 		// Navigation Smooth Scroll
-
 		$('.portfolio__nav-link').click(function(e) {
 			e.preventDefault();
 			var scrollLink = $(this).attr('href');
@@ -275,7 +271,6 @@
 		});
 
 		// Swiper
-
 		function thrSwiperInit() {
 			thrSwiper = new Swiper('.trace__swiper', {
 				resizeReInit: true,
@@ -295,7 +290,6 @@
 			thrSwiper.destroy();
 			thrSwiperInit();
 		}, false);
-
 	$(document).ready(function() {
 		scrollHandler();
 		thrSwiperInit();
