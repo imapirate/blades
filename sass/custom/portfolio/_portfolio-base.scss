@@ -415,7 +415,7 @@
 		text-align: center;
 		border-radius: 50%;
 		font-size: 16px;
-		font-weight: 300;
+		font-weight: 600;
 		color: #fff;
 		position: absolute;
 		top: 50%;
@@ -456,10 +456,6 @@
 	display: block;
 	padding: 20px 25px 20px 60px;
 	transition: all 0.2s ease-in-out;
-
-	&:hover {
-		opacity: 0.7;
-	}
 
 	@include mq($portfolio-bp-mobile) {
 		padding: 25px 30px 25px 90px;
@@ -655,14 +651,14 @@
 }
 
 .triangle__item--badge-a--left {
-	&:after { 
+	&:after {
 		border-color: transparent transparent transparent $color-gray-0;
 		-moz-transform: scale(.9999);
 	}
 }
 
 .triangle__item--badge-a--right {
-	&:after { 
+	&:after {
 		border-color: transparent transparent $color-gray-0 transparent;
 		-moz-transform: scale(.9999);
 	}
