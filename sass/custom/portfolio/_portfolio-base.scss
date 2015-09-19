@@ -15,7 +15,7 @@
 //    Used for the section link navigation at the top of the case study
 //    Used in the "What We Did" section after results
 //
-// 4. Badge
+// 5. Badge
 //    The down arrow used to indicate section breaks
 //
 
@@ -301,14 +301,13 @@
 		padding-bottom: 80px;
 	}
 }
-	
+
 .portfolio__pad--top-lg {
 	padding-top: 25%;
 }
 
 .portfolio__pad--bottom-md {
 	padding-bottom: 40px;
-		
 	@include mq($portfolio-bp-tablet) {
 		padding-bottom: 50px;
 	}
@@ -400,7 +399,7 @@
 .portfolio__count-list {
 	counter-increment: step-counter;
 	position: relative;
-	color: $portfolio-color-gray-0;
+	color: #000;
 	line-height: 1;
 	font: 500 18px $portfolio-fontFamily-sans;
 	border-top: 1px solid $portfolio-color-gray-d;
@@ -417,7 +416,7 @@
 		border-radius: 50%;
 		font-size: 16px;
 		font-weight: 300;
-		color: $portfolio-color-gray-f;
+		color: #fff;
 		position: absolute;
 		top: 50%;
 		left: 20px;
@@ -439,11 +438,11 @@
 }
 
 .portfolio__nav-item {
-	
+
 	&:before {
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 	}
-	
+
 	html.no-touch & {
 		&:hover {
 			&:before { background-color: $portfolio-color-gray-0; color: $portfolio-color-gray-f; }
@@ -563,7 +562,7 @@
 	&:after {
 		left: -100px;
 	}
-	
+
 	&:before {
 		right: -100px;
 	}
@@ -637,7 +636,7 @@
 		font-size: 16px;
 		letter-spacing: 3px;
 	}
-} 
+}
 
 .badge-a__divider {
 	height: 1px;
@@ -656,13 +655,15 @@
 }
 
 .triangle__item--badge-a--left {
-	&:after { border-color: transparent transparent transparent $portfolio-color-gray-0; 
+	&:after { 
+		border-color: transparent transparent transparent $color-gray-0;
 		-moz-transform: scale(.9999);
 	}
 }
 
 .triangle__item--badge-a--right {
-	&:after { border-color: transparent transparent $portfolio-color-gray-0 transparent; 
+	&:after { 
+		border-color: transparent transparent $color-gray-0 transparent;
 		-moz-transform: scale(.9999);
 	}
 }
