@@ -217,52 +217,38 @@
 
 // main -> placeholders
 
+
+
 // =============================================
 
 //	2. Portfolio Basics
 
 // =============================================
 
-.portfolio-h1 {
-	font-family: $portfolio-fontFamily-serif;
-	font-weight: 900;
-	color: $portfolio-color-gray-f;
-}
-
 .full-width,
 .site-width {
 	position: relative;
 }
 
-.portfolio__l {
+.l-portfolio {
 	margin: 0 auto;
 	position: relative;
 }
 
-.portfolio__l--wide {
+.l-portfolio--wide {
 	margin: 0 auto;
 	position: relative;
 	width: 80%;
 }
 
-.portfolio__l--hidden {
-	overflow: hidden;
-}
-
-.txt-width-neue {
+.portfolio__txt-width {
 	max-width: 700px;
-}
-
-.portfolio-kicker--thr {
-	padding-bottom: 6px;
-
-	&:after {
-		background-color: $portfolio-color-gray-f;
-		width: 100%;
-	}
+	margin: auto;
 }
 
 // main -> portfolio basics
+
+
 
 // =============================================
 
@@ -355,7 +341,7 @@
 
 // Results Grid
 
-.portfolio__l--rule {
+.l-portfolio--rule {
 	border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 
@@ -383,6 +369,9 @@
 		clear: left;
 	}
 }
+
+
+
 
 // =============================================
 
@@ -485,6 +474,9 @@
 }
 
 // main -> count lists
+
+
+
 
 // =============================================
 
@@ -592,7 +584,7 @@
 		position: relative;
 		transform: translate(0, -50px);
 
-		.thr__js--is-in-view & {
+		.is-in-view & {
 			transform: translate(0, 0);
 		}
 	}
@@ -618,7 +610,7 @@
 		position: relative;
 		transform: translate(0, 50px);
 
-		.thr__js--is-in-view & {
+		.is-in-view & {
 			transform: translate(0, 0);
 		}
 	}
@@ -644,7 +636,7 @@
 	&--js {
 		width: 0;
 
-		.thr__js--is-in-view & {
+		.is-in-view & {
 			width: 100%;
 		}
 	}
