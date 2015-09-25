@@ -1,46 +1,4 @@
 @font-face {
-  font-family: "National";
-  src: url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-Book.eot");
-  src: local("☺"), url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-Book.eot?iefix") format("eot"), url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-Book.woff") format("woff"), local("☺");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "National";
-  src: url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-BookItalic.eot");
-  src: local("☺"), url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-BookItalic.eot?iefix") format("eot"), url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-BookItalic.woff") format("woff"), local("☺");
-  font-weight: 300;
-  font-style: italic;
-}
-@font-face {
-  font-family: "National";
-  src: url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-Bold.eot");
-  src: local("☺"), url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-Bold.eot?iefix") format("eot"), url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-Bold.woff") format("woff"), local("☺");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "National";
-  src: url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-BoldItalic.eot");
-  src: local("☺"), url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-BoldItalic.eot?iefix") format("eot"), url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-BoldItalic.woff") format("woff"), local("☺");
-  font-weight: 700;
-  font-style: italic;
-}
-@font-face {
-  font-family: "National";
-  src: url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-Black.eot");
-  src: local("☺"), url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-Black.eot?iefix") format("eot"), url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-Black.woff") format("woff"), local("☺");
-  font-weight: 900;
-  font-style: normal;
-}
-@font-face {
-  font-family: "National";
-  src: url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-BlackItalic.eot");
-  src: local("☺"), url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-BlackItalic.eot?iefix") format("eot"), url("/wp-content/themes/blades/views/custom/hechinger/fonts/NationalWebLF-BlackItalic.woff") format("woff"), local("☺");
-  font-weight: 900;
-  font-style: italic;
-}
-@font-face {
   font-family: "Tiempos";
   src: url("/wp-content/themes/blades/views/custom/hechinger/fonts/TiemposHeadlineWeb-Black.eot");
   src: local("☺"), url("/wp-content/themes/blades/views/custom/hechinger/fonts/TiemposHeadlineWeb-Black.eot?iefix") format("eot"), url("/wp-content/themes/blades/views/custom/hechinger/fonts/TiemposHeadlineWeb-Black.woff") format("woff"), local("☺");
@@ -81,4 +39,40 @@
   src: local("☺"), url("/wp-content/themes/blades/views/custom/hechinger/fonts/TiemposTextWeb-SemiboldItalic.eot?iefix") format("eot"), url("/wp-content/themes/blades/views/custom/hechinger/fonts/TiemposTextWeb-SemiboldItalic.woff") format("woff"), local("☺");
   font-weight: 700;
   font-style: italic;
+}
+
+@font-face {
+  font-family: "Cubano";
+  src: url("/wp-content/themes/blades/views/custom/rh-bookmark/fonts/Cubano-Regular.otf");
+  font-weight: normal;
+  font-style: Regular;
+}
+
+@font-face {
+  font-family: "Georgia";
+  src: url("/wp-content/themes/blades/views/custom/rh-bookmark/fonts/Georgia.ttf");
+  font-weight: normal;
+  font-style: Regular;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/wp-content/themes/blades/views/custom/rh-bookmark/fonts/ProximaNova-Reg.otf");
+  font-weight: normal;
+  font-style: Regular;
+}
+
+@font-face {
+  font-family: "IM FELL Great Primer";
+  src: url("/static/fonts/IM-Fell-Great-Primer-Roman.ttf");
+  src: url("/wp-content/themes/blades/views/custom/rh-bookmark/fonts/IM-Fell-Great-Primer-Roman.ttf");
+  font-weight: normal;
+  font-style: Regular;
+}
+
+@font-face {
+  font-family: "Purista";
+  src: url("/wp-content/themes/blades/views/custom/rh-bookmark/fonts/Purista Semibold.otf");
+  font-weight: normal;
+  font-style: SemiBold;
 }

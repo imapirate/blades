@@ -1722,6 +1722,8 @@ body {
     height: 23px;
     content: '';
     background-image: url('../../../images/portfolio/rh-bookmark/arrow-point.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
 
@@ -1970,17 +1972,242 @@ body {
   height: 100%;
 }
 
-// #number-total {
-//   @extend %__text;
-//   color: $black;
-//   font-size: 164pt;
-// }
+// =============================================
 
-// #number-total-label {
-//   @extend %__italic;
-//   color: $black;
-//   font-size: 51pt;
-// }
+//	Editor Module
+
+// =============================================
+#editor-module {
+  @include clearfix;
+  margin: 100px 0 200px;
+}
+
+#controls {
+  float: left;
+  width: 30%;
+  margin-left: 10%;
+  color: #000000;
+}
+
+.control-section {
+  position: relative;
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.section-label {
+  border-bottom: 1pt solid black;
+  margin-bottom: 35px;
+}
+
+.section-label-h {
+  font-family: "Calibre", sans-serif;
+  font-size: 24pt;
+  letter-spacing: 5pt;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+#layout > img {
+  width: 29%;
+  margin-right: 5%;
+  opacity: 0.2;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+
+.control-item {
+	width: 90%;
+	margin-left: 10%;
+
+	&.is-selected {
+		background-color: red;
+		&:before {
+	    position: absolute;
+    	left: 5px;
+    	margin-top: -5px;
+    	width: 20px;
+    	height: 30px;
+    	transform: rotate(-90deg);
+	    content: '';
+	    background-image: url('../../../images/portfolio/rh-bookmark/arrow-point.svg');
+	    background-size: cover;
+    	background-repeat: no-repeat;
+	  }
+	}
+}
+
+.type-sample {
+
+	> .theme-number { 
+		font-size: 24pt; 
+    	margin-bottom: 10px;
+	}
+	> .lorem-ipsum { 
+		font-size: 16pt;
+    	margin-bottom: 20px;
+	}
+
+  &.theme-1 {
+    > .theme-number { font-family: "Cubano", sans-serif; }
+    > .lorem-ipsum { font-family: "Georgia", serif; }
+  }
+  &.theme-2 {
+    > .theme-number { font-family: "Purista", sans-serif; }
+    > .lorem-ipsum { font-family: "Proxima Nova", sans-serif; }
+  }
+  &.theme-3 {
+    > .theme-number { font-family: "IM FELL Great Primer", serif; }
+    > .lorem-ipsum { 
+    	font-family: "Georgia", serif; 
+    	margin-bottom: 0;
+    }
+  }
+}
+
+.color-sample {
+  height: 20px;
+  margin-bottom: 40px;
+
+  > div {
+    width: 25%;
+    height: 100%;
+    float: left;
+  }
+
+  &.palette-1 {
+     > .block-1 { background-color: #000000; }
+     > .block-2 { background-color: #F8D056; }
+     > .block-3 { background-color: #F7F7DD; }
+     > .block-4 { background-color: #5DA085; }
+  }
+
+  &.palette-2 {
+     > .block-1 { background-color: #222321; }
+     > .block-2 { background-color: #5FC2B7; }
+     > .block-3 { background-color: #F1F0EA; }
+     > .block-4 { background-color: #E6585B; }
+  }
+
+  &.palette-3 {
+     > .block-1 { background-color: #EEE5D7; }
+     > .block-2 { background-color: #35251D; }
+     > .block-3 { background-color: #F37825; }
+     > .block-4 { background-color: #60B99A; }
+  }
+}
+
+#site-result {
+    width: 55%;
+    float: left;
+    margin-left: 5%;
+}
+
+#result-nav {
+  width: 100%;
+  background-color: #000000;
+  padding: 20px;
+  > p {
+    color: #ffffff;
+    display: inline-block;
+    margin: 0 10% 0 0;
+  }
+  > .result-nav-link {
+    font-family: "Georgia", serif;
+    font-size: 20pt;
+    text-transform: uppercase;
+  }
+}
+
+#author-name {
+  font-family: "Cubano", sans-serif;
+  font-size: 20pt;
+  letter-spacing: 2pt;
+}
+
+#result-page-top {
+    background-color: #5DA085;
+    width: 100%;
+    padding: 50px 20px;
+    background-image:  url('../../../images/portfolio/rh-bookmark/book-cover.png');
+    background-repeat: no-repeat;
+}
+
+#result-blurb-block {
+    width: 50%;
+    padding: 20px;
+    margin-left: 45%;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.result-book-title {
+  font-family: "Cubano", sans-serif;
+  font-size: 32pt;
+  text-align: center;
+  letter-spacing: 3pt;
+  margin: 0 0 20px 0;
+}
+
+.result-blurb-txt {
+  margin-bottom: 20px;
+  font-family: "Georgia", serif;
+  font-size: 12pt;
+  line-height: 1.5;
+}
+
+#result-buy-btn {
+  display: block;
+  margin: 0 auto;
+  width: 20%;
+  padding: 5px;
+
+  border: none;
+  border-radius: 4px;
+  color: #000000;
+  background-color: #F8D056;
+
+  font-family: "Georgia", serif;
+  font-size: 14pt;
+  text-transform: uppercase;
+}
+
+#result-page-bottom {
+    padding: 20px;
+    width: 100%;
+    background-color: #F7F7DD;
+    color: #000000;
+}
+
+#result-praise {
+    margin-bottom: 40px;
+}
+
+.result-h {
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	color: #5DA085;
+    border-bottom: 1pt solid #CFCFCA;
+    font-family: "Cubano";
+    font-size: 16pt;
+    letter-spacing: 1pt;
+}
+
+.result-sub-h, .result-quote {
+    font-family: "Cubano";
+    font-size: 14pt;
+}
+
+.result-sub-h { margin-bottom: 10px; }
+
+.result-txt {
+	margin-bottom: 20px;
+    font-family: "Georgia";
+    font-size: 12pt;
+    line-height: 1.5;
+}
 
 // =============================================
 
