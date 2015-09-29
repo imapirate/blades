@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="317px" height="80px" viewBox="0 0 317 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.3 (12072) - http://www.bohemiancoding.com/sketch -->
+    <title>Theme Two + Lorem ipsum dolor si</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetInner1" result="shadowBlurInner1"></feGaussianBlur>
+            <feComposite in="shadowBlurInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0" in="shadowInnerInner1" type="matrix" result="shadowMatrixInner1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-HD" sketch:type="MSArtboardGroup" transform="translate(-234.000000, -8482.000000)">
+            <g id="Chapter-1---A-Versatile-System" sketch:type="MSLayerGroup" transform="translate(0.000000, 2112.000000)">
+                <g id="Editor-Widget" transform="translate(182.000000, 5194.000000)" sketch:type="MSTextLayer">
+                    <g id="Editor-Widget-Interface" transform="translate(0.000000, 749.000000)">
+                        <g id="Theme-Two-+-Lorem-ipsum-dolor-si" transform="translate(52.695312, 413.395993)">
+                            <text id="Theme-Two" fill="white" filter="url(#filter-1)" font-family="Purista" font-size="36" font-weight="526" line-spacing="36">
+                                <tspan x="0" y="39" fill="#000000">Theme Two</tspan>
+                            </text>
+                            <text id="Lorem-ipsum-dolor-si" fill="#000000" font-family="Proxima Nova" font-size="18" font-weight="normal" line-spacing="20">
+                                <tspan x="0" y="69">Lorem ipsum dolor sit amet, consectetur </tspan>
+                                <tspan x="0" y="89">adipiscing elit. </tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

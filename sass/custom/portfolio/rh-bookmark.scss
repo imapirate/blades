@@ -1983,16 +1983,38 @@ body {
 }
 
 #controls {
+  width: 90%;
+  margin: 0 auto;
+  color: #000000;
+
+  @include clearfix;
+
+  @include mq(788px) {
   float: left;
   width: 30%;
   margin-left: 10%;
-  color: #000000;
+}
+  @include mq(1600px) {
+    	width: 35%;
+  }
 }
 
 .control-section {
   position: relative;
+  margin-right: 5%;
+  width: 30%;
+  float: left;
   margin-bottom: 50px;
+
+  &:last-of-type {
+  	margin-right: 0;
+  }
+
+
+  @include mq(788px) {
+  float: none;
   width: 100%;
+ }
 }
 
 .section-label {
@@ -2009,9 +2031,13 @@ body {
 }
 
 #layout > img {
-  width: 29%;
+  width: 28%;
   margin-right: 5%;
   opacity: 0.2;
+
+  &:first-of-type {
+  	opacity: 1;
+  }
 
   &:last-of-type {
     margin-right: 0;
@@ -2019,12 +2045,22 @@ body {
 }
 
 .control-item {
+	width: 100%;
+
+	@include mq(1000px) {
 	width: 90%;
 	margin-left: 10%;
+	}
+
+	&.type-sample {
+	 	margin-bottom: 20px;
+	}
 
 	&.is-selected {
-		background-color: red;
+
 		&:before {
+
+		@include mq(1000px) {
 	    position: absolute;
     	left: 5px;
     	margin-top: -5px;
@@ -2035,37 +2071,42 @@ body {
 	    background-image: url('../../../images/portfolio/rh-bookmark/arrow-point.svg');
 	    background-size: cover;
     	background-repeat: no-repeat;
+    	}
 	  }
 	}
 }
 
-.type-sample {
-
-	> .theme-number { 
-		font-size: 24pt; 
-    	margin-bottom: 10px;
-	}
-	> .lorem-ipsum { 
-		font-size: 16pt;
-    	margin-bottom: 20px;
-	}
-
-  &.theme-1 {
-    > .theme-number { font-family: "Cubano", sans-serif; }
-    > .lorem-ipsum { font-family: "Georgia", serif; }
-  }
-  &.theme-2 {
-    > .theme-number { font-family: "Purista", sans-serif; }
-    > .lorem-ipsum { font-family: "Proxima Nova", sans-serif; }
-  }
-  &.theme-3 {
-    > .theme-number { font-family: "IM FELL Great Primer", serif; }
-    > .lorem-ipsum { 
-    	font-family: "Georgia", serif; 
-    	margin-bottom: 0;
-    }
-  }
+.type-img {
+    width: 100%;
+    max-width: 350px;
 }
+// .type-sample {
+
+// 	> .theme-number { 
+// 		font-size: 24pt; 
+//     	margin-bottom: 10px;
+// 	}
+// 	> .lorem-ipsum { 
+// 		font-size: 16pt;
+//     	margin-bottom: 20px;
+// 	}
+
+//   &.theme-1 {
+//     > .theme-number { font-family: "Cubano", sans-serif; }
+//     > .lorem-ipsum { font-family: "Georgia", serif; }
+//   }
+//   &.theme-2 {
+//     > .theme-number { font-family: "Purista", sans-serif; }
+//     > .lorem-ipsum { font-family: "Proxima Nova", sans-serif; }
+//   }
+//   &.theme-3 {
+//     > .theme-number { font-family: "IM FELL Great Primer", serif; }
+//     > .lorem-ipsum { 
+//     	font-family: "Georgia", serif; 
+//     	margin-bottom: 0;
+//     }
+//   }
+// }
 
 .color-sample {
   height: 20px;
@@ -2100,9 +2141,21 @@ body {
 }
 
 #site-result {
-    width: 55%;
-    float: left;
-    margin-left: 5%;
+    width: 100%;
+
+    @include mq(788px) {
+    	width: 55%;
+    	float: left;
+    	margin-left: 5%;
+    }
+    @include mq(1600px) {
+    	width: 50%;
+    }
+} 
+
+#site-mockup {
+	width: 100%;
+	max-width: 788px;
 }
 
 #result-nav {
