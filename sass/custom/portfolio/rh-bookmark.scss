@@ -2543,5 +2543,24 @@ body {
 // =============================================
 
 .rh__screenshots {
-	height: 1000px;
+	position: relative;
+	margin-bottom: -10%;
+
+	&:after {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    content: '';
+    border-top: 500px solid #4a4a4a;
+    background-color: #27B99E;
+	}
+}
+
+#site-screenshots {
+	width: 100%;
+    position: relative;
+    z-index: 1;
+    margin-top: -10%;
 }
