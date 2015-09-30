@@ -2142,6 +2142,7 @@ body {
 
 #site-result {
     width: 100%;
+    background-color: #000000;
 
     @include mq(788px) {
     	width: 55%;
@@ -2196,6 +2197,14 @@ body {
     background-position-x: 50%;
     background-position-y: 20%;
 
+    &.layout-3 {
+    padding: 3%;
+    background-image: url("../../../images/portfolio/rh-bookmark/informationist-paperback.jpg");
+    background-size: cover;
+    background-position-x: initial;
+    background-position-y: 85%;
+    }
+
     @include mq(1200px) {
     padding: 50px 20px;
     background-size: contain;
@@ -2211,9 +2220,17 @@ body {
     background-color: rgba(0,0,0,0.7);
     color: #ffffff;
 
-    @include mq(1200px) {
-    width: 50%;
-    margin: 0 0 0 45%;	
+    &.layout-1 {
+	    @include mq(1200px) {
+	    width: 50%;
+	    margin: 0 0 0 45%;	
+	    }
+    }
+    
+    &.layout-3 {
+    margin-top: 25;
+    background-color: #F1F0EA;
+    color: #000000;
     }
 }
 
@@ -2253,6 +2270,11 @@ body {
     width: 100%;
     background-color: #F1F0EA;
     color: #000000;
+
+    &.layout-3 {
+    	width: 94%;
+    	margin: -3% auto 0 auto;
+    }
 }
 
 #result-praise {
