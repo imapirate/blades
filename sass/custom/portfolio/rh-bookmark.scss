@@ -661,7 +661,10 @@ body {
 
 .rh__part-two {
 	padding-top: 50px;
-	margin-top: 150px;
+
+	@include mq(788px) {
+		margin-top: 150px;
+	}
 }
 
 .rh__part-three {
@@ -1979,7 +1982,12 @@ body {
 // =============================================
 #editor-module {
   @include clearfix;
-  margin: 100px 0 200px;
+  margin-top: 100px;
+  position: relative;
+
+  @include mq(788px) {
+  	margin-bottom: 200px; 
+  }
 }
 
 #controls {
@@ -2143,11 +2151,19 @@ body {
 #site-result {
     width: 100%;
     background-color: #000000;
+    overflow: scroll;
+    max-height: 500px;
 
     @include mq(788px) {
     	width: 55%;
     	float: left;
     	margin-left: 5%;
+    	position: absolute;
+        top: 0;
+    	right: 0;
+    	bottom: 0;
+    	left: 40%;
+    	max-height: inherit;
     }
     @include mq(1600px) {
     	width: 50%;
@@ -2226,9 +2242,9 @@ body {
 	    margin: 0 0 0 45%;	
 	    }
     }
-    
+
     &.layout-3 {
-    margin-top: 25;
+    margin-top: 25%;
     background-color: #F1F0EA;
     color: #000000;
     }
