@@ -2008,16 +2008,19 @@ body {
 }
 
 .control-section {
-  position: relative;
-  margin-right: 5%;
-  width: 30%;
-  float: left;
-  margin-bottom: 50px;
+   position: relative;
+   margin-right: 5%;
+   width: 30%;
+   float: left;
+   margin-bottom: 30px;
 
   &:last-of-type {
   	margin-right: 0;
   }
 
+  @include mq(550px) {
+  margin-bottom: 50px;
+  }
 
   @include mq(788px) {
   float: none;
@@ -2027,19 +2030,25 @@ body {
 
 .section-label {
   border-bottom: 1pt solid black;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
+
+  @include mq(550px) { margin-bottom: 35px; }
 }
 
 .section-label-h {
   font-family: "Calibre", sans-serif;
-  font-size: 24pt;
+  font-size: 14pt;
   letter-spacing: 5pt;
   text-transform: uppercase;
   margin: 0;
+
+  @include mq(550px) {
+  	font-size: 24pt;
+  }
 }
 
 #layout > img {
-  width: 28%;
+  width: 27%;
   margin-right: 5%;
   opacity: 0.2;
 
@@ -2050,6 +2059,8 @@ body {
   &:last-of-type {
     margin-right: 0;
   }
+
+  @include mq(550px) { width: 28%; }
 }
 
 .control-item {
@@ -2061,7 +2072,9 @@ body {
 	}
 
 	&.type-sample {
-	 	margin-bottom: 20px;
+	 	margin-bottom: 10px;
+
+	 	@include mq(550px) { margin-bottom: 20px; }
 	}
 
 	&.is-selected {
@@ -2117,8 +2130,8 @@ body {
 // }
 
 .color-sample {
-  height: 20px;
-  margin-bottom: 40px;
+  height: 10px;
+  margin-bottom: 20px;
 
   > div {
     width: 25%;
@@ -2146,6 +2159,11 @@ body {
      > .block-3 { background-color: #F37825; }
      > .block-4 { background-color: #60B99A; }
   }
+
+  @include mq(550px) {
+  	height: 20px;
+  	margin-bottom: 40px;
+  }
 }
 
 #site-result {
@@ -2167,6 +2185,7 @@ body {
     }
     @include mq(1600px) {
     	width: 50%;
+    	margin-left: 10%;
     }
 } 
 
