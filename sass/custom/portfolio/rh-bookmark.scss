@@ -2001,30 +2001,29 @@ body {
   float: left;
   width: 30%;
   margin-left: 10%;
-}
+  }
   @include mq(1600px) {
     	width: 35%;
   }
 }
 
 .control-section {
-   position: relative;
-   margin-right: 5%;
-   width: 30%;
-   float: left;
-   margin-bottom: 30px;
+  position: relative;
+  width: 30%;
+  float: left;
+  margin: 0 5% 30px 0;
 
   &:last-of-type {
-  	margin-right: 0;
+    margin-right: 0;
   }
 
   @include mq(550px) {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
   }
 
   @include mq(788px) {
-  float: none;
-  width: 100%;
+    float: none;
+    width: 100%;
  }
 }
 
@@ -2042,9 +2041,7 @@ body {
   text-transform: uppercase;
   margin: 0;
 
-  @include mq(550px) {
-  	font-size: 24pt;
-  }
+  @include mq(550px) { font-size: 24pt; }
 }
 
 #layout > img {
@@ -2052,13 +2049,9 @@ body {
   margin-right: 5%;
   opacity: 0.2;
 
-  &:first-of-type {
-  	opacity: 1;
-  }
+  &:first-of-type { opacity: 1; }
 
-  &:last-of-type {
-    margin-right: 0;
-  }
+  &:last-of-type { margin-right: 0; }
 
   @include mq(550px) { width: 28%; }
 }
@@ -2078,9 +2071,7 @@ body {
 	}
 
 	&.is-selected {
-
 		&:before {
-
 		@include mq(1000px) {
 	    position: absolute;
     	left: 5px;
@@ -2132,6 +2123,11 @@ body {
 .color-sample {
   height: 10px;
   margin-bottom: 20px;
+  
+  @include mq(550px) {
+  	height: 20px;
+  	margin-bottom: 40px;
+  }
 
   > div {
     width: 25%;
@@ -2159,24 +2155,19 @@ body {
      > .block-3 { background-color: #F37825; }
      > .block-4 { background-color: #60B99A; }
   }
-
-  @include mq(550px) {
-  	height: 20px;
-  	margin-bottom: 40px;
-  }
 }
 
 #site-result {
     width: 100%;
-    background-color: #000000;
-    overflow: scroll;
     max-height: 500px;
+    overflow: scroll;
+    background-color: #000000;
 
     @include mq(788px) {
+    	position: absolute;
     	width: 55%;
     	float: left;
     	margin-left: 5%;
-    	position: absolute;
         top: 0;
     	right: 0;
     	bottom: 0;
@@ -2196,8 +2187,9 @@ body {
 
 #result-nav {
   width: 100%;
-  background-color: #000000;
   padding: 20px 15px;
+  background-color: #000000;
+
   @include mq(1200px) { padding: 20px; }
 
   > p {
@@ -2207,10 +2199,12 @@ body {
 
     @include mq(500px) { margin-right: 5%;}
   }
+
   > .result-nav-link {
     font-family: "Georgia", serif;
     font-size: 10pt;
     text-transform: uppercase;
+
     @include mq(500px) { font-size: 12pt; }
     @include mq(788px) { font-size: 10pt; }
     @include mq(900px) { font-size: 12pt; }
@@ -2349,11 +2343,11 @@ body {
 }
 
 .result-book-title {
+  margin: 0 0 10px 0;
   font-family: "Cubano", sans-serif;
   font-size: 20pt;
   text-align: center;
   letter-spacing: 1pt;
-  margin: 0 0 10px 0;
 
   @include mq(500px) {
   	font-size: 24pt;
@@ -2368,15 +2362,15 @@ body {
   line-height: 1.5;
 
   @include mq(500px) {
-  	font-size: 12pt;
   	margin-bottom: 20px;
+  	font-size: 12pt;
   }
 }
 
 #result-buy-btn {
   display: block;
-  margin: 0 auto;
   width: 15%;
+  margin: 0 auto;
   padding: 3px;
 
   border: none;
@@ -2406,8 +2400,8 @@ body {
 }
 
 #result-page-bottom {
-    padding: 20px;
     width: 100%;
+    padding: 20px;
     color: #000000;
 
     &.layout-3 {
@@ -2418,7 +2412,8 @@ body {
     &.color-1 { background-color: #f7f7dd; }
     &.color-2 { background-color: #F1F0EA; }
     &.color-3 { 
-    	background-color: #eee5d7; 
+    	background-color: #eee5d7;
+    	 
     	> div > p { color: #35251D; }
     }
 
