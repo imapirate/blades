@@ -1957,8 +1957,8 @@ body {
   text-align: center;
   margin: 50px auto;
   opacity: 0;
-  transition: 0.5s ease-in-out;
-  transition-delay: 0.5s;
+  transition: 1s ease-in-out;
+  transition-delay: 1s;
 
     &.rh__js--is-in-view {
   	opacity: 1;
@@ -1968,6 +1968,7 @@ body {
 #math-result {
   width: 100%;
   height: 100%;
+  overflow: visible;
 }
 
 // #number-total {
