@@ -2203,22 +2203,32 @@ body {
   > p {
     color: #ffffff;
     display: inline-block;
-    margin: 0 5% 0 0;
+    margin: 0 2% 0 0;
+
+    @include mq(500px) { margin-right: 5%;}
   }
   > .result-nav-link {
     font-family: "Georgia", serif;
-    font-size: 12pt;
+    font-size: 10pt;
     text-transform: uppercase;
-
+    @include mq(500px) { font-size: 12pt; }
+    @include mq(788px) { font-size: 10pt; }
+    @include mq(900px) { font-size: 12pt; }
     @include mq(1200px) { font-size: 16pt; }
   }
 }
 
 #author-name {
   font-family: "Cubano", sans-serif;
-  font-size: 16pt;
-  letter-spacing: 2pt;
+  font-size: 10pt;
+  letter-spacing: 1pt;
 
+  @include mq(500px) { 
+  	font-size: 16pt;
+  	letter-spacing: 2pt;
+  	}
+  @include mq(788px) { font-size: 14pt; }
+  @include mq(900px) { font-size: 16pt; }
   @include mq(1200px) { font-size: 20pt; }
 }
 
@@ -2231,6 +2241,24 @@ body {
     background-size: 140%;
     background-position-x: 50%;
     background-position-y: 20%;
+
+    &.layout-2 {
+    background-image: url("../../../images/portfolio/rh-bookmark/author-photo.jpg");
+    background-size: cover;
+    background-position-x: 30%;
+    background-position-y: 50%;
+
+	    @include mq(788px) {
+	    	background-position-x: 20%;
+	    	background-position-y: 100%;
+	    }
+
+	    @include mq(1200px) {
+	    	background-size: cover;
+	    	background-position-x: 50%;
+	    	background-position-y: 50%;
+	    }
+    }
 
     &.layout-3 {
     padding: 3%;
@@ -2262,33 +2290,62 @@ body {
 	    }
     }
 
+    &.layout-2 {
+    	width: 100%;
+    	margin: 25% 0 0 0;
+
+    	@include mq(600px) {
+    		width: 60%;
+    		margin: 0 0 0 40%;
+    	}
+    	@include mq(788px) {
+    		width: 100%;
+    		margin: 25% 0 0 0;
+    	}
+
+    	@include mq(1200px) {
+    		width: 60%;
+    		margin: 0 0 0 40%;	
+    	}
+    }
+
     &.layout-3 {
-    margin-top: 25%;
-    background-color: #F1F0EA;
-    color: #000000;
+    	margin-top: 25%;
+    	background-color: #F1F0EA;
+    	color: #000000;
     }
 }
 
 .result-book-title {
   font-family: "Cubano", sans-serif;
-  font-size: 24pt;
+  font-size: 20pt;
   text-align: center;
   letter-spacing: 1pt;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
+
+  @include mq(500px) {
+  	font-size: 24pt;
+  	margin-bottom: 20px;
+  }
 }
 
 .result-blurb-txt {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-family: "Georgia", serif;
-  font-size: 12pt;
+  font-size: 10pt;
   line-height: 1.5;
+
+  @include mq(500px) {
+  	font-size: 12pt;
+  	margin-bottom: 20px;
+  }
 }
 
 #result-buy-btn {
   display: block;
   margin: 0 auto;
-  width: 20%;
-  padding: 5px;
+  width: 15%;
+  padding: 3px;
 
   border: none;
   border-radius: 4px;
@@ -2296,8 +2353,14 @@ body {
   background-color: #5FC2B7;
 
   font-family: "Georgia", serif;
-  font-size: 14pt;
+  font-size: 10pt;
   text-transform: uppercase;
+
+  @include mq(500px) { 
+  	width: 20%;
+  	padding: 5px;
+  	font-size: 14pt;
+  }
 }
 
 #result-page-bottom {
